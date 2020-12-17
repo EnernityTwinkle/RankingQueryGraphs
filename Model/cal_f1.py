@@ -77,17 +77,17 @@ def cal_f1(file_name1, file_name2, data_type, actual_num = 0, log=0):
     if(actual_num == 0):
         if(data_type == 't'):
             print(sum_f1, p / 2032.0, r / 2032.0, sum_f1 / 2032.0)
-            return sum_f1 / 2032.0
+            return p / 2032.0, r / 2032.0, sum_f1 / 2032.0
         else:
             print(sum_f1, p / 755.0, r / 755.0, sum_f1 / 755.0)
-            return sum_f1 / 755.0
+            return p / 755.0, r / 755.0, sum_f1 / 755.0
     else:
         if(data_type == 't'):
             print(sum_f1, p / 800.0, r / 800.0, sum_f1 / 800.0)
-            return sum_f1 / 800.0
+            return p / 800.0, r / 800.0, sum_f1 / 800.0
         else:
             print(sum_f1, p / 300.0, r / 300.0, sum_f1 / 300.0)
-            return sum_f1 / 300.0
+            return p / 300.0, r / 300.0, sum_f1 / 300.0
 
 
 # 计算预测文件与gold文件的得分
