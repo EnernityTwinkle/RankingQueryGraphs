@@ -93,6 +93,33 @@ def read_entity(init_dir_name):
                             entity_dic[value] = name
     return entity_dic
 
+# 读取比较信息，一般只有时间约束和序数词约束会有意义
+def read_comp(init_dir_name):
+    qid2comp_dic = {}
+    for root, dirs, files in os.walk(init_dir_name):
+        # print(root, dirs, files)
+        for dir_name in dirs: # 针对每组问句对应的文件夹进行处理
+            file_names = os.listdir(root + dir_name)
+            for file_name in file_names:
+                if('_links' in file_name):
+                    # import pdb; pdb.set_trace()
+                    qid = file_name[0:4]
+                    qid2comp_dic[qid] = []
+                    f = open(init_dir_name + dir_name + '/' + file_name, 'r', encoding = 'utf-8')
+                    for i, line in enumerate(f):
+                        line_json = json.loads(line.strip())
+                        if(len(line_json) != 9):
+                            print('长度不等于9')
+                            import pdb; pdb.set_trace()
+                        if(line_json[5][0] != 'comp'):
+                            print('comp 所在位置不一致')
+                            import pdb; pdb.set_trace()
+                        comp = line_json[5][1]
+                        qid2comp_dic[qid].append(comp)
+    return qid2comp_dic
+
+
+
 # 将freebase中的关系转为常规词,num为取几个层级之间的词，层级之间用'.'分隔
 def trans_relid2words(rel_id, num = 1):
     words_list = rel_id.split('.')[0-num:]
@@ -102,7 +129,7 @@ def trans_relid2words(rel_id, num = 1):
 
 
 # 得到一条候选的基本信息
-def get_info_of_cand(line, entity_dic):
+def get_info_of_cand(line, entity_dic, comp_list):
     main_path = []
     entity_path = []
     time_path = []
@@ -139,6 +166,9 @@ def get_info_of_cand(line, entity_dic):
             constrain_rel = subpath[3][-1]
             entity_path.append(constrain_rel)
             entity_path.append(entity_str)
+            # if(len(subpath[3]) == 2):
+            #     print(subpath)
+            #     import pdb; pdb.set_trace()
         elif(subpath[0] == 'Time'):
             time_str = subpath[2]
             for i, item in enumerate(subpath[3]):
@@ -152,7 +182,7 @@ def get_info_of_cand(line, entity_dic):
             # import pdb; pdb.set_trace()
         elif(subpath[0] == 'Type'):
             type_str = trans_relid2words(subpath[2])
-            type_path.append('type is ' + type_str)
+            type_path.append(type_str)
         elif(subpath[0] == 'Ordinal'):
             ordinal_str = subpath[2]
             for i, item in enumerate(subpath[3]):
@@ -160,14 +190,17 @@ def get_info_of_cand(line, entity_dic):
             # ordinal_rel = ' -- '.join(subpath[3])
             ordinal_rel = subpath[3][-1]
             ordinal_path.append(ordinal_rel)
+            ordinal_path.append(comp_list[subpath[1]])
             ordinal_path.append(ordinal_str)
+            # print(ordinal_path)
+            # import pdb; pdb.set_trace()
         else:
             print(subpath)
             import pdb; pdb.set_trace()
     return main_path, entity_path, time_path, type_path, ordinal_path, p, r, f1
 
 # 读取查询图信息
-def read_query_graph(init_dir_name, entity_dic):
+def read_query_graph(init_dir_name, entity_dic, qid2comp_dic):
     num = 0
     que2cands_dic = {}
     for root, dirs, files in os.walk(init_dir_name):
@@ -176,6 +209,7 @@ def read_query_graph(init_dir_name, entity_dic):
             file_names = os.listdir(root + dir_name)
             for file_name in file_names:
                 qid = file_name[0:4]
+                comp_list = qid2comp_dic[qid]
                 # if(int(qid) % 100 != 0):
                 #     continue
                 if('_schema' in file_name):
@@ -183,7 +217,8 @@ def read_query_graph(init_dir_name, entity_dic):
                     for line in f:
                         if(qid not in que2cands_dic):
                             que2cands_dic[qid] = []
-                        main_path, entity_path, time_path, type_path, ordinal_path, p, r, f1 = get_info_of_cand(line, entity_dic)
+                        # print(qid)
+                        main_path, entity_path, time_path, type_path, ordinal_path, p, r, f1 = get_info_of_cand(line, entity_dic, comp_list)
                         query_graph = QueryGraphForTrain(main_path = main_path, entity_path = entity_path, time_path = time_path,\
                                                         type_path = type_path, ordinal_path = ordinal_path, p = p, r = r, f1 = f1)
                         # query_graph.serialize()
@@ -271,24 +306,26 @@ def write2file(file_name, query_answer):
             query_graph = item[2]
             cand_str = ''
             # *********************约束路径放在主路径之前****************************
-            if(query_graph.type_path != []):
-                cand_str += ' '.join(query_graph.type_path) + '. '
-            # if(query_graph.entity_path != []):
-            #     # cand_str += ' ' + ' '.join(query_graph.entity_path) + '.'
-            #     cand_str += query_graph.entity_path[0] + ' is ' + query_graph.entity_path[1] + '. '
-            # if(query_graph.time_path != []):
-            #     # cand_str += ' ' + ' '.join(query_graph.time_path) + '.'
-            #     cand_str += query_graph.time_path[0] + ' ' + query_graph.time_path[1] + '. '
-                # cand_str += 'time is ' + query_graph.time_path[1] + '. '
-                # print(item[1].lower())
-                # print('time:', cand_str)
-            # if(query_graph.ordinal_path != []):
-            #     # cand_str += ' ' + ' '.join(query_graph.ordinal_path) + '.'
-            #     cand_str += query_graph.ordinal_path[0] + ' is ' + query_graph.ordinal_path[1] + '. '
-                # cand_str += query_graph.ordinal_path[0] + ' rank ' + query_graph.ordinal_path[1] + '. '
+            if(query_graph.ordinal_path != []):
+                # cand_str += ' ' + ' '.join(query_graph.ordinal_path) + '.'
+                # cand_str += query_graph.ordinal_path[0] + ' is ' + query_graph.ordinal_path[1] + '. '
+                cand_str += query_graph.ordinal_path[0] + ' ' + query_graph.ordinal_path[1] + ' ' + query_graph.ordinal_path[2] + '. '
                 # cand_str += 'rank is ' + query_graph.ordinal_path[1] + '. '
                 # print('ordinal:', cand_str)
                 # cand_str += ' ' + query_graph.ordinal_path[0] + ' rank ' + query_graph.ordinal_path[1] + '.'
+            if(query_graph.time_path != []):
+                cand_str += ' '.join(query_graph.time_path) + '. '
+                # cand_str += query_graph.time_path[0] + ' is ' + query_graph.time_path[1] + '. '
+                # cand_str += 'time is ' + query_graph.time_path[1] + '. '
+                # print(item[1].lower())
+                # print('time:', cand_str)
+            if(query_graph.type_path != []):
+                cand_str += ' '.join(query_graph.type_path) + '. '
+                # 重复主路径，answer用类型代替
+                # cand_str += ' '.join(query_graph.main_path[0:2]) + ' ' + query_graph.type_path[0] + '. '
+            if(query_graph.entity_path != []):
+                cand_str += ' '.join(query_graph.entity_path) + '. '
+                # cand_str += query_graph.entity_path[0] + ' is ' + query_graph.entity_path[1] + '. '
             # ********************************************************************
             cand_str += ' '.join(query_graph.main_path[0:3]) + '.' # 包含主实体、关系和答案
             # cand_str += query_graph.main_path[0] +  ' <' + query_graph.main_path[1] + '>.'
