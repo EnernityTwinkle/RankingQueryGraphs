@@ -71,10 +71,10 @@ parser.add_argument("--input_model_dir", default='0.9675389502344577_0.480302519
 # parser.add_argument("--v_file_name",default='compq_listwise_top_50_relall_main_type_entity_time_ordinal_rank_before_dev_all.txt',type=str)
 # parser.add_argument("--t_file_name",default='compq_listwise_top_50_relall_main_type_entity_time_ordinal_rank_before_test_all.txt',type=str)
 
-parser.add_argument("--T_file_name",default='compq_listwise_1_10_type_entity_time_ordinal_mainpath__train.txt',type=str)
+parser.add_argument("--T_file_name",default='compq_listwise_1_50_type_entity_time_ordinal_mainpath__train.txt',type=str)
 # parser.add_argument("--T_file_name",default='compq_listwise_new_search_1_50_relall_main_type_entity_time_ordinal_before_is_train.txt',type=str)
-parser.add_argument("--v_file_name",default='compq_listwise_1_10_type_entity_time_ordinal_mainpath__dev.txt',type=str)
-parser.add_argument("--t_file_name",default='compq_listwise_1_10_type_entity_time_ordinal_mainpath__test.txt',type=str)
+parser.add_argument("--v_file_name",default='compq_listwise_1_50_type_entity_time_ordinal_mainpath__dev.txt',type=str)
+parser.add_argument("--t_file_name",default='compq_listwise_1_50_type_entity_time_ordinal_mainpath__test.txt',type=str)
 
 # parser.add_argument("--T_file_name",default='compq_listwise_top_50_relall_main_type_entity_timestr_before_is_train.txt',type=str)
 # parser.add_argument("--v_file_name",default='compq_listwise_top_50_relall_main_type_entity_timestr_before_dev_all.txt',type=str)
@@ -363,8 +363,7 @@ def main(fout_res):
     # output_modes = {"mrpc": "classification"}
     output_modes = {"mrpc": "listwise"}
     device = torch.device("cuda", 0)
-    # args.train_batch_size = args.train_batch_size // args.gradient_accumulation_steps
-    # output_dir = args.output_dir + str(P_train) + '_' + str(P_dev)
+    
     # if os.path.exists(args.output_dir) and os.listdir(args.output_dir) and args.do_train:
     #     raise ValueError("Output directory ({}) already exists and is not empty.".format(args.output_dir))
     # if not os.path.exists(args.output_dir):
@@ -531,7 +530,7 @@ def main(fout_res):
                 fout_res.flush()
             if(True):
                 model_to_save = model.module if hasattr(model, 'module') else model  # Only save the model it-self
-                output_dir = args.output_dir + str(P_train) + '_' + str(P_dev) + '_' + str(_)
+                output_dir = args.output_dir + str(P_train) + '_' + str(F_dev) + '_' + str(_)
                 if not os.path.exists(output_dir):
                     os.makedirs(output_dir)
                 # if(P_dev > dev_acc):
@@ -557,7 +556,6 @@ def test(best_model_dir_name, fout_res):
     # output_modes = {"mrpc": "classification"}
     output_modes = {"mrpc": "listwise"}
     device = torch.device("cuda", 0)
-    args.train_batch_size = args.train_batch_size // args.gradient_accumulation_steps
     task_name = args.task_name.lower()
     if task_name not in processors:
         raise ValueError("Task not found: %s" % (task_name))
