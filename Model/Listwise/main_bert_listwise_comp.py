@@ -40,13 +40,17 @@ client = WatchClient(id="webq_listwise" + str(N), gpus=[7],
                      server_host="127.0.0.1", server_port=62333)
 client.wait()
 
+seed = 42
+# seed = 1000
+# seed = 10000
+
 os.environ["CUDA_VISIBLE_DEVICES"] = '7'
 parser = ArgumentParser(description = 'For KBQA')
 parser.add_argument("--data_dir",default='../../Build_Data/',type=str)
 parser.add_argument("--bert_model", default='bert-base-uncased', type=str)
 parser.add_argument("--bert_vocab", default='bert-base-uncased', type=str)
 parser.add_argument("--task_name",default='mrpc',type=str,help="The name of the task to train.")
-parser.add_argument("--output_dir",default='./bert_listwise_10epoch_relall_main_type_entity_time_ordinal_rank_before_1_' + str(N) + '_1_' + str(steps_num) + '/',type=str)
+parser.add_argument("--output_dir",default='./bert_listwise_5epoch_' + str(seed) + '_type_entity_time_ordinal_mainpath_1_' + str(N) + '_1_' + str(steps_num) + '/',type=str)
 # parser.add_argument("--output_dir",default='./bert_listwise_new_search_relall_main_type_entity_time_ordinal_rank_before_1_' + str(N) + '_1_' + str(steps_num) + '/',type=str)
 parser.add_argument("--input_model_dir", default='0.9675389502344577_0.4803025192052977_3', type=str)
 # parser.add_argument("--T_file_name",default='compq_listwise_top_' + str(N) + '_is_rank_train.txt',type=str)
@@ -67,10 +71,10 @@ parser.add_argument("--input_model_dir", default='0.9675389502344577_0.480302519
 # parser.add_argument("--v_file_name",default='compq_listwise_top_50_relall_main_type_entity_time_ordinal_rank_before_dev_all.txt',type=str)
 # parser.add_argument("--t_file_name",default='compq_listwise_top_50_relall_main_type_entity_time_ordinal_rank_before_test_all.txt',type=str)
 
-parser.add_argument("--T_file_name",default='compq_listwise_1_50_relall_main_type_entity_time_ordinal_rank_before_is_train.txt',type=str)
+parser.add_argument("--T_file_name",default='compq_listwise_1_10_type_entity_time_ordinal_mainpath__train.txt',type=str)
 # parser.add_argument("--T_file_name",default='compq_listwise_new_search_1_50_relall_main_type_entity_time_ordinal_before_is_train.txt',type=str)
-parser.add_argument("--v_file_name",default='compq_listwise_1_50_relall_main_type_entity_time_ordinal_rank_before_dev_all.txt',type=str)
-parser.add_argument("--t_file_name",default='compq_listwise_1_50_relall_main_type_entity_time_ordinal_rank_before_test_all.txt',type=str)
+parser.add_argument("--v_file_name",default='compq_listwise_1_10_type_entity_time_ordinal_mainpath__dev.txt',type=str)
+parser.add_argument("--t_file_name",default='compq_listwise_1_10_type_entity_time_ordinal_mainpath__test.txt',type=str)
 
 # parser.add_argument("--T_file_name",default='compq_listwise_top_50_relall_main_type_entity_timestr_before_is_train.txt',type=str)
 # parser.add_argument("--v_file_name",default='compq_listwise_top_50_relall_main_type_entity_timestr_before_dev_all.txt',type=str)
@@ -93,12 +97,12 @@ parser.add_argument("--do_lower_case",action='store_true',help="Set this flag if
 parser.add_argument("--train_batch_size",default=1,type=int,help="Total batch size for training.")
 parser.add_argument("--eval_batch_size",default=100,type=int,help="Total batch size for eval.")
 parser.add_argument("--learning_rate",default=5e-5,type=float,help="The initial learning rate for Adam.")
-parser.add_argument("--num_train_epochs",default=10.0,type=float,help="Total number of training epochs to perform.")
-# parser.add_argument("--num_train_epochs",default=5.0,type=float,help="Total number of training epochs to perform.")
+# parser.add_argument("--num_train_epochs",default=10.0,type=float,help="Total number of training epochs to perform.")
+parser.add_argument("--num_train_epochs",default=5.0,type=float,help="Total number of training epochs to perform.")
 parser.add_argument("--warmup_proportion",default=0.1,type=float,)
 parser.add_argument("--no_cuda",action='store_true',help="Whether not to use CUDA when available")
 parser.add_argument("--local_rank",type=int,default=-1,help="local_rank for distributed training on gpus")
-parser.add_argument('--seed',type=int,default=42,help="random seed for initialization")
+parser.add_argument('--seed',type=int,default=seed,help="random seed for initialization")
 # parser.add_argument('--seed',type=int,default=20000,help="random seed for initialization")
 parser.add_argument('--gradient_accumulation_steps',type=int,default=steps_num,help="Number of updates steps to accumulate before performing a backward/update pass.")
 parser.add_argument('--server_ip', type=str, default='', help="Can be used for distant debugging.")
@@ -353,7 +357,7 @@ def build_data_for_model_train(examples, label_list, tokenizer, output_mode, dev
     return eval_data
     
 
-def main():
+def main(fout_res):
     best_model_dir_name = ''
     processors = {"mrpc": MrpcProcessor}
     # output_modes = {"mrpc": "classification"}
@@ -361,10 +365,10 @@ def main():
     device = torch.device("cuda", 0)
     # args.train_batch_size = args.train_batch_size // args.gradient_accumulation_steps
     # output_dir = args.output_dir + str(P_train) + '_' + str(P_dev)
-    if os.path.exists(args.output_dir) and os.listdir(args.output_dir) and args.do_train:
-        raise ValueError("Output directory ({}) already exists and is not empty.".format(args.output_dir))
-    if not os.path.exists(args.output_dir):
-        os.makedirs(args.output_dir)
+    # if os.path.exists(args.output_dir) and os.listdir(args.output_dir) and args.do_train:
+    #     raise ValueError("Output directory ({}) already exists and is not empty.".format(args.output_dir))
+    # if not os.path.exists(args.output_dir):
+    #     os.makedirs(args.output_dir)
     task_name = args.task_name.lower()
     shutil.copy(__file__, args.output_dir + __file__)
     if task_name not in processors:
@@ -497,8 +501,10 @@ def main():
             optimizer.step()
             optimizer.zero_grad()
             print('train_loss:', tr_loss)      
+            fout_res.write('train loss:' + str(tr_loss) + '\n')
             P_train = 1. * int(n_batch_correct)/len_train_data
             print("train_Accuracy-----------------------",P_train)
+            fout_res.write('train accuracy:' + str(P_train) + '\n')
             if args.do_eval:
                 file_name1 = args.output_dir + 'prediction_valid'
                 f_valid = open(file_name1, 'w', encoding='utf-8')
@@ -520,13 +526,16 @@ def main():
                         else:
                             f_valid.write(str(float(item)) + '\n')
                 f_valid.flush()
-                P_dev = cal_f1(file_name1, args.data_dir + args.v_file_name, 'v', actual_num=1)
+                p, r, F_dev = cal_f1(file_name1, args.data_dir + args.v_file_name, 'v', actual_num=1)
+                fout_res.write(str(p) + '\t' + str(r) + '\t' + str(F_dev) + '\n')
+                fout_res.flush()
             if(True):
                 model_to_save = model.module if hasattr(model, 'module') else model  # Only save the model it-self
                 output_dir = args.output_dir + str(P_train) + '_' + str(P_dev) + '_' + str(_)
                 if not os.path.exists(output_dir):
                     os.makedirs(output_dir)
-                if(P_dev > dev_acc):
+                # if(P_dev > dev_acc):
+                if(True):
                     best_model_dir_name = output_dir
                     dev_acc = P_dev
                     print(best_model_dir_name)
@@ -537,11 +546,13 @@ def main():
                 torch.save(model_to_save.state_dict(), output_model_file)
                 model_to_save.config.to_json_file(output_config_file)
                 tokenizer.save_vocabulary(output_dir)
+                test(best_model_dir_name, fout_res)
                 # dev_acc = P_dev
     return best_model_dir_name
 
-def test(best_model_dir_name):
+def test(best_model_dir_name, fout_res):
     print('测试选用的模型是', best_model_dir_name)
+    fout_res.write('测试选用的模型是:' + best_model_dir_name + '\n')
     processors = {"mrpc": MrpcProcessor}
     # output_modes = {"mrpc": "classification"}
     output_modes = {"mrpc": "listwise"}
@@ -571,10 +582,15 @@ def test(best_model_dir_name):
     nb_tr_steps = 0
     tr_loss = 0
     # 构建验证集数据
-    # test_pickle = open(args.t_model_data_name, 'rb')
-    # eval_data = pickle.load(test_pickle)
-    eval_examples = processor.get_test_examples(args.data_dir)
-    eval_data = build_data_for_model(eval_examples, label_list, tokenizer, output_mode, device)
+    pkl_path = (args.data_dir + args.t_file_name).replace('.txt', '.pkl')
+    if(os.path.exists(pkl_path)):
+        test_pickle = open(pkl_path, 'rb')
+        eval_data = pickle.load(test_pickle)
+    else:
+        eval_examples = processor.get_test_examples(args.data_dir)
+        eval_data = build_data_for_model(eval_examples, label_list, tokenizer, output_mode, device)
+        test_pickle = open(pkl_path, 'wb')
+        pickle.dump(eval_data, test_pickle)
     # ************************** 
     file_name1 = args.output_dir + 'prediction'
     f = open(file_name1, 'w', encoding='utf-8')
@@ -598,9 +614,16 @@ def test(best_model_dir_name):
                 else:
                     f.write(str(float(item)) + '\n')
         f.flush()
-        cal_f1(file_name1, args.data_dir + args.t_file_name, 't', actual_num=1)
+        p, r, f = cal_f1(file_name1, args.data_dir + args.t_file_name, 't', actual_num=1)
+        fout_res.write('precision:' + str(p) + '\trecall:' + str(r) + '\tf1:' + str(f) + '\n')
+        fout_res.flush()
                 
 if __name__ == "__main__":
-    best_model_dir_name = main()
+    if os.path.exists(args.output_dir) and os.listdir(args.output_dir) and args.do_train:
+        raise ValueError("Output directory ({}) already exists and is not empty.".format(args.output_dir))
+    if not os.path.exists(args.output_dir):
+        os.makedirs(args.output_dir)
+    fout_res = open(args.output_dir + 'result.log', 'w', encoding='utf-8')
+    best_model_dir_name = main(fout_res)
     # best_model_dir_name = '/data2/yhjia/kbqa_sp/bert_data/continue_rerank_diff/bert_listwise1_modeling_scores_5070_no_weights_5_10/0.7990066225165563_0.5480288662251654_4'
-    test(best_model_dir_name)
+    test(best_model_dir_name, fout_res)
