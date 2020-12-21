@@ -306,19 +306,6 @@ def write2file(file_name, query_answer):
             query_graph = item[2]
             cand_str = ''
             # *********************约束路径放在主路径之前****************************
-            if(query_graph.ordinal_path != []):
-                # cand_str += ' ' + ' '.join(query_graph.ordinal_path) + '.'
-                # cand_str += query_graph.ordinal_path[0] + ' is ' + query_graph.ordinal_path[1] + '. '
-                cand_str += query_graph.ordinal_path[0] + ' ' + query_graph.ordinal_path[1] + ' ' + query_graph.ordinal_path[2] + '. '
-                # cand_str += 'rank is ' + query_graph.ordinal_path[1] + '. '
-                # print('ordinal:', cand_str)
-                # cand_str += ' ' + query_graph.ordinal_path[0] + ' rank ' + query_graph.ordinal_path[1] + '.'
-            if(query_graph.time_path != []):
-                cand_str += ' '.join(query_graph.time_path) + '. '
-                # cand_str += query_graph.time_path[0] + ' is ' + query_graph.time_path[1] + '. '
-                # cand_str += 'time is ' + query_graph.time_path[1] + '. '
-                # print(item[1].lower())
-                # print('time:', cand_str)
             if(query_graph.type_path != []):
                 cand_str += ' '.join(query_graph.type_path) + '. '
                 # 重复主路径，answer用类型代替
@@ -326,6 +313,19 @@ def write2file(file_name, query_answer):
             if(query_graph.entity_path != []):
                 cand_str += ' '.join(query_graph.entity_path) + '. '
                 # cand_str += query_graph.entity_path[0] + ' is ' + query_graph.entity_path[1] + '. '
+            if(query_graph.time_path != []):
+                cand_str += ' '.join(query_graph.time_path) + '. '
+                # cand_str += query_graph.time_path[0] + ' is ' + query_graph.time_path[1] + '. '
+                # cand_str += 'time is ' + query_graph.time_path[1] + '. '
+                # print(item[1].lower())
+                # print('time:', cand_str)
+            if(query_graph.ordinal_path != []):
+                # cand_str += ' ' + ' '.join(query_graph.ordinal_path) + '.'
+                # cand_str += query_graph.ordinal_path[0] + ' is ' + query_graph.ordinal_path[1] + '. '
+                cand_str += query_graph.ordinal_path[0] + ' ' + query_graph.ordinal_path[1] + ' ' + query_graph.ordinal_path[2] + '. '
+                # cand_str += 'rank is ' + query_graph.ordinal_path[1] + '. '
+                # print('ordinal:', cand_str)
+                # cand_str += ' ' + query_graph.ordinal_path[0] + ' rank ' + query_graph.ordinal_path[1] + '.'
             # ********************************************************************
             cand_str += ' '.join(query_graph.main_path[0:3]) + '.' # 包含主实体、关系和答案
             # cand_str += query_graph.main_path[0] +  ' <' + query_graph.main_path[1] + '>.'
