@@ -3,7 +3,8 @@ import json
 import random
 import copy
 import pickle
-from sample_pos_and_neg import select_top_data, select_pairwise_data, select_top_n_listwise, select_classify_data_solid, select_top_1_n_listwise
+from sample_pos_and_neg import select_top_data, select_pairwise_data, select_top_n_listwise, select_classify_data_solid, select_top_1_n_listwise,\
+                                select_top_1_n_listwise_pos_solid, select_top_1_n_listwise_11_per_group
 seed = 100
 random.seed(seed)
 r_shuff = random.random
@@ -139,7 +140,8 @@ def get_info_of_cand(line, entity_dic, comp_list):
     p = line_json['p']
     r = line_json['r']
     f1 = line_json['f1']
-    ans_str = line_json['ans_str'].replace('\t', ', ')
+    ans_str = ' '.join(line_json['ans_str'].replace('\t', ', ').split(' ')[0:600])# 保留所有答案
+    # ans_str = ','.join(line_json['ans_str'].split('\t')[0:3]) # 保留一个答案
     raw_paths = line_json['raw_paths']
     for subpath in raw_paths:
         if(len(subpath) != 4):
@@ -245,14 +247,20 @@ def get_pos_neg_accord_f1(que2feature):
         for feature in features:
             if(qid not in qid2cand):
                 qid2cand[qid] = [[], []]
-                if(float(feature.f1) == max_f1 and max_f1 > 0.1):
+                # if(float(feature.f1) == max_f1 and max_f1 > 0.1):
+                if(feature.f1 > 0.1):
+                # if(float(feature.f1) == max_f1 and float(feature.f1) > 0.1 and float(feature.p) > 0.1):
+                # if(float(feature.f1) > 0.9 and float(feature.p) > 0.1):
                     qid2cand[qid][0].append(feature)# 0存放正确的候选
                 # elif(float(feature.f1) == 0):
                 #     qid2cand[qid][1].append(feature)# 1存放错误的候选
                 else:
                     qid2cand[qid][1].append(feature)# 1存放错误的候选
             else:
-                if(float(feature.f1) == max_f1 and max_f1 > 0.1):
+                # if(float(feature.f1) == max_f1 and max_f1 > 0.1):
+                # if(float(feature.f1) == max_f1 and float(feature.f1) > 0.1 and float(feature.p) > 0.1):
+                if(feature.f1 > 0.1):
+                # if(float(feature.f1) > 0.9 and float(feature.p) > 0.1):
                     qid2cand[qid][0].append(feature)# 0存放正确的候选
                 # elif(float(feature.f1) == 0):
                 #     qid2cand[qid][1].append(feature)# 1存放错误的候选
@@ -302,7 +310,6 @@ def write2file(file_name, query_answer):
         num += 1
         for item in onequery_item:
             # import pdb; pdb.set_trace()
-            
             query_graph = item[2]
             cand_str = ''
             # *********************约束路径放在主路径之前****************************
@@ -310,15 +317,18 @@ def write2file(file_name, query_answer):
                 cand_str += ' '.join(query_graph.type_path) + '. '
                 # 重复主路径，answer用类型代替
                 # cand_str += ' '.join(query_graph.main_path[0:2]) + ' ' + query_graph.type_path[0] + '. '
+            # cand_str += '\t'
             if(query_graph.entity_path != []):
                 cand_str += ' '.join(query_graph.entity_path) + '. '
                 # cand_str += query_graph.entity_path[0] + ' is ' + query_graph.entity_path[1] + '. '
+            # cand_str += '\t'
             if(query_graph.time_path != []):
                 cand_str += ' '.join(query_graph.time_path) + '. '
                 # cand_str += query_graph.time_path[0] + ' is ' + query_graph.time_path[1] + '. '
                 # cand_str += 'time is ' + query_graph.time_path[1] + '. '
                 # print(item[1].lower())
                 # print('time:', cand_str)
+            # cand_str += '\t'
             if(query_graph.ordinal_path != []):
                 # cand_str += ' ' + ' '.join(query_graph.ordinal_path) + '.'
                 # cand_str += query_graph.ordinal_path[0] + ' is ' + query_graph.ordinal_path[1] + '. '
@@ -326,23 +336,158 @@ def write2file(file_name, query_answer):
                 # cand_str += 'rank is ' + query_graph.ordinal_path[1] + '. '
                 # print('ordinal:', cand_str)
                 # cand_str += ' ' + query_graph.ordinal_path[0] + ' rank ' + query_graph.ordinal_path[1] + '.'
+            # cand_str += '\t'
             # ********************************************************************
             cand_str += ' '.join(query_graph.main_path[0:3]) + '.' # 包含主实体、关系和答案
+            # cand_str += ' '.join(query_graph.main_path[1]) + '.' # 包含主关系
             # cand_str += query_graph.main_path[0] +  ' <' + query_graph.main_path[1] + '>.'
             # cand_str += query_graph.main_path[0] +  ' <' + query_graph.main_path[1] + '> ' + query_graph.main_path[2] + '.'
             # cand_str = query_graph.main_path[0] + ' ' + query_graph.main_path[1] + ' is ' + query_graph.main_path[2] + '.' # 包含主实体、关系和答案
             # if(query_graph.type_path != []):
-            #     cand_str += ' ' + ' '.join(query_graph.type_path) + '.'
+            #     cand_str += ' '.join(query_graph.type_path) + '. '
+            #     # 重复主路径，answer用类型代替
+            #     # cand_str += ' '.join(query_graph.main_path[0:2]) + ' ' + query_graph.type_path[0] + '. '
             # if(query_graph.entity_path != []):
-            #     # cand_str += ' ' + ' '.join(query_graph.entity_path) + '.'
-            #     cand_str += ' ' + query_graph.entity_path[0] + ' is ' + query_graph.entity_path[1] + '.'
+            #     cand_str += ' '.join(query_graph.entity_path) + '. '
+            #     # cand_str += query_graph.entity_path[0] + ' is ' + query_graph.entity_path[1] + '. '
             # if(query_graph.time_path != []):
-            #     # cand_str += ' ' + ' '.join(query_graph.time_path) + '.'
-            #     cand_str += ' ' + query_graph.time_path[0] + ' is ' + query_graph.time_path[1] + '.'
+            #     cand_str += ' '.join(query_graph.time_path) + '. '
+            #     # cand_str += query_graph.time_path[0] + ' is ' + query_graph.time_path[1] + '. '
+            #     # cand_str += 'time is ' + query_graph.time_path[1] + '. '
+            #     # print(item[1].lower())
+            #     # print('time:', cand_str)
             # if(query_graph.ordinal_path != []):
             #     # cand_str += ' ' + ' '.join(query_graph.ordinal_path) + '.'
-            #     cand_str += ' ' + query_graph.ordinal_path[0] + ' is ' + query_graph.ordinal_path[1] + '.'
-            #     # cand_str += ' ' + query_graph.ordinal_path[0] + ' rank ' + query_graph.ordinal_path[1] + '.'
+            #     # cand_str += query_graph.ordinal_path[0] + ' is ' + query_graph.ordinal_path[1] + '. '
+            #     cand_str += query_graph.ordinal_path[0] + ' ' + query_graph.ordinal_path[1] + ' ' + query_graph.ordinal_path[2] + '. '
+            f.write(item[0] + '\t' + item[1].lower() + '\t' + cand_str.lower() + '\t' +\
+                    str(query_graph.p) + '\t' + str(query_graph.r) + '\t' + str(query_graph.f1) + '\t' + item[3] + '\n')
+    f.flush()
+    print('问句个数：', num)
+
+# 将数据写出到文件
+def write2file_label_position(file_name, query_answer):
+    f = open(file_name, 'w', encoding='utf-8')
+    num = 0
+    for onequery_item in query_answer:
+        num += 1
+        for item in onequery_item:
+            # import pdb; pdb.set_trace()
+            query_graph = item[2]
+            cand_str = ''
+            # *********************约束路径放在主路径之前****************************
+            if(query_graph.type_path != []):
+                cand_str += ' '.join(query_graph.type_path) + '. '
+                # 重复主路径，answer用类型代替
+                # cand_str += ' '.join(query_graph.main_path[0:2]) + ' ' + query_graph.type_path[0] + '. '
+            cand_str += '\t'
+            if(query_graph.entity_path != []):
+                cand_str += ' '.join(query_graph.entity_path) + '. '
+                # cand_str += query_graph.entity_path[0] + ' is ' + query_graph.entity_path[1] + '. '
+            cand_str += '\t'
+            if(query_graph.time_path != []):
+                cand_str += ' '.join(query_graph.time_path) + '. '
+                # cand_str += query_graph.time_path[0] + ' is ' + query_graph.time_path[1] + '. '
+                # cand_str += 'time is ' + query_graph.time_path[1] + '. '
+                # print(item[1].lower())
+                # print('time:', cand_str)
+            cand_str += '\t'
+            if(query_graph.ordinal_path != []):
+                # cand_str += ' ' + ' '.join(query_graph.ordinal_path) + '.'
+                # cand_str += query_graph.ordinal_path[0] + ' is ' + query_graph.ordinal_path[1] + '. '
+                cand_str += query_graph.ordinal_path[0] + ' ' + query_graph.ordinal_path[1] + ' ' + query_graph.ordinal_path[2] + '. '
+                # cand_str += 'rank is ' + query_graph.ordinal_path[1] + '. '
+                # print('ordinal:', cand_str)
+                # cand_str += ' ' + query_graph.ordinal_path[0] + ' rank ' + query_graph.ordinal_path[1] + '.'
+            cand_str += '\t'
+            # ********************************************************************
+            cand_str += ' '.join(query_graph.main_path[0:3]) + '.' # 包含主实体、关系和答案
+            f.write(item[0] + '\t' + item[1].lower() + '\t' + cand_str.lower() + '\t' +\
+                    str(query_graph.p) + '\t' + str(query_graph.r) + '\t' + str(query_graph.f1) + '\t' + item[3] + '\n')
+    f.flush()
+    print('问句个数：', num)
+
+
+# 将数据写出到文件,加额外的词使查询图序列更像一句话
+def write2file_label_position_type(file_name, query_answer):
+    f = open(file_name, 'w', encoding='utf-8')
+    num = 0
+    for onequery_item in query_answer:
+        num += 1
+        for item in onequery_item:
+            # import pdb; pdb.set_trace()
+            query_graph = item[2]
+            cand_str = ''
+            # *********************约束路径放在主路径之前****************************
+            if(query_graph.type_path != []):
+                cand_str += 'type is ' + ' '.join(query_graph.type_path) + '. '
+                # 重复主路径，answer用类型代替
+                # cand_str += ' '.join(query_graph.main_path[0:2]) + ' ' + query_graph.type_path[0] + '. '
+            cand_str += '\t'
+            if(query_graph.entity_path != []):
+                # cand_str += ' '.join(query_graph.entity_path) + '. '
+                cand_str += query_graph.entity_path[0] + ' is ' + query_graph.entity_path[1] + '. '
+            cand_str += '\t'
+            if(query_graph.time_path != []):
+                # cand_str += ' '.join(query_graph.time_path) + '. '
+                cand_str += query_graph.time_path[0] + ' is ' + query_graph.time_path[1] + '. '
+                # cand_str += 'time is ' + query_graph.time_path[1] + '. '
+                # print(item[1].lower())
+                # print('time:', cand_str)
+            cand_str += '\t'
+            if(query_graph.ordinal_path != []):
+                # cand_str += ' ' + ' '.join(query_graph.ordinal_path) + '.'
+                # cand_str += query_graph.ordinal_path[0] + ' is ' + query_graph.ordinal_path[1] + '. '
+                cand_str += query_graph.ordinal_path[0] + ' ' + query_graph.ordinal_path[1] + ' is ' + query_graph.ordinal_path[2] + '. '
+                # cand_str += 'rank is ' + query_graph.ordinal_path[1] + '. '
+                # print('ordinal:', cand_str)
+                # cand_str += ' ' + query_graph.ordinal_path[0] + ' rank ' + query_graph.ordinal_path[1] + '.'
+            cand_str += '\t'
+            # ********************************************************************
+            cand_str += ' '.join(query_graph.main_path[0:3]) + '.' # 包含主实体、关系和答案
+            f.write(item[0] + '\t' + item[1].lower() + '\t' + cand_str.lower() + '\t' +\
+                    str(query_graph.p) + '\t' + str(query_graph.r) + '\t' + str(query_graph.f1) + '\t' + item[3] + '\n')
+    f.flush()
+    print('问句个数：', num)
+
+
+# 将数据写出到文件
+def write2file_label_position_no_punc(file_name, query_answer):
+    f = open(file_name, 'w', encoding='utf-8')
+    num = 0
+    for onequery_item in query_answer:
+        num += 1
+        for item in onequery_item:
+            # import pdb; pdb.set_trace()
+            query_graph = item[2]
+            cand_str = ''
+            # *********************约束路径放在主路径之前****************************
+            if(query_graph.type_path != []):
+                cand_str += ' '.join(query_graph.type_path)
+                # 重复主路径，answer用类型代替
+                # cand_str += ' '.join(query_graph.main_path[0:2]) + ' ' + query_graph.type_path[0] + '. '
+            cand_str += '\t'
+            if(query_graph.entity_path != []):
+                cand_str += ' '.join(query_graph.entity_path)
+                # cand_str += query_graph.entity_path[0] + ' is ' + query_graph.entity_path[1] + '. '
+            cand_str += '\t'
+            if(query_graph.time_path != []):
+                cand_str += ' '.join(query_graph.time_path)
+                # cand_str += query_graph.time_path[0] + ' is ' + query_graph.time_path[1] + '. '
+                # cand_str += 'time is ' + query_graph.time_path[1] + '. '
+                # print(item[1].lower())
+                # print('time:', cand_str)
+            cand_str += '\t'
+            if(query_graph.ordinal_path != []):
+                # cand_str += ' ' + ' '.join(query_graph.ordinal_path) + '.'
+                # cand_str += query_graph.ordinal_path[0] + ' is ' + query_graph.ordinal_path[1] + '. '
+                cand_str += query_graph.ordinal_path[0] + ' ' + query_graph.ordinal_path[1] + ' ' + query_graph.ordinal_path[2]
+                # cand_str += 'rank is ' + query_graph.ordinal_path[1] + '. '
+                # print('ordinal:', cand_str)
+                # cand_str += ' ' + query_graph.ordinal_path[0] + ' rank ' + query_graph.ordinal_path[1] + '.'
+            cand_str += '\t'
+            # ********************************************************************
+            cand_str += ' '.join(query_graph.main_path[0:3]) + '.' # 包含主实体、关系和答案
             f.write(item[0] + '\t' + item[1].lower() + '\t' + cand_str.lower() + '\t' +\
                     str(query_graph.p) + '\t' + str(query_graph.r) + '\t' + str(query_graph.f1) + '\t' + item[3] + '\n')
     f.flush()
