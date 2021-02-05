@@ -32,7 +32,7 @@ import shutil
 # N = 100
 # N = 60
 # N = 50
-N = 40
+# N = 40
 # N = 30
 # N = 20
 
@@ -297,8 +297,7 @@ def main(fout_res):
         raise ValueError("Task not found: %s" % (task_name))
     processor = processors[task_name]()
     output_mode = output_modes[task_name]
-    # merge_mode = ['classification', 'pairwise', 'listwise']
-    merge_mode = ['classification']
+    merge_mode = ['classification', 'pairwise', 'listwise']
     label_list = processor.get_labels()
     num_labels = len(label_list)
     if(output_modes['mrpc'] == 'classification'):
@@ -308,17 +307,15 @@ def main(fout_res):
     num_train_optimization_steps = None
     if args.do_train:
         train_examples = processor.get_train_examples(args.data_dir)
-        # import pdb; pdb.set_trace()
         num_train_optimization_steps = math.ceil(
-            len(train_examples) / args.train_batch_size / args.gradient_accumulation_steps) * args.num_train_epochs       
+            len(train_examples) / args.train_batch_size / args.gradient_accumulation_steps) * args.num_train_epochs    
+    # import pdb; pdb.set_trace()   
     # Prepare model
     cache_dir = args.cache_dir if args.cache_dir else os.path.join(str(PYTORCH_PRETRAINED_BERT_CACHE))
     model = BertForSequenceClassification.from_pretrained(args.bert_model,cache_dir=cache_dir,num_labels=1)
     model.to(device)
-    # first_model_dir = './bert_classify_no_weights_1_4_5_10_edition2/0.9836030857661473_0.5353679178807944_2'
-    # first_model = BertForSequenceClassification.from_pretrained(first_model_dir,cache_dir=cache_dir,num_labels=2)
-    # first_model.to(device)
-    # first_model.eval()
+    # import pdb; pdb.set_trace()
+    weights_loss = torch.tensor((1.0, 1.0, 1.0), requires_grad = True)
     # Prepare optimizer
     if args.do_train:
         param_optimizer = list(model.named_parameters())
@@ -337,10 +334,11 @@ def main(fout_res):
     # 构建验证集数据
     # eval_pickle = open(args.v_model_data_name, 'rb')
     # eval_data = pickle.load(eval_pickle)
+    # import pdb; pdb.set_trace()   
     eval_examples = processor.get_dev_examples(args.data_dir)
+    # import pdb; pdb.set_trace()   
     eval_data = build_data_for_model(eval_examples, label_list, tokenizer, output_mode, device)
-    # eval_pickle = open(args.v_file_name.replace('.txt', '.pkl'), 'wb')
-    # pickle.dump(eval_data, eval_pickle)
+    # import pdb; pdb.set_trace()   
     # **************************
     if args.do_train:   
         i_train_step = 0
@@ -378,7 +376,6 @@ def main(fout_res):
                 loss_list = 0.0
                 if "classification" in merge_mode:
                     # *******************交叉熵损失函数*********************
-                    
                     logits_sigmoid = torch.sigmoid(logits).view(-1)
                     for i, label_item in enumerate(label_ids):
                         # import pdb; pdb.set_trace()
@@ -416,17 +413,22 @@ def main(fout_res):
                                 # import pdb; pdb.set_trace()
                     loss_list = 0 - loss_list
                     list_loss += loss_list.item()
-                    # 计算评价函数
-                    true_pos = torch.max(logits_que, 1)[1]
-                    for i, item in enumerate(true_pos):
-                        if(label_ids_que[i][item] == 1):
-                            n_batch_correct += 1
-                    len_train_data += logits_que.size(0)
+                # 计算评价函数
+                true_pos = torch.max(logits.view(-1, args.group_size), 1)[1]
+                label_ids_que = label_ids.view(-1, args.group_size)
+                for i, item in enumerate(true_pos):
+                    if(label_ids_que[i][item] == 1):
+                        n_batch_correct += 1
+                len_train_data += logits.view(-1, args.group_size).size(0)
                 #import pdb;pdb.set_trace()
                 try:
                     # fout_res.write('loss:' + str(loss_point) + '\t' + str(loss_pair) + '\t' + str(loss_list) + '\n')
                     # loss = (loss_point + loss_pair * 10.0 + loss_list * 2.0) / 3.0
-                    loss = (loss_point + loss_pair + loss_list) / 3.0
+                    # loss = (loss_point + loss_pair + loss_list) / 3.0
+                    # loss_tensor = torch.tensor((loss_point, loss_pair, loss_list), requires_grad = True)
+                    loss_tensor = torch.tensor((loss_point, loss_pair, loss_list), requires_grad = False)
+                    loss = torch.sum(weights_loss * loss_tensor)
+                    # import pdb; pdb.set_trace()
                     loss.backward()      
                 except:
                     import pdb; pdb.set_trace()
@@ -553,63 +555,65 @@ def test(best_model_dir_name, fout_res):
         fout_res.flush()
 
 if __name__ == "__main__":
-
-    for seed in [42, 1000, 10000]:
-    # for seed in [42]:
+    # for seed in [42, 1000, 10000]:
+    for seed in [42]:
         for steps in[100]:
-            logger = logging.getLogger(__name__)
-            from watchmen import WatchClient
-            client = WatchClient(id="webq_mergx4" + str(N) + str(seed) + str(steps), gpus=[4],
-                                server_host="127.0.0.1", server_port=62333)
-            client.wait()
-            print(seed)
-            os.environ["CUDA_VISIBLE_DEVICES"] = '4'
-            parser = ArgumentParser(description = 'For KBQA')
-            parser.add_argument("--data_dir",default='../../Build_Data/WebQ/',type=str)
-            parser.add_argument("--bert_model", default='bert-base-uncased', type=str)
-            parser.add_argument("--bert_vocab", default='bert-base-uncased', type=str)
-            parser.add_argument("--task_name",default='mrpc',type=str,help="The name of the task to train.")
-            parser.add_argument("--output_dir",default='./webq/bert_webq_pointwise_merge_type_entity_time_ordianl_mainpath_neg_' + str(N) + '_' + str(seed) + '_' + str(steps) + '/',type=str)
-            parser.add_argument("--input_model_dir", default='0.9675389502344577_0.4803025192052977_3', type=str)
-            # parser.add_argument("--T_file_name",default='webq_listwise_1_' + str(N) + '_type_entity_time_ordinal_mainpath_is_train.txt',type=str)
-            # parser.add_argument("--v_file_name",default='webq_listwise_1_40_type_entity_time_ordinal_mainpath_dev_all.txt',type=str)
-            # parser.add_argument("--t_file_name",default='webq_listwise_1_40_type_entity_time_ordinal_mainpath_test_all.txt',type=str)
+            # for N in [5, 10, 20, 30, 40, 50, 60, 70]:
+            # for N in [30, 40, 50, 60, 70]:
+            for N in [30]:
+                logger = logging.getLogger(__name__)
+                # from watchmen import WatchClient
+                # client = WatchClient(id="webq_merge2" + str(N) + str(seed) + str(steps), gpus=[2],
+                #                     server_host="127.0.0.1", server_port=62333)
+                # client.wait()
+                print(seed)
+                os.environ["CUDA_VISIBLE_DEVICES"] = '2'
+                parser = ArgumentParser(description = 'For KBQA')
+                parser.add_argument("--data_dir",default='../../../bert_rank_data/webq/',type=str)
+                parser.add_argument("--bert_model", default='../../../bert_rank_data/bert_base_uncased', type=str)
+                parser.add_argument("--bert_vocab", default='../../../bert_rank_data/bert_base_uncased', type=str)
+                parser.add_argument("--task_name",default='mrpc',type=str,help="The name of the task to train.")
+                parser.add_argument("--output_dir",default='../../../bert_rank_data/model/webq/bert_webq_tensor_merge2_type_entity_time_ordianl_mainpath_neg_' + str(N) + '_' + str(seed) + '_' + str(steps) + '/',type=str)
+                parser.add_argument("--input_model_dir", default='0.9675389502344577_0.4803025192052977_3', type=str)
+                # parser.add_argument("--T_file_name",default='webq_listwise_1_' + str(N) + '_type_entity_time_ordinal_mainpath_is_train.txt',type=str)
+                # parser.add_argument("--v_file_name",default='webq_listwise_1_40_type_entity_time_ordinal_mainpath_dev_all.txt',type=str)
+                # parser.add_argument("--t_file_name",default='webq_listwise_1_40_type_entity_time_ordinal_mainpath_test_all.txt',type=str)
 
-            parser.add_argument("--T_file_name",default='webq_rank1_f01_label_position_listwise_1_' + str(N) + '_type_entity_time_ordinal_mainpath_is_train.txt',type=str)
-            parser.add_argument("--v_file_name",default='webq_rank1_f01_label_position_listwise_1_40_type_entity_time_ordinal_mainpath_dev_all.txt',type=str)
-            parser.add_argument("--t_file_name",default='webq_rank1_f01_label_position_listwise_1_40_type_entity_time_ordinal_mainpath_test_all.txt',type=str)
+                parser.add_argument("--T_file_name",default='webq_rank1_f01_label_position_listwise_1_' + str(N) + '_type_entity_time_ordinal_mainpath_is_train.txt',type=str)
+                parser.add_argument("--v_file_name",default='webq_rank1_f01_label_position_listwise_1_70_type_entity_time_ordinal_mainpath_dev_all.txt',type=str)
+                parser.add_argument("--t_file_name",default='webq_rank1_f01_label_position_listwise_1_70_type_entity_time_ordinal_mainpath_test_all.txt',type=str)
 
 
-            parser.add_argument("--T_model_data_name",default='train_all_518484_from_1_500000000.pkl',type=str)
-            parser.add_argument("--v_model_data_name",default='dev_all_135428_from_v_bert_rel_answer_pairwise_1_500000000.pkl',type=str)
-            parser.add_argument("--t_model_data_name",default='test_all_344985_from_1_500000000.pkl',type=str)
-            ## Other parameters
-            parser.add_argument("--group_size",default=N + 1,type=int,help="")
-            parser.add_argument("--cache_dir",default="",type=str,help="Where do you want to store the pre-trained models downloaded from s3")
-            parser.add_argument("--max_seq_length",default=100,type=int)
-            parser.add_argument("--do_train",default='true',help="Whether to run training.")
-            parser.add_argument("--do_eval",default='true',help="Whether to run eval on the dev set.")
-            parser.add_argument("--do_lower_case",action='store_true',help="Set this flag if you are using an uncased model.")
-            parser.add_argument("--train_batch_size",default=1,type=int,help="Total batch size for training.")
-            parser.add_argument("--eval_batch_size",default=100,type=int,help="Total batch size for eval.")
-            parser.add_argument("--learning_rate",default=5e-5,type=float,help="The initial learning rate for Adam.")
-            parser.add_argument("--num_train_epochs",default=5.0,type=float,help="Total number of training epochs to perform.")
-            parser.add_argument("--warmup_proportion",default=0.1,type=float,)
-            parser.add_argument("--no_cuda",action='store_true',help="Whether not to use CUDA when available")
-            parser.add_argument("--local_rank",type=int,default=-1,help="local_rank for distributed training on gpus")
-            parser.add_argument('--seed',type=int,default=seed,help="random seed for initialization")
-            parser.add_argument('--gradient_accumulation_steps',type=int,default=steps,help="Number of updates steps to accumulate before performing a backward/update pass.")
-            parser.add_argument('--server_ip', type=str, default='', help="Can be used for distant debugging.")
-            parser.add_argument('--server_port', type=str, default='', help="Can be used for distant debugging.")  
-            args = parser.parse_args()
-            random.seed(args.seed)
-            np.random.seed(args.seed)
-            torch.manual_seed(args.seed)
-            torch.cuda.manual_seed_all(args.seed)   
-            if os.path.exists(args.output_dir) and os.listdir(args.output_dir) and args.do_train:
-                raise ValueError("Output directory ({}) already exists and is not empty.".format(args.output_dir))
-            if not os.path.exists(args.output_dir):
-                os.makedirs(args.output_dir)
-            fout_res = open(args.output_dir + 'result.log', 'w', encoding='utf-8')
-            best_model_dir_name = main(fout_res)
-            test(best_model_dir_name, fout_res)
+                parser.add_argument("--T_model_data_name",default='train_all_518484_from_1_500000000.pkl',type=str)
+                parser.add_argument("--v_model_data_name",default='dev_all_135428_from_v_bert_rel_answer_pairwise_1_500000000.pkl',type=str)
+                parser.add_argument("--t_model_data_name",default='test_all_344985_from_1_500000000.pkl',type=str)
+                ## Other parameters
+                parser.add_argument("--group_size",default=N + 1,type=int,help="")
+                parser.add_argument("--cache_dir",default="",type=str,help="Where do you want to store the pre-trained models downloaded from s3")
+                parser.add_argument("--max_seq_length",default=100,type=int)
+                parser.add_argument("--do_train",default='true',help="Whether to run training.")
+                parser.add_argument("--do_eval",default='true',help="Whether to run eval on the dev set.")
+                parser.add_argument("--do_lower_case",action='store_true',help="Set this flag if you are using an uncased model.")
+                parser.add_argument("--train_batch_size",default=1,type=int,help="Total batch size for training.")
+                parser.add_argument("--eval_batch_size",default=100,type=int,help="Total batch size for eval.")
+                parser.add_argument("--learning_rate",default=5e-5,type=float,help="The initial learning rate for Adam.")
+                parser.add_argument("--num_train_epochs",default=5.0,type=float,help="Total number of training epochs to perform.")
+                parser.add_argument("--warmup_proportion",default=0.1,type=float,)
+                parser.add_argument("--no_cuda",action='store_true',help="Whether not to use CUDA when available")
+                parser.add_argument("--local_rank",type=int,default=-1,help="local_rank for distributed training on gpus")
+                parser.add_argument('--seed',type=int,default=seed,help="random seed for initialization")
+                parser.add_argument('--gradient_accumulation_steps',type=int,default=steps,help="Number of updates steps to accumulate before performing a backward/update pass.")
+                parser.add_argument('--server_ip', type=str, default='', help="Can be used for distant debugging.")
+                parser.add_argument('--server_port', type=str, default='', help="Can be used for distant debugging.")  
+                args = parser.parse_args()
+                random.seed(args.seed)
+                np.random.seed(args.seed)
+                torch.manual_seed(args.seed)
+                torch.cuda.manual_seed_all(args.seed)   
+                if os.path.exists(args.output_dir) and os.listdir(args.output_dir) and args.do_train:
+                    raise ValueError("Output directory ({}) already exists and is not empty.".format(args.output_dir))
+                if not os.path.exists(args.output_dir):
+                    os.makedirs(args.output_dir)
+                fout_res = open(args.output_dir + 'result.log', 'w', encoding='utf-8')
+                best_model_dir_name = main(fout_res)
+                test(best_model_dir_name, fout_res)
