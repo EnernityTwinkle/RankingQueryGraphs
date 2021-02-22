@@ -1,1 +1,0 @@
-{"p": 0.0, "r": 0.0, "f1": 0, "ans_size": 1, "hops": 1, "ans_str": "Bible", "answer_type": "book.literary_series", "agg": false, "raw_paths": [["Main", 1, "m.05t38r", ["book.written_work.part_of_series"]]]}
