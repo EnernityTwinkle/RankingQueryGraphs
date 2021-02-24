@@ -1,0 +1,533 @@
+music.track_contribution	1831891	0.999997
+measurement_unit.dated_integer	1758001	1.000000
+film.performance	1386250	0.999978
+# type.content_import	1239965	0.999989
+location.geocode	1141760	0.999557
+medicine.drug_label_section	666694	1.000000
+education.education	530827	0.999942
+tv.tv_guest_role	465411	0.999994
+book.pagination	402241	0.999998
+measurement_unit.rect_size	377344	0.999997
+people.place_lived	367413	0.999940
+film.film_regional_release_date	358580	0.999997
+measurement_unit.dated_float	336893	1.000000
+location.mailing_address	311300	0.999904
+award.award_nomination	310453	0.999977
+sports.sports_team_roster	282844	0.999958
+film.film_crew_gig	252936	0.999949
+music.group_membership	247063	0.999951
+film.film_cut	242070	0.999979
+organization.organization_relationship	230452	0.999879
+# type.permission	221528	0.999928
+sports.pro_sports_played	215124	0.999967
+# pipeline.vote	190309	1.000000
+award.award_honor	177152	0.999977
+tv.regular_tv_appearance	153387	0.999967
+people.marriage	152331	0.999928
+measurement_unit.dated_money_value	147922	0.999986
+people.sibling_relationship	132017	0.999985
+business.employment_tenure	127730	0.999984
+biology.gene_group_membership	122798	1.000000
+soccer.football_player_stats	96869	0.999979
+film.personal_film_appearance	87974	0.999875
+government.political_party_tenure	87708	0.999989
+measurement_unit.money_value	86917	0.999988
+organization.organization_board_membership	57115	0.999982
+measurement_unit.dated_percentage	49892	1.000000
+food.nutrition_fact	48598	0.999979
+tv.tv_network_duration	44495	0.999798
+organization.leadership	43584	0.999633
+protected_sites.natural_or_cultural_site_listing	43233	0.999931
+medicine.drug_strength	42520	1.000000
+film.film_film_distributor_relationship	41309	1.000000
+government.government_position_held	40521	0.999063
+tv.tv_producer_term	34595	1.000000
+military.military_service	27938	0.999249
+measurement_unit.time_interval	25937	0.999576
+sports.sports_league_participation	24698	1.000000
+transportation.road_starting_point	24105	0.999959
+award.ranking	23737	0.999832
+olympics.olympic_athlete_affiliation	22975	1.000000
+tv.tv_regular_personal_appearance	22871	0.999345
+american_football.player_game_statistics	22658	1.000000
+music.recording_contribution	21970	0.999954
+olympics.olympic_medal_honor	20795	0.999952
+basketball.basketball_player_stats	17898	0.999944
+theater.theater_role	17781	0.999888
+location.co2_emission	15596	1.000000
+military.military_combatant_group	14896	0.999799
+location.adjoining_relationship	14592	1.000000
+american_football.forty_yard_dash_time	14169	1.000000
+book.contents	14016	0.999287
+visual_art.artwork_owner_relationship	12992	0.999692
+book.periodical_publication_date	11365	0.999912
+book.periodical_publisher_period	10632	1.000000
+organization.non_profit_registration	9951	0.998395
+projects.project_participation	9843	0.999898
+computer.software_compatibility	9800	0.999898
+pipeline.review_flag	9663	1.000000
+tv.tv_program_writer_relationship	9347	1.000000
+finance.exchange_rate	9341	1.000000
+book.periodical_frequency	8555	1.000000
+measurement_unit.dated_metric_ton	8468	1.000000
+royalty.noble_title_tenure	8302	1.000000
+business.company_product_relationship	8231	0.999393
+tv.tv_guest_personal_appearance	8061	0.999380
+measurement_unit.adjusted_money_value	7888	1.000000
+organization.organization_membership	7693	0.997925
+award.category_ceremony_relationship	7671	0.999870
+american_football.game_receiving_statistics	7324	1.000000
+american_football.player_receiving_statistics	7047	1.000000
+location.administrative_division_capital_relationship	7003	1.000000
+theater.theater_production_venue_relationship	6994	0.998857
+theater.theater_designer_gig	6651	1.000000
+business.open_times	6408	0.997044
+sports.team_venue_relationship	6266	1.000000
+wine.grape_variety_composition	6189	1.000000
+aviation.comparable_aircraft_relationship	6035	1.000000
+military.military_command	5978	1.000000
+venture_capital.venture_investment	5967	0.999330
+internet.localized_uri	5776	0.998790
+location.partial_containment_relationship	5547	1.000000
+measurement_unit.dated_kgoe	5268	1.000000
+measurement_unit.dated_kilowatt_hour	5078	1.000000
+film.dubbing_performance	4975	0.999799
+exhibitions.exhibition_run	4878	1.000000
+american_football.player_rushing_statistics	4822	1.000000
+broadcast.tv_affiliation_duration	4777	1.000000
+measurement_unit.dimensions	4729	0.999366
+american_football.game_rushing_statistics	4213	1.000000
+fictional_universe.romantic_involvement	3959	1.000000
+automotive.similar_automobile_models	3944	1.000000
+soccer.football_team_management_tenure	3605	1.000000
+cvg.game_performance	3517	0.999716
+fictional_universe.sibling_relationship_of_fictional_characters	3405	1.000000
+tennis.tennis_tournament_championship	3400	0.999706
+education.acceptance_rate	3382	1.000000
+business.sponsorship	3326	0.999699
+chemistry.atomic_mass	3274	1.000000
+location.cotermination	3212	1.000000
+royalty.chivalric_order_membership	3193	1.000000
+soccer.football_player_match_participation	3140	1.000000
+digicams.camera_resolution	3093	0.999354
+food.beer_containment	3006	0.999003
+aviation.aircraft_ownership_count	2953	1.000000
+cvg.musical_game_song_relationship	2943	1.000000
+sports.sports_team_season_record	2872	0.994804
+book.periodical_format_period	2842	1.000000
+award.hall_of_fame_induction	2788	0.997853
+business.company_brand_relationship	2746	0.997820
+measurement_unit.integer_range	2688	0.999257
+business.acquisition	2680	0.997024
+tv.tv_producer_episode_credit	2673	1.000000
+religion.religious_organization_leadership	2623	0.998477
+biology.organism_classification_placement	2593	0.999614
+opera.opera_character_voice	2571	1.000000
+royalty.system_title_relationship	2560	1.000000
+theater.theater_production_staff_gig	2505	1.000000
+visual_art.artwork_location_relationship	2503	1.000000
+fictional_universe.marriage_of_fictional_characters	2403	1.000000
+architecture.ownership	2341	0.999573
+sports.sports_league_draft_pick	2325	1.000000
+# location.geometry	2274	0.999560
+sports.sports_award	2209	0.997742
+organization.email_contact	2141	0.987091
+medicine.drug_therapeutic_equivalence_relationship	1891	1.000000
+boats.warship_armament	1741	1.000000
+business.company_name_change	1727	0.999421
+tv.video	1724	0.984580
+architecture.occupancy	1675	0.998807
+internet.website_ownership	1561	0.987350
+american_football.player_passing_statistics	1542	1.000000
+measurement_unit.integer_ratio	1521	0.999343
+business.holding	1512	1.000000
+fictional_universe.fictional_employment_tenure	1417	1.000000
+influence.peer_relationship	1408	0.995053
+book.editorial_tenure	1398	1.000000
+tv.tv_crew_gig	1338	0.999253
+american_football.game_passing_statistics	1329	1.000000
+book.journal_publication	1133	0.997359
+government.election_poll_score	1128	1.000000
+fictional_universe.fictional_date_time	1089	0.934764
+education.academic_post	1082	0.999077
+dining.restaurant_chef_association	1077	1.000000
+location.religion_percentage	1074	0.999070
+sports.sports_team_coach_tenure	1051	0.999049
+music.conducting_tenure	1033	1.000000
+boxing.match_boxer_relationship	1025	1.000000
+zoos.animal_captivity	1005	1.000000
+digicams.camera_dimensions	996	1.000000
+people.human_measurement	988	0.997980
+# atom.feed_link	961	1.000000
+time.geologic_time_period_uncertainty	937	1.000000
+basketball.basketball_historical_coach_position	934	0.998930
+broadcast.callsign_duration	882	1.000000
+aviation.aviation_incident_aircraft_relationship	852	1.000000
+book.publisher_imprint_tenure	850	1.000000
+boats.ship_ownership	841	1.000000
+celebrities.romantic_relationship	831	0.997599
+soccer.football_league_participation	793	1.000000
+tennis.tennis_match	746	0.997326
+travel.travel_destination_monthly_climate	727	0.998626
+media_common.dedication	727	0.998626
+measurement_unit.recurring_money_value	706	1.000000
+business.competitive_space_mediator	695	0.994278
+business.company_product_line_relationship	691	0.997114
+sports.sports_team_captain_tenure	689	1.000000
+measurement_unit.monetary_range	687	1.000000
+business.asset_ownership	641	0.992260
+american_football.football_historical_coach_position	625	1.000000
+award.long_list_nomination	623	1.000000
+sports.competitor_competition_relationship	586	1.000000
+aviation.airline_airport_presence	578	1.000000
+organization.organization_merger	578	0.991424
+measurement_unit.floating_point_range	574	1.000000
+# people.appointment	554	0.984014
+celebrities.friendship	552	0.989247
+film.film_film_company_relationship	549	1.000000
+chemistry.solubility_relationship	495	1.000000
+education.honorary_degree	456	0.991304
+travel.transportation	453	0.970021
+digicams.camera_sensor_size	451	1.000000
+location.location_symbol_relationship	430	1.000000
+law.judicial_tenure	428	1.000000
+organization.organization_spin_off	427	1.000000
+event.speech_or_presentation	421	0.992925
+soccer.football_goal	397	1.000000
+music.music_video_performance	391	1.000000
+symbols.flag_use	378	1.000000
+tv.tv_segment_performance	372	1.000000
+food.recipe_ingredient	367	1.000000
+organization.organization_committee_membership	361	1.000000
+film.film_festival_sponsorship	360	1.000000
+soccer.football_player_substitution	360	1.000000
+government.national_anthem_of_a_country	340	1.000000
+comic_strips.comic_strip_creator_duration	333	1.000000
+education.gender_enrollment	332	1.000000
+book.place_of_publication_period	331	1.000000
+government.legislative_election_results	320	1.000000
+soccer.football_disciplinary_action	304	1.000000
+biology.animal_ownership	296	1.000000
+sports.competitor_country_relationship	267	1.000000
+government.legislative_committee_membership	265	1.000000
+astronomy.constellation_bordering_relationship	263	1.000000
+geography.mountain_age	262	1.000000
+biology.hybrid_parentage	260	1.000000
+comic_books.comic_story_printing	253	1.000000
+military.casualties	235	1.000000
+biology.breed_registration	231	1.000000
+location.imports_and_exports	228	1.000000
+broadcast.cable_satellite_availability	224	1.000000
+award.award_judging_term	213	1.000000
+music.concert_set_list	210	1.000000
+fashion.clothing_size	210	1.000000
+opera.opera_role	208	1.000000
+business.brand_slogan	206	0.985646
+people.group_membership	202	0.995074
+film.film_song_relationship	198	1.000000
+opera.opera_production_venue_relationship	192	1.000000
+soccer.football_team_manager_match_participation	189	1.000000
+travel.hotel_grade	185	0.994624
+chemistry.isotope_decay	184	1.000000
+computer.os_compatibility	182	1.000000
+military.force_strength	181	1.000000
+military.military_post_use	176	1.000000
+location.imports_exports_by_industry	175	0.994318
+military.military_posting	172	1.000000
+celebrities.sexual_orientation_phase	167	1.000000
+business.brand_colors	163	0.987879
+sports.sports_official_tenure	154	1.000000
+aviation.airport_runway	152	1.000000
+music.concert_performance	149	0.993333
+law.legal_case_party_relationship	148	1.000000
+royalty.noble_title_gender_equivalency	138	1.000000
+atom.feed_category	132	0.970588
+tv.tv_episode_song_relationship	130	1.000000
+broadcast.radio_affiliation_duration	128	1.000000
+royalty.system_rank_relationship	126	1.000000
+business.product_endorsement	122	1.000000
+interests.collection	118	0.991597
+medicine.survival_rate	115	1.000000
+book.newspaper_circulation	104	1.000000
+religion.place_of_worship_historical_use	103	0.971698
+celebrities.legal_entanglement	103	1.000000
+fashion.designer_label_association	103	0.990385
+rail.railway_operator_relationship	101	1.000000
+cricket.cricket_coach_tenure	98	1.000000
+chemistry.electron_affinity	86	1.000000
+chess.chess_move	85	1.000000
+symbols.armorial_grant	84	1.000000
+comic_strips.comic_strip_syndicate_duration	83	1.000000
+travel.hotel_guest_visit	77	1.000000
+celebrities.substance_abuse_problem	74	1.000000
+education.student_teacher_ratio	69	1.000000
+martial_arts.martial_arts_certification	66	1.000000
+royalty.chivalric_rank_precedence	66	1.000000
+biology.plant_disease_triangle	64	1.000000
+tv.tv_segment_personal_appearance	64	1.000000
+basketball.basketball_team_stats	61	1.000000
+soccer.football_player_loan	60	1.000000
+cvg.computer_game_evaluation	51	1.000000
+astronomy.apparent_mass	51	1.000000
+music.music_video_gig	48	1.000000
+celebrities.rivalry	48	1.000000
+automotive.manufacturing_plant_model_relationship	43	1.000000
+transportation.transit_system_length	42	1.000000
+rail.railway_type_relationship	42	1.000000
+religion.religious_leadership_jurisdiction_appointment	41	1.000000
+opera.opera_designer_gig	40	1.000000
+skiing.ski_area_ownership	39	1.000000
+royalty.chivalric_order_position_tenure	37	1.000000
+olympics.olympic_city_bid	36	1.000000
+rail.railway_gauge_relationship	33	1.000000
+astronomy.meteor_shower_occurrence	32	1.000000
+royalty.precedence	32	1.000000
+book.newspaper_price	32	1.000000
+media_common.completion_of_unfinished_work	31	1.000000
+chess.chess_game_participation	30	1.000000
+medicine.hospital_ownership	28	0.933333
+book.scholarly_financial_support	28	1.000000
+amusement_parks.accident	28	1.000000
+dataworld.property_value_assignment	27	0.964286
+comedy.comedy_group_membership	26	1.000000
+basketball.basketball_player_career_stats	25	1.000000
+skiing.lift_tenure	25	1.000000
+royalty.chivalric_order_relationship	24	1.000000
+soccer.football_player_transfer	23	1.000000
+physics.subatomic_particle_composition	23	1.000000
+olympics.olympic_torch_relay	22	1.000000
+physics.particle_antiparticle	22	1.000000
+celebrities.rehab	22	1.000000
+rail.rolling_stock_tenure	20	1.000000
+royalty.noble_rank_gender_equivalence	19	1.000000
+symbols.heraldic_charge_color	19	1.000000
+architecture.light_sequence	19	1.000000
+aviation.aircraft_status	18	1.000000
+astronomy.planetographic_coordinate	17	1.000000
+medicine.diagnostic_test_signs	17	1.000000
+distilled_spirits.spirit_aging	15	1.000000
+architecture.light_color_range	15	1.000000
+royalty.system_order_relationship	15	1.000000
+spaceflight.rocket_stage	15	1.000000
+astronomy.celestial_object_age	15	1.000000
+business.market_share	14	1.000000
+aviation.cargo_by_year	14	1.000000
+rail.locomotive_ownership	13	1.000000
+amusement_parks.disney_ride_ticket_membership	13	1.000000
+digicams.camera_image_stabilization	13	0.928571
+architecture.light_attributes	13	1.000000
+food.beer_production	12	1.000000
+location.oil_production	12	1.000000
+government.electoral_college_elected_office	11	1.000000
+cricket.cricket_roster_batting	11	1.000000
+cricket.fall_of_wicket	10	1.000000
+boats.ship_powerplant_system	10	1.000000
+# opera.opera_production_staff_gig	9	1.000000
+# digicams.camera_digital_zoom_capability	9	1.000000
+# tv.tv_segment_song_relationship	8	1.000000
+# dataworld.do_not_merge_mediator	7	1.000000
+# tv.tv_segment_guest_appearance	7	1.000000
+# law.court_courthouse_relationship	7	1.000000
+# astronomy.galactic_interaction	7	1.000000
+# business.market_size	6	1.000000
+# boxing.boxing_title_tenure	6	1.000000
+# physics.subatomic_mass	5	1.000000
+# symbols.heraldic_variation_of_the_field_color	5	1.000000
+# location.electricity_production	5	1.000000
+# cricket.cricket_umpire_panel_membership	5	1.000000
+# measurement_unit.dated_ratio	5	1.000000
+# cricket.cricket_roster_bowling	4	1.000000
+# dataworld.data_project	4	1.000000
+# astronomy.number_of_stars	4	1.000000
+# skiing.yearly_snowfall	4	1.000000
+# royalty.chivalric_rank_gender_equivalence	4	1.000000
+# engineering.battery_size_cell_variation	3	1.000000
+# rail.locomotive_class_operator_relationship	3	1.000000
+# automotive.upholstery	3	1.000000
+# engineering.mains_power	3	1.000000
+# spaceflight.satellite_orbit_synchronous	3	1.000000
+# olympics.olympic_demonstration_medal_honor	3	1.000000
+# automotive.warranty	2	1.000000
+# finance.exchange_operator_relationship	2	1.000000
+# american_football.football_game_score	2	1.000000
+# engineering.material_composition	2	1.000000
+# astronomy.apparent_dimension	2	1.000000
+# cricket.cricket_player_debut	2	1.000000
+# biology.gene_ontology_data_source	2	1.000000
+# cricket.team_inning_batting_stats	1	1.000000
+# cricket.cricket_roster_extras	1	1.000000
+# symbols.heraldic_torse	1	1.000000
+# cricket.cricket_roster_keeping	1	1.000000
+# symbols.heraldic_ordinaire_color	1	1.000000
+# physics.magnetic_moment	1	1.000000
+# food.licensee_tenure	1	1.000000
+# symbols.heraldic_mantling	1	1.000000
+# people.appointment_nomination	1	1.000000
+# olympics.demonstration_event_athlete_relationship	1	1.000000
+# cricket.cricket_team_stats	1	1.000000
+# # location.natural_gas_production	5	0.833333
+# # transportation.road_junction	19	0.826087
+# # boats.boat_disposition	34	0.723404
+# # royalty.chivalric_title_gender_equivalency	8	0.666667
+# # boats.engine	2	0.666667
+# # type.lang	404	0.592375
+# # type.content	1452588	0.574875
+# # cricket.cricket_bowler_stats	639	0.241223
+# # symbols.coat_of_arms	285	0.228732
+# # cricket.cricket_player_stats	808	0.211297
+# # location.location	342251	0.195884
+# # location.postal_code	10851	0.128775
+# # dataworld.attribution_namespace	2	0.074074
+# # music.engineer	671	0.068553
+# # community.discussion_thread	968	0.055447
+# # fashion.fiber	1	0.034483
+# # type.attribution	2038	0.026522
+# # music.producer	811	0.026173
+# # music.media_format	1	0.024390
+# # book.poem	40	0.019493
+# # award.ranked_item	300	0.016313
+# # film.film_format	1	0.015625
+# # medicine.cancer_center	1	0.015152
+# # cvg.cvg_publisher	69	0.011942
+# # chemistry.chemical_compound	205	0.011479
+# # book.book_subject	385	0.011114
+# # cvg.cvg_developer	105	0.010739
+# # finance.currency	5	0.006649
+# # cvg.computer_videogame	270	0.006137
+# # location.ua_raion	2	0.003968
+# # type.namespace	8939	0.003214
+# # cvg.game_version	184	0.003191
+# # dataworld.information_source	2	0.003021
+# # type.property	122	0.002876
+# # film.film_casting_director	16	0.002845
+# # broadcast.genre	1	0.002801
+# # music.album	3071	0.002796
+# # music.soundtrack	72	0.002778
+# # music.artist	1906	0.002492
+# # government.election_poll	2	0.002336
+# # book.published_work	44	0.002329
+# # business.stock_ticker_symbol	159	0.002131
+# # film.film_production_designer	31	0.002072
+# # religion.religion	1	0.001623
+# # visual_art.art_owner	1	0.001477
+# # visual_art.artwork	55	0.001430
+# # film.film_genre	1	0.001385
+# # type.type	31	0.001166
+# # atom.feed_item	1	0.001148
+# # computer.file_format	4	0.001136
+# # type.media_type	1	0.001081
+# # media_common.quotation_source	1	0.001003
+# # film.film_festival	4	0.000875
+# # award.award_ceremony	5	0.000823
+# # award.hall_of_fame_inductee	2	0.000720
+# # tv.tv_series_episode	952	0.000694
+# # dining.restaurant	5	0.000585
+# # book.translation	3	0.000585
+# # organization.membership_organization	1	0.000537
+# # library.public_library_system	5	0.000532
+# # book.short_non_fiction	1	0.000479
+# # film.director	45	0.000474
+# # music.group_member	117	0.000470
+# # film.film_set_designer	4	0.000468
+# # media_common.media_genre	1	0.000449
+# # theater.theater	1	0.000441
+# # medicine.physician	1	0.000425
+# # business.consumer_company	1	0.000407
+# # book.written_work	789	0.000404
+# # type.domain	43	0.000377
+# # people.person	1204	0.000353
+# # fictional_universe.fictional_setting	1	0.000352
+# # people.ethnicity	2	0.000341
+# # film.production_company	2	0.000299
+# # religion.place_of_worship	2	0.000289
+# # film.film_screening_venue	5	0.000273
+# # education.field_of_study	1	0.000266
+# # book.literary_series	2	0.000262
+# # business.employer	96	0.000253
+# # food.beer	1	0.000253
+# # book.book	446	0.000237
+# # sports.drafted_athlete	1	0.000217
+# # time.recurring_event	4	0.000216
+# # film.film_story_contributor	5	0.000213
+# # book.book_edition	230	0.000209
+# # film.film_art_director	3	0.000199
+# # business.business_location	7	0.000197
+# # fictional_universe.person_in_fiction	1	0.000193
+# # media_common.cataloged_instance	311	0.000190
+# # book.publication	3	0.000189
+# # business.business_operation	76	0.000188
+# # dataworld.provenance	14	0.000187
+# # location.administrative_division	7	0.000166
+# # organization.organization	125	0.000156
+# # biology.organism	1	0.000145
+# # projects.project	1	0.000143
+# # architecture.venue	3	0.000130
+# # basketball.basketball_player	2	0.000129
+# # film.producer	11	0.000113
+# # medicine.condition_prevention_factors	1	0.000113
+# # award.award_nominated_work	13	0.000111
+# # medicine.drug	1	0.000110
+# # education.university	3	0.000109
+# # film.writer	8	0.000107
+# # business.brand	1	0.000107
+# # type.usergroup	31	0.000102
+# # language.human_language	1	0.000101
+# # film.film_festival_event	3	0.000090
+# # time.event	17	0.000089
+# # computer.software	1	0.000089
+# # music.composer	6	0.000088
+# # pipeline.merge_task	1	0.000088
+# # internet.website	2	0.000083
+# # travel.tourist_attraction	2	0.000083
+# # military.military_conflict	1	0.000082
+# # film.film_costumer_designer	1	0.000078
+# # type.user	8	0.000077
+# # medicine.medical_treatment	1	0.000077
+# # music.release	99	0.000074
+# # education.educational_institution_campus	2	0.000074
+# # media_common.creative_work	90	0.000072
+# # award.award_nominee	10	0.000066
+# # media_common.adaptation	1	0.000065
+# # music.composition	33	0.000059
+# # film.music_contributor	2	0.000057
+# # business.job_title	1	0.000056
+# # architecture.building	4	0.000054
+# # sports.sports_league_season	1	0.000053
+# # tv.tv_program	4	0.000052
+# # film.editor	2	0.000052
+# # film.actor	24	0.000051
+# # fictional_universe.fictional_character	51	0.000049
+# # tv.tv_series_season	4	0.000049
+# # music.musical_group	10	0.000045
+# # tv.tv_character	6	0.000044
+# # film.film_character	37	0.000043
+# # business.issuer	2	0.000043
+# # music.release_track	672	0.000042
+# # fictional_universe.work_of_fiction	1	0.000040
+# # projects.project_focus	4	0.000039
+# # music.recording	413	0.000037
+# # organization.organization_founder	1	0.000034
+# # film.person_or_entity_appearing_in_film	2	0.000032
+# # metropolitan_transit.transit_stop	1	0.000032
+# # education.educational_institution	5	0.000031
+# # people.deceased_person	18	0.000030
+# # architecture.structure	4	0.000030
+# # film.film_crewmember	3	0.000030
+# # film.film	8	0.000029
+# # tv.tv_actor	2	0.000028
+# # award.award_winner	3	0.000025
+# # sports.pro_athlete	9	0.000023
+# # people.measured_person	9	0.000022
+# # book.author	10	0.000019
+# # influence.influence_node	1	0.000019
+# # location.dated_location	8	0.000017
+# # soccer.football_player	2	0.000016
+# # pipeline.task	1	0.000015
+# # location.statistical_region	8	0.000014
+# # music.record_label	1	0.000014
+# # biology.organism_classification	4	0.000013
+# # dataworld.mass_data_operation	1	0.000013
+# # biology.gene	1	0.000008
+# # education.school	1	0.000008
+# # business.consumer_product	4	0.000007
+# # location.citytown	1	0.000002
