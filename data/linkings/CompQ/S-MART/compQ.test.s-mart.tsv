@@ -1,0 +1,2145 @@
+CompQTest-0	baseball	44	8	m.09p14	Major_League_Baseball	2.115724
+CompQTest-0	michael jordan	14	14	m.054c1	Michael_Jordan	34234.745350
+CompQTest-0	michael jordan	14	14	m.05p18cc	Mike_Jordan_(baseball)	2.051532
+CompQTest-1	dave meggett	21	12	m.09rvts	Dave_Meggett	28180.888428
+CompQTest-1	high school	5	11	m.0bpgx	High_school	1.161224
+CompQTest-2	a band called pain	16	18	m.02vrrfr	A_Band_Called_Pain	45792.962816
+CompQTest-3	mets	25	4	m.05g76	New_York_Mets	9443.108114
+CompQTest-3	world series	38	12	m.0fjp3	World_Series	5573.972923
+CompQTest-4	russia	29	6	m.06bnz	Russia	26419.681369
+CompQTest-4	russia	29	6	m.0163v	Belarus	7.522561
+CompQTest-4	russia	29	6	m.07t21	Ukraine	2.561391
+CompQTest-4	russia	29	6	m.05qhw	Poland	1.716103
+CompQTest-5	defense	30	7	m.07y0n	United_States_Department_of_Defense	5.071779
+CompQTest-6	forrest gump	25	12	m.0bdjd	Forrest_Gump	29479.431492
+CompQTest-6	jenny	9	5	m.03x6n9	Jenny_Lewis	2.005206
+CompQTest-7	kennedy	29	7	m.0d3k14	John_F._Kennedy	6043117.129881
+CompQTest-7	president	13	9	m.0157m	Bill_Clinton	2.534281
+CompQTest-8	exit to eden	33	12	m.04_25p	Exit_to_Eden	126425.714513
+CompQTest-8	exit to eden	33	12	m.0fpdlt	Exit_to_Eden_(film)	3631.157500
+CompQTest-9	batts	29	5	m.01mzs28	Mike_Batt	1.352151
+CompQTest-9	batts	29	5	m.02611c	Phil_Batt	8.885731
+CompQTest-9	batts	29	5	m.0h5m59	Matt_Batts	1.649269
+CompQTest-9	billy	23	5	m.03337q	Billy_Graham	4.382279
+CompQTest-9	billy	23	5	m.019389	Billy_Corgan	4.526663
+CompQTest-9	goodfellas	38	10	m.0h6r5	Goodfellas	7769.043913
+CompQTest-10	australia	19	9	m.0chghy	Australia	53489.147078
+CompQTest-11	mexican army	12	12	m.025sjdv	Mexican_Army	4812.208803
+CompQTest-11	the alamo	42	9	m.04v8dx	The_Alamo_(2004_film)	307.074332
+CompQTest-11	the alamo	42	9	m.04v8h1	The_Alamo_(1960_film)	1.905898
+CompQTest-11	the alamo	42	9	m.0121j3	Alamo_Mission_in_San_Antonio	62.715655
+CompQTest-12	darth vader	11	11	m.0f2y0	Darth_Vader	64030.017115
+CompQTest-13	rome	14	4	m.06c62	Rome	66485.639613
+CompQTest-13	rome	14	4	m.0gkkw	Jim_Rome	1.073529
+CompQTest-14	captain kirk	11	12	m.0crtw	James_T._Kirk	53746.618747
+CompQTest-14	star trek movie	27	15	m.08phg9	Star_Trek_(film)	4588.064133
+CompQTest-14	star trek movie	27	15	m.0hhqv27	Star_Trek_Into_Darkness	355.266680
+CompQTest-15	alyssa rosenbaum	36	16	m.0h25	Ayn_Rand	1105.317322
+CompQTest-15	immigrant	26	9	m.01zbfv	Aliyah	1.200671
+CompQTest-15	russian	18	7	m.05vz3zq	Soviet_Union	13.416233
+CompQTest-15	russian	18	7	m.06bnz	Russia	12.745890
+CompQTest-15	russian	18	7	m.01mzwp	Russian_Soviet_Federative_Socialist_Republic	1.574201
+CompQTest-15	russian	18	7	m.0cdbq	Russian_Empire	3.119659
+CompQTest-16	president	8	9	m.0157m	Bill_Clinton	1.188809
+CompQTest-16	united states	33	13	m.09c7w0	United_States	2397.887707
+CompQTest-16	united states	33	13	m.04sg45j	<EMPTY>	2397.887707
+CompQTest-16	united states	33	13	m.01bqks	Federal_government_of_the_United_States	1.117101
+CompQTest-17	best animated feature	51	21	m.0gqzz	Academy_Award_for_Best_Animated_Feature	1.934570
+CompQTest-17	best costume design	8	19	m.0gs96	Academy_Award_for_Best_Costume_Design	2.935989
+CompQTest-17	george miller	33	13	m.013t9y	George_Miller_(filmmaker)	51320.141738
+CompQTest-17	george miller	33	13	m.024sjl	George_Miller_(California_politician)	647.579473
+CompQTest-17	george miller	33	13	m.022fkc	George_Armitage_Miller	17.020221
+CompQTest-18	minister	18	8	m.0m947	Yes_Minister	1.297154
+CompQTest-18	pakistan	30	8	m.05sb1	Pakistan	23966.966640
+CompQTest-18	pakistan	30	8	m.038_0z	Pakistan_national_cricket_team	1.366512
+CompQTest-19	americans	50	9	m.04q7gbh	Americans	1280.593175
+CompQTest-19	americans	50	9	m.09c7w0	United_States	9.776982
+CompQTest-19	americans	50	9	m.04sg45j	<EMPTY>	9.776982
+CompQTest-19	indian	19	6	m.03rk0	India	3.370969
+CompQTest-19	nasa	40	4	m.05f4p	NASA	16178.765941
+CompQTest-20	dawes	39	5	m.0myv2	Charles_G._Dawes	6.653987
+CompQTest-20	president of us	12	15	m.060d2	President_of_the_United_States	10000.000000
+CompQTest-20	the president	8	13	m.0157m	Bill_Clinton	1.144788
+CompQTest-20	the president	8	13	m.06c0j	Ronald_Reagan	1.144788
+CompQTest-20	the president	8	13	m.0gzh	Abraham_Lincoln	1.164906
+CompQTest-20	us	25	2	m.09c7w0	United_States	7.354882
+CompQTest-20	us	25	2	m.04sg45j	<EMPTY>	7.354882
+CompQTest-21	prince of thieves	24	17	m.01msrb	Robin_Hood:_Prince_of_Thieves	32.643319
+CompQTest-21	prince of thieves	24	17	m.07kh6f3	The_Town_(2010_film)	36.534205
+CompQTest-21	robin hood	10	10	m.06j7x	Robin_Hood	33142.611696
+CompQTest-21	robin hood	10	10	m.03wh1s	Robin_Hood_(1973_film)	12.738362
+CompQTest-21	robin hood	10	10	m.05q96q6	Robin_Hood_(2010_film)	16.254388
+CompQTest-21	robin hood	10	10	m.0bcr8s	Robin_Hood_(2006_TV_series)	10.145260
+CompQTest-22	episode 2	22	9	m.04g4m8t	Episode_2_(Twin_Peaks)	1.076650
+CompQTest-22	obi wan	11	7	m.0fkm7	Obi-Wan_Kenobi	21883.708573
+CompQTest-23	france	26	6	m.0f8l9c	France	24149.624327
+CompQTest-24	czech republic	23	14	m.01mjq	Czech_Republic	17739.467083
+CompQTest-25	country	6	7	m.01lyv	Country_music	10000.000000
+CompQTest-25	spain	43	5	m.06mkj	Spain	20185.300352
+CompQTest-26	england	16	7	m.02jx1	England	4067.181242
+CompQTest-26	oliver cromwell	29	15	m.05m0h	Oliver_Cromwell	31554.902821
+CompQTest-27	elena gilbert	10	13	m.0790rw8	Elena_Gilbert	52429.344662
+CompQTest-27	vampire diaries	27	15	m.05sy2k_	The_Vampire_Diaries	1378.778951
+CompQTest-27	vampire diaries	27	15	m.0jzynzg	The_Vampire_Diaries_(season_4)	9.739095
+CompQTest-27	vampire diaries	27	15	m.0gysgzy	The_Vampire_Diaries_(season_3)	10.793656
+CompQTest-28	louisiana	20	9	m.04ly1	Louisiana	15135.538190
+CompQTest-28	world war	37	9	m.081pw	World_War_II	29.507178
+CompQTest-28	world war	37	9	m.0cm2xh	World_War_I	1.356809
+CompQTest-28	world war	37	9	m.011_9x	World_war	10.920491
+CompQTest-29	franklin roosevelt	9	18	m.02yy8	Franklin_D._Roosevelt	29466.644510
+CompQTest-29	pearl harbor	66	12	m.0pc62	Pearl_Harbor_(film)	232.260979
+CompQTest-29	pearl harbor	66	12	m.097gl	Pearl_Harbor	794.737181
+CompQTest-29	world	46	5	m.09nm_	World	191.117612
+CompQTest-30	wright brothers	13	15	m.0fzv_	Wright_brothers	4154.793307
+CompQTest-31	republican party	29	16	m.07wbk	Republican_Party_(United_States)	7276.125204
+CompQTest-31	republican party	29	16	m.07wf9	Democratic-Republican_Party	2.730052
+CompQTest-31	split	16	5	m.01g_k3	Split,_Croatia	9.531372
+CompQTest-32	new york giants	31	15	m.05gg4	New_York_Giants	102784.261645
+CompQTest-32	new york giants	31	15	m.0713r	San_Francisco_Giants	7.439029
+CompQTest-33	egypt	37	5	m.02k54	Egypt	9066.942845
+CompQTest-33	presidential election	12	21	m.07wcy	United_States_presidential_election	1.688785
+CompQTest-34	cherokee	38	8	m.0dbxy	Cherokee	3.582687
+CompQTest-34	federal troops	15	14	m.07wh1	United_States_Army	3.446962
+CompQTest-34	federal troops	15	14	m.01_bmf	Union_Army	11.175868
+CompQTest-34	trail of tears	59	14	m.0jg8j	Trail_of_Tears	2.514864
+CompQTest-34	trail of tears	59	14	m.08ff04	Trail_of_Tears_(band)	1.195145
+CompQTest-34	west on	47	7	m.0t_b8	Weston,_Massachusetts	1.394929
+CompQTest-34	west on	47	7	m.01_1q6c	Weston,_Florida	1.789227
+CompQTest-34	west on	47	7	m.0rd8m	Weston,_Connecticut	1.842818
+CompQTest-35	harry potter movies	6	19	m.02676m4	Harry_Potter_(film_series)	2751.630061
+CompQTest-35	roger lloyd pack	30	16	m.02px6m	Roger_Lloyd-Pack	28054.943696
+CompQTest-36	mom	24	3	m.043ffp	Mom_(Futurama)	1.718076
+CompQTest-36	once and again	45	14	m.032vw9	Once_and_Again	283.009572
+CompQTest-37	fable	45	5	m.01jy8v	Aesop's_Fables	1.067948
+CompQTest-37	greek	13	5	m.035qy	Greece	76.801152
+CompQTest-37	greek	13	5	m.02pvxqq	Greek_(TV_series)	8.751017
+CompQTest-37	greek	13	5	m.0hkt6	Ancient_Greece	4.872534
+CompQTest-38	france	30	6	m.0f8l9c	France	34184.315452
+CompQTest-38	france	30	6	m.01l3vx	France_national_football_team	1.843600
+CompQTest-38	us	18	2	m.09c7w0	United_States	3.635521
+CompQTest-39	moments to remember	24	19	m.06xg2d	Moments_to_Remember	1.371552
+CompQTest-39	moments to remember	24	19	m.06lkr2	A_Moment_to_Remember	2.573073
+CompQTest-41	robin	12	5	m.0pckp	Robin_(comics)	277.772628
+CompQTest-41	robin	12	5	m.0208pb	Dick_Grayson	4.229710
+CompQTest-41	the dark knight	21	15	m.0btpm6	The_Dark_Knight_(film)	3115.400847
+CompQTest-41	the dark knight	21	15	m.01d5g	Batman	7.291514
+CompQTest-42	family guy	29	10	m.019nnl	Family_Guy	28695.925818
+CompQTest-42	family guy	29	10	m.05q7g_b	Family_Guy_(season_8)	3.284729
+CompQTest-42	family guy	29	10	m.0b74djw	Family_Guy_(season_9)	3.195653
+CompQTest-42	family guy	29	10	m.027gynh	Family_Guy_(season_1)	2.010515
+CompQTest-42	family guy	29	10	m.05q9pvs	Family_Guy_(season_7)	2.899381
+CompQTest-42	family guy	29	10	m.06xlxlx	Family_Guy_(season_10)	313.953496
+CompQTest-42	family guy	29	10	m.0k22zlc	Family_Guy_(season_11)	16.964584
+CompQTest-42	meg	22	3	m.035szd	Meg_Griffin	23586.381656
+CompQTest-43	saudi arabia	28	12	m.01z215	Saudi_Arabia	35178.138039
+CompQTest-44	attack force z	17	14	m.05vhtk	Attack_Force_Z	6539.535809
+CompQTest-45	senators	21	8	m.0512p	Minnesota_Twins	1.503237
+CompQTest-45	virginia	12	8	m.07z1m	Virginia	6069.840157
+CompQTest-46	mark van doren	30	14	m.038fbr	Mark_Van_Doren	63332.755172
+CompQTest-47	nba	33	3	m.05jvx	National_Basketball_Association	15430.092992
+CompQTest-47	nba	33	3	m.029yl8	NBA_Development_League	1.430496
+CompQTest-47	ray allen	14	9	m.03lh3v	Ray_Allen	9284.131587
+CompQTest-48	one for the money	28	17	m.0g5sxb4	One_for_the_Money_(film)	25890.613076
+CompQTest-48	one for the money	28	17	m.098ts0	One_for_the_Money_(novel)	1712.953813
+CompQTest-48	stephanie plum	10	14	m.098by5	Stephanie_Plum	38937.370543
+CompQTest-49	world	30	5	m.09nm_	World	380.370079
+CompQTest-50	us	45	2	m.09c7w0	United_States	5.702556
+CompQTest-50	us	45	2	m.04sg45j	<EMPTY>	5.702556
+CompQTest-51	french	9	6	m.0f8l9c	France	26.160711
+CompQTest-51	spoken	16	6	m.01nrn9g	Spoken_(band)	1.216410
+CompQTest-52	supreme court	27	13	m.07sz1	Supreme_Court_of_the_United_States	1.814325
+CompQTest-52	supreme court	27	13	m.0238x4	Supreme_Court_of_India	2.875328
+CompQTest-52	the supreme	23	11	m.012wjr	The_Supremes	782.039194
+CompQTest-53	ncis	24	4	m.03m8sg	NCIS_(TV_series)	1156.211433
+CompQTest-53	ncis	24	4	m.05df6zw	NCIS_(season_3)	98.202813
+CompQTest-53	ncis	24	4	m.0jxg0xl	NCIS_(season_9)	10.298600
+CompQTest-53	ncis	24	4	m.06gtgs2	NCIS_(season_7)	3.849816
+CompQTest-53	ncis	24	4	m.05df6zh	NCIS_(season_6)	2.768992
+CompQTest-53	ncis	24	4	m.05df6zz	NCIS_(season_2)	2.677255
+CompQTest-53	ziva david	10	10	m.093xn8	Ziva_David	35169.994054
+CompQTest-54	david	6	5	m.02cvn	David	12.552691
+CompQTest-54	david	6	5	m.031j3l	David,_Chiriqu%ED	1.164289
+CompQTest-54	the cult	19	8	m.013rfk	The_Cult	10.220953
+CompQTest-54	waco	44	4	m.0106dv	Waco,_Texas	163.812846
+CompQTest-54	waco	44	4	m.01k_xm	Dr_Pepper	1.819492
+CompQTest-54	waco	44	4	m.039jzz	Waco_siege	2.398392
+CompQTest-55	barefoot in the park	27	20	m.026s_ky	Barefoot_in_the_Park_(film)	7.404072
+CompQTest-55	barefoot in the park	27	20	m.02vyxk	Barefoot_in_the_Park	3.621109
+CompQTest-55	barefoot in the park	27	20	m.0g2pwq	Barefoot_in_the_Park_(TV_series)	1.151412
+CompQTest-56	cars	71	4	m.03q0r1	Cars_(film)	48.940922
+CompQTest-56	cars	71	4	m.0ck9j5	Cars_(video_game)	52.805856
+CompQTest-56	cars	71	4	m.0gy1css	Cars_(franchise)	2.646860
+CompQTest-56	lightning mcqueen	41	17	m.0dccjy	Lightning_McQueen	5418.583216
+CompQTest-56	the character	27	13	m.0664c8	Jack_Harkness	2.373571
+CompQTest-56	the voice	13	9	m.0gg645n	The_Voice_(U.S._TV_series)	2.772535
+CompQTest-57	captain kirk	10	12	m.0crtw	James_T._Kirk	56280.795454
+CompQTest-57	captain kirk	10	12	m.084m3	William_Shatner	3.475562
+CompQTest-57	star trek	26	9	m.06qwh	Star_Trek:_The_Original_Series	39.127082
+CompQTest-57	star trek	26	9	m.08phg9	Star_Trek_(film)	62.489879
+CompQTest-57	star trek	26	9	m.0hhqv27	Star_Trek_Into_Darkness	3.253907
+CompQTest-57	star trek	26	9	m.06r4f	Star_Trek:_Voyager	6.006804
+CompQTest-57	star trek	26	9	m.06qv_	Star_Trek:_The_Next_Generation	4.149045
+CompQTest-57	star trek	26	9	m.06mv6	Star_Trek	1610.967321
+CompQTest-58	james franco	8	12	m.05bnp0	James_Franco	34815.317071
+CompQTest-58	milk	29	4	m.03hkch7	Milk_(film)	188.416798
+CompQTest-58	milk	29	4	m.01brc5	Harvey_Milk	2.281884
+CompQTest-59	they might be giants	20	20	m.07n3s	They_Might_Be_Giants	14269.338860
+CompQTest-59	they might be giants	20	20	m.05gvpf	They_Might_Be_Giants_(film)	2.255858
+CompQTest-60	brian dawkins	9	13	m.04m4p5	Brian_Dawkins	41877.778497
+CompQTest-61	ali	27	3	m.0h353	Muhammad_Ali	591.011922
+CompQTest-61	ali	27	3	m.024c1p	Ali	11.727765
+CompQTest-61	ali	27	3	m.01719t	Ali_(film)	1.165715
+CompQTest-61	jack johnson	34	12	m.0jg6v	Jack_Johnson_(boxer)	42.408226
+CompQTest-61	jack johnson	34	12	m.02h7gb	Jack_Johnson_(musician)	2990.848973
+CompQTest-63	anita roddick	32	13	m.02vkt5	Anita_Roddick	45131.350513
+CompQTest-64	eystein ii	8	10	m.0427s7	Eystein_II_of_Norway	29031.721379
+CompQTest-64	norway	22	6	m.05b4w	Norway	13417.460720
+CompQTest-65	donna	11	5	m.02kvknw	Donna_Moss	1.823107
+CompQTest-65	donna	11	5	m.02pcf8b	Donna_Noble	2.855017
+CompQTest-65	donna	11	5	m.05rn76	Donna_Pinciotti	2.051550
+CompQTest-65	west wing	20	9	m.0g60z	The_West_Wing	221.246216
+CompQTest-66	anna kendrick	8	13	m.04066xj	Anna_Kendrick	20148.380099
+CompQTest-66	scott pilgrim	30	13	m.05t0_2v	Scott_Pilgrim_vs._the_World	1046.175385
+CompQTest-66	scott pilgrim	30	13	m.0c3wh5j	Scott_Pilgrim_vs._the_World:_The_Game	1.780565
+CompQTest-67	capricorn	6	9	m.0c132q	Capricorn_(astrology)	4.434886
+CompQTest-67	piers haggard	43	13	m.03nvy4	Piers_Haggard	88040.460940
+CompQTest-68	meat	36	4	m.04scj	Meat	976.575758
+CompQTest-68	red	32	3	m.04m8hb	Red_Digital_Cinema_Camera_Company	1.029977
+CompQTest-69	thom hoffman	20	12	m.0b50l3	Thom_Hoffman	31660.800783
+CompQTest-70	adrian peterson	14	15	m.095xk6	Adrian_Peterson	32927.804421
+CompQTest-70	college	42	7	m.01zff	College_football	13.626208
+CompQTest-71	ohio	19	4	m.05kkh	Ohio	9347.565210
+CompQTest-71	state	24	5	m.0jkhr	North_Carolina_State_University	5.777071
+CompQTest-71	state	24	5	m.0d0xs	U.S._state	10000.000000
+CompQTest-72	mount rushmore	28	14	m.019dvv	Mount_Rushmore	58552.879902
+CompQTest-72	nancy hanks	58	11	m.06c1y5	Nancy_Lincoln	15632.051570
+CompQTest-73	bush	18	4	m.09b6zr	George_W._Bush	877.998333
+CompQTest-73	bush	18	4	m.034ls	George_H._W._Bush	7.056445
+CompQTest-73	george w	8	8	m.09b6zr	George_W._Bush	1427.806460
+CompQTest-74	mts iceplex	13	11	m.0g5r_z_	MTS_Iceplex	17044.939068
+CompQTest-74	winnipeg	28	8	m.0pmq2	Winnipeg	6251.614256
+CompQTest-74	winnipeg	28	8	m.0gvt8sz	Winnipeg_Jets	13433.280002
+CompQTest-75	high school	5	11	m.09dv8h	High_School_Musical	1.827658
+CompQTest-75	lil wayne	21	9	m.016kjs	Lil_Wayne	27897.661831
+CompQTest-76	damien	11	6	m.09s4pt	Damien_Thorn	639.472746
+CompQTest-76	damien	11	6	m.0g0xk	Antichrist	1.785369
+CompQTest-76	the omen	21	8	m.019k65	The_Omen	23248.873538
+CompQTest-76	the omen	21	8	m.07c5kt	The_Omen_(2006_film)	411.233768
+CompQTest-76	the omen	21	8	m.026xhhk	The_Omen_(film_series)	3191.676478
+CompQTest-77	kellan lutz	9	11	m.02pjwn5	Kellan_Lutz	45699.034262
+CompQTest-77	prom night	29	10	m.02rxbq6	Prom_Night_(2008_film)	279.836789
+CompQTest-77	prom night	29	10	m.07h_rj	Prom_Night_(1980_film)	48.303910
+CompQTest-78	president	6	9	m.0157m	Bill_Clinton	1.105784
+CompQTest-78	roger mudd	31	10	m.048cfp	Roger_Mudd	47766.007388
+CompQTest-79	country	5	7	m.01lyv	Country_music	10000.000000
+CompQTest-79	hitler	17	6	m.07_m9_	Adolf_Hitler	10289.184536
+CompQTest-79	ww2	41	3	m.081pw	World_War_II	2.489234
+CompQTest-80	mark twain	15	10	m.014635	Mark_Twain	18577.501452
+CompQTest-81	communist party of china	32	24	m.02189	Communist_Party_of_China	24893.614163
+CompQTest-82	nina hagen	35	10	m.02cpgy	Nina_Hagen	45652.285469
+CompQTest-82	nina hagen	35	10	m.04lggdb	Nina_Hagen_(album)	1.092740
+CompQTest-83	david beckham	14	13	m.02d9k	David_Beckham	34959.162509
+CompQTest-84	steve mcqueen	22	13	m.012cj0	Steve_McQueen	40330.386452
+CompQTest-84	the great escape	44	16	m.018rvr	The_Great_Escape_(film)	2046.868967
+CompQTest-85	labor	19	5	m.0q96	Australian_Labor_Party	249.551745
+CompQTest-86	andrew johnson	9	14	m.0rmg	Andrew_Johnson	38265.778499
+CompQTest-86	andrew johnson	9	14	m.04c_yq	Andrew_Johnson_(English_footballer)	7.904882
+CompQTest-86	president	38	9	m.0157m	Bill_Clinton	2.432761
+CompQTest-87	city	17	4	m.01n32	City	10000.000000
+CompQTest-87	spain	25	5	m.06mkj	Spain	25661.279364
+CompQTest-87	spain	25	5	m.02w64f	Spain_national_football_team	5.300960
+CompQTest-87	the largest city	5	16	m.0h7h6	Toronto	1.583656
+CompQTest-88	charles perkins	39	15	m.05p9kj	Charles_Perkins_(Aboriginal_activist)	22816.235391
+CompQTest-88	charles perkins	39	15	m.05f976q	Charles_A._Perkins	3.426013
+CompQTest-88	charles perkins	39	15	m.07trld	Charles_L._Perkins	1.986131
+CompQTest-88	charles perkins	39	15	m.0ds5t6g	Chuck_Perkins	2.263321
+CompQTest-89	corpse bride	28	12	m.050xxm	Corpse_Bride	4170.488343
+CompQTest-89	johnny depp	8	11	m.0jfx1	Johnny_Depp	8861.023187
+CompQTest-89	johnny depp	8	11	m.04pk1f	Charlie_and_the_Chocolate_Factory_(film)	367.526642
+CompQTest-90	franklin d roosevelt	9	20	m.02yy8	Franklin_D._Roosevelt	63101.389115
+CompQTest-91	mickey	11	6	m.057ph	Mickey_Mouse	278.088419
+CompQTest-91	mickey	11	6	m.025s7bn	Mickey_Mouse_Clubhouse	1.913470
+CompQTest-91	mickey	11	6	m.01jx92	Robert_Blake_(actor)	1.351145
+CompQTest-91	the rocky	21	9	m.06c6l	Rocky_Mountains	264.377332
+CompQTest-92	arsenal	30	7	m.0xbm	Arsenal_F.C.	5943.536342
+CompQTest-92	nasri	8	5	m.0f2dbm	Samir_Nasri	11593.225590
+CompQTest-93	benjamin latrobe	31	16	m.013pvh	Benjamin_Henry_Latrobe	59604.032434
+CompQTest-93	benjamin latrobe	31	16	m.0cfg0f	Benjamin_Henry_Latrobe,_II	1.476423
+CompQTest-94	first man	31	9	m.09_c5v	Adam	1.009929
+CompQTest-94	moon	55	4	m.04zxmvq	Moon_(film)	1.297362
+CompQTest-94	the president	8	13	m.0157m	Bill_Clinton	1.144788
+CompQTest-94	the president	8	13	m.09b6zr	George_W._Bush	1.186395
+CompQTest-94	the president	8	13	m.06c0j	Ronald_Reagan	1.144788
+CompQTest-94	the president	8	13	m.02yy8	Franklin_D._Roosevelt	1.144788
+CompQTest-94	the president	8	13	m.0gzh	Abraham_Lincoln	1.205610
+CompQTest-95	steve perry	33	11	m.03yt18	Steve_Perry_(author)	1.371438
+CompQTest-95	steve perry	33	11	m.03yz68	Steve_Perry_(musician)	3037.683398
+CompQTest-95	steve perry	33	11	m.0fv5w_f	Steve_Perry_(Oregon_musician)	1.112145
+CompQTest-96	season of the witch	25	19	m.04zzwmh	Season_of_the_Witch_(2011_film)	2023.564505
+CompQTest-96	the girl	9	8	m.026hyj6	The_Girl_(2000_film)	1.992628
+CompQTest-97	aquarius	6	8	m.0c134f	Aquarius_(astrology)	2.336992
+CompQTest-97	benjamin harrison v	37	19	m.0k0tp	Benjamin_Harrison_V	37621.220482
+CompQTest-98	burgundy	22	8	m.01_0qv	Duke_of_Burgundy	159.455967
+CompQTest-98	burgundy	22	8	m.0lpp8	Burgundy	142.491316
+CompQTest-98	burgundy	22	8	m.034qzw	Anchorman:_The_Legend_of_Ron_Burgundy	3.270620
+CompQTest-98	rudolph ii	8	10	m.04_yx3	Rudolph_II_of_Burgundy	72.508200
+CompQTest-98	rudolph ii	8	10	m.025_21	Rudolph_of_France	4.611490
+CompQTest-98	rudolph ii	8	10	m.06hfk	Rudolf_II,_Holy_Roman_Emperor	23131.725500
+CompQTest-98	rudolph ii	8	10	m.04_yz8	Rudolph_III_of_Burgundy	929.959718
+CompQTest-99	italy	23	5	m.03rjj	Italy	41310.816706
+CompQTest-99	the capital	8	11	m.0hknf	Genoa	6.076566
+CompQTest-99	the capital	8	11	m.07p7g	Tripoli	1.718513
+CompQTest-99	the capital	8	11	m.091ppl	The_Capital	1.058148
+CompQTest-100	2001	43	4	m.08ct6	2001:_A_Space_Odyssey_(film)	3.493878
+CompQTest-100	professor griff	16	15	m.01vzz9y	Professor_Griff	1029.267376
+CompQTest-101	sheldon cooper	10	14	m.05p74fx	Sheldon_Cooper	31251.570125
+CompQTest-101	the big bang theory	35	19	m.02r5qtm	The_Big_Bang_Theory	20687.121819
+CompQTest-102	william henry harrison	24	22	m.0835q	William_Henry_Harrison	104337.310486
+CompQTest-103	mark reizen	22	11	m.0ddyr2	Mark_Reizen	37156.419549
+CompQTest-103	soviet	5	6	m.05vz3zq	Soviet_Union	1298.502605
+CompQTest-103	soviet	5	6	m.06dr9	Red_Army	1.094191
+CompQTest-104	dictator	10	8	m.07_m9_	Adolf_Hitler	58.854162
+CompQTest-104	germany	22	7	m.0345h	Germany	19373.107215
+CompQTest-104	germany	22	7	m.03f2w	East_Germany	5.233100
+CompQTest-104	germany	22	7	m.01l3wr	Germany_national_football_team	45.252814
+CompQTest-104	world war	37	9	m.081pw	World_War_II	4.400550
+CompQTest-104	world war	37	9	m.011_9x	World_war	17.341562
+CompQTest-105	italy	40	5	m.03rjj	Italy	18035.698443
+CompQTest-105	type of government	5	18	m.02pbmw	Government_of_India	1.213728
+CompQTest-106	celtics	38	7	m.0bwjj	Boston_Celtics	20357.647649
+CompQTest-106	celtics	38	7	m.0j46b	Celtic_F.C.	2.263318
+CompQTest-106	ray allen	8	9	m.03lh3v	Ray_Allen	34133.768593
+CompQTest-107	a history of violence	27	21	m.05rfst	A_History_of_Violence	74.982397
+CompQTest-107	a history of violence	27	21	m.05rfsd	A_History_of_Violence_(comics)	5.584127
+CompQTest-108	alexander graham bell	14	21	m.0k70	Alexander_Graham_Bell	35225.879584
+CompQTest-109	the beatles	14	11	m.07c0j	The_Beatles	25248.049018
+CompQTest-109	the ed sullivan show	34	20	m.011j_g	The_Ed_Sullivan_Show	15121.211930
+CompQTest-109	the ed sullivan show	34	20	m.02q0f	Ed_Sullivan	3.308369
+CompQTest-110	california	37	10	m.01n7q	California	7012.548145
+CompQTest-111	baseball	6	8	m.09p14	Major_League_Baseball	1.529040
+CompQTest-111	jeana tomasino	37	14	m.0c9h40	Jeana_Keough	53126.025979
+CompQTest-112	curtis bernhardt	42	16	m.08mxlb	Curtis_Bernhardt	37044.139732
+CompQTest-112	elisabeth risdon	9	16	m.02x6kqd	Elisabeth_Risdon	749.757372
+CompQTest-113	super bowl	16	10	m.06x5s	Super_Bowl	26848.521161
+CompQTest-114	davies	23	6	m.0513f4	Kevin_Davies	3.694789
+CompQTest-114	oliver ford	11	11	m.0hhtbhs	Oliver_Ford	20590.122731
+CompQTest-114	paddy breathnach	46	16	m.04mzxbn	Paddy_Breathnach	48757.816672
+CompQTest-115	jim henson	38	10	m.044f7	Jim_Henson	41910.936446
+CompQTest-115	jim henson	38	10	m.05335	The_Muppets	53.114664
+CompQTest-116	mo	20	2	m.01vs_v8	Madonna_(entertainer)	10.977477
+CompQTest-116	sheen	23	5	m.01pllx	Charlie_Sheen	8.076944
+CompQTest-116	sheen	23	5	m.01pkhw	Michael_Sheen	1.659225
+CompQTest-116	sheen	23	5	m.0hvb2	Martin_Sheen	1.241285
+CompQTest-116	was lily	11	8	m.04gs89n	Wali%42y	5.214062
+CompQTest-117	american	12	8	m.09c7w0	United_States	25.413572
+CompQTest-117	american	12	8	m.0z07	American_Airlines	2.338065
+CompQTest-117	american	12	8	m.04q7gbh	Americans	1.998645
+CompQTest-117	american	12	8	m.0sgjzry	<EMPTY>	2.338065
+CompQTest-117	american	12	8	m.04sg45j	<EMPTY>	25.413572
+CompQTest-117	heroes	28	6	m.0d7vtk	Heroes_(TV_series)	34.765363
+CompQTest-117	olympics	71	8	m.06vvk	Summer_Olympic_Games	1.285359
+CompQTest-117	olympics	71	8	m.05nd_	Olympic_Games	1.780262
+CompQTest-118	playoffs	56	8	m.0g5qm_d	Stanley_Cup_playoffs	28.809658
+CompQTest-118	toronto maple leafs	27	19	m.0j6tr	Toronto_Maple_Leafs	168653.604234
+CompQTest-119	ronaldinho	9	10	m.02lfw5	Ronaldinho	22385.769059
+CompQTest-119	ronaldinho	9	10	m.0hhqw	Ronaldo	74.339360
+CompQTest-120	lamar odom	7	10	m.02_nkp	Lamar_Odom	33810.174437
+CompQTest-121	john f kennedy	10	14	m.0d3k14	John_F._Kennedy	21991.637683
+CompQTest-121	john f kennedy	10	14	m.0150p7	John_F._Kennedy,_Jr.	1.071391
+CompQTest-122	star trek	35	9	m.08phg9	Star_Trek_(film)	650.314902
+CompQTest-122	star trek	35	9	m.06qwh	Star_Trek:_The_Original_Series	8.936684
+CompQTest-122	star trek	35	9	m.06qv_	Star_Trek:_The_Next_Generation	3.720578
+CompQTest-122	star trek	35	9	m.06r4f	Star_Trek:_Voyager	10.587356
+CompQTest-122	star trek	35	9	m.06mv6	Star_Trek	620.683472
+CompQTest-122	winona ryder	14	12	m.086sj	Winona_Ryder	35242.824377
+CompQTest-123	michael vick	15	12	m.027f42	Michael_Vick	49691.330939
+CompQTest-124	barack obama	39	12	m.02mjmr	Barack_Obama	11396.627506
+CompQTest-124	vice president	19	14	m.07wrz	University_of_Chicago	6.944140
+CompQTest-125	lake of the woods	14	17	m.0nhhc	Lake_of_the_Woods_County,_Minnesota	3.056325
+CompQTest-125	lake of the woods	14	17	m.01jm9x	Lake_of_the_Woods	2652.462637
+CompQTest-125	state	5	5	m.0d0xs	U.S._state	10000.000000
+CompQTest-126	legolas	15	7	m.0gwkm	Legolas	17939.833763
+CompQTest-126	the hobbit	31	10	m.0ndwt2w	The_Hobbit:_An_Unexpected_Journey	211.387013
+CompQTest-126	the hobbit	31	10	m.02kl1y	The_Hobbit_(1977_film)	8.899095
+CompQTest-126	the hobbit	31	10	m.026ph7x	The_Hobbit_(film_series)	30.421086
+CompQTest-127	henry harrison	26	14	m.0835q	William_Henry_Harrison	73303.243033
+CompQTest-127	henry harrison	26	14	m.02ps4y4	Henry_Harrison_(Irish_politician)	2.417432
+CompQTest-128	general cornwallis	8	18	m.09jrf	Charles_Cornwallis,_1st_Marquess_Cornwallis	34103.065195
+CompQTest-128	general cornwallis	8	18	m.0776s2	Edward_Cornwallis	1.659894
+CompQTest-128	yorktown	43	8	m.014s1b	Siege_of_Yorktown	1.210161
+CompQTest-128	yorktown	43	8	m.010pld	Yorktown,_Virginia	67.228021
+CompQTest-128	yorktown	43	8	m.01fmw0	USS_Yorktown_(CV-10)	4.882828
+CompQTest-129	american	33	8	m.09c7w0	United_States	32.695577
+CompQTest-129	american	33	8	m.0z07	American_Airlines	2.249342
+CompQTest-129	american	33	8	m.04q7gbh	Americans	3.058979
+CompQTest-129	american	33	8	m.04sg45j	<EMPTY>	32.695577
+CompQTest-129	american	33	8	m.0sgjzry	<EMPTY>	2.249342
+CompQTest-129	john hancock	9	12	m.04563	John_Hancock	425299.031083
+CompQTest-129	john hancock	9	12	m.0b28z	John_Hancock_Center	2.634022
+CompQTest-129	john hancock	9	12	m.02vrgnr	Hancock_(film)	22.640496
+CompQTest-130	google	9	6	m.045c7b	Google	14148.750004
+CompQTest-130	google	9	6	m.0387r	Google_Search	2.296850
+CompQTest-131	archduke felix	15	14	m.03nt382	Archduke_Felix_of_Austria	5048.496884
+CompQTest-131	austria	33	7	m.0h7x	Austria	6284.944613
+CompQTest-132	giri babu	16	9	m.04gnc4q	Giri_Babu	31323.663824
+CompQTest-133	country	5	7	m.01lyv	Country_music	10000.000000
+CompQTest-133	hitler	17	6	m.07_m9_	Adolf_Hitler	10289.184536
+CompQTest-133	ww2	44	3	m.081pw	World_War_II	2.489234
+CompQTest-134	governor of indiana	11	19	m.04f_xd8	Governor_of_Indiana	18127.747070
+CompQTest-134	governor of indiana	11	19	m.048v04	Mitch_Daniels	2.651008
+CompQTest-135	jeremy lin	15	10	m.09k72lh	Jeremy_Lin	36819.075178
+CompQTest-136	nina hagen	40	10	m.02cpgy	Nina_Hagen	31601.493481
+CompQTest-136	taurus	6	6	m.07bn_4	Taurus_(astrology)	1.031189
+CompQTest-137	amnesty international	9	21	m.012l0	Amnesty_International	36144.828483
+CompQTest-137	amnesty international	9	21	m.0b1g9d	Amnesty_International_Aotearoa_New_Zealand	2.961651
+CompQTest-137	aotearoa	31	8	m.0ctw_b	New_Zealand	114.391230
+CompQTest-137	new zealand	40	11	m.0ctw_b	New_Zealand	14108.089574
+CompQTest-138	barcelona museum of contemporary art	27	36	m.0cgk4g	Barcelona_Museum_of_Contemporary_Art	244694.103029
+CompQTest-139	mohammed v	26	10	m.01dmjp	Mohammed_V_of_Morocco	34103.050451
+CompQTest-139	mohammed v	26	10	m.01qbpd	Mohammed_V_International_Airport	3.899003
+CompQTest-139	mohammed v	26	10	m.025x3mh	Mohammed_V_University_at_Agdal	1.049347
+CompQTest-139	mohammed v	26	10	m.025x3gp	Mohammed_V_University	6.140942
+CompQTest-139	morocco	40	7	m.04wgh	Morocco	30356.578428
+CompQTest-140	2010	34	4	m.04gcyg	2010_(film)	1.554880
+CompQTest-140	terrell owens	8	13	m.027ddp	Terrell_Owens	37467.338524
+CompQTest-141	aries	6	5	m.06jpj7	Austin_Aries	1.691883
+CompQTest-141	aries	6	5	m.076y5q	Aries_(astrology)	1.435460
+CompQTest-141	olive osmond	34	12	m.02_772	Olive_Osmond	34245.601095
+CompQTest-142	harper lee	10	10	m.01bq7x	Harper_Lee	35927.259630
+CompQTest-142	high school	28	11	m.09dv8h	High_School_Musical	1.369323
+CompQTest-142	high school	28	11	m.0bpgx	High_school	1.184073
+CompQTest-143	2010	38	4	m.04gcyg	2010_(film)	1.760361
+CompQTest-143	cristiano ronaldo	8	17	m.02xt6q	Cristiano_Ronaldo	50010.882111
+CompQTest-144	irish	5	5	m.018p4y	Pierce_Brosnan	7.175951
+CompQTest-144	irish	5	5	m.012wgb	Ireland	6.772688
+CompQTest-144	irish	5	5	m.03rt9	Republic_of_Ireland	2.321188
+CompQTest-144	mark sheppard	21	13	m.0fd_yv	Mark_Sheppard	51762.836609
+CompQTest-145	allied	15	6	m.059dn	NATO	1.835163
+CompQTest-145	france	8	6	m.0f8l9c	France	65491.017686
+CompQTest-145	ww2	30	3	m.081pw	World_War_II	3.610067
+CompQTest-146	spain	38	5	m.06mkj	Spain	25129.988095
+CompQTest-147	a pastry	41	8	m.02yhwv	Andr%E9_Patry	24.278141
+CompQTest-147	french	17	6	m.0f8l9c	France	33.492999
+CompQTest-147	that has	32	8	m.06r25_	Thatta	1.311038
+CompQTest-148	delaware	15	8	m.026mj	Delaware	28616.365440
+CompQTest-148	delaware	15	8	m.0dtzd	Delaware_River	1.782923
+CompQTest-149	euro	48	4	m.02j9z	Europe	1.822873
+CompQTest-149	euro	48	4	m.02q3s	Eurovision_Song_Contest	1.230307
+CompQTest-149	france	30	6	m.0f8l9c	France	24841.658465
+CompQTest-150	lilies of the field	24	19	m.0p4wv	Lilies_of_the_Field_(1963_film)	62.608349
+CompQTest-150	lilies of the field	24	19	m.0c028xn	Lilies_of_the_Field_(novel)	2.522561
+CompQTest-151	despicable me	42	13	m.0gwn31_	Despicable_Me_2	528.563880
+CompQTest-151	despicable me	42	13	m.06zkfsy	Despicable_Me	5.516159
+CompQTest-151	russell brand	20	13	m.06crng	Russell_Brand	33452.844973
+CompQTest-152	taylor swift	20	12	m.0dl567	Taylor_Swift	44131.065885
+CompQTest-152	the lorax	41	9	m.087wc7n	The_Lorax_(film)	59635.704132
+CompQTest-152	the lorax	41	9	m.09h7dd	The_Lorax	168.038256
+CompQTest-153	mandela	45	7	m.05g7q	Nelson_Mandela	31813.529868
+CompQTest-153	mandela	45	7	m.084n2	Winnie_Madikizela-Mandela	1.847161
+CompQTest-153	south africa	25	12	m.0hzlz	South_Africa	21839.768439
+CompQTest-153	south africa	25	12	m.02c59t	Southern_Africa	1.699122
+CompQTest-154	battle of	21	9	m.01bvx	Battle	1.321379
+CompQTest-154	ypres	31	5	m.0145__	Ypres	3366.096220
+CompQTest-155	archibald hill	32	14	m.0jzxs	Archibald_Hill	38740.352458
+CompQTest-156	italian	12	7	m.03rjj	Italy	211.960404
+CompQTest-156	ww1	30	3	m.0cm2xh	World_War_I	1.684861
+CompQTest-157	ravens	26	6	m.01ct6	Baltimore_Ravens	7482.165101
+CompQTest-157	superbowl	39	9	m.06x5s	Super_Bowl	1141.799143
+CompQTest-158	queen victoria	8	14	m.0cw10	Queen_Victoria	12641.110023
+CompQTest-159	jackie mclean	16	13	m.01ljk94	Jackie_McLean	29888.536405
+CompQTest-160	billy currington	16	16	m.07jfh5	Billy_Currington	10765.285754
+CompQTest-160	october	44	7	m.03f1ls	Eric_Whitacre	1.202206
+CompQTest-161	bronx	40	5	m.02t4w7	A_Bronx_Tale	7.744820
+CompQTest-161	bronx	40	5	m.01531	The_Bronx	11097.641468
+CompQTest-162	benjamin latrobe	28	16	m.013pvh	Benjamin_Henry_Latrobe	37816.520767
+CompQTest-162	benjamin latrobe	28	16	m.0cfg0f	Benjamin_Henry_Latrobe,_II	1.438220
+CompQTest-163	clark	26	5	m.0586ry	Clark_College_(Washington)	1.879600
+CompQTest-163	clark	26	5	m.0962_n	Chris_Clark_(musician)	1.271161
+CompQTest-163	clark	26	5	m.01p5xy	Clark_University	6.201872
+CompQTest-163	clark	26	5	m.0d1y7	Clark_County,_Nevada	6.295179
+CompQTest-163	lewis	16	5	m.03tck	Inspector_Morse	1.317417
+CompQTest-163	lewis	16	5	m.0b5pmk	Lewis_(TV_series)	10.118892
+CompQTest-164	thomas jefferson	9	16	m.07cbs	Thomas_Jefferson	34261.613554
+CompQTest-165	obama	9	5	m.02mjmr	Barack_Obama	6089.845976
+CompQTest-165	obama	9	5	m.025s5v9	Michelle_Obama	1.750933
+CompQTest-165	president	40	9	m.0157m	Bill_Clinton	2.422493
+CompQTest-166	france	8	6	m.0f8l9c	France	65303.585287
+CompQTest-166	ww2	31	3	m.081pw	World_War_II	3.610067
+CompQTest-167	boris iii	40	9	m.0fkd8	Boris_III_of_Bulgaria	26634.069007
+CompQTest-167	bulgaria	53	8	m.015qh	Bulgaria	8574.879963
+CompQTest-168	danger mouse	21	12	m.01wd08	Danger_Mouse_(TV_series)	614.145058
+CompQTest-168	danger mouse	21	12	m.01w806h	Danger_Mouse	7726.532642
+CompQTest-168	pest control	37	12	m.03ql5d9	Pest_Control_(Doctor_Who)	1.153594
+CompQTest-169	coronation street	24	17	m.01_2n	Coronation_Street	8615.388199
+CompQTest-169	ken barlow	10	10	m.015lwh	Ken_Barlow	48939.006625
+CompQTest-169	ken barlow	10	10	m.03wfmtk	Ken_Barlow_(basketball)	21.742960
+CompQTest-170	greek	5	5	m.035qy	Greece	88.213051
+CompQTest-170	greek	5	5	m.0hkt6	Ancient_Greece	1.763789
+CompQTest-170	greek	5	5	m.02pvxqq	Greek_(TV_series)	8.847309
+CompQTest-170	zoe carides	21	11	m.08hpjp	Zoe_Carides	23275.139714
+CompQTest-171	family guy	28	10	m.019nnl	Family_Guy	3133.752760
+CompQTest-171	family guy	28	10	m.051xp89	Family_Guy_(season_5)	1.996951
+CompQTest-171	family guy	28	10	m.027gynh	Family_Guy_(season_1)	2.000171
+CompQTest-171	family guy	28	10	m.0ckt2c	Family_Guy_Video_Game!	17.847610
+CompQTest-171	family guy	28	10	m.06xlxlx	Family_Guy_(season_10)	4.162174
+CompQTest-171	mila kunis	9	10	m.023v4_	Mila_Kunis	33102.015733
+CompQTest-172	george ponsonby	39	15	m.03_sw0	George_Ponsonby	17777.403872
+CompQTest-172	george ponsonby	39	15	m.04jmv8_	George_Ponsonby_(Junior_Lord_of_the_Treasury)	10521.700370
+CompQTest-173	matt	15	4	m.01zqb7	Matt_Hardy	2.252097
+CompQTest-173	the haunting in connecticut	23	27	m.043s2w5	The_Haunting_in_Connecticut	70602.387088
+CompQTest-174	national treasure	29	17	m.033srr	National_Treasure_(film)	1412.035253
+CompQTest-174	national treasure	29	17	m.04mz3sn	National_Treasure_(franchise)	1703.547984
+CompQTest-174	nicolas cage	8	12	m.01vvb4m	Nicolas_Cage	34899.992941
+CompQTest-175	minister	18	8	m.0m947	Yes_Minister	1.297154
+CompQTest-175	pakistan	30	8	m.05sb1	Pakistan	23966.966640
+CompQTest-175	pakistan	30	8	m.038_0z	Pakistan_national_cricket_team	1.366512
+CompQTest-176	ohio	19	4	m.05kkh	Ohio	7939.188864
+CompQTest-177	argentina	15	9	m.0jgd	Argentina	26290.354486
+CompQTest-177	argentina	15	9	m.02bh_v	Argentina_national_football_team	2.975778
+CompQTest-177	the spaniards	31	13	m.06mkj	Spain	8.039054
+CompQTest-178	agatha christie	15	15	m.0ldd	Agatha_Christie	22088.074001
+CompQTest-178	agatha christie	15	15	m.09s3f7	Agatha_Christie_(band)	1.173645
+CompQTest-179	alfred newman	34	13	m.02sj1x	Alfred_Newman_(composer)	34864.472100
+CompQTest-179	libra	6	5	m.01d_h	BT_(musician)	1.437049
+CompQTest-179	libra	6	5	m.0c131z	Libra_(astrology)	1.625375
+CompQTest-180	ny knicks	27	9	m.0jm3v	New_York_Knicks	54872.259989
+CompQTest-180	playoff game	43	12	m.054qg3	National_Football_League_playoffs	1.967320
+CompQTest-181	academic	6	8	m.01z9g9	Academia	1.451544
+CompQTest-181	molefi kete asante	30	18	m.06j__3	Molefi_Kete_Asante	13293.886741
+CompQTest-182	atlanta braves	9	14	m.0x2p	Atlanta_Braves	57726.733171
+CompQTest-182	world series	32	12	m.0fjp3	World_Series	6259.248496
+CompQTest-183	grease	35	6	m.01xlqd	Grease_(film)	956.700831
+CompQTest-183	grease	35	6	m.01qd2t	Grease_2	1.709686
+CompQTest-183	grease	35	6	m.0120cd	Grease_(musical)	17.600367
+CompQTest-183	grease	35	6	m.035qy	Greece	1.403431
+CompQTest-183	jeff conaway	14	12	m.026mzh	Jeff_Conaway	32162.652917
+CompQTest-184	albert pujols	9	13	m.035gcb	Albert_Pujols	41093.090493
+CompQTest-185	dawkins	6	7	m.06g4_	Richard_Dawkins	443.799180
+CompQTest-185	dawkins	6	7	m.04m4p5	Brian_Dawkins	2.103420
+CompQTest-185	to read	19	7	m.055fqn	How_to_Win_Friends_and_Influence_People	1.208229
+CompQTest-186	ponyboy	10	7	m.02q8z1	The_Outsiders_(novel)	758.480358
+CompQTest-186	that was then this is now	21	25	m.04jvgb	That_Was_Then..._This_Is_Now	1.241367
+CompQTest-186	that was then this is now	21	25	m.032bv5	That_Was_Then,_This_Is_Now	513.564116
+CompQTest-187	europe	38	6	m.02j9z	Europe	20672.656852
+CompQTest-187	europe	38	6	m.07y9k	UEFA	1.128373
+CompQTest-188	african	9	7	m.0dg3n1	Africa	3.640848
+CompQTest-188	americans	17	9	m.09c7w0	United_States	21.427861
+CompQTest-188	americans	17	9	m.04q7gbh	Americans	568.077530
+CompQTest-188	americans	17	9	m.04sg45j	<EMPTY>	21.427861
+CompQTest-189	meat loaf	19	9	m.01vvybv	Meat_Loaf	14615.093831
+CompQTest-189	rocky horror	37	12	m.06cgf	The_Rocky_Horror_Picture_Show	254.196664
+CompQTest-189	rocky horror	37	12	m.014p4m	The_Rocky_Horror_Show	8.487993
+CompQTest-190	jim henson	32	10	m.044f7	Jim_Henson	29653.012416
+CompQTest-190	jim henson	32	10	m.05335	The_Muppets	25.053182
+CompQTest-191	the beatles	15	11	m.07c0j	The_Beatles	25823.077065
+CompQTest-192	africa	37	6	m.0dg3n1	Africa	40968.722524
+CompQTest-192	hip hop	19	7	m.01vsgrn	Eminem	1.134042
+CompQTest-193	michael vick	15	12	m.027f42	Michael_Vick	49691.330939
+CompQTest-194	steve perry	35	11	m.03yt18	Steve_Perry_(author)	1.371438
+CompQTest-194	steve perry	35	11	m.03yz68	Steve_Perry_(musician)	3037.683398
+CompQTest-194	steve perry	35	11	m.0fv5w_f	Steve_Perry_(Oregon_musician)	1.112145
+CompQTest-195	greece	7	6	m.035qy	Greece	40389.606019
+CompQTest-196	cuban	16	5	m.0d04z6	Cuba	55.334959
+CompQTest-196	cuban	16	5	m.024t0y	Mark_Cuban	2.008273
+CompQTest-197	brett gardner	8	13	m.02px3wt	Brett_Gardner	44365.266084
+CompQTest-198	government	13	10	m.01bqks	Federal_government_of_the_United_States	50.706043
+CompQTest-198	government	13	10	m.04jrx3	Government_of_Australia	2.072970
+CompQTest-198	united states	32	13	m.09c7w0	United_States	4292.060727
+CompQTest-198	united states	32	13	m.04sg45j	<EMPTY>	4292.060727
+CompQTest-199	city	5	4	m.01n32	City	10000.000000
+CompQTest-199	florida	13	7	m.02xry	Florida	36939.438425
+CompQTest-199	florida	13	7	m.02vwckw	Flo_Rida	2.793970
+CompQTest-200	gang of four	16	12	m.012yv4	Gang_of_Four_(band)	33.860674
+CompQTest-200	gang of four	16	12	m.0nhxlsr	<EMPTY>	33.860674
+CompQTest-201	dancing on ice	22	14	m.09q6rv	Dancing_on_Ice	12261.508834
+CompQTest-201	dancing on ice	22	14	m.0ln04pt	Dancing_on_Ice_(series_7)	3.878052
+CompQTest-201	dancing on ice	22	14	m.0bmqvjb	Dancing_on_Ice_(series_5)	1.002832
+CompQTest-202	batman	20	6	m.01hp5	Batman_(1989_film)	3.418207
+CompQTest-202	batman	20	6	m.01rmfh	Batman_(TV_series)	2.628632
+CompQTest-202	batman	20	6	m.01d5g	Batman	281.700112
+CompQTest-202	blaine	10	6	m.0gh819f	Blaine_Anderson	200.182568
+CompQTest-203	aquarius	6	8	m.0c134f	Aquarius_(astrology)	2.336992
+CompQTest-203	lakshmi mittal	37	14	m.02k4_t	Lakshmi_Mittal	44341.389610
+CompQTest-204	cars	32	4	m.03q0r1	Cars_(film)	30.565101
+CompQTest-204	cars	32	4	m.0ck9j5	Cars_(video_game)	13.220340
+CompQTest-204	michael keaton	9	14	m.01j5ws	Michael_Keaton	53346.185704
+CompQTest-205	armie hammer	8	12	m.03y9941	Armie_Hammer	37777.638562
+CompQTest-205	social network	33	14	m.07s846j	The_Social_Network	601.057629
+CompQTest-206	detroit lions	12	13	m.02c_4	Detroit_Lions	31703.943507
+CompQTest-206	thanksgiving	34	12	m.027qtzz	Thanksgiving	60625.472599
+CompQTest-207	italy	29	5	m.03rjj	Italy	41310.816706
+CompQTest-208	egypt	24	5	m.02k54	Egypt	45965.176715
+CompQTest-209	canadian	8	8	m.0d060g	Canada	2818.539167
+CompQTest-209	minister	23	8	m.0m947	Yes_Minister	1.230577
+CompQTest-210	alana	18	5	m.026mcjn	Alana_Stewart	2.120496
+CompQTest-210	alana	18	5	m.07gp69	Alana_Evans	3.109711
+CompQTest-210	alana	18	5	m.0683r7	Adriana_Sage	1.094931
+CompQTest-210	alana	18	5	m.0bwgh70	Alana_Blanchard	1.739697
+CompQTest-210	dr	15	2	m.027rn	Dominican_Republic	2.699688
+CompQTest-210	lentin	24	6	m.026qxbw	Ronit_Lentin	1.409380
+CompQTest-211	baseball	6	8	m.09p14	Major_League_Baseball	84.763788
+CompQTest-211	brooks robinson	24	15	m.02f0mr	Brooks_Robinson	20720.791249
+CompQTest-212	afghanistan	38	11	m.0jdd	Afghanistan	23455.786511
+CompQTest-213	brazil	29	6	m.015fr	Brazil	26656.929863
+CompQTest-214	benjamin latrobe	35	16	m.013pvh	Benjamin_Henry_Latrobe	41794.765891
+CompQTest-215	james polk	9	10	m.042f1	James_K._Polk	20596.352212
+CompQTest-216	a bridge too far	34	16	m.0m9p3	A_Bridge_Too_Far_(film)	3322.444392
+CompQTest-216	a bridge too far	34	16	m.04t3x56	<EMPTY>	1.038329
+CompQTest-217	billy west	39	10	m.01rrwf6	Billy_West	47157.915182
+CompQTest-217	billy west	39	10	m.0ks2mj	Billy_West_(silent_film_actor)	1.199332
+CompQTest-217	serieses	26	8	m.02xlsc_	QI_(E_series)	1.300686
+CompQTest-218	basketball	5	10	m.05jvx	National_Basketball_Association	9.771394
+CompQTest-218	monica	37	6	m.037bqd	Saint_Monica	1.611537
+CompQTest-218	monica	37	6	m.03fbn4	Monica_Geller	20.677575
+CompQTest-218	monica	37	6	m.05g6r1	Monica_Sweetheart	2.179666
+CompQTest-220	governor of minnesota	8	21	m.01fgff	Governor_of_Minnesota	87255.898105
+CompQTest-220	lakshmi kalyanam	35	16	m.02phgt3	Lakshmi_Kalyanam	50136.169772
+CompQTest-221	kitt	23	4	m.05_bhx	KITT	1074.668417
+CompQTest-221	kitt	23	4	m.03gwf6l	Knight_Rider_(2008_film)	4.687469
+CompQTest-221	kitt	23	4	m.02gl9l	Eartha_Kitt	1.812515
+CompQTest-221	knight rider	31	12	m.0bvxv	Knight_Rider_(1982_TV_series)	162259.436751
+CompQTest-221	knight rider	31	12	m.041104g	Knight_Rider_(2008_TV_series)	142.232180
+CompQTest-222	jesus	10	5	m.045m1_	Jesus	10589.084043
+CompQTest-222	jesus	10	5	m.03lh3v	Ray_Allen	1.015183
+CompQTest-223	egypt	37	5	m.02k54	Egypt	9066.942845
+CompQTest-223	presidential election	12	21	m.07wcy	United_States_presidential_election	1.688785
+CompQTest-224	jesus	10	5	m.045m1_	Jesus	10589.084043
+CompQTest-224	jesus	10	5	m.03lh3v	Ray_Allen	1.015183
+CompQTest-225	patriots	19	8	m.05g3b	New_England_Patriots	12202.969043
+CompQTest-225	teams	5	5	m.03whz_8	Kansas_State_Wildcats_football	1.512586
+CompQTest-226	dumbledore	9	10	m.0cb2r	Albus_Dumbledore	12254.682724
+CompQTest-226	dumbledore	9	10	m.015rkw	Michael_Gambon	7.237622
+CompQTest-227	andrew jackson	36	14	m.0rlz	Andrew_Jackson	24783.187383
+CompQTest-227	of state	22	8	m.07vsl	United_States_Department_of_State	2.080350
+CompQTest-228	kennedy	32	7	m.0d3k14	John_F._Kennedy	4839.038817
+CompQTest-229	archie kao	35	10	m.09kpxx	Archie_Kao	30781.096326
+CompQTest-229	episode	6	7	m.02qn5g6	CSI:_Crime_Scene_Investigation_(season_4)	6.785228
+CompQTest-229	serieses	22	8	m.02xlsc_	QI_(E_series)	4.401516
+CompQTest-230	president nixon	8	15	m.06c97	Richard_Nixon	9328.905815
+CompQTest-231	father of modern linguistics	17	28	m.0b78hw	Noam_Chomsky	3898.117451
+CompQTest-231	swiss	11	5	m.06mzp	Switzerland	161.004383
+CompQTest-231	swiss	11	5	m.015mtr	Swiss_International_Air_Lines	4.528491
+CompQTest-232	katherine jackson	37	17	m.0524pr	Katherine_Jackson	25495.895422
+CompQTest-232	katherine jackson	37	17	m.01phkr	Kate_Jackson	5.361475
+CompQTest-233	alfred ollivant	39	15	m.09qx5d	Alfred_Ollivant_(bishop)	7.716838
+CompQTest-233	alfred ollivant	39	15	m.0b27c6	Alfred_Ollivant_(writer)	17991.537827
+CompQTest-233	alfred ollivant	39	15	m.0n4735x	Alfred_Ollivant_(cricketer)	2.578341
+CompQTest-234	anjul nigam	28	11	m.03c9fly	Anjul_Nigam	31460.489183
+CompQTest-234	big	6	3	m.016ky6	Big_(film)	2.407649
+CompQTest-235	joseph stalin	40	13	m.03_lf	Joseph_Stalin	47502.833863
+CompQTest-235	pisces	6	6	m.07b6cz	Pisces_(astrology)	2.081776
+CompQTest-235	pisces	6	6	m.0ch_cf	Fish	1.068812
+CompQTest-236	soviet union	34	12	m.05vz3zq	Soviet_Union	14319.279954
+CompQTest-237	cambodia	19	8	m.01xbgx	Cambodia	175158.817839
+CompQTest-237	king of	11	7	m.0gx28nq	King_Of...	1.388442
+CompQTest-238	bavaria	30	7	m.017v_	Bavaria	4037.231154
+CompQTest-238	elisabeth ludovika	8	18	m.0bpn2j	Elisabeth_Ludovika_of_Bavaria	30742.890628
+CompQTest-239	costa rica	24	10	m.01p8s	Costa_Rica	27332.164468
+CompQTest-239	the president	7	13	m.09b6zr	George_W._Bush	1.145249
+CompQTest-239	the president	7	13	m.06c0j	Ronald_Reagan	1.112603
+CompQTest-240	cars	32	4	m.03q0r1	Cars_(film)	30.565101
+CompQTest-240	cars	32	4	m.0ck9j5	Cars_(video_game)	13.220340
+CompQTest-240	michael keaton	9	14	m.01j5ws	Michael_Keaton	53346.185704
+CompQTest-241	flora montgomery	21	16	m.03m9kb5	Flora_Montgomery	34321.826045
+CompQTest-241	irish	5	5	m.018p4y	Pierce_Brosnan	6.987285
+CompQTest-241	irish	5	5	m.012wgb	Ireland	12.517927
+CompQTest-241	irish	5	5	m.01d0cr	Micky_Ward	1.134881
+CompQTest-241	irish	5	5	m.05bcl	Northern_Ireland	1.390943
+CompQTest-241	irish	5	5	m.03rt9	Republic_of_Ireland	2.321188
+CompQTest-242	nation of islam	26	15	m.05g0g	Nation_of_Islam	41448.626101
+CompQTest-242	the leader	8	10	m.05ddy2	Leader_(comics)	1.306770
+CompQTest-244	cache county	28	12	m.0jc6p	Cache_County,_Utah	22877.270607
+CompQTest-244	city	20	4	m.01n32	City	10000.000000
+CompQTest-244	the largest city	8	16	m.0h7h6	Toronto	2.638563
+CompQTest-245	darth vader	21	11	m.0f2y0	Darth_Vader	65468.311238
+CompQTest-245	darth vader	21	11	m.0d0vj4	Dick_Cheney	27.408503
+CompQTest-246	hong kong	5	9	m.03h64	Hong_Kong	39143.547007
+CompQTest-246	toby leung	25	10	m.03d4vdg	Toby_Leung	24387.440585
+CompQTest-247	ireland	9	7	m.012wgb	Ireland	12609.970977
+CompQTest-247	ireland	9	7	m.03rt9	Republic_of_Ireland	146.153914
+CompQTest-247	ireland	9	7	m.05bcl	Northern_Ireland	5.359330
+CompQTest-247	rugby union	22	11	m.0148q6	New_Zealand_national_rugby_union_team	1.408865
+CompQTest-248	france	24	6	m.0f8l9c	France	87559.290911
+CompQTest-248	ww2	37	3	m.081pw	World_War_II	3.610067
+CompQTest-249	james bond	6	10	m.0clpml	James_Bond	125997.167012
+CompQTest-249	molly peters	28	12	m.07ptjv	Molly_Peters	17020.882212
+CompQTest-250	aviator	53	7	m.049xgc	The_Aviator_(2004_film)	293.368383
+CompQTest-250	hollywood	12	9	m.0f2wj	Hollywood	31151.861531
+CompQTest-250	hollywood	12	9	m.0rj4g	Hollywood,_Florida	1.418546
+CompQTest-250	jude law	31	8	m.01r93l	Jude_Law	16406.609726
+CompQTest-251	bilbo baggins	10	13	m.0g6z1	Bilbo_Baggins	48687.251326
+CompQTest-251	the hobbit	27	10	m.02kl1y	The_Hobbit_(1977_film)	427.793054
+CompQTest-251	the hobbit	27	10	m.07g75	The_Hobbit	56.452329
+CompQTest-251	the hobbit	27	10	m.026ph7x	The_Hobbit_(film_series)	74.162488
+CompQTest-251	the hobbit	27	10	m.0286j4k	The_Hobbit_(2003_video_game)	12.674777
+CompQTest-252	a bear for punishment	33	21	m.02rn33k	A_Bear_for_Punishment	74006.067098
+CompQTest-252	the actress	8	11	m.027mglq	The_Actress	1.109970
+CompQTest-253	atlantic coast airlines	30	23	m.021wq2	Atlantic_Coast_Airlines	70435.119034
+CompQTest-253	atlantic coast airlines	30	23	m.01nhr6	Independence_Air	6.611198
+CompQTest-254	other boleyn girl	22	17	m.0gyy53	The_Other_Boleyn_Girl_(2008_film)	440.252872
+CompQTest-254	other boleyn girl	22	17	m.042q5t	The_Other_Boleyn_Girl	12121.958693
+CompQTest-255	july	29	4	m.06s5pl	Miranda_July	1.167786
+CompQTest-255	lamar odom	8	10	m.02_nkp	Lamar_Odom	40414.455066
+CompQTest-256	benedict arnold	9	15	m.05v433	Benedict_Arnold_(congressman)	1.128607
+CompQTest-256	benedict arnold	9	15	m.025_0c	Benedict_Arnold	5287.755861
+CompQTest-256	benedict arnold	9	15	m.0fyp35	Benedict_Arnold_(governor)	1.034511
+CompQTest-257	pennsylvania	23	12	m.05tbn	Pennsylvania	4264.721928
+CompQTest-257	pennsylvania	23	12	m.07tds	University_of_Pennsylvania	1.778812
+CompQTest-257	the governor	7	12	m.0hd1l	Jesse_Ventura	10.698970
+CompQTest-258	north korea	21	11	m.05b7q	North_Korea	24033.752401
+CompQTest-258	the leader	7	10	m.05ddy2	Leader_(comics)	1.305689
+CompQTest-259	tebow	11	5	m.0g7km1	Tim_Tebow	3044.569161
+CompQTest-260	can i	6	5	m.09gfmbm	Jaicko	2.924301
+CompQTest-260	sacramento	26	10	m.07bcn	Sacramento,_California	36358.490311
+CompQTest-260	sacramento	26	10	m.09b2k	Sacramento_River	1.278872
+CompQTest-260	sacramento	26	10	m.0jmmn	Sacramento_Kings	3.407157
+CompQTest-261	charles darwin	14	14	m.01lwx	Charles_Darwin	21276.286778
+CompQTest-262	hanne	15	5	m.03mhz1k	Hanne_S%F8rvaag	4.460266
+CompQTest-262	hanne	15	5	m.02pt_xm	Hanne_Blank	1.130216
+CompQTest-262	hanne	15	5	m.01qmymg	Hanne_Hukkelberg	1.112918
+CompQTest-262	hanne	15	5	m.04dkjj	Hans_Albers	7.644354
+CompQTest-262	reksten	26	7	m.068kbq	Hilmar_Reksten	515.819776
+CompQTest-262	reksten	26	7	m.06wbnnd	Egil_Reksten	1329.175444
+CompQTest-262	ruud	21	4	m.066r58	Barrett_Ruud	1.389652
+CompQTest-262	ruud	21	4	m.0g0t0	Ruud_Gullit	1.847988
+CompQTest-263	1996	45	4	m.01vsxdm	Marilyn_Manson_(band)	1.775434
+CompQTest-263	merril bainbridge	16	17	m.0b5rbf	Merril_Bainbridge	27022.470939
+CompQTest-264	ekaterina svanidze	37	18	m.03dlx5	Ekaterina_Svanidze	15150.648687
+CompQTest-265	jennifer lawrence	8	17	m.02x0dzw	Jennifer_Lawrence	30859.607957
+CompQTest-265	x men	34	5	m.0d90m	X-Men_(film)	4.545603
+CompQTest-265	x men	34	5	m.02rx03r	X-Men_(film_series)	76.365046
+CompQTest-266	capricorn	6	9	m.0c132q	Capricorn_(astrology)	4.500165
+CompQTest-266	pieter van vollenhoven	38	22	m.013pyd	Pieter_van_Vollenhoven	50455.165870
+CompQTest-267	darth vader	21	11	m.0f2y0	Darth_Vader	66771.367337
+CompQTest-267	the voice	8	9	m.0gg645n	The_Voice_(U.S._TV_series)	2.680309
+CompQTest-268	dan august	33	10	m.0fkqjl	Dan_August	5556.163670
+CompQTest-268	executive producer	11	18	m.01xndd	J._J._Abrams	1.187591
+CompQTest-269	toy story	18	9	m.0dyb1	Toy_Story	2432.853999
+CompQTest-269	toy story	18	9	m.01xdxy	Toy_Story_2	57.155922
+CompQTest-269	toy story	18	9	m.04hwbq	Toy_Story_3	3.621252
+CompQTest-269	toy story	18	9	m.0661p0m	Toy_Story_(video_game)	11.122907
+CompQTest-269	toy story	18	9	m.0g0y2m	Toy_Story_2:_Buzz_Lightyear_to_the_Rescue	1.810324
+CompQTest-269	toy story	18	9	m.058zftr	Toy_Story_(franchise)	20.900301
+CompQTest-269	woody	9	5	m.064dv4	Sheriff_Woody	2297.473214
+CompQTest-269	woody	9	5	m.06_qlq	Woody_Strode	2.238942
+CompQTest-269	woody	9	5	m.04zbq8	Brent_Musburger	1.450442
+CompQTest-270	headquarters	30	12	m.03bby1	Googleplex	2.909704
+CompQTest-270	microsoft	20	9	m.04sv4	Microsoft	12598.898384
+CompQTest-270	microsoft	20	9	m.0qt178q	<EMPTY>	12598.898384
+CompQTest-271	ronaldo	14	7	m.0hhqw	Ronaldo	540861.266281
+CompQTest-271	ronaldo	14	7	m.02xt6q	Cristiano_Ronaldo	3041.392861
+CompQTest-272	ariel	22	5	m.0cl19h	Ariel_(The_Little_Mermaid)	17125.038996
+CompQTest-272	ariel	22	5	m.04q37mr	Ariel_(The_Tempest)	1.198540
+CompQTest-272	sisters	34	7	m.03rs0j	Sisters_(TV_series)	1.257982
+CompQTest-273	george lopez	8	12	m.07x1_3	George_Lopez_(TV_series)	27498.422066
+CompQTest-273	george lopez	8	12	m.02xfj0	George_Lopez	27559.631364
+CompQTest-273	what	0	4	m.0270qwm	Balls_of_Fury	4.730704
+CompQTest-274	plaxico burress	9	15	m.047j_j	Plaxico_Burress	907174.241037
+CompQTest-274	plaxico burress	9	15	m.05tfm	Pittsburgh_Steelers	4.402328
+CompQTest-274	plaxico burress	9	15	m.05g49	New_York_Jets	3.838532
+CompQTest-274	plaxico burress	9	15	m.05gg4	New_York_Giants	1.203241
+CompQTest-274	plaxico burress	9	15	m.0kgf3	Big_Ten_Conference	1.086033
+CompQTest-275	richard pryor	7	13	m.01hmk9	Richard_Pryor	23056.659719
+CompQTest-276	king henry viii	16	15	m.03p77	Henry_VIII_of_England	39030.625764
+CompQTest-277	jobs	5	4	m.06y3r	Steve_Jobs	1.331506
+CompQTest-277	john adams	14	10	m.03_js	John_Adams	10611.658103
+CompQTest-277	john adams	14	10	m.046q7	John_Adams_(composer)	1.054294
+CompQTest-278	alias	26	5	m.01rf57	Alias_(TV_series)	40.602389
+CompQTest-278	lauren reed	11	11	m.02krsd	Lauren_Reed	66717.691854
+CompQTest-279	jeremy shockey	9	14	m.076ltd	Jeremy_Shockey	27261.676197
+CompQTest-280	bible	36	5	m.015j7	Bible	5.069732
+CompQTest-280	bible	36	5	m.01bj9g	Hebrew_Bible	1.135698
+CompQTest-280	elizabeth in	19	12	m.0sm1j	Elizabeth,_Indiana	450.162032
+CompQTest-281	lord of the rings	32	17	m.017gl1	The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring	173.590930
+CompQTest-281	lord of the rings	32	17	m.017jd9	The_Lord_of_the_Rings:_The_Return_of_the_King	2.080659
+CompQTest-281	lord of the rings	32	17	m.0dz8q	Gandalf	1.600091
+CompQTest-281	lord of the rings	32	17	m.025h5s	The_Lord_of_the_Rings_(film_series)	22.655222
+CompQTest-281	lord of the rings	32	17	m.07bz5	The_Lord_of_the_Rings	4.822180
+CompQTest-281	viggo mortensen	8	15	m.01ps2h8	Viggo_Mortensen	13575.753453
+CompQTest-282	high school	5	11	m.09dv8h	High_School_Musical	1.369323
+CompQTest-282	myron rolle	21	11	m.03c_bj_	Myron_Rolle	38425.894046
+CompQTest-283	followers	13	9	m.08y2n9	Followers	1.058148
+CompQTest-283	twitter	26	7	m.0289n8t	Twitter	47686.157379
+CompQTest-284	george lopez	34	12	m.02xfj0	George_Lopez	41617.003367
+CompQTest-284	george lopez	34	12	m.07x1_3	George_Lopez_(TV_series)	9604.957022
+CompQTest-284	is maxs	5	7	m.0dfps	Roger_Ebert	2.662020
+CompQTest-284	what	0	4	m.0270qwm	Balls_of_Fury	4.730704
+CompQTest-285	championship	32	12	m.0355pl	Football_League_Championship	22.868067
+CompQTest-285	ncaa	18	4	m.0gh43	National_Collegiate_Athletic_Association	5044.661621
+CompQTest-285	ncaa	18	4	m.02jp2w	NCAA_Men's_Division_I_Basketball_Championship	3.339933
+CompQTest-286	switzerland	36	11	m.06mzp	Switzerland	24976.853413
+CompQTest-287	billy graham	33	12	m.03337q	Billy_Graham	23179.260314
+CompQTest-287	president	12	9	m.0157m	Bill_Clinton	29.827046
+CompQTest-287	president of us	12	15	m.060d2	President_of_the_United_States	10000.000000
+CompQTest-287	us	25	2	m.09c7w0	United_States	6.174352
+CompQTest-287	us	25	2	m.04sg45j	<EMPTY>	6.174352
+CompQTest-288	league cup	12	10	m.012dbw	Football_League_Cup	10659.077664
+CompQTest-289	frances conroy	9	14	m.05p5nc	Frances_Conroy	28100.198157
+CompQTest-289	jim jarmusch	40	12	m.0405l	Jim_Jarmusch	24479.550639
+CompQTest-290	armie hammer	8	12	m.03y9941	Armie_Hammer	37777.638562
+CompQTest-290	social network	33	14	m.07s846j	The_Social_Network	601.057629
+CompQTest-291	the superbowl	14	13	m.06x5s	Super_Bowl	153.160191
+CompQTest-292	vyacheslav tikhonov	20	19	m.03mtbm	Vyacheslav_Tikhonov	26450.694340
+CompQTest-293	peter crill	33	11	m.08503y	Peter_Crill	16549.369550
+CompQTest-293	president of the	8	16	m.01hvfh	President_of_the_Senate	2.057466
+CompQTest-293	us	25	2	m.09c7w0	United_States	4.250514
+CompQTest-293	us	25	2	m.04sg45j	<EMPTY>	4.250514
+CompQTest-294	katherine jackson	37	17	m.0524pr	Katherine_Jackson	25495.895422
+CompQTest-294	katherine jackson	37	17	m.01phkr	Kate_Jackson	5.361475
+CompQTest-295	anita yuen	16	10	m.04tndx	Anita_Yuen	28647.111530
+CompQTest-296	mom	32	3	m.043ffp	Mom_(Futurama)	1.718076
+CompQTest-296	stacey	10	6	m.088np1	Stacey_Slater	2.637973
+CompQTest-296	stacey	10	6	m.014d_k	A_Goofy_Movie	5.058646
+CompQTest-296	stacey	10	6	m.05s1pk	Raylene	3.891488
+CompQTest-296	stacy	24	5	m.01svw8n	Fergie_(singer)	3.762828
+CompQTest-296	stacy	24	5	m.02hsgn	Stacy_Keach	2.034693
+CompQTest-296	stacy	24	5	m.04g20s	Stacy_Peralta	1.705764
+CompQTest-297	david beckham	14	13	m.02d9k	David_Beckham	34959.162509
+CompQTest-298	pittsburgh steelers	26	19	m.05tfm	Pittsburgh_Steelers	37795.691774
+CompQTest-298	superbowl	52	9	m.06x5s	Super_Bowl	249.703513
+CompQTest-299	michigan ohio state game	12	24	m.0931ks	Michigan%13Ohio_State_football_rivalry	362679.571712
+CompQTest-300	football	32	8	m.059yj	National_Football_League	5.647178
+CompQTest-300	steve spurrier	8	14	m.03yx01	Steve_Spurrier	30841.597266
+CompQTest-301	executive producer	11	18	m.01xndd	J._J._Abrams	1.330796
+CompQTest-301	the odd couple	33	14	m.0g0ccz	The_Odd_Couple_(TV_series)	8792.269478
+CompQTest-301	the odd couple	33	14	m.0g7g1t	The_Odd_Couple_(film)	28.249357
+CompQTest-301	the odd couple	33	14	m.02f35g	The_Odd_Couple	207.107382
+CompQTest-302	mark willson rose	33	17	m.02vxp_z	Mark_Rose_(politician)	15960.226784
+CompQTest-302	president of the	8	16	m.01hvfh	President_of_the_Senate	2.059169
+CompQTest-302	us	25	2	m.09c7w0	United_States	3.578402
+CompQTest-302	us	25	2	m.04sg45j	<EMPTY>	3.578402
+CompQTest-303	amy grant	7	9	m.010hn	Amy_Grant	31365.736555
+CompQTest-304	canadian	8	8	m.0d060g	Canada	2818.539167
+CompQTest-304	minister	23	8	m.0m947	Yes_Minister	1.230577
+CompQTest-305	blue nile	31	9	m.014wlv	Blue_Nile	47075.502218
+CompQTest-306	jacob black	11	11	m.02qd_td	Jacob_Black	40143.851310
+CompQTest-306	twilight	26	8	m.03nm_fh	Twilight_(2008_film)	27.848006
+CompQTest-306	twilight	26	8	m.0c34ct	Twilight_(novel)	111.151588
+CompQTest-306	twilight	26	8	m.09gjmvw	The_Twilight_Saga_(film_series)	83.993716
+CompQTest-307	appalachian mountains	46	21	m.0lm0n	Appalachian_Mountains	32541.898713
+CompQTest-307	appalachian mountains	46	21	m.01qsf5	Appalachia	36.604143
+CompQTest-307	kentucky	73	8	m.0498y	Kentucky	2801.255373
+CompQTest-307	kentucky	73	8	m.059hnc	Kentucky_County,_Virginia	44.136849
+CompQTest-308	agatha christie	15	15	m.0ldd	Agatha_Christie	22088.074001
+CompQTest-308	agatha christie	15	15	m.09s3f7	Agatha_Christie_(band)	1.173645
+CompQTest-309	james k polk	9	12	m.042f1	James_K._Polk	13297.417372
+CompQTest-310	the leader	8	10	m.05ddy2	Leader_(comics)	1.305689
+CompQTest-310	us	26	2	m.09c7w0	United_States	3.924733
+CompQTest-310	us	26	2	m.04sg45j	<EMPTY>	3.924733
+CompQTest-310	wwii	36	4	m.081pw	World_War_II	2.354765
+CompQTest-311	emily	9	5	m.04205z	Emily_Blunt	2.031934
+CompQTest-311	emily	9	5	m.02nzw	Emily_Bront%EB	1.685851
+CompQTest-311	the bachelorette	25	16	m.017mtp	The_Bachelorette	26106.786340
+CompQTest-311	the bachelorette	25	16	m.0j670gs	The_Bachelorette_(season_8)	11.569283
+CompQTest-311	the bachelorette	25	16	m.0gjb1_f	The_Bachelorette_(season_7)	1.335440
+CompQTest-312	limbeck	16	7	m.01ph7d3	Limbeck	14524.455339
+CompQTest-313	cold war	33	8	m.01w1sx	Cold_War	2.606614
+CompQTest-313	the president	8	13	m.02yy8	Franklin_D._Roosevelt	1.240042
+CompQTest-313	the president	8	13	m.0gzh	Abraham_Lincoln	1.278252
+CompQTest-313	the president	8	13	m.0157m	Bill_Clinton	1.169571
+CompQTest-313	the president	8	13	m.06c0j	Ronald_Reagan	1.240042
+CompQTest-313	the president	8	13	m.09b6zr	George_W._Bush	1.212078
+CompQTest-314	ohio	19	4	m.05kkh	Ohio	7939.188864
+CompQTest-315	cuban	12	5	m.0d04z6	Cuba	170.487861
+CompQTest-315	cuban	12	5	m.024t0y	Mark_Cuban	1.705259
+CompQTest-315	revolution	43	10	m.0l9qsc8	Revolution_(TV_series)	2.320843
+CompQTest-316	paul mccartney	14	14	m.03j24kf	Paul_McCartney	44137.834014
+CompQTest-316	the beatles	37	11	m.07c0j	The_Beatles	25946.909094
+CompQTest-316	the beatles	37	11	m.0fsx7m	The_Beatles_(TV_series)	10.291282
+CompQTest-317	battle of	24	9	m.01bvx	Battle	1.335651
+CompQTest-317	fallen timbers	34	14	m.01ztlw	Battle_of_Fallen_Timbers	2.082194
+CompQTest-317	fallen timbers	34	14	m.0g589w2	The_Shops_at_Fallen_Timbers	25.684457
+CompQTest-318	charles darwin	14	14	m.01lwx	Charles_Darwin	21276.286778
+CompQTest-319	seymour hoffman	8	15	m.02qgqt	Philip_Seymour_Hoffman	16762.421838
+CompQTest-319	the hunger games	32	16	m.0gkz15s	The_Hunger_Games_(film)	3604.879702
+CompQTest-319	the hunger games	32	16	m.09g7nv6	The_Hunger_Games_trilogy	4056.890412
+CompQTest-320	gerald ford	8	11	m.0c_md_	Gerald_Ford	14311.131220
+CompQTest-320	gerald ford	8	11	m.027c9y_	Gerald_Rudolff_Ford	1.424267
+CompQTest-320	president	39	9	m.0157m	Bill_Clinton	2.556176
+CompQTest-320	select as	20	9	m.0kqntr	Elekta	1.565491
+CompQTest-320	vice president	34	14	m.07wrz	University_of_Chicago	2.915222
+CompQTest-321	olympic games	5	13	m.06vvk	Summer_Olympic_Games	2.331279
+CompQTest-321	olympic games	5	13	m.05nd_	Olympic_Games	21.965788
+CompQTest-321	opening ceremony	24	16	m.04q2tdk	Olympic_Games_ceremony	1.925260
+CompQTest-322	big	6	3	m.016ky6	Big_(film)	2.407649
+CompQTest-322	miguel sandoval	28	15	m.07lmxq	Miguel_Sandoval	46146.008892
+CompQTest-323	martin luther	23	13	m.04yd_	Martin_Luther	10219.730478
+CompQTest-323	martin luther	23	13	m.051cc	Martin_Luther_King,_Jr.	4.682931
+CompQTest-324	a streetcar named desire movie	31	30	m.097zcz	A_Streetcar_Named_Desire_(1951_film)	6640.595707
+CompQTest-324	stanley kowalski	11	16	m.03bhwh	Stanley_Kowalski	34084.597252
+CompQTest-324	stanley kowalski	11	16	m.0chlnr	Stanley_Kowalski_(Due_South)	402.589374
+CompQTest-325	country	5	7	m.01lyv	Country_music	10000.000000
+CompQTest-325	united states	21	13	m.09c7w0	United_States	5233.276678
+CompQTest-325	united states	21	13	m.04sg45j	<EMPTY>	5233.276678
+CompQTest-325	war	52	3	m.0178xc	War_(band)	3.261322
+CompQTest-326	uma aaltonen	26	12	m.02rmk97	Uma_Aaltonen	28342.335753
+CompQTest-326	us	8	2	m.09c7w0	United_States	5.841501
+CompQTest-326	us	8	2	m.04sg45j	<EMPTY>	5.841501
+CompQTest-326	us president	8	12	m.060d2	President_of_the_United_States	10000.000000
+CompQTest-327	dallas cowboys	18	14	m.02896	Dallas_Cowboys	62841.415560
+CompQTest-327	super bowl	41	10	m.06x5s	Super_Bowl	4636.788292
+CompQTest-328	all in the family	23	17	m.02qmbht	All_in_the_Family_(film)	1.827865
+CompQTest-328	all in the family	23	17	m.015pnb	All_in_the_Family	45.316343
+CompQTest-328	meathead	11	8	m.06jz0	Rob_Reiner	36.653976
+CompQTest-329	country	5	7	m.01lyv	Country_music	10000.000000
+CompQTest-329	san juan	31	8	m.02l5yd	San_Juan_Province,_Argentina	1.722774
+CompQTest-329	san juan	31	8	m.0fw4v	San_Juan,_Puerto_Rico	522.030390
+CompQTest-329	san juan	31	8	m.095hx	San_Juan_Islands	14.738305
+CompQTest-329	san juan hill	31	13	m.01tf88	Battle_of_San_Juan_Hill	2.353994
+CompQTest-330	messi	15	5	m.06qjgc	Lionel_Messi	26421.495536
+CompQTest-331	hitler	29	6	m.07_m9_	Adolf_Hitler	7459.541138
+CompQTest-331	hitler	29	6	m.04mhbh	Craig_Ferguson	1.175060
+CompQTest-331	name of the book	12	16	m.0fd_f	Catch-22	6.619841
+CompQTest-332	mohammed vi	27	11	m.01gz4f	Mohammed_VI_of_Morocco	26057.217018
+CompQTest-332	morocco	42	7	m.04wgh	Morocco	30356.578428
+CompQTest-333	best actress	8	12	m.0gqwc	Academy_Award_for_Best_Actress	1.103725
+CompQTest-333	billy wilder	26	12	m.0c921	Billy_Wilder	43692.546515
+CompQTest-334	soviet	12	6	m.05vz3zq	Soviet_Union	1667.423885
+CompQTest-334	soviet	12	6	m.01hg2h	Soviet_Air_Forces	2.690129
+CompQTest-334	soviet	12	6	m.06dr9	Red_Army	1.950217
+CompQTest-334	world	33	5	m.09nm_	World	324.412847
+CompQTest-335	ingrid lacey	20	12	m.0bqg79	Ingrid_Lacey	25932.285014
+CompQTest-336	aubrey morris	20	13	m.0633y8	Aubrey_Morris	35268.444193
+CompQTest-337	steve hanft	16	11	m.0fy786	Steve_Hanft	24552.013957
+CompQTest-338	billy d williams	19	16	m.027_sn	Billy_Dee_Williams	21724.153376
+CompQTest-338	star wars	44	9	m.06mmr	Star_Wars	2.958476
+CompQTest-339	champions league	35	16	m.0c1q0	UEFA_Champions_League	1229.062932
+CompQTest-339	liverpool fc	9	12	m.04ltf	Liverpool_F.C.	122987.232488
+CompQTest-340	john singleton	32	14	m.014gc6	John_Singleton	29784.673445
+CompQTest-340	john singleton	32	14	m.0bmv0v	John_Singleton_(Australian_entrepreneur)	15.271101
+CompQTest-340	john singleton	32	14	m.05c0nw6	John_Singleton_(baseball)	1.095623
+CompQTest-341	billy d williams	19	16	m.027_sn	Billy_Dee_Williams	21724.153376
+CompQTest-341	star wars	44	9	m.06mmr	Star_Wars	2.958476
+CompQTest-342	championship	42	12	m.0355pl	Football_League_Championship	8.020901
+CompQTest-342	detroit pistons	13	15	m.0jm8l	Detroit_Pistons	33951.684801
+CompQTest-343	charles lawson	23	14	m.07hgx7	Charles_Lawson	30029.760424
+CompQTest-343	english	5	7	m.02jx1	England	19.418098
+CompQTest-343	english	5	7	m.02h40lc	English_language	2.364369
+CompQTest-344	new atlantis	26	12	m.05tyx8	New_Atlantis	3836.282050
+CompQTest-344	new atlantis	26	12	m.0dq_xk	Leicester_Hemingway	4.767198
+CompQTest-345	pittsburgh steelers	16	19	m.05tfm	Pittsburgh_Steelers	30311.207449
+CompQTest-346	spain	22	5	m.06mkj	Spain	11073.382285
+CompQTest-346	spain	22	5	m.02w64f	Spain_national_football_team	4277.189304
+CompQTest-347	kevin rodney sullivan	37	21	m.0bcvlk	Kevin_Rodney_Sullivan	64149.563396
+CompQTest-347	zoe saldana	9	11	m.05qg6g	Zoe_Saldana	34982.409718
+CompQTest-348	2010	34	4	m.04gcyg	2010_(film)	1.760361
+CompQTest-348	michael oher	9	12	m.0h7q7b	Michael_Oher	55418.444745
+CompQTest-349	donnie wahlberg	9	15	m.02stwg	Donnie_Wahlberg	20224.788117
+CompQTest-349	the sixth sense	33	15	m.07j94	The_Sixth_Sense	5802.869416
+CompQTest-349	the sixth sense	33	15	m.0frx5f	The_Sixth_Sense_(TV_series)	3.259600
+CompQTest-350	european union	28	14	m.0_6t_z8	European_Union	33393.930080
+CompQTest-350	president of the	11	16	m.01hvfh	President_of_the_Senate	1.851684
+CompQTest-351	america	32	7	m.09c7w0	United_States	58.941397
+CompQTest-351	chinese	14	7	m.0d05w3	China	13.021791
+CompQTest-351	chinese	14	7	m.01r2l	Chinese_language	1.035467
+CompQTest-351	settle	22	6	m.020wgx	Settle	1.167567
+CompQTest-352	lilian harvey	38	13	m.01vnnz6	Lilian_Harvey	35683.847322
+CompQTest-352	the same movies	19	15	m.0fmz3q	Satan's_Playground	22.402017
+CompQTest-353	queen elizabeth ii	9	18	m.0d1_f	Elizabeth_II	42928.461858
+CompQTest-354	africa	58	6	m.0dg3n1	Africa	6647.376360
+CompQTest-354	amnesty international	30	21	m.012l0	Amnesty_International	16901.606562
+CompQTest-354	south africa	52	12	m.0hzlz	South_Africa	5852.173382
+CompQTest-354	south africa	52	12	m.03zrc_	South_Africa_national_football_team	1.205485
+CompQTest-355	a history of violence	35	21	m.05rfst	A_History_of_Violence	10777.979897
+CompQTest-355	a history of violence	35	21	m.05rfsd	A_History_of_Violence_(comics)	6.697383
+CompQTest-355	governor of minnesota	8	21	m.01fgff	Governor_of_Minnesota	87255.898105
+CompQTest-356	bilbo	11	5	m.0g6z1	Bilbo_Baggins	208.157637
+CompQTest-356	bilbo	11	5	m.013qp3	Bill_Bailey	4.120435
+CompQTest-356	lord of the rings	20	17	m.017gl1	The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring	1.726839
+CompQTest-356	lord of the rings	20	17	m.0dz8q	Gandalf	1.735157
+CompQTest-356	lord of the rings	20	17	m.025h5s	The_Lord_of_the_Rings_(film_series)	3.052828
+CompQTest-356	lord of the rings	20	17	m.07bz5	The_Lord_of_the_Rings	32.829820
+CompQTest-357	japan	29	5	m.03_3d	Japan	25400.813778
+CompQTest-358	deion sanders	17	13	m.03n69x	Deion_Sanders	20216.910955
+CompQTest-358	jr	31	2	m.03y90f	Jim_Ross	1.201339
+CompQTest-359	the first president	8	19	m.034rd	George_Washington	2.772297
+CompQTest-359	use a	31	5	m.01b_d4	University_of_East_Anglia	1.278144
+CompQTest-360	family guy	45	10	m.019nnl	Family_Guy	37592.937473
+CompQTest-360	family guy	45	10	m.06xlxlx	Family_Guy_(season_10)	318.616927
+CompQTest-360	family guy	45	10	m.0k22zlc	Family_Guy_(season_11)	18.449136
+CompQTest-360	meg griffin	30	11	m.035szd	Meg_Griffin	21834.163515
+CompQTest-360	the original	8	12	m.0pgcm	Dexter's_Laboratory	8.719764
+CompQTest-360	voice	21	5	m.0gg645n	The_Voice_(U.S._TV_series)	7.652042
+CompQTest-361	alan scarfe	25	11	m.0g0j22	Alan_Scarfe	44143.332650
+CompQTest-361	alan scarfe	25	11	m.0bwgyjr	Alan_Scarfe_(bishop)	668.222337
+CompQTest-362	france	8	6	m.0f8l9c	France	65303.585287
+CompQTest-362	ww2	31	3	m.081pw	World_War_II	3.610067
+CompQTest-363	new england patriots	31	20	m.05g3b	New_England_Patriots	86466.884775
+CompQTest-364	george lucas	14	12	m.0343h	George_Lucas	44594.810029
+CompQTest-364	star wars	35	9	m.0ddt_	Star_Wars_Episode_I:_The_Phantom_Menace	11.314464
+CompQTest-364	star wars	35	9	m.06mmr	Star_Wars	2.775281
+CompQTest-364	star wars	35	9	m.06xpls	Star_Wars_live-action_TV_series	32.145500
+CompQTest-365	the governor	7	12	m.0hd1l	Jesse_Ventura	7.426106
+CompQTest-365	virginia	23	8	m.07z1m	Virginia	4597.506173
+CompQTest-366	stanley	39	7	m.095l08	Stanley_(2001_TV_series)	2.170663
+CompQTest-366	stanley	39	7	m.03_byc	Stanley_Black_&_Decker	2.201362
+CompQTest-366	stanley	39	7	m.01b5lx	Stanley,_Falkland_Islands	14.699510
+CompQTest-366	stanley	39	7	m.0bh72h0	Stanley_Hand_Tools	1.251640
+CompQTest-366	stanley	39	7	m.019lr5	Stanley,_Hong_Kong	1.707984
+CompQTest-366	stanley cup	39	11	m.0hn79	Stanley_Cup	3.508380
+CompQTest-366	the great one	18	13	m.0839s	Wayne_Gretzky	107.206065
+CompQTest-366	the great one	18	13	m.014g_s	Dwayne_Johnson	2.354061
+CompQTest-367	executive producer	11	18	m.01xndd	J._J._Abrams	1.221774
+CompQTest-367	instant star	33	12	m.06rmlq	Instant_Star	667.513363
+CompQTest-368	zoe cassavetes	16	14	m.03wcg_v	Zoe_Cassavetes	26836.044806
+CompQTest-369	abraham lincoln	10	15	m.0gzh	Abraham_Lincoln	6941.399119
+CompQTest-369	indiana	34	7	m.03v1s	Indiana	15158.257488
+CompQTest-370	arizona	23	7	m.0vmt	Arizona	14042.275166
+CompQTest-370	arizona	23	7	m.027b7y9	Bella_Swan	1.654578
+CompQTest-370	the governor	7	12	m.0hd1l	Jesse_Ventura	18.461350
+CompQTest-371	gavin and stacey	20	16	m.02r4c7n	Gavin_&_Stacey	6064.357841
+CompQTest-371	smithy	10	6	m.02r4c7n	Gavin_&_Stacey	12.249341
+CompQTest-372	protagonist	11	11	m.017ykt	Samus_Aran	4.111448
+CompQTest-372	the hitch hikers guide to the galaxy	26	36	m.03wjm2	The_Hitchhiker's_Guide_to_the_Galaxy_(film)	7.374461
+CompQTest-372	the hitch hikers guide to the galaxy	26	36	m.02fdym	The_Hitchhiker's_Guide_to_the_Galaxy_(novel)	6803.273080
+CompQTest-373	star trek	35	9	m.08phg9	Star_Trek_(film)	650.314902
+CompQTest-373	star trek	35	9	m.06qwh	Star_Trek:_The_Original_Series	8.936684
+CompQTest-373	star trek	35	9	m.06qv_	Star_Trek:_The_Next_Generation	3.720578
+CompQTest-373	star trek	35	9	m.06r4f	Star_Trek:_Voyager	10.587356
+CompQTest-373	star trek	35	9	m.06mv6	Star_Trek	620.683472
+CompQTest-373	winona ryder	14	12	m.086sj	Winona_Ryder	35242.824377
+CompQTest-374	state	27	5	m.0m2mz	Administrative_divisions_of_Mexico	1.762913
+CompQTest-374	state	27	5	m.07vsl	United_States_Department_of_State	17.356035
+CompQTest-374	united states	36	13	m.09c7w0	United_States	10857.955286
+CompQTest-374	united states	36	13	m.04sg45j	<EMPTY>	10857.955286
+CompQTest-374	united states	36	13	m.01bqks	Federal_government_of_the_United_States	1.003883
+CompQTest-375	eddie van halen	35	15	m.01fvfn	Eddie_Van_Halen	143445.599195
+CompQTest-375	pisces	6	6	m.07b6cz	Pisces_(astrology)	1.852914
+CompQTest-376	shalamar	16	8	m.047vq5	Shalamar	22747.792247
+CompQTest-376	shalamar	16	8	m.01p6xrv	Howard_Hewett	469.299268
+CompQTest-376	shalamar	16	8	m.0bvgcx	Micki_Free	14.797282
+CompQTest-377	alaska	40	6	m.0hjy	Alaska	1585.773525
+CompQTest-377	united states	17	13	m.09c7w0	United_States	1800.960007
+CompQTest-378	james franco	8	12	m.05bnp0	James_Franco	34815.317071
+CompQTest-378	milk	29	4	m.03hkch7	Milk_(film)	188.416798
+CompQTest-378	milk	29	4	m.01brc5	Harvey_Milk	2.281884
+CompQTest-379	louisiana	7	9	m.04ly1	Louisiana	18622.638586
+CompQTest-380	ingvar bakken	26	13	m.02x347m	Ingvar_Bakken	47262.536251
+CompQTest-380	us	8	2	m.09c7w0	United_States	5.841501
+CompQTest-380	us	8	2	m.04sg45j	<EMPTY>	5.841501
+CompQTest-380	us president	8	12	m.060d2	President_of_the_United_States	10000.000000
+CompQTest-381	carter the unstoppable sex machine	16	34	m.02bygj	Carter_the_Unstoppable_Sex_Machine	104350.309653
+CompQTest-382	jobs	5	4	m.06y3r	Steve_Jobs	1.331506
+CompQTest-382	john adams	14	10	m.03_js	John_Adams	10611.658103
+CompQTest-382	john adams	14	10	m.046q7	John_Adams_(composer)	1.054294
+CompQTest-383	greek	5	5	m.035qy	Greece	88.213051
+CompQTest-383	greek	5	5	m.0hkt6	Ancient_Greece	1.476909
+CompQTest-383	marcel bozzuffi	21	15	m.09ww3w	Marcel_Bozzuffi	45667.202768
+CompQTest-384	sugihara	24	8	m.02j8rx	Chiune_Sugihara	1231.894174
+CompQTest-385	1900	40	4	m.03nzcx	1900_(film)	1.329267
+CompQTest-385	deepak sareen	16	13	m.0g9vvxq	Deepak_Sareen	24150.088191
+CompQTest-386	sean connery	24	12	m.06mr6	Sean_Connery	29217.610616
+CompQTest-386	the last movie	9	14	m.0fxwf1	The_Last_Movie	62.561396
+CompQTest-387	denmark	51	7	m.0k6nt	Denmark	18106.873416
+CompQTest-387	ulrike eleonora	32	15	m.01t9tc	Ulrika_Eleonora_of_Denmark	53752.109604
+CompQTest-387	ulrike eleonora	32	15	m.0q9jx	Ulrika_Eleonora,_Queen_of_Sweden	16207.222598
+CompQTest-388	lord	13	4	m.0d05l6	God	4.931605
+CompQTest-388	middle ages	43	11	m.04rjz	Middle_Ages	4.055350
+CompQTest-388	wear in	31	7	m.05_ct4	Otha_Wearin	1.199354
+CompQTest-389	steve perry	33	11	m.03yt18	Steve_Perry_(author)	1.371438
+CompQTest-389	steve perry	33	11	m.03yz68	Steve_Perry_(musician)	3037.683398
+CompQTest-389	steve perry	33	11	m.0fv5w_f	Steve_Perry_(Oregon_musician)	1.112145
+CompQTest-390	animated feature	70	16	m.0k54q	The_Transformers:_The_Movie	3.263702
+CompQTest-390	best foreign language film	15	26	m.0gqng	Academy_Award_for_Best_Foreign_Language_Film	5.178713
+CompQTest-390	george miller	47	13	m.013t9y	George_Miller_(filmmaker)	55313.493557
+CompQTest-390	george miller	47	13	m.022fkc	George_Armitage_Miller	464.457819
+CompQTest-390	george miller	47	13	m.024sjl	George_Miller_(California_politician)	673.040794
+CompQTest-391	carolina panthers	15	17	m.01y3c	Carolina_Panthers	27102.707111
+CompQTest-391	coach	9	5	m.03p1tw4	Coach,_Inc.	1.143410
+CompQTest-391	coach	9	5	m.03k8s3	Coach_(TV_series)	33.458320
+CompQTest-392	philippine	25	10	m.05v8c	Philippines	1082.279317
+CompQTest-392	the sun	10	7	m.0b6hk5f	The_Sun_(United_Kingdom)	339.901175
+CompQTest-393	cristiano ronaldo	15	17	m.02xt6q	Cristiano_Ronaldo	41539.883134
+CompQTest-394	warren g harding	8	16	m.081t6	Warren_G._Harding	23811.503145
+CompQTest-395	cosima de vito	16	14	m.0cf7rj	Cosima_De_Vito	46352.242477
+CompQTest-396	libya	21	5	m.04gqr	Libya	37946.889378
+CompQTest-396	the leader	7	10	m.05ddy2	Leader_(comics)	1.305689
+CompQTest-397	justices	14	8	m.01shqcj	Justice_(band)	1.012973
+CompQTest-397	supreme court	30	13	m.07sz1	Supreme_Court_of_the_United_States	1.814325
+CompQTest-397	supreme court	30	13	m.0238x4	Supreme_Court_of_India	5.624566
+CompQTest-397	the supreme	26	11	m.012wjr	The_Supremes	302.173838
+CompQTest-398	aries	6	5	m.076y5q	Aries_(astrology)	1.612760
+CompQTest-398	aries	6	5	m.0dgqlnx	Mission:_Impossible_%13_Ghost_Protocol	1.682269
+CompQTest-398	benjamin harrison	39	17	m.01b61	Benjamin_Harrison	31350.383775
+CompQTest-398	benjamin harrison	39	17	m.0k0tp	Benjamin_Harrison_V	2.897602
+CompQTest-399	libya	29	5	m.04gqr	Libya	19183.102539
+CompQTest-400	acts	18	4	m.0wm4	Acts_of_the_Apostles	2.621669
+CompQTest-400	philip	8	6	m.0gsw6	Prince_Philip,_Duke_of_Edinburgh	7.820441
+CompQTest-400	philip	8	6	m.0f6fz	Philip_II_of_Spain	2.653446
+CompQTest-400	philip	8	6	m.012tjy	Philip_the_Apostle	5.466056
+CompQTest-401	ankahee	35	7	m.0crvgxr	Ankahee_(1985_film)	21.150149
+CompQTest-401	ankahee	35	7	m.0d7v78	Ankahee_(2006_film)	35.785586
+CompQTest-401	governor of minnesota	8	21	m.01fgff	Governor_of_Minnesota	87255.898105
+CompQTest-402	darth vader	11	11	m.0f2y0	Darth_Vader	65468.311238
+CompQTest-402	darth vader	11	11	m.0d0vj4	Dick_Cheney	27.408503
+CompQTest-403	libya	20	5	m.04gqr	Libya	17522.496882
+CompQTest-403	who	0	3	m.0840w	World_Health_Organization	1.282154
+CompQTest-404	god	12	3	m.0d05l6	God	18389.569500
+CompQTest-404	the underworld	19	14	m.03g72	Hades	93.578214
+CompQTest-404	zeus	50	4	m.088pn	Zeus	10220.846473
+CompQTest-404	zeus	50	4	m.03xm4p	Zeus_(Marvel_Comics)	39.101613
+CompQTest-404	zeus	50	4	m.0bbvfjz	Zeus_(DC_Comics)	1.047952
+CompQTest-404	zeus	50	4	m.03nrbx	Tom_Lister,_Jr.	3.956023
+CompQTest-405	steelers	25	8	m.05tfm	Pittsburgh_Steelers	42086.359150
+CompQTest-405	steelers	25	8	m.0425gc	Pohang_Steelers	1.047406
+CompQTest-405	the superbowl	38	13	m.06x5s	Super_Bowl	250.799348
+CompQTest-406	beltran	8	7	m.01s86h	Carlos_Beltr%E1n	15313.254526
+CompQTest-406	beltran	8	7	m.04crqn5	Yurizan_Beltran	1.825524
+CompQTest-406	beltran	8	7	m.02mmrf	Robert_Beltran	2.254720
+CompQTest-406	cardinals	36	9	m.06x68	St._Louis_Cardinals	13668.210430
+CompQTest-406	cardinals	36	9	m.0ws7	Arizona_Cardinals	4.796198
+CompQTest-407	alf	11	3	m.01klc1	ALF_(TV_series)	14209.392414
+CompQTest-407	alf	11	3	m.025sbb0	Alf_Stewart	1.152517
+CompQTest-407	alf	11	3	m.019v3d	Alison_Moyet	1.580530
+CompQTest-407	alf	11	3	m.02xvf0	Mike_Rutherford	4.978110
+CompQTest-407	alf	11	3	m.02842kb	Alfie_Boe	1.828449
+CompQTest-407	tv show	18	7	m.026tjq	The_Love_Boat	14.577193
+CompQTest-408	marilyn monroe	8	14	m.04wqr	Marilyn_Monroe	8362.787064
+CompQTest-409	michael kors	8	12	m.07f8gw	Michael_Kors	36038.805438
+CompQTest-410	phoenix az	35	10	m.0d35y	Phoenix,_Arizona	25818.948485
+CompQTest-410	phoenix az	35	10	m.0syvm	Phoenix_Sky_Harbor_International_Airport	2.126380
+CompQTest-410	phoenix az	35	10	m.02vjl2	Phoenix_metropolitan_area	1.906100
+CompQTest-411	forest whitaker	9	15	m.02y_2y	Forest_Whitaker	21226.339637
+CompQTest-411	mark rydell	41	11	m.07s_q8	Mark_Rydell	7120.154130
+CompQTest-412	canada	9	6	m.0d060g	Canada	13754.683296
+CompQTest-412	england	39	7	m.02jx1	England	5662.073227
+CompQTest-412	england	39	7	m.07ssc	United_Kingdom	209.242497
+CompQTest-413	norway	36	6	m.05b4w	Norway	14735.969553
+CompQTest-414	soviet union	22	12	m.05vz3zq	Soviet_Union	14127.710010
+CompQTest-414	the leader	8	10	m.05wh0sh	Vladimir_Lenin	14.982210
+CompQTest-414	wwii	42	4	m.081pw	World_War_II	10.376514
+CompQTest-415	denver	11	6	m.0289q	Denver_Broncos	1.788225
+CompQTest-415	denver	11	6	m.02cl1	Denver	3334.860266
+CompQTest-415	denver	11	6	m.0jmdb	Denver_Nuggets	3.180214
+CompQTest-415	four christmases	21	16	m.03gttvn	Four_Christmases	3870.313236
+CompQTest-416	jan akkerman	16	12	m.03ymvw	Jan_Akkerman	36522.916789
+CompQTest-417	ingrid of sweden	34	16	m.013rw3	Ingrid_of_Sweden	366241.741685
+CompQTest-418	princess leia	7	13	m.0ddqw	Princess_Leia	317170.796870
+CompQTest-418	star wars	24	9	m.0ddt_	Star_Wars_Episode_I:_The_Phantom_Menace	5.913667
+CompQTest-418	star wars	24	9	m.06mmr	Star_Wars	2.761652
+CompQTest-418	star wars	24	9	m.06xpls	Star_Wars_live-action_TV_series	1.792643
+CompQTest-418	star wars	24	9	m.03s45d	Star_Wars_(1983_video_game)	1.984847
+CompQTest-418	star wars	24	9	m.05bny_	Star_Wars_(1991_video_game)	2.947754
+CompQTest-419	alfred lyttelton	26	16	m.04x2fj	Alfred_Lyttelton	37769.436014
+CompQTest-419	us	8	2	m.09c7w0	United_States	2.619848
+CompQTest-419	us	8	2	m.04sg45j	<EMPTY>	2.619848
+CompQTest-419	us president	8	12	m.060d2	President_of_the_United_States	10000.000000
+CompQTest-420	canada	30	6	m.0d060g	Canada	11712.251555
+CompQTest-420	pierre trudeau	42	14	m.063vn	Pierre_Trudeau	20926.863228
+CompQTest-421	giants	26	6	m.0713r	San_Francisco_Giants	29816.579109
+CompQTest-421	giants	26	6	m.05gg4	New_York_Giants	13.285643
+CompQTest-421	world series	41	12	m.0fjp3	World_Series	17021.549280
+CompQTest-422	houston rockets	14	15	m.0jmfb	Houston_Rockets	33951.684801
+CompQTest-423	countries	24	9	m.0jgd	Argentina	7.983530
+CompQTest-423	landlocked	13	10	m.01mjq	Czech_Republic	16.380974
+CompQTest-423	latin america	37	13	m.04pnx	Latin_America	24727.948847
+CompQTest-423	latin america	37	13	m.0b2h3	Monterrey	1.403715
+CompQTest-424	george lucas	14	12	m.0343h	George_Lucas	44594.810029
+CompQTest-424	star wars	35	9	m.0ddt_	Star_Wars_Episode_I:_The_Phantom_Menace	11.314464
+CompQTest-424	star wars	35	9	m.06mmr	Star_Wars	2.775281
+CompQTest-424	star wars	35	9	m.06xpls	Star_Wars_live-action_TV_series	32.145500
+CompQTest-425	sydney harbour	42	14	m.0701q	Sydney_Harbour_Bridge	307.213543
+CompQTest-425	sydney harbour	42	14	m.01rfyc	Port_Jackson	11417.356067
+CompQTest-425	sydney harbour	42	14	m.0fz25	Sydney,_Nova_Scotia	1.998658
+CompQTest-425	us	8	2	m.09c7w0	United_States	3.753677
+CompQTest-425	us	8	2	m.04sg45j	<EMPTY>	3.753677
+CompQTest-425	us president	8	12	m.060d2	President_of_the_United_States	10000.000000
+CompQTest-426	live in	29	7	m.09gnlly	Live-In	10.021990
+CompQTest-426	state	5	5	m.0d0xs	U.S._state	10000.000000
+CompQTest-426	the simpsons	16	12	m.07c72	The_Simpsons	17440.299342
+CompQTest-427	capricorn	6	9	m.0c132q	Capricorn_(astrology)	4.500165
+CompQTest-427	john alexander mcclernand	38	25	m.059w54	John_Alexander_McClernand	150274.866117
+CompQTest-428	adrian peterson	14	15	m.095xk6	Adrian_Peterson	32927.804421
+CompQTest-428	college	42	7	m.01zff	College_football	13.626208
+CompQTest-429	calvin coolidge	45	15	m.01vbl	Calvin_Coolidge	4809.595200
+CompQTest-429	united states	12	13	m.09c7w0	United_States	1213.762932
+CompQTest-429	united states	12	13	m.04sg45j	<EMPTY>	1213.762932
+CompQTest-430	jack johnson	20	12	m.02h7gb	Jack_Johnson_(musician)	17347.531240
+CompQTest-430	jack johnson	20	12	m.0jg6v	Jack_Johnson_(boxer)	14.461198
+CompQTest-430	sessions	33	8	m.02vlmrk	Ramon_Sessions	1.208635
+CompQTest-431	franz liszt	37	11	m.0hqgp	Franz_Liszt	57413.645395
+CompQTest-431	protestant	6	10	m.05sfs	Protestantism	2.142772
+CompQTest-432	plaxico burress	9	15	m.047j_j	Plaxico_Burress	907174.241037
+CompQTest-432	plaxico burress	9	15	m.05tfm	Pittsburgh_Steelers	4.402328
+CompQTest-432	plaxico burress	9	15	m.05g49	New_York_Jets	3.838532
+CompQTest-432	plaxico burress	9	15	m.05gg4	New_York_Giants	1.203241
+CompQTest-432	plaxico burress	9	15	m.0kgf3	Big_Ten_Conference	1.086033
+CompQTest-433	ardeshir irani	34	14	m.0cj1f6	Ardeshir_Irani	5979.585801
+CompQTest-433	zubeida	10	7	m.02z0_jl	Zubeida	11536.849459
+CompQTest-433	zubeida	10	7	m.01ly7xq	Zubeidaa	693.190464
+CompQTest-434	carmen	36	6	m.09g6g	Carmen	3.938216
+CompQTest-434	george lopez	50	12	m.07x1_3	George_Lopez_(TV_series)	37582.801105
+CompQTest-434	george lopez	50	12	m.02xfj0	George_Lopez	31786.168255
+CompQTest-434	what	0	4	m.0270qwm	Balls_of_Fury	4.757892
+CompQTest-435	irish	5	5	m.018p4y	Pierce_Brosnan	34.255075
+CompQTest-435	irish	5	5	m.012wgb	Ireland	5.925685
+CompQTest-435	irish	5	5	m.03rt9	Republic_of_Ireland	2.380438
+CompQTest-435	peter capaldi	21	13	m.09xrxq	Peter_Capaldi	39873.537941
+CompQTest-436	taft	8	4	m.083pr	William_Howard_Taft	19259.239752
+CompQTest-436	taft	8	4	m.01_5y1	Robert_Taft	5.221427
+CompQTest-437	who	0	3	m.03l_zp	Jim_Neidhart	7.959281
+CompQTest-437	world wrestling entertainment	51	29	m.0gy1_	WWE	120494.443391
+CompQTest-438	george washington	9	17	m.034rd	George_Washington	17377.584114
+CompQTest-439	ashley	9	6	m.06x06k	Ashley_Massaro	4.777240
+CompQTest-439	ashley	9	6	m.02r95fh	Ashley_Furniture_Industries	2.071398
+CompQTest-439	the bachelorette	25	16	m.017mtp	The_Bachelorette	25061.649150
+CompQTest-439	the bachelorette	25	16	m.0gjb1_f	The_Bachelorette_(season_7)	1.620966
+CompQTest-439	the bachelorette	25	16	m.0j670gs	The_Bachelorette_(season_8)	2.831607
+CompQTest-440	france	37	6	m.0f8l9c	France	80329.042642
+CompQTest-440	france	37	6	m.01l3vx	France_national_football_team	2.995188
+CompQTest-440	january	22	7	m.03v1jf	January_Jones	2.559904
+CompQTest-441	vince lombardi	18	14	m.07_xf	Vince_Lombardi	36486.614301
+CompQTest-442	dorothy gale	7	12	m.020hj1	Dorothy_Gale	15483.672372
+CompQTest-442	the wizard of oz	33	16	m.02q52q	The_Wizard_of_Oz_(1939_film)	900.311054
+CompQTest-442	the wizard of oz	33	16	m.021r0s	Wizard_of_Oz_(character)	30.035609
+CompQTest-443	adele faccio	33	12	m.02r7m1h	Adele_Faccio	34062.953975
+CompQTest-443	president of the	8	16	m.01hvfh	President_of_the_Senate	2.057466
+CompQTest-443	us	25	2	m.09c7w0	United_States	4.935156
+CompQTest-443	us	25	2	m.04sg45j	<EMPTY>	4.935156
+CompQTest-444	florida marlins	9	15	m.02__x	Miami_Marlins	48448.870406
+CompQTest-444	mlb	30	3	m.09p14	Major_League_Baseball	92986.485737
+CompQTest-444	mlb	30	3	m.01tcz4	Minor_League_Baseball	1.598005
+CompQTest-445	princess leia	9	13	m.0ddqw	Princess_Leia	317170.796870
+CompQTest-445	star wars	32	9	m.0ddt_	Star_Wars_Episode_I:_The_Phantom_Menace	5.913667
+CompQTest-445	star wars	32	9	m.06xpls	Star_Wars_live-action_TV_series	1.792643
+CompQTest-445	star wars	32	9	m.06mmr	Star_Wars	2.761652
+CompQTest-445	star wars	32	9	m.03s45d	Star_Wars_(1983_video_game)	1.984847
+CompQTest-446	baseball	47	8	m.09p14	Major_League_Baseball	1.626658
+CompQTest-446	michael jordan	8	14	m.054c1	Michael_Jordan	33308.681504
+CompQTest-446	michael jordan	8	14	m.05p18cc	Mike_Jordan_(baseball)	2.601201
+CompQTest-447	abc	23	3	m.0gsg7	American_Broadcasting_Company	4218.471293
+CompQTest-447	abc	23	3	m.01dg8q	ABC_(band)	2.486934
+CompQTest-447	abc	23	3	m.013fn	Australian_Broadcasting_Corporation	2.739327
+CompQTest-447	becket	9	6	m.026fs38	Becket_(1964_film)	461.746312
+CompQTest-447	becket	9	6	m.06whf	Samuel_Beckett	20.098425
+CompQTest-447	becket	9	6	m.098lc	Thomas_Becket	41.415032
+CompQTest-447	becket	9	6	m.0lfp0	Becket	3.835408
+CompQTest-447	castle	32	6	m.0522ftz	Castle_(TV_series)	41.607380
+CompQTest-448	serena williams	15	15	m.015z4j	Serena_Williams	39509.636674
+CompQTest-448	venus williams	34	14	m.016cff	Venus_Williams	44572.533865
+CompQTest-449	olympics	47	8	m.06vvk	Summer_Olympic_Games	1.171440
+CompQTest-449	olympics	47	8	m.05nd_	Olympic_Games	1.780262
+CompQTest-450	orioles	27	7	m.01d6g	Baltimore_Orioles	27879.419883
+CompQTest-450	world series	43	12	m.0fjp3	World_Series	4175.089002
+CompQTest-451	invent	29	6	m.0j2tw	National_Inventors_Hall_of_Fame	1.038713
+CompQTest-451	johannes guttenberg	9	19	m.04061	Johannes_Gutenberg	11929.737516
+CompQTest-451	the printing press	36	18	m.05sxt	Printing_press	1.142823
+CompQTest-452	american	37	8	m.09c7w0	United_States	42.715794
+CompQTest-452	american	37	8	m.0z07	American_Airlines	1.473627
+CompQTest-452	american	37	8	m.04q7gbh	Americans	1.883543
+CompQTest-452	american	37	8	m.0sgjzry	<EMPTY>	1.473627
+CompQTest-453	sweden	27	6	m.0d0vqn	Sweden	22732.201100
+CompQTest-453	ulrika eleonora	8	15	m.0q9jx	Ulrika_Eleonora,_Queen_of_Sweden	35849.519031
+CompQTest-453	ulrika eleonora	8	15	m.01t9tc	Ulrika_Eleonora_of_Denmark	21.226740
+CompQTest-454	the host	7	8	m.0gy7bt5	The_Host_(2013_film)	1.098121
+CompQTest-454	the host	7	8	m.02z7570	The_Host_(novel)	1.152560
+CompQTest-454	total request live	19	18	m.07cglfc	Total_Request_Live	1477.056939
+CompQTest-454	total request live	19	18	m.02q6qbt	Total_Request_Live_(Italy)	5.639641
+CompQTest-455	england	16	7	m.02jx1	England	10302.238715
+CompQTest-455	england	16	7	m.07ssc	United_Kingdom	8.199274
+CompQTest-456	libra	6	5	m.01d_h	BT_(musician)	1.276745
+CompQTest-456	libra	6	5	m.0c131z	Libra_(astrology)	1.517335
+CompQTest-456	olive osmond	39	12	m.02_772	Olive_Osmond	36266.871054
+CompQTest-457	executive producer	11	18	m.01xndd	J._J._Abrams	1.259989
+CompQTest-457	girls club	33	10	m.02l71l	Girls_Club_(TV_series)	8.906862
+CompQTest-457	girls club	33	10	m.01w0lk	Boys_&_Girls_Clubs_of_America	29.737601
+CompQTest-457	girls club	33	10	m.051x588	Girl's_Club	2.075048
+CompQTest-458	dunkirk	17	7	m.0md6f	Dunkirk	55.271909
+CompQTest-458	dunkirk	17	7	m.0jpb7	Battle_of_Dunkirk	1.570597
+CompQTest-458	ww2	32	3	m.081pw	World_War_II	2.352656
+CompQTest-459	clear channel communications	24	28	m.018p5f	Clear_Channel_Communications	178370.549743
+CompQTest-459	the president	7	13	m.09b6zr	George_W._Bush	1.738521
+CompQTest-459	who	0	3	m.07mwg4	WHO-DT	7.290902
+CompQTest-460	architect	11	9	m.01wg25j	Little_Richard	2.818871
+CompQTest-460	experience music project	28	24	m.0pxmn	EMP_Museum	995.845054
+CompQTest-461	lord of the rings	32	17	m.017gl1	The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring	173.590930
+CompQTest-461	lord of the rings	32	17	m.017jd9	The_Lord_of_the_Rings:_The_Return_of_the_King	2.080659
+CompQTest-461	lord of the rings	32	17	m.0dz8q	Gandalf	1.600091
+CompQTest-461	lord of the rings	32	17	m.025h5s	The_Lord_of_the_Rings_(film_series)	22.655222
+CompQTest-461	lord of the rings	32	17	m.07bz5	The_Lord_of_the_Rings	4.822180
+CompQTest-461	viggo mortensen	8	15	m.01ps2h8	Viggo_Mortensen	13575.753453
+CompQTest-462	ncis	24	4	m.03m8sg	NCIS_(TV_series)	4058.486448
+CompQTest-462	ncis	24	4	m.0jxg0xl	NCIS_(season_9)	4.162579
+CompQTest-462	ncis	24	4	m.06gtgs2	NCIS_(season_7)	1.046592
+CompQTest-462	ncis	24	4	m.05mx3hn	NCIS:_Los_Angeles	1.745775
+CompQTest-462	ncis	24	4	m.059dn	NATO	1.090206
+CompQTest-462	ziva	10	4	m.093xn8	Ziva_David	88.090394
+CompQTest-463	cheers	32	6	m.01s81	Cheers	4469.198987
+CompQTest-463	woody harrelson	8	15	m.0170s4	Woody_Harrelson	45555.786453
+CompQTest-464	wayne gretzky	9	13	m.0839s	Wayne_Gretzky	34692.361360
+CompQTest-465	brian	23	5	m.03pcvr	Brian_Griffin	5438.450439
+CompQTest-465	family guy	32	10	m.019nnl	Family_Guy	18738.009129
+CompQTest-465	family guy	32	10	m.05q7g_b	Family_Guy_(season_8)	178.124854
+CompQTest-465	family guy	32	10	m.0b74djw	Family_Guy_(season_9)	3.200806
+CompQTest-465	family guy	32	10	m.05q9pvs	Family_Guy_(season_7)	2.914375
+CompQTest-465	family guy	32	10	m.06xlxlx	Family_Guy_(season_10)	328.610987
+CompQTest-465	family guy	32	10	m.0k22zlc	Family_Guy_(season_11)	18.449136
+CompQTest-465	the voice	10	9	m.0gg645n	The_Voice_(U.S._TV_series)	13.434060
+CompQTest-466	ncis	38	4	m.03m8sg	NCIS_(TV_series)	2485.939317
+CompQTest-466	ncis	38	4	m.0jxg0xl	NCIS_(season_9)	410.624571
+CompQTest-466	ncis	38	4	m.0c0w3zc	NCIS_(season_8)	3.107126
+CompQTest-466	ncis	38	4	m.05df6zh	NCIS_(season_6)	3.193735
+CompQTest-466	the role	10	8	m.06w5gr	Bhumika:_The_Role	170.325883
+CompQTest-466	tony dinozzo	22	12	m.07wp25	Anthony_DiNozzo	4844.347258
+CompQTest-467	miss america pageant	24	20	m.01bk3n	Miss_America	19419.866362
+CompQTest-468	amy stiller	9	11	m.0194r1	Amy_Stiller	38649.662840
+CompQTest-468	dodgeball	29	9	m.034qrh	DodgeBall:_A_True_Underdog_Story	12574.997812
+CompQTest-469	microsoft corporation	27	21	m.04sv4	Microsoft	82343.518404
+CompQTest-469	microsoft corporation	27	21	m.0qt178q	<EMPTY>	82343.518404
+CompQTest-470	joe biden	9	9	m.012gx2	Joe_Biden	45301.947110
+CompQTest-471	australia	8	9	m.0chghy	Australia	17138.278252
+CompQTest-471	world war	37	9	m.081pw	World_War_II	29.604618
+CompQTest-471	world war	37	9	m.0cm2xh	World_War_I	1.383506
+CompQTest-471	world war	37	9	m.011_9x	World_war	19.356967
+CompQTest-472	american league	12	15	m.0h8b0	American_League	397879.901940
+CompQTest-472	american league	12	15	m.09c7w0	United_States	2.353092
+CompQTest-472	american league	12	15	m.04sg45j	<EMPTY>	2.353092
+CompQTest-472	east	28	4	m.0jbdq	Gulf_Coast_League	11.727150
+CompQTest-473	franklin d roosevelt	9	20	m.02yy8	Franklin_D._Roosevelt	63101.389115
+CompQTest-474	bilbo	11	5	m.0g6z1	Bilbo_Baggins	850.705224
+CompQTest-474	the fellowship of the ring	20	26	m.017gl1	The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring	14.956875
+CompQTest-474	the fellowship of the ring	20	26	m.0h35m	The_Fellowship_of_the_Ring	31556.416973
+CompQTest-475	la kings	27	8	m.0jnq8	Los_Angeles_Kings	40531.478559
+CompQTest-476	dmitri mendeleev	9	16	m.0gglj	Dmitri_Mendeleev	60931.660528
+CompQTest-477	country	6	7	m.01lyv	Country_music	10000.000000
+CompQTest-477	europe	17	6	m.02j9z	Europe	29385.395829
+CompQTest-477	europe	17	6	m.07y9k	UEFA	1.680977
+CompQTest-477	land	40	4	m.01fv5t	States_of_Germany	15.001180
+CompQTest-478	2010	34	4	m.04gcyg	2010_(film)	1.760361
+CompQTest-478	michael oher	9	12	m.0h7q7b	Michael_Oher	55418.444745
+CompQTest-479	germany	9	7	m.0345h	Germany	10063.949902
+CompQTest-479	germany	9	7	m.03f2w	East_Germany	1.408324
+CompQTest-479	germany	9	7	m.01l3wr	Germany_national_football_team	2.632667
+CompQTest-479	versailles	42	10	m.0d_61	Palace_of_Versailles	1778.944151
+CompQTest-479	versailles	42	10	m.080g3	Versailles_(city)	1.594738
+CompQTest-480	eddie hodges	16	12	m.0dsv7p	Eddie_Hodges	30348.851015
+CompQTest-481	iran	35	4	m.03shp	Iran	6516.752726
+CompQTest-481	iraq	30	4	m.0d05q4	Iraq	15065.636505
+CompQTest-481	iraq	30	4	m.0d06vc	Iraq_War	1.216091
+CompQTest-481	us	12	2	m.09c7w0	United_States	87.716053
+CompQTest-482	eric cartman	20	12	m.0myj0	Eric_Cartman	36582.783551
+CompQTest-482	eric cartman	20	12	m.01_x6v	Trey_Parker	54.798493
+CompQTest-482	south park	36	10	m.06y_n	South_Park	30355.407073
+CompQTest-482	south park	36	10	m.02_9c11	South_Park_(season_10)	2.678005
+CompQTest-482	south park	36	10	m.05ng5lk	South_Park_(season_13)	3.094442
+CompQTest-482	south park	36	10	m.0d13c8	South_Park_(video_game)	2.754306
+CompQTest-483	red sox	27	7	m.01d5z	Boston_Red_Sox	19161.838867
+CompQTest-484	brett gardner	8	13	m.02px3wt	Brett_Gardner	44365.266084
+CompQTest-485	country	5	7	m.01lyv	Country_music	10000.000000
+CompQTest-485	germany	17	7	m.0345h	Germany	22724.125409
+CompQTest-485	germany	17	7	m.03f2w	East_Germany	1.660590
+CompQTest-485	germany	17	7	m.01l3wr	Germany_national_football_team	3.550484
+CompQTest-485	ww1	41	3	m.0cm2xh	World_War_I	2.910862
+CompQTest-486	the crucible	25	12	m.01cb4s	The_Crucible	12.449351
+CompQTest-487	american	6	8	m.0z07	American_Airlines	2.338065
+CompQTest-487	american	6	8	m.09c7w0	United_States	158.937746
+CompQTest-487	american	6	8	m.04q7gbh	Americans	2.302126
+CompQTest-487	the fourteen	60	12	m.0c08_04	The_14	37.534980
+CompQTest-487	world	41	5	m.09nm_	World	324.412847
+CompQTest-488	colonial	30	8	m.08csr	Thirteen_Colonies	18.934554
+CompQTest-488	governor	18	8	m.01lk4j	Governor_of_South_Carolina	28.789716
+CompQTest-488	south carolina	39	14	m.06yxd	South_Carolina	11373.211753
+CompQTest-488	south carolina	39	14	m.03tw2s	University_of_South_Carolina	2.810633
+CompQTest-488	south carolina	39	14	m.03by3qq	South_Carolina_Gamecocks_football	1.777747
+CompQTest-489	manchester united	52	17	m.050fh	Manchester_United_F.C.	22236.144101
+CompQTest-489	wayne rooney	15	12	m.01c9z7	Wayne_Rooney	26706.621018
+CompQTest-490	argentina	9	9	m.0jgd	Argentina	3936.167923
+CompQTest-490	spain	42	5	m.06mkj	Spain	8135.582147
+CompQTest-491	alexander hamilton	14	18	m.0b3pq	Alexander_Hamilton	42420.659130
+CompQTest-491	constitution	45	12	m.07y14	USS_Constitution	1.421154
+CompQTest-492	minnisota	46	9	m.04ykg	Minnesota	22.535421
+CompQTest-492	vikings	56	7	m.051q5	Minnesota_Vikings	2983.760315
+CompQTest-492	vikings	56	7	m.07_my	Vikings	1.320227
+CompQTest-493	david beckham	14	13	m.02d9k	David_Beckham	22594.091655
+CompQTest-494	archie shepp	7	12	m.01w8zb	Archie_Shepp	35185.127717
+CompQTest-494	san francisco	28	13	m.0d6lp	San_Francisco	12289.373789
+CompQTest-495	denver broncos	26	14	m.0289q	Denver_Broncos	27309.034241
+CompQTest-495	superbowl	49	9	m.06x5s	Super_Bowl	1141.799143
+CompQTest-496	battle of gettysburg	12	20	m.01jnm	Battle_of_Gettysburg	3.508214
+CompQTest-496	confederate	42	11	m.020d5	Confederate_States_of_America	2772.461997
+CompQTest-496	confederate	42	11	m.0kbq	American_Civil_War	1.300410
+CompQTest-496	union or	33	8	m.0zg4m	Union,_Oregon	47.338433
+CompQTest-497	sweden	24	6	m.0d0vqn	Sweden	38790.461157
+CompQTest-498	adeline yen mah	21	15	m.061lpg	Adeline_Yen_Mah	58663.472603
+CompQTest-498	high school	5	11	m.0bpgx	High_school	1.161224
+CompQTest-498	high school	5	11	m.09dv8h	High_School_Musical	1.500521
+CompQTest-499	government	13	10	m.01bqks	Federal_government_of_the_United_States	50.706043
+CompQTest-499	government	13	10	m.02wz7x	Government_of_Canada	1.780403
+CompQTest-499	government	13	10	m.04jrx3	Government_of_Australia	2.072970
+CompQTest-499	united states	33	13	m.09c7w0	United_States	4292.060727
+CompQTest-499	united states	33	13	m.04sg45j	<EMPTY>	4292.060727
+CompQTest-500	call on me	24	10	m.0cydtc	Call_on_Me_(Janet_Jackson_song)	1.057287
+CompQTest-500	call on me	24	10	m.0dy2fl	Call_on_Me_(Eric_Prydz_song)	4.673999
+CompQTest-500	call on me	24	10	m.01635v	Bobby_Bland	1.033845
+CompQTest-501	carolina panthers	9	17	m.01y3c	Carolina_Panthers	28437.943677
+CompQTest-501	superbowl	33	9	m.06x5s	Super_Bowl	29.585208
+CompQTest-502	conservative	5	12	m.07wpm	Conservative_Party_(UK)	30.084735
+CompQTest-502	conservative	5	12	m.01swmr	Conservative_Party_of_Canada	3.456661
+CompQTest-502	conservative	5	12	m.027nnh	Conservative_Party_of_Canada_(1867%131942)	2.497263
+CompQTest-502	conservative	5	12	m.02z3sy	Conservative_Party_of_New_York_State	1.739631
+CompQTest-502	convention	47	10	m.02jvff	Republican_National_Convention	21.412763
+CompQTest-502	democratic	36	10	m.0d075m	Democratic_Party_(United_States)	6697.229199
+CompQTest-502	democratic	36	10	m.07wbk	Republican_Party_(United_States)	1.476335
+CompQTest-503	alexander hamilton	14	18	m.0b3pq	Alexander_Hamilton	42420.659130
+CompQTest-503	constitution	45	12	m.07y14	USS_Constitution	1.421154
+CompQTest-504	corpse bride	28	12	m.050xxm	Corpse_Bride	4170.488343
+CompQTest-504	johnny depp	8	11	m.0jfx1	Johnny_Depp	8861.023187
+CompQTest-504	johnny depp	8	11	m.04pk1f	Charlie_and_the_Chocolate_Factory_(film)	367.526642
+CompQTest-505	john albion andrew	40	18	m.03b0nn	John_Albion_Andrew	24970.125300
+CompQTest-505	sagittarian	6	11	m.07g8fj	Sagittarius_(astrology)	49.631609
+CompQTest-506	country	6	7	m.01lyv	Country_music	10000.000000
+CompQTest-506	crimean	22	7	m.0cmc2	Crimean_War	1.547528
+CompQTest-507	london tipton	10	13	m.07g8r3	London_Tipton	57064.012066
+CompQTest-507	suite life on deck	27	18	m.03mj4jm	The_Suite_Life_on_Deck	1155.611303
+CompQTest-508	perestroika	43	11	m.02346r	Angels_in_America:_A_Gay_Fantasia_on_National_Themes	1.170167
+CompQTest-508	soviet	6	6	m.05vz3zq	Soviet_Union	999.950473
+CompQTest-508	soviet	6	6	m.06dr9	Red_Army	1.245170
+CompQTest-509	grammy	12	6	m.0c4ys	Grammy_Award	13802.681350
+CompQTest-510	kevin mccarthy	26	14	m.04xbr4	Kevin_McCarthy_(actor)	13002.748554
+CompQTest-510	kevin mccarthy	26	14	m.074qxm	Kevin_McCarthy_(California_politician)	61.654773
+CompQTest-511	alfred lunt	31	11	m.012c8f	Alfred_Lunt	34513.830346
+CompQTest-511	of death	19	8	m.09gnyht	Essays_(Francis_Bacon)	15.570366
+CompQTest-512	alan scarfe	27	11	m.0g0j22	Alan_Scarfe	37101.963779
+CompQTest-512	alan scarfe	27	11	m.0bwgyjr	Alan_Scarfe_(bishop)	668.222337
+CompQTest-513	lakshman kadirgamar	26	19	m.02rv7t	Lakshman_Kadirgamar	40727.773644
+CompQTest-513	us	8	2	m.09c7w0	United_States	3.803685
+CompQTest-513	us	8	2	m.04sg45j	<EMPTY>	3.803685
+CompQTest-513	us president	8	12	m.060d2	President_of_the_United_States	10000.000000
+CompQTest-514	a bandit	34	8	m.03cfchz	A_Bandit	24.290090
+CompQTest-514	producer	12	8	m.03bnv	George_Harrison	1.023470
+CompQTest-515	loudon wainwright iii	16	21	m.03qmj9	Loudon_Wainwright_III	117829.032272
+CompQTest-516	attilio bertolucci	35	18	m.0cqy94	Attilio_Bertolucci	24502.671912
+CompQTest-516	the son	24	7	m.09lxbk	The_Son_(film)	1.124805
+CompQTest-517	governor of minnesota	8	21	m.01fgff	Governor_of_Minnesota	87255.898105
+CompQTest-517	maathaad maathaadu mallige	35	26	m.03c7xsy	Maathaad_Maathaadu_Mallige	151496.466464
+CompQTest-518	brazil	33	6	m.015fr	Brazil	27339.523544
+CompQTest-519	cuba	24	4	m.0d04z6	Cuba	32782.081427
+CompQTest-519	libre	29	5	m.01wqqck	Nino_Bravo	18.666628
+CompQTest-520	chrysler corporation	9	20	m.01_bp	Chrysler	133667.156111
+CompQTest-521	air force	17	9	m.02rjqfl	United_States_Air_Force	819.057110
+CompQTest-521	air force	17	9	m.0243_h	Indian_Air_Force	2.545046
+CompQTest-521	defense meritorious service medal	37	33	m.039hzm	Defense_Meritorious_Service_Medal	20.358885
+CompQTest-521	has won	4	7	m.0hn8bmw	Choi_Ha-won	2.709700
+CompQTest-522	soviet	5	6	m.05vz3zq	Soviet_Union	892.427279
+CompQTest-522	soviet	5	6	m.06dr9	Red_Army	1.513680
+CompQTest-522	the 1920s	36	9	m.08bs5	1920s	1.343307
+CompQTest-523	fa cup	17	6	m.02_p0	FA_Cup	71210.009264
+CompQTest-523	final	24	5	m.07z5wd	FA_Cup_Final	13.644363
+CompQTest-524	baltimore ravens	14	16	m.01ct6	Baltimore_Ravens	67953.205663
+CompQTest-524	super bowl	35	10	m.06x5s	Super_Bowl	18398.161716
+CompQTest-525	jrr tolkien	17	11	m.041h0	J._R._R._Tolkien	27072.443422
+CompQTest-526	mary jane	10	9	m.01ppxz	Mary_Jane_Watson	46.526639
+CompQTest-526	spiderman	27	9	m.0fqt1ns	The_Amazing_Spider-Man_(2012_film)	73.612604
+CompQTest-526	spiderman	27	9	m.06ys2	Spider-Man	101.905687
+CompQTest-527	civil war	35	9	m.0kbq	American_Civil_War	2.637161
+CompQTest-527	union	12	5	m.02fp48	Union_(American_Civil_War)	7.325938
+CompQTest-527	union	12	5	m.01_bmf	Union_Army	1.634019
+CompQTest-527	union	12	5	m.02ccqg	Union_College	1.522697
+CompQTest-528	rupaul drag race season 3	24	25	m.0g76_mh	RuPaul's_Drag_Race_(season_3)	22552.729300
+CompQTest-528	the runner	7	10	m.03wgsg8	The_Runner_(1999_film)	2.870577
+CompQTest-528	the runner	7	10	m.026_y90	The_Runner_(1985_film)	1.486555
+CompQTest-528	the runner	7	10	m.0dt9vg	Runner_(comics)	1.421739
+CompQTest-529	deception	20	9	m.0285qlv	Deception_(2008_film)	2.977922
+CompQTest-529	deception	20	9	m.0452mx	Mortal_Kombat:_Deception	1.211242
+CompQTest-529	edward	10	6	m.042865	Edward_the_Blue_Engine	1.206809
+CompQTest-529	edward	10	6	m.0bj2wc	Edward_Highmore	1.009569
+CompQTest-529	edward	10	6	m.0cp1t	Edward_the_Elder	2.131626
+CompQTest-529	edward	10	6	m.0cr2f	Edward_the_Martyr	2.321449
+CompQTest-530	marilyn monroe	8	14	m.04wqr	Marilyn_Monroe	8362.787064
+CompQTest-531	iran	29	4	m.03shp	Iran	16038.798695
+CompQTest-532	anna kendrick	17	13	m.04066xj	Anna_Kendrick	28839.382363
+CompQTest-532	pitch perfect	40	13	m.0hr6d1j	Pitch_Perfect	4064.557869
+CompQTest-532	sings in	31	8	m.02rvnlr	Singin'_Sam	1.528010
+CompQTest-533	harry	19	5	m.03647x	Harry_Potter_(character)	2630.353018
+CompQTest-533	harry	19	5	m.025xc3	Harry_Osborn	1.106100
+CompQTest-533	second book	49	11	m.015pln	Harry_Potter_and_the_Chamber_of_Secrets	1.782414
+CompQTest-533	second book	49	11	m.0262vrv	The_Audacity_of_Hope	1.049607
+CompQTest-534	england	19	7	m.02jx1	England	10302.238715
+CompQTest-534	england	19	7	m.07ssc	United_Kingdom	6.424121
+CompQTest-535	lil wayne	9	9	m.016kjs	Lil_Wayne	36122.416658
+CompQTest-535	what	0	4	m.0hr4h8p	Wait_what	4.173368
+CompQTest-536	denmark	59	7	m.0k6nt	Denmark	15593.730594
+CompQTest-536	ulrike eleonora	40	15	m.01t9tc	Ulrika_Eleonora_of_Denmark	53752.109604
+CompQTest-536	ulrike eleonora	40	15	m.0q9jx	Ulrika_Eleonora,_Queen_of_Sweden	16207.222598
+CompQTest-537	gimli	7	5	m.0h34n	Gimli_(Middle-earth)	14772.923467
+CompQTest-537	gimli	7	5	m.01846t	John_Rhys-Davies	32170.575080
+CompQTest-537	the hobbit	25	10	m.0ndwt2w	The_Hobbit:_An_Unexpected_Journey	154.323680
+CompQTest-537	the hobbit	25	10	m.02kl1y	The_Hobbit_(1977_film)	8.440394
+CompQTest-537	the hobbit	25	10	m.07g75	The_Hobbit	31.689441
+CompQTest-537	the hobbit	25	10	m.0286j4k	The_Hobbit_(2003_video_game)	10.793790
+CompQTest-538	the lion king	27	13	m.0m63c	The_Lion_King	57081.076367
+CompQTest-538	the lion king	27	13	m.0c7lj1	The_Lion_King_(franchise)	13.120616
+CompQTest-538	the lion king	27	13	m.0906pq	The_Lion_King_(musical)	400.701211
+CompQTest-538	the lion king	27	13	m.0b136v	The_Lion_King_(video_game)	37.935904
+CompQTest-538	timon	10	5	m.0c31r0	Timon_and_Pumbaa	26969.506213
+CompQTest-539	a bright shining lie	21	20	m.06gjyq	A_Bright_Shining_Lie	2298.208369
+CompQTest-539	a bright shining lie	21	20	m.0crbxn4	A_Bright_Shining_Lie_(film)	101.305549
+CompQTest-540	champions league	26	16	m.0c1q0	UEFA_Champions_League	1598.881397
+CompQTest-540	juventus	9	8	m.045xx	Juventus_F.C.	10306.117709
+CompQTest-541	capricorn	6	9	m.0c132q	Capricorn_(astrology)	4.434886
+CompQTest-541	katherine jackson	43	17	m.0524pr	Katherine_Jackson	25495.895422
+CompQTest-541	katherine jackson	43	17	m.01phkr	Kate_Jackson	37.415037
+CompQTest-542	country	5	7	m.01lyv	Country_music	10000.000000
+CompQTest-542	germany	17	7	m.0345h	Germany	22724.125409
+CompQTest-542	germany	17	7	m.03f2w	East_Germany	1.660590
+CompQTest-542	germany	17	7	m.01l3wr	Germany_national_football_team	3.550484
+CompQTest-542	ww1	41	3	m.0cm2xh	World_War_I	2.910862
+CompQTest-543	carolina panthers	15	17	m.01y3c	Carolina_Panthers	27102.707111
+CompQTest-543	coach	9	5	m.03p1tw4	Coach,_Inc.	1.143410
+CompQTest-543	coach	9	5	m.03k8s3	Coach_(TV_series)	33.458320
+CompQTest-544	neil armstrong	9	14	m.05b6w	Neil_Armstrong	62596.149565
+CompQTest-544	neil armstrong	9	14	m.06c3sx	Neil_Armstrong_(ice_hockey)	1.022943
+CompQTest-545	andrew jackson	36	14	m.0rlz	Andrew_Jackson	24783.187383
+CompQTest-545	of state	22	8	m.07vsl	United_States_Department_of_State	2.080350
+CompQTest-546	chinese ghost story	25	19	m.01d22s	A_Chinese_Ghost_Story	3585.903138
+CompQTest-546	chinese ghost story	25	19	m.0gk_4s8	A_Chinese_Ghost_Story_(2011_film)	43.306914
+CompQTest-547	english	31	7	m.02jx1	England	76.228789
+CompQTest-547	english	31	7	m.02h40lc	English_language	2.547672
+CompQTest-547	fleur	10	5	m.027qs8y	Hubert_Keller	1.579758
+CompQTest-547	fleur	10	5	m.0jwswk2	Fleur_Pellerin	1.045674
+CompQTest-547	lis mean	19	8	m.0lpfh	Lima	5.333450
+CompQTest-548	2010	38	4	m.04gcyg	2010_(film)	1.760361
+CompQTest-548	cristiano ronaldo	8	17	m.02xt6q	Cristiano_Ronaldo	50010.882111
+CompQTest-549	padosan	32	7	m.0czhtx	Padosan	1508.045435
+CompQTest-549	the actress	7	11	m.027mglq	The_Actress	1.091933
+CompQTest-549	the actress	7	11	m.0dm652	Vyjayanthimala	1.115810
+CompQTest-550	boston bruins	27	13	m.0j2zj	Boston_Bruins	52893.011437
+CompQTest-550	stanley	53	7	m.01b5lx	Stanley,_Falkland_Islands	14.699510
+CompQTest-551	ernest dickerson	39	16	m.05tmbq	Ernest_Dickerson	51939.259312
+CompQTest-551	sam jones iii	9	13	m.0b_z40	Sam_Jones_III	13769.143448
+CompQTest-552	alana austin	16	12	m.08hpfj	Alana_Austin	26358.542370
+CompQTest-553	chicago bears	12	13	m.01y3v	Chicago_Bears	26104.766583
+CompQTest-554	david beckham	15	13	m.02d9k	David_Beckham	34959.162509
+CompQTest-555	katherine shindle	20	17	m.09m9m6	Katherine_Shindle	32378.850688
+CompQTest-556	iran	29	4	m.03shp	Iran	16038.798695
+CompQTest-557	air force	17	9	m.02rjqfl	United_States_Air_Force	2354.543851
+CompQTest-557	air force	17	9	m.01r_nkk	Young_Jeezy	1.211655
+CompQTest-557	air force	17	9	m.0243_h	Indian_Air_Force	2.572173
+CompQTest-557	air force	17	9	m.0215bz	Pakistan_Air_Force	1.283377
+CompQTest-557	bronze star	51	11	m.01kpt	Bronze_Star_Medal	3.019683
+CompQTest-557	combat action medal	27	19	m.02p_zs2	Air_Force_Combat_Action_Medal	1.407652
+CompQTest-557	has won	4	7	m.0hn8bmw	Choi_Ha-won	2.709700
+CompQTest-558	amy stiller	9	11	m.0194r1	Amy_Stiller	38649.662840
+CompQTest-558	dodgeball	29	9	m.034qrh	DodgeBall:_A_True_Underdog_Story	12574.997812
+CompQTest-559	attilio bertolucci	35	18	m.0cqy94	Attilio_Bertolucci	20262.642889
+CompQTest-559	the son	24	7	m.09lxbk	The_Son_(film)	1.218137
+CompQTest-560	college football	5	16	m.01zff	College_football	2847.781721
+CompQTest-560	john elway	31	10	m.01sthx	John_Elway	8604.619416
+CompQTest-561	anita roddick	30	13	m.02vkt5	Anita_Roddick	49902.978952
+CompQTest-561	jew	6	3	m.041rx	Jews	2.019784
+CompQTest-562	martin luther king	17	18	m.051cc	Martin_Luther_King,_Jr.	5951.969244
+CompQTest-563	barney and friends	24	18	m.01f4yy	Barney_&_Friends	54310.843690
+CompQTest-563	selena gomez	8	12	m.0gs6vr	Selena_Gomez	37897.024117
+CompQTest-564	mozart	8	6	m.082db	Wolfgang_Amadeus_Mozart	33458.006943
+CompQTest-565	seahawks	18	8	m.070xg	Seattle_Seahawks	14500.291839
+CompQTest-565	the superbowl	31	13	m.06x5s	Super_Bowl	1173.417221
+CompQTest-566	robin williams	11	14	m.0dzf_	Robin_Williams	7677.846326
+CompQTest-567	mitt romney	10	11	m.0271_s	Mitt_Romney	23595.634853
+CompQTest-568	ingrid of sweden	35	16	m.013rw3	Ingrid_of_Sweden	289151.403001
+CompQTest-569	ezra taft benson	33	16	m.022_k9	Ezra_Taft_Benson	86414.794263
+CompQTest-569	ezra taft benson	33	16	m.03tcng	Ezra_T._Benson	57.713369
+CompQTest-569	president of us	12	15	m.060d2	President_of_the_United_States	10000.000000
+CompQTest-569	us	25	2	m.09c7w0	United_States	3.477918
+CompQTest-569	us	25	2	m.04sg45j	<EMPTY>	3.477918
+CompQTest-570	family guy	30	10	m.019nnl	Family_Guy	26093.177290
+CompQTest-570	family guy	30	10	m.05q7g_b	Family_Guy_(season_8)	2.335623
+CompQTest-570	family guy	30	10	m.05q9pvs	Family_Guy_(season_7)	2.914375
+CompQTest-570	family guy	30	10	m.06xlxlx	Family_Guy_(season_10)	313.953496
+CompQTest-570	family guy	30	10	m.0k22zlc	Family_Guy_(season_11)	18.449136
+CompQTest-570	meg	11	3	m.035szd	Meg_Griffin	29570.475495
+CompQTest-570	season 1	18	8	m.06gsyjx	Glee_(season_1)	2.895281
+CompQTest-571	miguel primo de rivera	28	22	m.01_h_s	Miguel_Primo_de_Rivera	53846.696817
+CompQTest-571	miguel primo de rivera	28	22	m.0gx0s1h	Miguel_Primo_de_Rivera_y_S%E1enz_de_Heredia	3.657049
+CompQTest-572	van halen	9	9	m.0ycfj	Van_Halen	67702.013358
+CompQTest-572	van halen	9	9	m.02rt2d	Sammy_Hagar	294.976759
+CompQTest-572	van halen	9	9	m.01fvfn	Eddie_Van_Halen	2.900128
+CompQTest-572	van halen	9	9	m.01hm30v	Van_Halen_(album)	1.036884
+CompQTest-573	braveheart	26	10	m.01gc7	Braveheart	9877.327531
+CompQTest-573	princess	14	8	m.06cd05	Princess_Cruises	3.491866
+CompQTest-574	mohammed vi	15	11	m.01gz4f	Mohammed_VI_of_Morocco	26057.217018
+CompQTest-574	morocco	30	7	m.04wgh	Morocco	30356.578428
+CompQTest-575	ncaa	25	4	m.0gh43	National_Collegiate_Athletic_Association	8609.521194
+CompQTest-575	ncaa	25	4	m.02jp2w	NCAA_Men's_Division_I_Basketball_Championship	3.378671
+CompQTest-575	ncaa	25	4	m.031fsz	Division_I_(NCAA)	1.202257
+CompQTest-575	qb	5	2	m.0694j	Quebec	1.079603
+CompQTest-576	doug anthony	32	12	m.023vmd	Doug_Anthony	29131.782539
+CompQTest-576	doug anthony	32	12	m.03_pcf	Doug_Anthony_All_Stars	97.571610
+CompQTest-577	hank baskett	13	12	m.0d81yf	Hank_Baskett	33452.095614
+CompQTest-578	child's play	33	12	m.02mkzj	Child's_Play_(1988_film)	69.843473
+CompQTest-578	chucky	23	6	m.06jpdm	Chucky_(Child's_Play)	514.951054
+CompQTest-578	chucky	23	6	m.02ml14	Bride_of_Chucky	9.674989
+CompQTest-578	the voice	9	9	m.0gg645n	The_Voice_(U.S._TV_series)	1.401206
+CompQTest-579	william george clark	31	20	m.01fhn8	William_George_Clark	119339.471359
+CompQTest-579	william george clark	31	20	m.043ldxq	William_George_Clark_(politician)	112967.549239
+CompQTest-580	caesar	10	6	m.0gzh	Abraham_Lincoln	2.383325
+CompQTest-580	caesar	10	6	m.0btyf5z	Rise_of_the_Planet_of_the_Apes	2.464969
+CompQTest-580	caesar	10	6	m.041wm	Julius_Caesar	132.627450
+CompQTest-580	the hunger games	31	16	m.0gkz15s	The_Hunger_Games_(film)	5150.108076
+CompQTest-580	the hunger games	31	16	m.09g7nv6	The_Hunger_Games_trilogy	15095.604657
+CompQTest-581	taft	8	4	m.083pr	William_Howard_Taft	19259.239752
+CompQTest-581	taft	8	4	m.01_5y1	Robert_Taft	5.221427
+CompQTest-582	denmark	10	7	m.0k6nt	Denmark	22735.633885
+CompQTest-582	denmark	10	7	m.02s2lg	Denmark_national_football_team	2.991096
+CompQTest-583	about schmidt	42	13	m.01h18v	About_Schmidt	34406.888119
+CompQTest-583	hot tub	31	7	m.041r19	Jacuzzi	4.627683
+CompQTest-583	jack nicholson	11	14	m.09fb5	Jack_Nicholson	27921.718732
+CompQTest-584	zimmers hole	16	12	m.01mc2hg	Zimmers_Hole	19216.848279
+CompQTest-585	batman	11	6	m.01d5g	Batman	401.565101
+CompQTest-585	batman	11	6	m.01hp5	Batman_(1989_film)	3.059002
+CompQTest-585	batman	11	6	m.01rmfh	Batman_(TV_series)	3.555065
+CompQTest-586	championship	41	12	m.0355pl	Football_League_Championship	4.598936
+CompQTest-586	dodgers	27	7	m.04mjl	Los_Angeles_Dodgers	25709.087326
+CompQTest-587	x-men	23	5	m.02rx03r	X-Men_(film_series)	128.673736
+CompQTest-587	x-men	23	5	m.0cd2vh9	X-Men:_First_Class	1.863229
+CompQTest-587	x-men	23	5	m.0d90m	X-Men_(film)	8.737150
+CompQTest-588	vince lombardi	18	14	m.07_xf	Vince_Lombardi	36486.614301
+CompQTest-589	does	24	4	m.04kf4	Leipzig	3.690818
+CompQTest-589	germany	29	7	m.0345h	Germany	26199.923544
+CompQTest-589	germany	29	7	m.03f2w	East_Germany	2.534571
+CompQTest-590	john nash	17	9	m.0pyqh	John_Forbes_Nash,_Jr.	1325.784159
+CompQTest-590	john nash	17	9	m.0pyq2	John_Nash_(architect)	3.643296
+CompQTest-591	charles dickens	24	15	m.01v9724	Charles_Dickens	31216.243378
+CompQTest-591	first book	13	10	m.0gtq0g	First_Book	1.058148
+CompQTest-592	france	29	6	m.0f8l9c	France	70796.242398
+CompQTest-592	who	0	3	m.0840w	World_Health_Organization	2.843224
+CompQTest-593	steve harris	33	12	m.01s2tk	Steve_Harris_(musician)	129695.739036
+CompQTest-593	steve harris	33	12	m.02k_c1	Steve_Harris_(actor)	26.073712
+CompQTest-594	northwestern football team	20	26	m.0c_fdy	Northwestern_Wildcats_football	4784.957877
+CompQTest-595	denmark	53	7	m.0k6nt	Denmark	19855.465909
+CompQTest-595	ulrike eleonora	34	15	m.01t9tc	Ulrika_Eleonora_of_Denmark	53752.109604
+CompQTest-595	ulrike eleonora	34	15	m.0q9jx	Ulrika_Eleonora,_Queen_of_Sweden	16207.222598
+CompQTest-596	jeana tomasino	34	14	m.0c9h40	Jeana_Keough	48349.968766
+CompQTest-596	virgo	6	5	m.0c130t	Virgo_(astrology)	1.227723
+CompQTest-597	alfred north whitehead	31	22	m.0bwpg	Alfred_North_Whitehead	56543.472523
+CompQTest-598	christopher columbus	9	20	m.01pwz	Christopher_Columbus	28052.075387
+CompQTest-598	christopher columbus	9	20	m.01r2c7	Chris_Columbus_(filmmaker)	1.431863
+CompQTest-599	fleetwood mac	16	13	m.033s6	Fleetwood_Mac	54260.282191
+CompQTest-599	fleetwood mac	16	13	m.094xh	Stevie_Nicks	222.892453
+CompQTest-599	fleetwood mac	16	13	m.094wr	Lindsey_Buckingham	4.706058
+CompQTest-600	apollo 13	26	9	m.011yd2	Apollo_13_(film)	432.319605
+CompQTest-600	tom hanks	8	9	m.0bxtg	Tom_Hanks	43717.045377
+CompQTest-601	afl	35	3	m.0ysy	American_Football_League	3.247342
+CompQTest-601	afl	35	3	m.01z4fn	American_Federation_of_Labor	3.697914
+CompQTest-601	afl	35	3	m.0ckh09	Australian_Football_League	269.599060
+CompQTest-601	afl	35	3	m.0g3j7	Arena_Football_League	3.519703
+CompQTest-601	the first president	8	19	m.034rd	George_Washington	2.613324
+CompQTest-602	a family at war	21	15	m.07mptt	A_Family_at_War	4278.364801
+CompQTest-603	hip hop awards	36	14	m.026z5z9	BET_Hip_Hop_Awards	9859.087583
+CompQTest-603	j cole	14	6	m.065zh2l	J._Cole	18394.618589
+CompQTest-603	j cole	14	6	m.02q041	Joe_Cole	6.704296
+CompQTest-603	what	0	4	m.0hr4h8p	Wait_what	4.064763
+CompQTest-604	ramy ayach	16	10	m.0287_8t	Ramy_Ayach	26339.916130
+CompQTest-605	darth vader	11	11	m.0f2y0	Darth_Vader	71836.315796
+CompQTest-605	darth vader	11	11	m.0d0vj4	Dick_Cheney	1.275683
+CompQTest-606	boredoms	16	8	m.02rt2w	Boredoms	19308.854982
+CompQTest-606	september	36	9	m.0b2km_	World_Trade_Center_(film)	1.245411
+CompQTest-607	buffy the vampire	19	17	m.0cskb	Buffy_the_Vampire_Slayer	10423.086248
+CompQTest-607	riley	10	5	m.01j9hw	Riley_Finn	5706.103997
+CompQTest-607	riley	10	5	m.0gqb22	Terminator:_The_Sarah_Connor_Chronicles	7.042427
+CompQTest-607	slayer	37	6	m.0jrcj	Slayer	729.753365
+CompQTest-608	limp bizkit	23	11	m.04qzm	Limp_Bizkit	49185.355630
+CompQTest-608	limp bizkit	23	11	m.01q7cb_	Fred_Durst	838.744378
+CompQTest-608	limp bizkit	23	11	m.01vs7x3	Wes_Borland	121.494441
+CompQTest-608	the band	14	8	m.01vrx3g	Levon_Helm	1.549236
+CompQTest-608	the band	14	8	m.07m7k	Tool_(band)	12.250789
+CompQTest-608	the band	14	8	m.03hmh_	Snow_Patrol	1.190561
+CompQTest-608	the band	14	8	m.07m4c	The_Band	1.630909
+CompQTest-609	joey jordison	10	13	m.01wt4wc	Joey_Jordison	12504.938496
+CompQTest-609	slipknot	32	8	m.0ntq7	Slipknot_(band)	11125.848952
+CompQTest-610	state	27	5	m.07vsl	United_States_Department_of_State	17.356035
+CompQTest-610	the second	8	10	m.0r099	El_Segundo,_California	3.197058
+CompQTest-610	united states	40	13	m.09c7w0	United_States	28409.163910
+CompQTest-610	united states	40	13	m.04sg45j	<EMPTY>	28409.163910
+CompQTest-611	steelers	29	8	m.05tfm	Pittsburgh_Steelers	139345.540345
+CompQTest-611	steelers	29	8	m.0425gc	Pohang_Steelers	1.041520
+CompQTest-612	mark van doren	28	14	m.038fbr	Mark_Van_Doren	75463.376457
+CompQTest-612	the son	17	7	m.045m1_	Jesus	1.240754
+CompQTest-613	counties	5	8	m.03wgr	Counties_of_Ireland	1.122013
+CompQTest-613	florida	17	7	m.02xry	Florida	40723.126576
+CompQTest-613	florida	17	7	m.02vwckw	Flo_Rida	2.315240
+CompQTest-614	tobias wolff	15	12	m.04nxw6	Tobias_Wolff	11985.744676
+CompQTest-615	britain	15	7	m.034cm	Great_Britain	341.239717
+CompQTest-615	britain	15	7	m.07ssc	United_Kingdom	1578.204711
+CompQTest-615	britain	15	7	m.01hnp	British_Empire	1.769634
+CompQTest-615	romans	33	6	m.06cmp	Roman_Empire	670.890802
+CompQTest-615	romans	33	6	m.03j38	Roman_Britain	1.447871
+CompQTest-615	romans	33	6	m.02l341	Ancient_Rome	19.138425
+CompQTest-615	romans	33	6	m.06frc	Roman_Republic	1.335019
+CompQTest-616	family guy	41	10	m.019nnl	Family_Guy	43824.664484
+CompQTest-616	seth macfarlane	17	15	m.021yw7	Seth_MacFarlane	22563.695187
+CompQTest-617	city	6	4	m.01n32	City	10000.000000
+CompQTest-617	pakistan	28	8	m.05sb1	Pakistan	37841.411274
+CompQTest-617	pakistan	28	8	m.038_0z	Pakistan_national_cricket_team	1.616809
+CompQTest-617	the oldest	14	10	m.080pwz	Varna_Necropolis	1.187777
+CompQTest-618	mark van doren	31	14	m.038fbr	Mark_Van_Doren	51820.255240
+CompQTest-619	steve harris	40	12	m.01s2tk	Steve_Harris_(musician)	655676.288112
+CompQTest-619	steve harris	40	12	m.02k_c1	Steve_Harris_(actor)	91.298008
+CompQTest-620	william george clark	39	20	m.01fhn8	William_George_Clark	18674.054939
+CompQTest-620	william george clark	39	20	m.043ldxq	William_George_Clark_(politician)	112967.549239
+CompQTest-621	tecumseh	9	8	m.01ck1m	Tecumseh	7362.005341
+CompQTest-621	tecumseh	9	8	m.01kyb6	Tecumseh,_Ontario	1.091692
+CompQTest-622	us	17	2	m.09c7w0	United_States	6.509813
+CompQTest-623	tears for fears	16	15	m.01n95d	Tears_for_Fears	33020.842403
+CompQTest-623	tears for fears	16	15	m.0hp2ps6	Curt_Smith	2.971089
+CompQTest-623	tears for fears	16	15	m.06zym8	Ian_Stanley	1.025450
+CompQTest-624	battle	42	6	m.03wg6l	Battle,_East_Sussex	2.523813
+CompQTest-624	hastings	52	8	m.03lkp	Hastings	17200.162975
+CompQTest-624	hastings	52	8	m.01741v	Hastings,_New_Zealand	1.967930
+CompQTest-624	william the conqueror	8	21	m.085t7	William_the_Conqueror	63687.682979
+CompQTest-625	sydney harbour	42	14	m.0701q	Sydney_Harbour_Bridge	329.058047
+CompQTest-625	sydney harbour	42	14	m.01rfyc	Port_Jackson	7797.786611
+CompQTest-625	sydney harbour	42	14	m.0fz25	Sydney,_Nova_Scotia	1.998658
+CompQTest-625	us	8	2	m.04sg45j	<EMPTY>	3.753677
+CompQTest-625	us	8	2	m.09c7w0	United_States	3.753677
+CompQTest-625	us president	8	12	m.060d2	President_of_the_United_States	10000.000000
+CompQTest-626	callie thorne	9	13	m.0fkft1	Callie_Thorne	29555.403377
+CompQTest-626	harold ramis	39	12	m.01pjr7	Harold_Ramis	26025.013835
+CompQTest-627	clem snide	16	10	m.09f6hh	Clem_Snide	10121.147560
+CompQTest-628	a dry white season	27	18	m.04x4pl	A_Dry_White_Season	1035.598429
+CompQTest-629	ryan reynolds	7	13	m.036hf4	Ryan_Reynolds	18749.766051
+CompQTest-629	ryan reynolds	7	13	m.02ph448	Ryan_Reynolds_(American_football)	1.018316
+CompQTest-630	traicho kostov	26	14	m.02qv6x1	Traycho_Kostov	46437.075783
+CompQTest-630	us	8	2	m.09c7w0	United_States	5.841501
+CompQTest-630	us	8	2	m.04sg45j	<EMPTY>	5.841501
+CompQTest-630	us president	8	12	m.060d2	President_of_the_United_States	10000.000000
+CompQTest-631	napoleon bonaparte	9	18	m.0j5b8	Napoleon	32467.722781
+CompQTest-632	euro	48	4	m.02j9z	Europe	1.822873
+CompQTest-632	euro	48	4	m.02q3s	Eurovision_Song_Contest	1.230307
+CompQTest-632	france	30	6	m.0f8l9c	France	24841.658465
+CompQTest-633	1941	46	4	m.04t6fk	1941_(film)	9.236252
+CompQTest-633	japan	19	5	m.03_3d	Japan	13660.510381
+CompQTest-633	japan	19	5	m.03xh50	Japan_national_football_team	1.455929
+CompQTest-634	augusta masters	9	15	m.014njb	Masters_Tournament	2026.170633
+CompQTest-635	adeline yen mah	15	15	m.061lpg	Adeline_Yen_Mah	55287.556490
+CompQTest-636	1776	49	4	m.015f4q	1776_(musical)	4.550768
+CompQTest-636	elected the	8	11	m.055sfq	The_Elected	24.432272
+CompQTest-636	virgina	38	7	m.07z1m	Virginia	15340.738685
+CompQTest-637	cheers	32	6	m.01s81	Cheers	4469.198987
+CompQTest-637	woody harrelson	8	15	m.0170s4	Woody_Harrelson	45555.786453
+CompQTest-638	great britain	26	13	m.07ssc	United_Kingdom	3.591492
+CompQTest-638	great britain	26	13	m.034cm	Great_Britain	26228.029914
+CompQTest-638	great wall	66	10	m.0d2dq0	Great_Wall_of_China	40884.805048
+CompQTest-639	chargers	12	8	m.06rpd	San_Diego_Chargers	29972.733287
+CompQTest-640	stanley cup	55	11	m.0cc8tt9	Stanley_Cup_Finals	156.422306
+CompQTest-640	toronto maple leafs	27	19	m.0j6tr	Toronto_Maple_Leafs	202283.028733
+CompQTest-641	in 1995	46	7	m.09zxk8	Piranha_(1995_film)	1.268458
+CompQTest-641	toad the wet sprocket	16	21	m.02kssx	Toad_the_Wet_Sprocket	221438.980092
+CompQTest-642	eric sykes	16	10	m.0kq5r	Eric_Sykes	43982.374641
+CompQTest-643	mandela	45	7	m.05g7q	Nelson_Mandela	31813.529868
+CompQTest-643	mandela	45	7	m.084n2	Winnie_Madikizela-Mandela	1.847161
+CompQTest-643	south africa	25	12	m.0hzlz	South_Africa	21839.768439
+CompQTest-643	south africa	25	12	m.02c59t	Southern_Africa	1.699122
+CompQTest-644	grease	35	6	m.01xlqd	Grease_(film)	956.700831
+CompQTest-644	grease	35	6	m.01qd2t	Grease_2	1.709686
+CompQTest-644	grease	35	6	m.0120cd	Grease_(musical)	17.600367
+CompQTest-644	grease	35	6	m.035qy	Greece	1.403431
+CompQTest-644	jeff conaway	14	12	m.026mzh	Jeff_Conaway	32162.652917
+CompQTest-645	abraham lincoln	16	15	m.0gzh	Abraham_Lincoln	41186.780397
+CompQTest-645	president	36	9	m.0157m	Bill_Clinton	2.432761
+CompQTest-645	ran	4	3	m.06khd	Royal_Australian_Navy	1.175354
+CompQTest-646	steve harris	35	12	m.01s2tk	Steve_Harris_(musician)	149152.727186
+CompQTest-646	steve harris	35	12	m.02k_c1	Steve_Harris_(actor)	26.073712
+CompQTest-647	byron nelson	9	12	m.02jhww	Byron_Nelson	6575.647946
+CompQTest-648	paul mccartney	14	14	m.03j24kf	Paul_McCartney	44137.834014
+CompQTest-648	the beatles	37	11	m.07c0j	The_Beatles	25946.909094
+CompQTest-648	the beatles	37	11	m.0fsx7m	The_Beatles_(TV_series)	10.291282
+CompQTest-649	michael jordan	9	14	m.054c1	Michael_Jordan	20949.942822
+CompQTest-649	nba	38	3	m.05jvx	National_Basketball_Association	7099.131221
+CompQTest-649	nba	38	3	m.029yl8	NBA_Development_League	1.395844
+CompQTest-650	president of the	8	16	m.01hvfh	President_of_the_Senate	2.599064
+CompQTest-650	susantha de fonseka	33	19	m.04n4__b	Susantha_de_Fonseka	20447.953525
+CompQTest-650	us	25	2	m.09c7w0	United_States	3.708366
+CompQTest-650	us	25	2	m.04sg45j	<EMPTY>	3.708366
+CompQTest-651	fa cup	8	6	m.02_p0	FA_Cup	58688.258204
+CompQTest-652	hakeem	28	6	m.01l_v5	Hakeem_Olajuwon	362.294667
+CompQTest-652	hakeem	28	6	m.056txjf	Hakeem_Nicks	1.116668
+CompQTest-652	hakeem	28	6	m.056ytr	Hakim_(Egyptian_singer)	19.523735
+CompQTest-653	berger	11	6	m.03x6l3	Patrik_Berger	39.819511
+CompQTest-653	berger	11	6	m.02py56s	Tora_Berger	1.265245
+CompQTest-653	sex and the city	21	16	m.03bzyn4	Sex_and_the_City_(film)	1.462769
+CompQTest-653	sex and the city	21	16	m.0l76z	Sex_and_the_City	56.792804
+CompQTest-654	giuseppe mango	25	14	m.02rpkrk	Giuseppe_Mango	20661.529107
+CompQTest-655	american	33	8	m.09c7w0	United_States	32.695577
+CompQTest-655	american	33	8	m.0z07	American_Airlines	2.249342
+CompQTest-655	american	33	8	m.04q7gbh	Americans	3.058979
+CompQTest-655	american	33	8	m.04sg45j	<EMPTY>	32.695577
+CompQTest-655	american	33	8	m.0sgjzry	<EMPTY>	2.249342
+CompQTest-655	john hancock	9	12	m.04563	John_Hancock	425299.031083
+CompQTest-655	john hancock	9	12	m.0b28z	John_Hancock_Center	2.634022
+CompQTest-655	john hancock	9	12	m.02vrgnr	Hancock_(film)	22.640496
+CompQTest-656	senators	12	8	m.0512p	Minnesota_Twins	1.503237
+CompQTest-656	virginia	24	8	m.07z1m	Virginia	8259.390135
+CompQTest-657	a 009 missione hong kong	23	24	m.06zl58s	A_009_missione_Hong_Kong	128669.011377
+CompQTest-658	steve perry	40	11	m.03yt18	Steve_Perry_(author)	1.371438
+CompQTest-658	steve perry	40	11	m.03yz68	Steve_Perry_(musician)	14013.939525
+CompQTest-658	steve perry	40	11	m.0fv5w_f	Steve_Perry_(Oregon_musician)	1.112145
+CompQTest-659	fijian	5	6	m.02wt0	Fiji	13.900532
+CompQTest-659	peter curtin	22	12	m.09vjqq	Peter_Curtin	727.722754
+CompQTest-660	2010	34	4	m.04gcyg	2010_(film)	1.554880
+CompQTest-660	terrell owens	8	13	m.027ddp	Terrell_Owens	37467.338524
+CompQTest-661	gamma squad	35	11	m.0fp0n7	Expendable_(film)	1447.141334
+CompQTest-661	governor of minnesota	8	21	m.01fgff	Governor_of_Minnesota	87255.898105
+CompQTest-662	bosnia	17	6	m.0166b	Bosnia_and_Herzegovina	22874.138766
+CompQTest-662	bosnia	17	6	m.02rwmk	Bosnian_War	1.012465
+CompQTest-663	stanley cup finals	59	18	m.0cc8tt9	Stanley_Cup_Finals	3476.071132
+CompQTest-663	toronto maple leafs	27	19	m.0j6tr	Toronto_Maple_Leafs	72606.821120
+CompQTest-664	gulf war	20	8	m.018w0j	Gulf_War	2.347428
+CompQTest-665	alanis morissette	21	17	m.0gdh5	Alanis_Morissette	37040.262148
+CompQTest-665	high school	5	11	m.09dv8h	High_School_Musical	1.986368
+CompQTest-665	high school	5	11	m.0bpgx	High_school	1.161224
+CompQTest-666	2001 film	27	9	m.047wh1	Planet_of_the_Apes_(2001_film)	21.260746
+CompQTest-666	2001 film	27	9	m.08ct6	2001:_A_Space_Odyssey_(film)	1.384062
+CompQTest-666	2001 film	27	9	m.01mgw	Crouching_Tiger,_Hidden_Dragon	1.031446
+CompQTest-666	a beautiful mind	37	16	m.09m6kg	A_Beautiful_Mind_(film)	5658.239645
+CompQTest-666	a beautiful mind	37	16	m.0drs36	A_Beautiful_Mind_(book)	1.014750
+CompQTest-667	dwight	10	6	m.089pwh	Dwight_Schrute	5.697735
+CompQTest-667	dwight	10	6	m.028rk	Dwight_D._Eisenhower	6.376267
+CompQTest-667	the office	20	10	m.08jgk1	The_Office_(U.S._TV_series)	10.858895
+CompQTest-667	the office	20	10	m.08jglt	The_Office_(UK_TV_series)	2.133804
+CompQTest-668	nicholas newman	10	15	m.0f22p8	Nicholas_Newman	48505.579675
+CompQTest-668	the young and the restless	29	26	m.01b64v	The_Young_and_the_Restless	11343.981189
+CompQTest-669	shaq	8	4	m.012xdf	Shaquille_O'Neal	59782.934625
+CompQTest-670	kevin lima	16	10	m.0d50mm	Kevin_Lima	36271.253624
+CompQTest-671	alyson stoner	9	13	m.02bwjv	Alyson_Stoner	31769.497299
+CompQTest-671	camp rock	31	9	m.02w4by3	Camp_Rock	1274.048706
+CompQTest-671	camp rock	31	9	m.080b54x	Camp_Rock_2:_The_Final_Jam	48.414220
+CompQTest-673	english	5	7	m.02jx1	England	108.900988
+CompQTest-673	english	5	7	m.02h40lc	English_language	2.504054
+CompQTest-673	philosopher	13	11	m.043s3	John_Locke	11.659134
+CompQTest-673	slate	60	5	m.026s38	Slate_(magazine)	34.227778
+CompQTest-674	charlie	10	7	m.06xt1y	Charlie_Pace	4.065607
+CompQTest-674	charlie	10	7	m.04cxdrv	Charlie_Harper_(Two_and_a_Half_Men)	2.101560
+CompQTest-674	charlie	10	7	m.02mt4k	Charlie_Kaufman	2.667430
+CompQTest-674	the santa clause	21	16	m.0129g2	The_Santa_Clause	6650.878119
+CompQTest-675	gary paulsen	35	12	m.04fpcx	Gary_Paulsen	28066.645475
+CompQTest-675	hatchet	24	7	m.04k062	Hatchet_(novel)	2489.720431
+CompQTest-675	hatchet	24	7	m.027rb4r	A_Cry_in_the_Wild	2.356349
+CompQTest-676	flea	20	4	m.01wwvt2	Flea_(musician)	2781.884954
+CompQTest-676	flea	20	4	m.01f7jt	Back_to_the_Future_Part_II	1.871508
+CompQTest-676	flea	20	4	m.01f7kl	Back_to_the_Future_Part_III	1.271337
+CompQTest-676	the big lebowski	33	16	m.07bwr	The_Big_Lebowski	20414.912066
+CompQTest-677	spain	29	5	m.06mkj	Spain	28073.860365
+CompQTest-678	a bittersweet life	34	18	m.07b6lr	A_Bittersweet_Life	4287.477737
+CompQTest-678	the movie	24	9	m.078wwr	Gucci_Mane	1.000278
+CompQTest-679	cristiano ronaldo	15	17	m.02xt6q	Cristiano_Ronaldo	19056.156775
+CompQTest-680	arizona	31	7	m.0vmt	Arizona	11412.365586
+CompQTest-680	arizona	31	7	m.027b7y9	Bella_Swan	1.654578
+CompQTest-681	iraq	29	4	m.0d05q4	Iraq	10983.022390
+CompQTest-682	carlton lassiter	11	16	m.0fdxxb	Carlton_Lassiter	110413.183929
+CompQTest-682	psych	31	5	m.0ds5jv	Psych	464.265364
+CompQTest-683	hong kong	5	9	m.03h64	Hong_Kong	14359.327277
+CompQTest-683	hong kong	5	9	m.0czf5w5	British_Hong_Kong	3.696231
+CompQTest-683	zhang yuan	25	10	m.07kx5k	Zhang_Yuan	12042.491449
+CompQTest-683	zhang yuan	25	10	m.05b5n5x	Top_Combine	46.877881
+CompQTest-684	by	29	2	m.0163v	Belarus	1.631051
+CompQTest-684	by	29	2	m.017v_	Bavaria	4.635662
+CompQTest-684	germany	32	7	m.0345h	Germany	37093.149885
+CompQTest-684	germany	32	7	m.01l3wr	Germany_national_football_team	3.550484
+CompQTest-684	germany	32	7	m.03f2w	East_Germany	1.857314
+CompQTest-684	occupied	20	8	m.08fmjs	Allied-occupied_Germany	8.520754
+CompQTest-685	microsoft	34	9	m.04sv4	Microsoft	10627.860629
+CompQTest-685	microsoft	34	9	m.0qt178q	<EMPTY>	10627.860629
+CompQTest-685	the founder	19	11	m.09w8jl	Jimmy_Wales	12.814427
+CompQTest-686	o come all ye faithful	22	22	m.045g1d	Adeste_Fideles	3.586999
+CompQTest-687	quentin tarantino	5	17	m.0693l	Quentin_Tarantino	2909.074737
+CompQTest-687	robert de niro	37	14	m.06cgy	Robert_De_Niro	91420.618430
+CompQTest-688	the colourfield	16	15	m.01qd3b5	The_Colourfield	25588.530912
+CompQTest-689	doug van horn	20	13	m.0285r_5	Doug_Van_Horn	65699.143993
+CompQTest-689	university	5	10	m.01dthg	University_of_Birmingham	1.065902
+CompQTest-689	university	5	10	m.07tf8	University	1.083389
+CompQTest-690	florida marlins	13	15	m.02__x	Miami_Marlins	78198.901649
+CompQTest-691	abraham	9	7	m.0pwb	Abraham	3759.629518
+CompQTest-691	abraham	9	7	m.0gzh	Abraham_Lincoln	40.587306
+CompQTest-691	sons	17	4	m.01db4k	Judah_(biblical_person)	1.456892
+CompQTest-692	carmen cortez	11	13	m.02ql50	Carmen_Cortez	40556.486772
+CompQTest-692	spy kids	28	8	m.02rrfzf	Spy_Kids	931.316673
+CompQTest-692	spy kids	28	8	m.042ldz	Daryl_Sabara	2.025910
+CompQTest-692	spy kids	28	8	m.0436kgz	Antonio_Banderas	1.445840
+CompQTest-692	spy kids	28	8	m.06cv1	Robert_Rodriguez	1.872379
+CompQTest-693	haiti	39	5	m.03gyl	Haiti	8916.150760
+CompQTest-694	oregon	12	6	m.05kj_	Oregon	11563.145869
+CompQTest-694	oregon ducks	12	12	m.0fbq2n	Oregon_Ducks_football	789.649138
+CompQTest-694	oregon ducks	12	12	m.03cmtnb	Oregon_Ducks_men's_basketball	237.938974
+CompQTest-694	oregon ducks	12	12	m.06k051	Oregon_Ducks	9.769528
+CompQTest-695	live in	28	7	m.09gnlly	Live-In	2.622177
+CompQTest-695	most	9	4	m.03hy9p	Most	4.702319
+CompQTest-695	of the people	14	13	m.03qn8dl	Of_the_People	1.759214
+CompQTest-695	russia	36	6	m.06bnz	Russia	17741.526590
+CompQTest-695	russia	36	6	m.07t21	Ukraine	2.411934
+CompQTest-695	russia	36	6	m.05qhw	Poland	1.721401
+CompQTest-695	russia	36	6	m.0163v	Belarus	1.781616
+CompQTest-696	nigeria	8	7	m.05cgv	Nigeria	17282.018094
+CompQTest-697	a bridge too far	31	16	m.0m9p3	A_Bridge_Too_Far_(film)	108.679465
+CompQTest-697	a bridge too far	31	16	m.04t3x56	<EMPTY>	1.038329
+CompQTest-698	hawaii	24	6	m.03gh4	Hawaii	134323.153889
+CompQTest-698	hawaii	24	6	m.0jbt3	Hawaii_(island)	1.323094
+CompQTest-698	hawaii	24	6	m.014wxc	Hawaiian_Islands	3.516534
+CompQTest-699	ruff endz	16	9	m.01knxf7	Ruff_Endz	13583.372747
+CompQTest-700	kate middleton	11	14	m.05mnc3	Catherine,_Duchess_of_Cambridge	17210.921480
+CompQTest-701	cambridge college	6	17	m.0986d0	Cambridge_College	10575.205107
+CompQTest-701	cambridge college	6	17	m.07tg4	University_of_Cambridge	26.769236
+CompQTest-701	william frederick chambers	28	26	m.03cnbcf	William_Frederick_Chambers	159170.965312
+CompQTest-702	benjamin harrison v	34	19	m.0k0tp	Benjamin_Harrison_V	46327.138955
+CompQTest-702	us	6	2	m.09c7w0	United_States	3.196762
+CompQTest-702	us	6	2	m.04sg45j	<EMPTY>	3.196762
+CompQTest-702	us president	6	12	m.060d2	President_of_the_United_States	10000.000000
+CompQTest-703	indian cricketer	11	16	m.024nj1	India_national_cricket_team	1284.147835
+CompQTest-703	international cricket	68	21	m.021q23	International_Cricket_Council	38.753963
+CompQTest-703	international cricket	68	21	m.02fbb5	New_Zealand_national_cricket_team	1.844944
+CompQTest-704	michigan	29	8	m.04rrx	Michigan	59430.599640
+CompQTest-704	michigan	29	8	m.07szy	University_of_Michigan	32.562195
+CompQTest-704	michigan	29	8	m.04kcn	Lake_Michigan	1.817537
+CompQTest-704	michigan	29	8	m.0fsb_6	Michigan_Wolverines_football	5.661780
+CompQTest-705	allied	15	6	m.059dn	NATO	1.835163
+CompQTest-705	france	8	6	m.0f8l9c	France	65491.017686
+CompQTest-705	ww2	30	3	m.081pw	World_War_II	3.610067
+CompQTest-706	anna kendrick	17	13	m.04066xj	Anna_Kendrick	28839.382363
+CompQTest-706	pitch perfect	40	13	m.0hr6d1j	Pitch_Perfect	4064.557869
+CompQTest-706	sings in	31	8	m.02rvnlr	Singin'_Sam	1.528010
+CompQTest-707	darth vader	11	11	m.0f2y0	Darth_Vader	94939.854698
+CompQTest-707	first movie	30	11	m.016dj8	Men_in_Black_(film)	3.267841
+CompQTest-707	first movie	30	11	m.0bt4g	Back_to_the_Future	59.614679
+CompQTest-707	first movie	30	11	m.01d2v1	Ghostbusters	7.809863
+CompQTest-708	apollo 13	26	9	m.011yd2	Apollo_13_(film)	432.319605
+CompQTest-708	tom hanks	8	9	m.0bxtg	Tom_Hanks	43717.045377
+CompQTest-709	a double life	31	13	m.01382t	A_Double_Life	7.044891
+CompQTest-709	a double life	31	13	m.047bkj9	Tongzhi_in_Love	1.858364
+CompQTest-710	bewitched	32	9	m.023ny6	Bewitched	13970.894869
+CompQTest-710	bewitched	32	9	m.05fm6m	Bewitched_(2005_film)	113.152153
+CompQTest-710	samantha stephens	11	17	m.023ny6	Bewitched	7471.616877
+CompQTest-711	kiss	24	4	m.011xhx	Kiss_(band)	3738.533549
+CompQTest-712	seattle seahawks	14	16	m.070xg	Seattle_Seahawks	43150.733072
+CompQTest-712	super bowl	41	10	m.06x5s	Super_Bowl	19379.436553
+CompQTest-713	the light bulb	13	14	m.0cpk7	Incandescent_light_bulb	1.317385
+CompQTest-714	cavaliers	13	9	m.0jm7n	Cleveland_Cavaliers	45568.852934
+CompQTest-715	lord of the flies	31	17	m.07s0_	Lord_of_the_Flies	230.581082
+CompQTest-715	lord of the flies	31	17	m.0kvfd1	Lord_of_the_Flies_(1963_film)	9.260389
+CompQTest-715	lord of the flies	31	17	m.026h2cm	Lord_of_the_Flies_(1990_film)	21.716893
+CompQTest-715	william golding	9	15	m.0870p	William_Golding	60820.475570
+CompQTest-716	total wipeout	31	13	m.05b08_1	Total_Wipeout	34455.833530
+CompQTest-716	total wipeout	31	13	m.047d4bz	Wipeout_(2008_U.S._game_show)	3.414338
+CompQTest-717	europe	30	6	m.02j9z	Europe	33106.057931
+CompQTest-717	europe	30	6	m.07y9k	UEFA	1.680977
+CompQTest-717	nation	20	6	m.09c7w0	United_States	9.783440
+CompQTest-718	normandy	32	8	m.05g56	Normandy	13676.450962
+CompQTest-718	vikings	13	7	m.07_my	Vikings	1.004978
+CompQTest-718	vikings	13	7	m.051q5	Minnesota_Vikings	167.561828
+CompQTest-718	vikings	13	7	m.0k3lwy1	Vikings_(TV_series)	1.095982
+CompQTest-719	the ocean	29	9	m.0j3b	Atlantic_Ocean	1.228363
+CompQTest-720	a g n kazi	21	10	m.03c2t03	Aftab_Ghulam_Nabi_Kazi	83589.844244
+CompQTest-721	championship	27	12	m.0355pl	Football_League_Championship	33.825844
+CompQTest-721	fsu	23	3	m.025v26c	Florida_State_Seminoles_football	6.095464
+CompQTest-721	fsu	23	3	m.096ds	Commonwealth_of_Independent_States	1.274142
+CompQTest-721	fsu	23	3	m.01jq0j	Florida_State_University	90.491471
+CompQTest-721	mvp	12	3	m.08b254	Montel_Vontavious_Porter	3938.941334
+CompQTest-721	of the	16	6	m.08b_ls	Armored_Core:_Project_Phantasma	1.723397
+CompQTest-722	amos alonzo stagg high school	9	29	m.0fcpy3	Amos_Alonzo_Stagg_High_School	336592.499250
+CompQTest-722	amos alonzo stagg high school	9	29	m.026n45l	Stagg_High_School_(Stockton,_California)	31.672596
+CompQTest-723	abraham lincoln	16	15	m.0gzh	Abraham_Lincoln	41186.780397
+CompQTest-723	president	36	9	m.0157m	Bill_Clinton	2.432761
+CompQTest-723	ran	4	3	m.06khd	Royal_Australian_Navy	1.175354
+CompQTest-724	nikola tesla	9	12	m.05d1y	Nikola_Tesla	38484.604391
+CompQTest-725	new jersey	24	10	m.05fjf	New_Jersey	2268.011588
+CompQTest-725	new jersey	24	10	m.0hm2b	New_Jersey_Devils	2.256240
+CompQTest-725	new jersey	24	10	m.0jm3b	Brooklyn_Nets	1.795875
+CompQTest-725	senators	12	8	m.05pcr	Ottawa_Senators	1.455620
+CompQTest-725	senators	12	8	m.0512p	Minnesota_Twins	1.355923
+CompQTest-726	bronwen hughes	45	14	m.0kt6th	Bronwen_Hughes	14436.452117
+CompQTest-726	vanessa lee chester	9	19	m.027cb3v	Vanessa_Lee_Chester	16720.047748
+CompQTest-727	russia	19	6	m.06bnz	Russia	21212.491548
+CompQTest-727	russia	19	6	m.05qhw	Poland	2.083732
+CompQTest-727	russia	19	6	m.0163v	Belarus	1.749248
+CompQTest-727	russia	19	6	m.07t21	Ukraine	2.298337
+CompQTest-728	jackie robinson	8	15	m.0443c	Jackie_Robinson	50983.416724
+CompQTest-729	championship	38	12	m.0355pl	Football_League_Championship	4.598936
+CompQTest-729	knicks	23	6	m.0jm3v	New_York_Knicks	44265.181758
+CompQTest-730	hong kong	5	9	m.03h64	Hong_Kong	20857.173008
+CompQTest-730	hong kong	5	9	m.0czf5w5	British_Hong_Kong	3.696231
+CompQTest-730	zhu xu	25	6	m.0gg757	Zhu_Xu	23776.249668
+CompQTest-731	hong kong	5	9	m.03h64	Hong_Kong	41483.830017
+CompQTest-731	lily young	25	10	m.04ldxwr	Lily_Young	78.786097
+CompQTest-732	oceania	35	7	m.05nrg	Oceania	43327.278817
+CompQTest-732	oceania	35	7	m.09pkq0	Australia_(continent)	2.337872
+CompQTest-732	territories	20	11	m.032kq5	Overseas_departments_and_territories_of_France	1.732682
+CompQTest-732	territories	20	11	m.0nyg5	Palestinian_territories	1.255885
+CompQTest-732	territories	20	11	m.01ff0h	Dependent_territory	1.733986
+CompQTest-733	bill clinton	9	12	m.0157m	Bill_Clinton	37336.018448
+CompQTest-733	georgetown university	37	21	m.0pspl	Georgetown_University	30826.613192
+CompQTest-733	georgetown university	37	21	m.02ckl3	Edmund_A._Walsh_School_of_Foreign_Service	88.071573
+CompQTest-734	neil armstrong	9	14	m.05b6w	Neil_Armstrong	62596.149565
+CompQTest-734	neil armstrong	9	14	m.06c3sx	Neil_Armstrong_(ice_hockey)	1.022943
+CompQTest-735	dana scully	11	11	m.022jb6	Dana_Scully	38462.750026
+CompQTest-735	x files	26	7	m.0443v1	The_X-Files_(film)	241.817914
+CompQTest-735	x files	26	7	m.07g9f	The_X-Files	1084.364167
+CompQTest-736	awakenings	53	10	m.0y_hb	Awakenings	2127.130388
+CompQTest-736	awakenings	53	10	m.0h96k0f	The_Awakening_(2011_film)	1.507113
+CompQTest-736	awakenings	53	10	m.0c6340	Awakenings_(book)	5953.105522
+CompQTest-736	oliver sacks	23	12	m.016q1r	Oliver_Sacks	25792.116444
+CompQTest-736	the 1990 film	39	13	m.016yxn	Reversal_of_Fortune	1.033129
+CompQTest-736	the 1990 film	39	13	m.035_2h	Dick_Tracy_(1990_film)	35.597396
+CompQTest-737	governor of oregon	8	18	m.025v33x	Governor_of_Oregon	10147.614330
+CompQTest-737	naked gun	36	9	m.0fb7c	Leslie_Nielsen	2.662048
+CompQTest-737	naked gun	36	9	m.01h7n7	The_Naked_Gun:_From_the_Files_of_Police_Squad!	14.247771
+CompQTest-738	best cinematography	50	19	m.0gr0m	Academy_Award_for_Best_Cinematography	2.806676
+CompQTest-738	best original song	8	18	m.0gqz2	Academy_Award_for_Best_Original_Song	3.088813
+CompQTest-738	boris kaufman	32	13	m.08_j8y	Boris_Kaufman	42417.343763
+CompQTest-739	pennsylvania	28	12	m.05tbn	Pennsylvania	5095.478584
+CompQTest-739	pennsylvania	28	12	m.07tds	University_of_Pennsylvania	1.650286
+CompQTest-739	u s	12	3	m.09c7w0	United_States	406.052722
+CompQTest-739	u s	12	3	m.04sg45j	<EMPTY>	406.052722
+CompQTest-739	u s	12	3	m.01bqks	Federal_government_of_the_United_States	2.651262
+CompQTest-740	can i	16	5	m.09gfmbm	Jaicko	2.590936
+CompQTest-740	southern california	43	19	m.0gx1l	Southern_California	22536.021973
+CompQTest-740	southern california	43	19	m.065y4w7	University_of_Southern_California	2.024306
+CompQTest-741	the gulf	14	8	m.0661z	Persian_Gulf	2.975878
+CompQTest-741	the gulf	14	8	m.03f_9	Gulf_of_Mexico	1.495543
+CompQTest-742	messi	14	5	m.06qjgc	Lionel_Messi	26421.495536
+CompQTest-743	chuck bass	10	10	m.0g0jx7	Chuck_Bass	42533.096946
+CompQTest-743	gossip girl	24	11	m.0gfzgl	Gossip_Girl	1818.473962
+CompQTest-743	gossip girl	24	11	m.06gtj4d	Gossip_Girl_(season_3)	3.467297
+CompQTest-743	gossip girl	24	11	m.05dlwks	Gossip_Girl_(season_1)	3.467297
+CompQTest-743	gossip girl	24	11	m.0c_m6sw	Gossip_Girl_(season_4)	3.526993
+CompQTest-743	gossip girl	24	11	m.05dlwkw	Gossip_Girl_(season_2)	3.467297
+CompQTest-744	martin luther king jr	16	21	m.051cc	Martin_Luther_King,_Jr.	21166.008454
+CompQTest-745	peyton manning	20	14	m.027jv8	Peyton_Manning	36740.897208
+CompQTest-745	super bowl	5	10	m.06x5s	Super_Bowl	8980.123113
+CompQTest-746	claudine auger	28	14	m.041twg	Claudine_Auger	6571.684888
+CompQTest-746	james bond	6	10	m.0clpml	James_Bond	203905.132806
+CompQTest-747	1997	42	4	m.02w8nlb	1997_(band)	2.803971
+CompQTest-747	kathleen hanna	16	14	m.0fq0dnv	Kathleen_Hanna	45962.241550
+CompQTest-748	franklin d	24	10	m.02yy8	Franklin_D._Roosevelt	14320.377619
+CompQTest-748	roosevelt	36	9	m.02yy8	Franklin_D._Roosevelt	13374.978727
+CompQTest-748	roosevelt	36	9	m.07hyk	Theodore_Roosevelt	16.176801
+CompQTest-749	superman	5	8	m.070vn	Superman	590.849390
+CompQTest-750	dmitri mendeleev	9	16	m.0gglj	Dmitri_Mendeleev	60931.660528
+CompQTest-751	ice age 4	33	9	m.0fpgp26	Ice_Age:_Continental_Drift	1685.608736
+CompQTest-751	nicki minaj	18	11	m.047sxrj	Nicki_Minaj	66260.387087
+CompQTest-752	senators	21	8	m.0512p	Minnesota_Twins	1.503237
+CompQTest-752	virginia	12	8	m.07z1m	Virginia	8259.390135
+CompQTest-753	lincoln	23	7	m.0gzh	Abraham_Lincoln	2214376.084744
+CompQTest-753	lincoln	23	7	m.0gmgwnv	Lincoln_(2012_film)	9.631188
+CompQTest-753	lincoln	23	7	m.0gy8s	Lincoln_Motor_Company	2.887106
+CompQTest-753	lincoln	23	7	m.0vv3w28	<EMPTY>	2.887106
+CompQTest-753	president	13	9	m.0157m	Bill_Clinton	2.539702
+CompQTest-754	messi	14	5	m.06qjgc	Lionel_Messi	26421.495536
+CompQTest-755	alastair mackenzie	19	18	m.026851_	Alastair_Mackenzie	24385.764970
+CompQTest-756	dallas cowboys	27	14	m.02896	Dallas_Cowboys	21187.633140
+CompQTest-756	the superbowl	46	13	m.06x5s	Super_Bowl	952.406396
+CompQTest-757	israel	39	6	m.03spz	Israel	30483.100936
+CompQTest-758	arsenalfc	27	9	m.0xbm	Arsenal_F.C.	133.723347
+CompQTest-759	carol	42	5	m.0j1t7hr	Carol_Peletier	4.764069
+CompQTest-759	christmas	32	9	m.01vq3	Christmas	22192.276595
+CompQTest-759	nicolas cage	9	12	m.01vvb4m	Nicolas_Cage	21310.003043
+CompQTest-760	championship	60	12	m.0355pl	Football_League_Championship	17.200435
+CompQTest-760	golden state warriors	18	21	m.0jmj7	Golden_State_Warriors	61631.055120
+CompQTest-760	nba	56	3	m.05jvx	National_Basketball_Association	2855.834549
+CompQTest-761	william george clark	31	20	m.01fhn8	William_George_Clark	18674.054939
+CompQTest-761	william george clark	31	20	m.043ldxq	William_George_Clark_(politician)	112967.549239
+CompQTest-762	hurricane katrina	37	17	m.07nnlb	Hurricane_Katrina	9.269660
+CompQTest-762	louisiana	20	9	m.04ly1	Louisiana	14551.063692
+CompQTest-763	anne hutchinson	16	15	m.01v5g9	Anne_Hutchinson	23356.444314
+CompQTest-764	harry potter	44	12	m.03hxsv	Harry_Potter_and_the_Half-Blood_Prince_(film)	20.798384
+CompQTest-764	harry potter	44	12	m.03647x	Harry_Potter_(character)	6.357625
+CompQTest-764	harry potter	44	12	m.078ffw	Harry_Potter	7.480749
+CompQTest-764	harry potter	44	12	m.02676m4	Harry_Potter_(film_series)	490.411550
+CompQTest-764	robert pattinson	19	16	m.062dn7	Robert_Pattinson	38596.288886
+CompQTest-765	call on me	23	10	m.0cydtc	Call_on_Me_(Janet_Jackson_song)	1.057287
+CompQTest-765	call on me	23	10	m.01635v	Bobby_Bland	1.033845
+CompQTest-765	call on me	23	10	m.0dy2fl	Call_on_Me_(Eric_Prydz_song)	4.673999
+CompQTest-766	blackie	22	7	m.096hm	Blake_Edwards	1.214087
+CompQTest-766	blackie	22	7	m.01hwt	Black_people	1.306041
+CompQTest-766	general hospital	40	16	m.0358x_	General_Hospital	8603.771807
+CompQTest-766	related	57	7	m.08qkhr	Related	1.166508
+CompQTest-766	to on	65	5	m.0k2sk	Who_Framed_Roger_Rabbit	1.155247
+CompQTest-766	to on	65	5	m.0ljc_	Cartoon_Network	1.673510
+CompQTest-767	floyd	14	5	m.01wv9xn	Pink_Floyd	42756.827673
+CompQTest-767	pink	9	4	m.01vrt_c	Pink_(singer)	118.771005
+CompQTest-768	apollo 13	37	9	m.011yd2	Apollo_13_(film)	444.715746
+CompQTest-768	tom hanks	19	9	m.0bxtg	Tom_Hanks	45693.316125
+CompQTest-769	joe montana	15	11	m.01r6hc	Joe_Montana	18155.919100
+CompQTest-769	super bowl	31	10	m.06x5s	Super_Bowl	45787.120124
+CompQTest-770	jeremy shockey	9	14	m.076ltd	Jeremy_Shockey	27261.676197
+CompQTest-771	country	5	7	m.01lyv	Country_music	10000.000000
+CompQTest-771	mongols	21	7	m.04w8f	Mongolia	1.668050
+CompQTest-771	mongols	21	7	m.01jv68	Mongol_Empire	5.863414
+CompQTest-772	herbert hoover	9	14	m.03kdl	Herbert_Hoover	3732.340816
+CompQTest-772	herbert hoover	9	14	m.03t1qx	M._Herbert_Hoover	1.171614
+CompQTest-774	dad	31	3	m.07w678	Calvin_Hill	14.556643
+CompQTest-774	peyton manning	14	14	m.027jv8	Peyton_Manning	56236.346595
+CompQTest-775	president	8	9	m.0157m	Bill_Clinton	1.188809
+CompQTest-775	united states	33	13	m.09c7w0	United_States	2397.887707
+CompQTest-775	united states	33	13	m.04sg45j	<EMPTY>	2397.887707
+CompQTest-775	united states	33	13	m.01bqks	Federal_government_of_the_United_States	1.117101
+CompQTest-776	reggie bush	13	11	m.05cb70	Reggie_Bush	20334.052020
+CompQTest-777	donnie wahlberg	9	15	m.02stwg	Donnie_Wahlberg	20224.788117
+CompQTest-777	the sixth sense	33	15	m.07j94	The_Sixth_Sense	5802.869416
+CompQTest-777	the sixth sense	33	15	m.0frx5f	The_Sixth_Sense_(TV_series)	3.259600
+CompQTest-778	mark pickerel	16	13	m.0bzyrj	Mark_Pickerel	53052.785710
+CompQTest-779	benjamin bratt	79	14	m.01tfck	Benjamin_Bratt	28285.511644
+CompQTest-779	carey lowell	41	12	m.041l94	Carey_Lowell	31735.733238
+CompQTest-780	david beckham	15	13	m.02d9k	David_Beckham	34959.162509
+CompQTest-781	cristiano ronaldo	15	17	m.02xt6q	Cristiano_Ronaldo	19056.156775
+CompQTest-782	anakin skywalker	10	16	m.0f2y0	Darth_Vader	82984.281675
+CompQTest-782	star wars 1	30	11	m.0ddt_	Star_Wars_Episode_I:_The_Phantom_Menace	484.520379
+CompQTest-783	family guy	28	10	m.019nnl	Family_Guy	3133.752760
+CompQTest-783	family guy	28	10	m.051xp89	Family_Guy_(season_5)	1.996951
+CompQTest-783	family guy	28	10	m.027gynh	Family_Guy_(season_1)	2.000171
+CompQTest-783	family guy	28	10	m.0ckt2c	Family_Guy_Video_Game!	17.847610
+CompQTest-783	family guy	28	10	m.06xlxlx	Family_Guy_(season_10)	4.162174
+CompQTest-783	mila kunis	9	10	m.023v4_	Mila_Kunis	33102.015733
+CompQTest-784	immigrants	22	10	m.01zbfv	Aliyah	1.516234
+CompQTest-784	us	40	2	m.09c7w0	United_States	4.389410
+CompQTest-784	us	40	2	m.04sg45j	<EMPTY>	4.389410
+CompQTest-785	ronald reagan	33	13	m.06c0j	Ronald_Reagan	23499.462065
+CompQTest-785	the vice president	8	18	m.0g3xvv	The_Vice_President	48.856308
+CompQTest-786	ashley	22	6	m.06x06k	Ashley_Massaro	11.699021
+CompQTest-786	ashley	22	6	m.02r95fh	Ashley_Furniture_Industries	9.566927
+CompQTest-786	taylor	15	6	m.010c45	Taylor,_Texas	1.920779
+CompQTest-786	taylor	15	6	m.0vrxt	Taylor,_Michigan	1.920779
+CompQTest-786	taylor	15	6	m.078g6y	Penny_Taylor	1.645246
+CompQTest-786	taylor	15	6	m.09jq89	Taylor_Guitars	9.103958
+CompQTest-787	house of representatives	34	24	m.0b3wk	United_States_House_of_Representatives	2.465154
+CompQTest-787	minority leader	11	15	m.0499g1	Minority_leader	1.230357
+CompQTest-788	us	37	2	m.09c7w0	United_States	7.574789
+CompQTest-789	fedex	8	5	m.0k9s1	FedEx	9077.453625
+CompQTest-789	fedex	8	5	m.05nwdl	FedEx_Express	2.162522
+CompQTest-789	fedex cup	8	9	m.08q5ws	FedEx_Cup	2.373328
+CompQTest-790	eva peron	24	9	m.0dltj	Eva_Per%F3n	39415.582633
+CompQTest-791	jfk	28	3	m.0d3k14	John_F._Kennedy	119032.324029
+CompQTest-791	president	13	9	m.0157m	Bill_Clinton	2.361608
+CompQTest-792	bilbo baggins	10	13	m.0g6z1	Bilbo_Baggins	48687.251326
+CompQTest-792	the hobbit	27	10	m.02kl1y	The_Hobbit_(1977_film)	427.793054
+CompQTest-792	the hobbit	27	10	m.07g75	The_Hobbit	56.452329
+CompQTest-792	the hobbit	27	10	m.026ph7x	The_Hobbit_(film_series)	74.162488
+CompQTest-792	the hobbit	27	10	m.0286j4k	The_Hobbit_(2003_video_game)	12.674777
+CompQTest-793	eowyn	10	5	m.0gynx	%C9owyn	2484.765365
+CompQTest-793	lord of the rings	19	17	m.017jd9	The_Lord_of_the_Rings:_The_Return_of_the_King	21.087602
+CompQTest-793	lord of the rings	19	17	m.017gl1	The_Lord_of_the_Rings:_The_Fellowship_of_the_Ring	25.883215
+CompQTest-793	lord of the rings	19	17	m.023cjg	The_Lord_of_the_Rings_(1978_film)	1.703337
+CompQTest-793	lord of the rings	19	17	m.0dz8q	Gandalf	2.363322
+CompQTest-793	lord of the rings	19	17	m.025h5s	The_Lord_of_the_Rings_(film_series)	12.124619
+CompQTest-793	lord of the rings	19	17	m.07bz5	The_Lord_of_the_Rings	27.130785
+CompQTest-793	lord of the rings	19	17	m.02r9202	Lord_of_the_Rings_(musical)	8.660641
+CompQTest-794	lex luthor	10	10	m.04q78	Lex_Luthor	14615.231428
+CompQTest-794	lex luthor	10	10	m.04lcqqy	Lex_Luthor_(Smallville)	173820.860851
+CompQTest-794	smallville	24	10	m.03g9xj	Smallville	14763.655135
+CompQTest-794	smallville	24	10	m.0c749tl	Smallville_(season_10)	71.276490
+CompQTest-794	smallville	24	10	m.06gspqd	Smallville_(season_9)	25.728618
+CompQTest-794	smallville	24	10	m.087t3k	Smallville_(season_3)	4.381097
+CompQTest-794	smallville	24	10	m.087t2w	Smallville_(season_2)	4.221604
+CompQTest-795	william faulkner	15	16	m.084w8	William_Faulkner	69042.839001
+CompQTest-796	ghost rider	21	11	m.0dgq80b	Ghost_Rider:_Spirit_of_Vengeance	15.115760
+CompQTest-796	ghost rider	21	11	m.027h42y	Ghost_Rider_(film)	1.098642
+CompQTest-796	ghost rider	21	11	m.033vgp	Ghost_Rider_(comics)	360.353366
+CompQTest-796	ghost rider	21	11	m.01t_xp_	Rush_(band)	2.113467
+CompQTest-796	roxanne	10	7	m.02rl6f	Roxanne_(film)	88.931385
+CompQTest-796	roxanne	10	7	m.014d_k	A_Goofy_Movie	1.506726
+CompQTest-796	roxanne	10	7	m.0h_cph8	God_Bless_America_(film)	2.013931
+CompQTest-796	roxanne	10	7	m.056mfh	Cyrano_de_Bergerac_(play)	2.474619
+CompQTest-797	communist	17	9	m.02189	Communist_Party_of_China	4.798541
+CompQTest-797	prc	39	3	m.0d05w3	China	325.536662
+CompQTest-798	christmas	19	9	m.01vq3	Christmas	11187.245331
+CompQTest-798	us	47	2	m.09c7w0	United_States	2.371574
+CompQTest-798	us	47	2	m.04sg45j	<EMPTY>	2.371574
+CompQTest-799	a boy named charlie brown	39	25	m.08wg4l	A_Boy_Named_Charlie_Brown	72167.401687
+CompQTest-799	a boy named charlie brown	39	25	m.04cvz7s	A_Boy_Named_Charlie_Brown_(TV_special)	73.789847
