@@ -1,0 +1,2 @@
+{"p": 0.0, "r": 0.0, "f1": 0, "ans_size": 1, "hops": 1, "ans_str": "1904", "answer_type": "datetime", "agg": false, "raw_paths": [["Main", 0, "m.03c7j06", ["organization.organization.date_founded"]]]}
+{"p": 0.0, "r": 0.0, "f1": 0, "ans_size": 1, "hops": 2, "ans_str": "Varese", "answer_type": "base.aareas.schema.administrative_area\tlocation.statistical_region\tlocation.dated_location\tbase.aareas.schema.earth.citytown\tlocation.citytown", "agg": false, "raw_paths": [["Main", 0, "m.03c7j06", ["organization.organization.headquarters", "location.mailing_address.citytown"]]]}

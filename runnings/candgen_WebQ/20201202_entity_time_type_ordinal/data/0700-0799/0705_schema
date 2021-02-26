@@ -1,0 +1,3 @@
+{"p": 0.0, "r": 0.0, "f1": 0.0, "ans_size": 1, "hops": 1, "ans_str": "39", "answer_type": "decimal", "agg": false, "raw_paths": [["Main", 0, "m.02qn24x", ["boats.ship.length_overall"]]]}
+{"p": 0.0, "r": 0.0, "f1": 0.0, "ans_size": 1, "hops": 2, "ans_str": "FV Cornelia Marie", "answer_type": "boats.ship\tbase.schemastaging.ship_extra", "agg": false, "raw_paths": [["Main", 0, "m.02qn24x", ["boats.ship.owners", "boats.ship_ownership.ship"]]]}
+{"p": 0.333333, "r": 1.0, "f1": 0.5, "ans_size": 3, "hops": 2, "ans_str": "F/V Cornelia Marie, LLC\tJake Harris\tJosh Harris", "answer_type": "boats.ship_owner", "agg": false, "raw_paths": [["Main", 0, "m.02qn24x", ["boats.ship.owners", "boats.ship_ownership.owner"]]]}
