@@ -33,11 +33,24 @@
 暴力搜索得到所有相关的一跳或两跳路径(yhjia@192.168.126.124:/data/yhjia/Question2Cands/backward_search/step1_webq_query_graph_with_linkings_and_answer.sh)
 
 
-## 从生成的查询图候选到训练测试数据的构建(Build_Data)
+## 查询图选择模块
+
+### 从生成的查询图候选到训练测试数据的构建(Build_Data)
+
+#### WebQ
+
+```
+cd Build_Data/WebQ
+python build_listwise_data.py
+```
+执行后会在runnings/train_data/webq文件夹下生成不同正负例的训练集文件，以及统一的验证和测试文件。这些文件会被三种排序优化方法共同使用。
+
+
 
 单点排序训练数据：read_query_graph.py
 
 805条    300条    799条
+
 
 
 

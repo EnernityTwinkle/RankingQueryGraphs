@@ -1,9 +1,12 @@
 import os
+import sys
 import json
 import random
 import copy
 import pickle
-from sample_pos_and_neg import select_top_data, select_pairwise_data, select_top_n_listwise, select_classify_data_solid, select_top_1_n_listwise,\
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(BASE_DIR)
+from Build_Data.sample_pos_and_neg import select_top_data, select_pairwise_data, select_top_n_listwise, select_classify_data_solid, select_top_1_n_listwise,\
                                 select_top_1_n_listwise_pos_solid, select_top_1_n_listwise_11_per_group, \
                                 select_top_1_n_listwise_gradual, select_top_1_n_listwise_gradual_true1, \
                                 select_pairwise_gradual_true1, select_pairwise_gradual
@@ -231,7 +234,8 @@ def read_query_graph(init_dir_name, entity_dic, qid2comp_dic):
                         num += 1
                         # que2cands_dic.append((p, r, f, ans_str, ))
                         # import pdb; pdb.set_trace()
-    print(num, len(que2cands_dic), num * 1.0 / len(que2cands_dic))
+    print("候选总个数:{%d}, 过滤后的问句总个数:{%d}, 平均每个问句对应的候选个数:{%f}" % \
+        (num, len(que2cands_dic), num * 1.0 / len(que2cands_dic)))
     return que2cands_dic
 
 def takeF1(item):
