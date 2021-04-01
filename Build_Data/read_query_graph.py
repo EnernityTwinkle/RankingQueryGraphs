@@ -4,7 +4,9 @@ import random
 import copy
 import pickle
 from sample_pos_and_neg import select_top_data, select_pairwise_data, select_top_n_listwise, select_classify_data_solid, select_top_1_n_listwise,\
-                                select_top_1_n_listwise_pos_solid, select_top_1_n_listwise_11_per_group
+                                select_top_1_n_listwise_pos_solid, select_top_1_n_listwise_11_per_group, \
+                                select_top_1_n_listwise_gradual, select_top_1_n_listwise_gradual_true1, \
+                                select_pairwise_gradual_true1, select_pairwise_gradual
 seed = 100
 random.seed(seed)
 r_shuff = random.random
@@ -140,7 +142,8 @@ def get_info_of_cand(line, entity_dic, comp_list):
     p = line_json['p']
     r = line_json['r']
     f1 = line_json['f1']
-    ans_str = ' '.join(line_json['ans_str'].replace('\t', ', ').split(' ')[0:600])# 保留所有答案
+    # ans_str = ' '.join(line_json['ans_str'].replace('\t', ', ').split(' ')[0:600])# 保留所有答案
+    ans_str = ''
     # ans_str = ','.join(line_json['ans_str'].split('\t')[0:3]) # 保留一个答案
     raw_paths = line_json['raw_paths']
     for subpath in raw_paths:
@@ -247,8 +250,8 @@ def get_pos_neg_accord_f1(que2feature):
         for feature in features:
             if(qid not in qid2cand):
                 qid2cand[qid] = [[], []]
-                # if(float(feature.f1) == max_f1 and max_f1 > 0.1):
-                if(feature.f1 > 0.1):
+                if(float(feature.f1) == max_f1 and max_f1 > 0.1):
+                # if(feature.f1 > 0.1):
                 # if(float(feature.f1) == max_f1 and float(feature.f1) > 0.1 and float(feature.p) > 0.1):
                 # if(float(feature.f1) > 0.9 and float(feature.p) > 0.1):
                     qid2cand[qid][0].append(feature)# 0存放正确的候选
@@ -257,9 +260,9 @@ def get_pos_neg_accord_f1(que2feature):
                 else:
                     qid2cand[qid][1].append(feature)# 1存放错误的候选
             else:
-                # if(float(feature.f1) == max_f1 and max_f1 > 0.1):
+                if(float(feature.f1) == max_f1 and max_f1 > 0.1):
                 # if(float(feature.f1) == max_f1 and float(feature.f1) > 0.1 and float(feature.p) > 0.1):
-                if(feature.f1 > 0.1):
+                # if(feature.f1 > 0.1):
                 # if(float(feature.f1) > 0.9 and float(feature.p) > 0.1):
                     qid2cand[qid][0].append(feature)# 0存放正确的候选
                 # elif(float(feature.f1) == 0):

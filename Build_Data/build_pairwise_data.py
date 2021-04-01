@@ -13,20 +13,16 @@ if __name__ == "__main__":
     qid2comp_dic = read_comp(init_dir_name)
     qid2cands = read_query_graph(init_dir_name, entity_dic, qid2comp_dic)
     qid2cands = get_pos_neg_accord_f1(qid2cands)
-    f = open('/data2/yhjia/kbqa_sp/compq_qid2question.pkl', 'rb')
+    f = open('../data/compq_qid2question.pkl', 'rb')
     qid2question = pickle.load(f)
 
 
     qid2cands_train, qid2cands_dev, qid2cands_test = split_data_compq(qid2cands)
     
-    # file_name = './CompQ_data/compq_pairwise_neg_' + str(NEG_NUM) + 'type_entity_time_ordinal_constrain_entity_rel_answer_'
-    # file_name = './CompQ_data/compq_pairwise_neg_' + str(NEG_NUM) + 'type_constrain_entity_rel_answer_'
-    # file_name = './CompQ_data/compq_pairwise_neg_' + str(NEG_NUM) + 'entity_constrain_entity_rel_answer_'
-    # file_name = './CompQ_data/compq_pairwise_neg_' + str(NEG_NUM) + 'time_constrain_entity_rel_answer_'
-    file_name = './CompQ_data/compq_pairwise_neg_' + str(NEG_NUM) + 'ordinal_constrain_entity_rel_answer_'
-    
-    train_data = select_pairwise_data(qid2question, qid2cands_train, pos_only1=False, data_type='T', neg=NEG_NUM)
-    write2file(file_name + '_train_all.txt', train_data)
+    for NEG_NUM in [5, 10, 20, 30, 40, 50, 60, 70, 80, 100, 120, 140]:
+        file_name = '../../bert_rank_data/compq/compq_rank1_f01_label_position_pairwise_neg_' + str(NEG_NUM) + '_type_entity_time_ordinal_mainpath_'
+        train_data = select_pairwise_gradual(qid2question, qid2cands_train, pos_only1=False, data_type='T', N=NEG_NUM)
+        write2file_label_position(file_name + '_train_all.txt', train_data)
     # 验证集和测试集都是使用全集
     # dev_data = select_pairwise_data(qid2question, qid2cands_dev, pos_only1=False, data_type='v', neg=NEG_NUM)
     # write2file(file_name + 'dev_all.txt', dev_data)
