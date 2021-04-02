@@ -43,6 +43,7 @@ def read_qid2entity(init_dir_name):
 def WebQ():
     result = {}
     init_dir_name = '../../runnings/candgen_WebQ/20201202_entity_time_type_ordinal/data/'
+    # init_dir_name = '/home/jiayonghui/github/bert_rank/runnings/candgen_WebQ/20201202_entity_time_type_ordinal/data/'
     question2path = {}
     num = 0
     for root, dirs, files in os.walk(init_dir_name):
@@ -66,10 +67,10 @@ def WebQ():
                                 mid.append(item[3])
     #                     import pdb; pdb.set_trace()
                     que_id = (file_name[0:4])
-                    if(int(que_id) < 5810):
-                        result[que_id + '\n' + temp] = k
-                    # if(int(que_id) < 3778):
+                    # if(int(que_id) < 5810):
                     #     result[que_id + '\n' + temp] = k
+                    if(int(que_id) < 3778):
+                        result[que_id + '\n' + temp] = k
                     # if(int(que_id) >= 3778):
                     #     result[que_id + '\n' + temp] = k
                     question2path[que_id] = mid
@@ -87,7 +88,7 @@ def WebQ():
     print(sum_f1)
     print(sum_f1 / len(result))
     print('训练集中没有正确答案的问句个数：', num)
-    import pdb; pdb.set_trace()
+    # import pdb; pdb.set_trace()
 
 
 def CompQ():
@@ -257,9 +258,9 @@ def WebQ_no_answer():
 
 if __name__ == "__main__":
     #**************获取WebQ数据集查询图生成模块的平均F1性能*******************
-    # WebQ()
+    WebQ()
     #**************获取CompQ数据集查询图生成模块的平均F1性能*******************
-    CompQ()
+    # CompQ()
     #*********************************************************************
     # CompQ_no_answer()
     # WebQ_no_answer()

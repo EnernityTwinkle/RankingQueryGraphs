@@ -600,3 +600,4 @@ if __name__ == "__main__":
         fout_res = open(args.output_dir + 'result.log', 'w', encoding='utf-8')
         best_model_dir_name = main(fout_res)
         test(best_model_dir_name, fout_res)
+        

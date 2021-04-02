@@ -145,8 +145,8 @@ def get_info_of_cand(line, entity_dic, comp_list):
     p = line_json['p']
     r = line_json['r']
     f1 = line_json['f1']
-    # ans_str = ' '.join(line_json['ans_str'].replace('\t', ', ').split(' ')[0:600])# 保留所有答案
-    ans_str = ''
+    ans_str = ' '.join(line_json['ans_str'].replace('\t', ', ').split(' ')[0:600])# 保留所有答案
+    # ans_str = ''
     # ans_str = ','.join(line_json['ans_str'].split('\t')[0:3]) # 保留一个答案
     raw_paths = line_json['raw_paths']
     for subpath in raw_paths:

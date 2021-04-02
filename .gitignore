@@ -1,4 +1,4 @@
 runnings/model/*
 runnings/train_data/*
-data/pretrain_model/pytorch_model.bin
-data/pretrain_model/vocab.txt
+data/pretrain_model/bert_base_uncased/pytorch_model.bin
+data/pretrain_model/bert_base_uncased/vocab.txt

@@ -17,8 +17,7 @@ def cal_f1(file_name1, file_name2, data_type, actual_num = 0, log=0):
     que_num = 0
     while i < len(lines):
         line_cut = lines[i].strip().split('\t')
-        if(len(line_cut) == 7):
-            have_p_r = 1
+        have_p_r = 1
         line = lines[i]
         qid_temp = line.strip().split('\t')[-1]
         if(qid_temp != qid):
