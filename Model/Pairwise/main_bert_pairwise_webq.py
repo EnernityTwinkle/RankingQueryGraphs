@@ -509,8 +509,6 @@ def test(best_model_dir_name, fout_res):
     nb_tr_steps = 0
     tr_loss = 0
     # 构建验证集数据
-    # test_pickle = open(args.t_model_data_name, 'rb')
-    # eval_data = pickle.load(test_pickle)
     eval_examples = processor.get_test_examples(args.data_dir)
     eval_data = build_data_for_model(eval_examples, label_list, tokenizer, output_mode, device)
     # ************************** 
