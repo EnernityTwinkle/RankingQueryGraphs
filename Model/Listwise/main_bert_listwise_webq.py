@@ -554,18 +554,18 @@ if __name__ == "__main__":
     # for N in [80, 100, 120, 140]:
         logger = logging.getLogger(__name__)
         print(seed)
-        os.environ["CUDA_VISIBLE_DEVICES"] = '3'
+        os.environ["CUDA_VISIBLE_DEVICES"] = '4'
         parser = ArgumentParser(description = 'For KBQA')
         parser.add_argument("--data_dir",default=BASE_DIR + '/runnings/train_data/webq/',type=str)
         parser.add_argument("--bert_model", default=BASE_DIR + '/data/pretrain_model/bert_base_uncased', type=str)
         parser.add_argument("--bert_vocab", default=BASE_DIR + '/data/pretrain_model/bert_base_uncased', type=str)
         parser.add_argument("--task_name",default='mrpc',type=str,help="The name of the task to train.")
-        parser.add_argument("--output_dir",default=BASE_DIR + '/runnings/model/webq/bert_webq_listwise_rank1_f01_gradual_merge_type_entity_time_ordianl_mainpath_neg_' + str(N) + '_' + str(seed) + '_' + str(steps) + '/',type=str)
+        parser.add_argument("--output_dir",default=BASE_DIR + '/runnings/model/webq/bert_webq_listwise_gradual_merge_type_entity_time_ordianl_mainpath_neg_' + str(N) + '_' + str(seed) + '_' + str(steps) + '/',type=str)
         parser.add_argument("--input_model_dir", default='0.9675389502344577_0.4803025192052977_3', type=str)
         
-        parser.add_argument("--T_file_name",default='webq_rank1_f01_gradual_label_position_listwise_1_' + str(N) + '_type_entity_time_ordinal_mainpath_is_train.txt',type=str)
-        parser.add_argument("--v_file_name",default='webq_rank1_f01_gradual_label_position_listwise_1_140_type_entity_time_ordinal_mainpath_dev_all.txt',type=str)
-        parser.add_argument("--t_file_name",default='webq_rank1_f01_gradual_label_position_listwise_1_140_type_entity_time_ordinal_mainpath_test_all.txt',type=str)
+        parser.add_argument("--T_file_name",default='webq_rank1_f01_gradual_label_position_1_' + str(N) + '_type_entity_time_ordinal_mainpath_is_train.txt',type=str)
+        parser.add_argument("--v_file_name",default='webq_rank1_f01_gradual_label_position_1_140_type_entity_time_ordinal_mainpath_dev_all.txt',type=str)
+        parser.add_argument("--t_file_name",default='webq_rank1_f01_gradual_label_position_1_140_type_entity_time_ordinal_mainpath_test_all.txt',type=str)
 
         parser.add_argument("--T_model_data_name",default='train_all_518484_from_1_500000000.pkl',type=str)
         parser.add_argument("--v_model_data_name",default='dev_all_135428_from_v_bert_rel_answer_pairwise_1_500000000.pkl',type=str)
