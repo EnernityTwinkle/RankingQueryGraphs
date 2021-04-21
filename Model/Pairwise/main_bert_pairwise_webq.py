@@ -383,15 +383,12 @@ def main(fout_res):
                     loss_point = 0- loss_point
                     point_loss += loss_point.item()
                 if "pairwise" in merge_mode:
-                    logits_sigmoid = torch.sigmoid(logits).view(-1)
-                    pos_score = logits_sigmoid[0]
-                    neg_score = logits_sigmoid[1:]
+                    scores = torch.sigmoid(logits.view(-1)).view(-1, 2)
+                    pos_score = scores.view(-1, 2)[:, 0].view(-1)
+                    neg_score = scores.view(-1, 2)[:, 1].view(-1)
                     margin_loss = torch.nn.functional.relu(neg_score + 0.5 - pos_score)
                     loss_pair = torch.mean(margin_loss)
                     pair_loss += loss_pair.item()
-                    # import pdb; pdb.set_trace()
-                    # n_batch_correct += torch.sum((torch.max(scores, 1)[1].data == 0))
-                    # len_train_data += scores.size(0)   
                 if 'listwise' in merge_mode:
                     logits_que = torch.softmax(logits.view(-1, args.group_size), 1)
                     label_ids_que = label_ids.view(-1, args.group_size)
@@ -541,34 +538,35 @@ def test(best_model_dir_name, fout_res):
 
 if __name__ == "__main__":
     seed = 42
-    steps = 100
-    for N in [5, 10, 20, 30, 40, 50, 60, 70, 80, 100, 120, 140]:
+    steps = 50
+    # for N in [5, 10, 20, 30, 40, 50, 60, 70, 80, 100, 120, 140]:
+    for N in [5, 10, 20, 40, 60, 80, 100, 120, 140]:
         logger = logging.getLogger(__name__)
         print(seed)
         os.environ["CUDA_VISIBLE_DEVICES"] = '5'
         parser = ArgumentParser(description = 'For KBQA')
         parser.add_argument("--data_dir",default=BASE_DIR + '/runnings/train_data/webq/',type=str)
-        parser.add_argument("--bert_model", default=BASE_DIR + '/data/pretrain_model/bert_base_uncased', type=str)
-        parser.add_argument("--bert_vocab", default=BASE_DIR + '/data/pretrain_model/bert_base_uncased', type=str)
+        parser.add_argument("--bert_model", default='bert-base-uncased', type=str)
+        parser.add_argument("--bert_vocab", default='bert-base-uncased', type=str)
         parser.add_argument("--task_name",default='mrpc',type=str,help="The name of the task to train.")
         parser.add_argument("--output_dir",default=BASE_DIR + '/runnings/model/webq/bert_webq_pairwise_gradual_merge_type_entity_time_ordianl_mainpath_neg_' + str(N) + '_' + str(seed) + '_' + str(steps) + '/',type=str)
         parser.add_argument("--input_model_dir", default='0.9675389502344577_0.4803025192052977_3', type=str)
         
-        parser.add_argument("--T_file_name",default='webq_rank1_f01_gradual_label_position_1_' + str(N) + '_type_entity_time_ordinal_mainpath_is_train.txt',type=str)
-        parser.add_argument("--v_file_name",default='webq_rank1_f01_gradual_label_position_1_140_type_entity_time_ordinal_mainpath_dev_all.txt',type=str)
-        parser.add_argument("--t_file_name",default='webq_rank1_f01_gradual_label_position_1_140_type_entity_time_ordinal_mainpath_test_all.txt',type=str)
+        parser.add_argument("--T_file_name",default='webq_rank1_f01_label_position_pairwise_neg_' + str(N) + '_type_entity_time_ordinal_mainpath__train.txt',type=str)
+        parser.add_argument("--v_file_name",default='pairwise_dev_all.txt',type=str)
+        parser.add_argument("--t_file_name",default='pairwise_test_all.txt',type=str)
 
         parser.add_argument("--T_model_data_name",default='train_all_518484_from_1_500000000.pkl',type=str)
         parser.add_argument("--v_model_data_name",default='dev_all_135428_from_v_bert_rel_answer_pairwise_1_500000000.pkl',type=str)
         parser.add_argument("--t_model_data_name",default='test_all_344985_from_1_500000000.pkl',type=str)
         ## Other parameters
-        parser.add_argument("--group_size",default=N + 1,type=int,help="")
+        parser.add_argument("--group_size",default=2,type=int,help="")
         parser.add_argument("--cache_dir",default="",type=str,help="Where do you want to store the pre-trained models downloaded from s3")
         parser.add_argument("--max_seq_length",default=100,type=int)
         parser.add_argument("--do_train",default='true',help="Whether to run training.")
         parser.add_argument("--do_eval",default='true',help="Whether to run eval on the dev set.")
         parser.add_argument("--do_lower_case",action='store_true',help="Set this flag if you are using an uncased model.")
-        parser.add_argument("--train_batch_size",default=1,type=int,help="Total batch size for training.")
+        parser.add_argument("--train_batch_size",default=16,type=int,help="Total batch size for training.")
         parser.add_argument("--eval_batch_size",default=100,type=int,help="Total batch size for eval.")
         parser.add_argument("--learning_rate",default=5e-5,type=float,help="The initial learning rate for Adam.")
         parser.add_argument("--num_train_epochs",default=5.0,type=float,help="Total number of training epochs to perform.")
