@@ -47,13 +47,6 @@ if __name__ == "__main__":
         # file_name = './webq_pairwise_rank1_p01_f01_neg_' + str(NEG_NUM) + '_type_entity_time_ordinal_mainpath_'
         # file_name = '/data2/yhjia/kbqa_train_data/WebQ/pairwise/webq_pairwise_neg_' + str(NEG_NUM) + '_type_entity_time_ordinal_mainpath_'
         file_name = BASE_DIR + '/runnings/train_data/webq/' + 'webq_rank1_f01_label_position_pairwise_neg_' + str(NEG_NUM) + '_type_entity_time_ordinal_mainpath_'
-
-
-        # file_name = './webq_pairwise_neg_' + str(NEG_NUM) + '_type_entity_time_ordinal_mainpath_'
-        # file_name = './webq_pairwise_neg_' + str(NEG_NUM) + '_mainpath_'
-        # file_name = './webq_pairwise_neg_' + str(NEG_NUM) + '_mainrel_'
-        # train_data = select_pairwise_data(qid2question, qid2cands_train, pos_only1=False, data_type='T', neg=NEG_NUM)
-        # train_data = select_pairwise_gradual_true1(qid2question, qid2cands_train, pos_only1=False, data_type='T', N=NEG_NUM)
         train_data = select_pairwise_gradual(qid2question, qid2cands_train, pos_only1=False, data_type='T', N=NEG_NUM)
         write2file_label_position(file_name + '_train.txt', train_data)
     # 验证集和测试集都是使用全集
