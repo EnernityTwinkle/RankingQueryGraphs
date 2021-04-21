@@ -1,4 +1,4 @@
-runnings/model/*
-runnings/train_data/*
+runnings/*
 data/pretrain_model/bert_base_uncased/pytorch_model.bin
 data/pretrain_model/bert_base_uncased/vocab.txt
+output_data/webq/*
