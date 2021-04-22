@@ -540,7 +540,7 @@ if __name__ == "__main__":
     seed = 42
     steps = 50
     # for N in [5, 10, 20, 30, 40, 50, 60, 70, 80, 100, 120, 140]:
-    for N in [5, 10, 20, 40, 60, 80, 100, 120, 140]:
+    for N in [5, 80, 100, 120, 140]:
         logger = logging.getLogger(__name__)
         print(seed)
         os.environ["CUDA_VISIBLE_DEVICES"] = '5'

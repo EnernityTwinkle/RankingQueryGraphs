@@ -4,6 +4,7 @@ import json
 import random
 import copy
 import pickle
+from typing import List
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(BASE_DIR)
 from Build_Data.sample_pos_and_neg import select_top_data, select_pairwise_data, select_top_n_listwise, select_classify_data_solid, select_top_1_n_listwise,\
@@ -17,7 +18,8 @@ r_shuff = random.random
 
 class QueryGraphForTrain:
     def __init__(self, main_path = [], entity_path = [], time_path = [],
-                     type_path = [], ordinal_path = [], p = 0, r = 0, f1 = 0):
+                     type_path = [], ordinal_path = [], p = 0, r = 0, f1 = 0,\
+                          entityId: List[str] = [], relationId: List[str] = []):
         '''
         这里包含QueryGraph中的每条边信息，其中entity_path指包含所有实体信息的路径；time_path指描述时间约束的路径；type_sparql指描述类型约束的路径；ordinal_path指序数词约束的路径；
         而entity_sparql、time_sparql、type_sparql和ordinal_sparql分别对应每种路径的sparql语句。
@@ -36,6 +38,8 @@ class QueryGraphForTrain:
         self.p = p
         self.r = r
         self.f1 = f1
+        self.entityId = entityId
+        self.relationId = relationId
     def set_entity_path(self, entity_path):
         self.entity_path = entity_path
     def set_entity_sparql(self, entity_sparql):
@@ -149,14 +153,19 @@ def get_info_of_cand(line, entity_dic, comp_list):
     # ans_str = ''
     # ans_str = ','.join(line_json['ans_str'].split('\t')[0:3]) # 保留一个答案
     raw_paths = line_json['raw_paths']
+    entityId = []
+    relationId = []
+    # import pdb; pdb.set_trace()
     for subpath in raw_paths:
         if(len(subpath) != 4):
             print(subpath)
             import pdb; pdb.set_trace()
         if(subpath[0] == 'Main'):
             entity_str = entity_dic[subpath[2]].replace('_', ' ')
+            entityId.append(subpath[2])
             for i, item in enumerate(subpath[3]):
                 subpath[3][i] = trans_relid2words(item)
+                relationId.append(item)
             core_rel_str = ' -- '.join(subpath[3])
             # core_rel_str = subpath[3][-1]
             main_path.append(entity_str)
@@ -170,10 +179,12 @@ def get_info_of_cand(line, entity_dic, comp_list):
             #     import pdb; pdb.set_trace()
             for i, item in enumerate(subpath[3]):
                 subpath[3][i] = trans_relid2words(item)
+                relationId.append(item)
             # constrain_rel = ' -- '.join(subpath[3])
             constrain_rel = subpath[3][-1]
             entity_path.append(constrain_rel)
             entity_path.append(entity_str)
+            # import pdb; pdb.set_trace()
             # if(len(subpath[3]) == 2):
             #     print(subpath)
             #     import pdb; pdb.set_trace()
@@ -181,6 +192,7 @@ def get_info_of_cand(line, entity_dic, comp_list):
             time_str = subpath[2]
             for i, item in enumerate(subpath[3]):
                 subpath[3][i] = trans_relid2words(item)
+                relationId.append(item)
                 # subpath[3][i] = trans_relid2words(item, 2)
             # time_rel = ' -- '.join(subpath[3])
             time_rel = subpath[3][-1]
@@ -195,6 +207,7 @@ def get_info_of_cand(line, entity_dic, comp_list):
             ordinal_str = subpath[2]
             for i, item in enumerate(subpath[3]):
                 subpath[3][i] = trans_relid2words(item, 1)
+                relationId.append(item)
             # ordinal_rel = ' -- '.join(subpath[3])
             ordinal_rel = subpath[3][-1]
             ordinal_path.append(ordinal_rel)
@@ -205,7 +218,8 @@ def get_info_of_cand(line, entity_dic, comp_list):
         else:
             print(subpath)
             import pdb; pdb.set_trace()
-    return main_path, entity_path, time_path, type_path, ordinal_path, p, r, f1
+    # import pdb; pdb.set_trace()
+    return main_path, entity_path, time_path, type_path, ordinal_path, p, r, f1, entityId, relationId
 
 # 读取查询图信息
 def read_query_graph(init_dir_name, entity_dic, qid2comp_dic):
@@ -226,9 +240,11 @@ def read_query_graph(init_dir_name, entity_dic, qid2comp_dic):
                         if(qid not in que2cands_dic):
                             que2cands_dic[qid] = []
                         # print(qid)
-                        main_path, entity_path, time_path, type_path, ordinal_path, p, r, f1 = get_info_of_cand(line, entity_dic, comp_list)
+                        # import pdb; pdb.set_trace()
+                        main_path, entity_path, time_path, type_path, ordinal_path, p, r, f1, entityId, relationId = get_info_of_cand(line, entity_dic, comp_list)
                         query_graph = QueryGraphForTrain(main_path = main_path, entity_path = entity_path, time_path = time_path,\
-                                                        type_path = type_path, ordinal_path = ordinal_path, p = p, r = r, f1 = f1)
+                                                        type_path = type_path, ordinal_path = ordinal_path, p = p, r = r, f1 = f1,\
+                                                            entityId=entityId, relationId=relationId)
                         # query_graph.serialize()
                         que2cands_dic[qid].append(query_graph)
                         num += 1
@@ -409,8 +425,12 @@ def write2file_label_position(file_name, query_answer):
             cand_str += '\t'
             # ********************************************************************
             cand_str += ' '.join(query_graph.main_path[0:3]) + '.' # 包含主实体、关系和答案
-            f.write(item[0] + '\t' + item[1].lower() + '\t' + cand_str.lower() + '\t' +\
-                    str(query_graph.p) + '\t' + str(query_graph.r) + '\t' + str(query_graph.f1) + '\t' + item[3] + '\n')
+            # import pdb; pdb.set_trace()
+            f.write(item[0] + '\t' + item[1].lower() + '\t' + cand_str.lower() + \
+                        '\t' + '##'.join(query_graph.entityId) + '\t' +\
+                        '\t' + '##'.join(query_graph.relationId) + '\t' + \
+                        str(query_graph.p) + '\t' + str(query_graph.r) + '\t' + str(query_graph.f1) \
+                         + '\t' + item[3] + '\n')
     f.flush()
     print('问句个数：', num)
 
