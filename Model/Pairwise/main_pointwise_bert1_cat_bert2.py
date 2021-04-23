@@ -40,6 +40,11 @@ def main(fout_res, args: ArgumentParser):
     shutil.copy(__file__, args.output_dir + __file__)
     merge_mode = ['classification']
     tokenizer = BertTokenizer.from_pretrained(args.bert_vocab, do_lower_case=args.do_lower_case)
+    # 构建验证集数据  
+    eval_examples = processor.get_dev_examples(args.data_dir)
+    # import pdb; pdb.set_trace()   
+    eval_data = processor.convert_examples_to_features_with_two_sentence(eval_examples, tokenizer)
+    eval_data = processor.build_data_for_model(eval_data, tokenizer, device)
     train_examples = processor.get_train_examples(args.data_dir)
     num_train_optimization_steps = math.ceil(math.ceil(len(train_examples) / args.train_batch_size)\
                                         / args.gradient_accumulation_steps) * args.num_train_epochs    
@@ -62,11 +67,7 @@ def main(fout_res, args: ArgumentParser):
     global_step = 0
     nb_tr_steps = 0
     tr_loss = 0
-    # 构建验证集数据  
-    eval_examples = processor.get_dev_examples(args.data_dir)
-    # import pdb; pdb.set_trace()   
-    eval_data = processor.convert_examples_to_features_with_two_sentence(eval_examples, tokenizer)
-    eval_data = processor.build_data_for_model(eval_data, tokenizer, device)
+    
     # import pdb; pdb.set_trace()
     # **************************
     if args.do_train:   
@@ -246,13 +247,13 @@ if __name__ == "__main__":
     for N in [5]:
         logger = logging.getLogger(__name__)
         print(seed)
-        os.environ["CUDA_VISIBLE_DEVICES"] = '2'
+        os.environ["CUDA_VISIBLE_DEVICES"] = '0'
         parser = ArgumentParser(description = 'For KBQA')
         parser.add_argument("--data_dir",default=BASE_DIR + '/runnings/train_data/webq/',type=str)
         parser.add_argument("--bert_model", default='bert-base-uncased', type=str)
         parser.add_argument("--bert_vocab", default='bert-base-uncased', type=str)
         parser.add_argument("--task_name",default='mrpc',type=str,help="The name of the task to train.")
-        parser.add_argument("--output_dir",default=BASE_DIR + '/runnings/model/webq/bert_webq_pointwise_two_sentence_cat-sub_neg_' + str(N) + '_' + str(seed) + '_' + str(steps) + '/',type=str)
+        parser.add_argument("--output_dir",default=BASE_DIR + '/runnings/model/webq/bert_webq_pointwise_two_sentence_cat2dense_activate_neg_' + str(N) + '_' + str(seed) + '_' + str(steps) + '/',type=str)
         parser.add_argument("--input_model_dir", default='0.9675389502344577_0.4803025192052977_3', type=str)
         parser.add_argument("--T_file_name",default='webq_rank1_f01_gradual_label_position_1_' + str(N) + '_type_entity_time_ordinal_mainpath_is_train.txt',type=str)
         parser.add_argument("--v_file_name",default='pairwise_dev_all.txt',type=str)
@@ -285,8 +286,8 @@ if __name__ == "__main__":
         torch.manual_seed(args.seed)
         torch.cuda.manual_seed_all(args.seed)
         
-        if os.path.exists(args.output_dir) and os.listdir(args.output_dir) and args.do_train:
-            raise ValueError("Output directory ({}) already exists and is not empty.".format(args.output_dir))
+        # if os.path.exists(args.output_dir) and os.listdir(args.output_dir) and args.do_train:
+        #     raise ValueError("Output directory ({}) already exists and is not empty.".format(args.output_dir))
         if not os.path.exists(args.output_dir):
             os.makedirs(args.output_dir)
         fout_res = open(args.output_dir + 'result.log', 'w', encoding='utf-8')

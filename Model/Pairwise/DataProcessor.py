@@ -64,9 +64,10 @@ class DataProcessor(object):
         return examples_all
 
 
-    def convert_examples_to_features(self, examples: List[List[str]], max_seq_length: int,
-                                 tokenizer, file_mode: str = 'T') -> List[List[InputFeatures]]:
+    def convert_examples_to_features(self, examples: List[List[str]],
+                                 tokenizer) -> List[List[InputFeatures]]:
         """Loads a data file into a list of `InputBatch`s."""
+        max_seq_length = self.args.max_seq_length
         features_all = []
         for (ex_index, example_group) in enumerate(examples):
             # print(ex_index)
@@ -130,6 +131,30 @@ class DataProcessor(object):
         # import pdb; pdb.set_trace()
         return (input_ids, input_mask, segment_ids)
 
+    def convert_sentenceb_to_bert_input(self, sentence: str, tokenizer) -> Tuple[List[int]]:
+        max_seq_length = self.args.max_seq_length
+        text_b_list = sentence.split('\t')
+        tokens_b = []
+        for i, text_b in enumerate(text_b_list):
+            tokens_b += tokenizer.tokenize(text_b)
+            # tokens_b.append('[unused' + str(i) + ']')
+        # tokens_a = tokenizer.tokenize(sentence)
+        self.truncate_seq(tokens_b, max_seq_length - 2)
+        tokens = ["[CLS]"] + tokens_b + ["[SEP]"]
+        segment_ids = [0] * len(tokens)
+        input_ids = tokenizer.convert_tokens_to_ids(tokens)
+        input_mask = [1] * len(input_ids)
+        # Zero-pad up to the sequence length.
+        padding = [0] * (max_seq_length - len(input_ids))
+        input_ids += padding
+        input_mask += padding
+        segment_ids += padding
+        assert len(input_ids) == max_seq_length
+        assert len(input_mask) == max_seq_length
+        assert len(segment_ids) == max_seq_length
+        # import pdb; pdb.set_trace()
+        return (input_ids, input_mask, segment_ids)
+
 
     def convert_examples_to_features_with_two_sentence(self, examples: List[List[str]],
                                  tokenizer, file_mode: str = 'T') -> List[List[InputFeatures]]:
@@ -148,7 +173,7 @@ class DataProcessor(object):
                                     input_mask=bert_input[1],
                                     segment_ids=bert_input[2],
                                     label_id=label_id))
-                bert_input = self.convert_sentence_to_bert_input(example.text_b, tokenizer)
+                bert_input = self.convert_sentenceb_to_bert_input(example.text_b, tokenizer)
                 features.append(
                         InputFeatures(input_ids=bert_input[0],
                                     input_mask=bert_input[1],
@@ -196,7 +221,7 @@ class DataProcessor(object):
         eval_data = TensorDataset(all_input_ids, all_input_mask, all_segment_ids, all_label_ids)
         return eval_data
 
-    def build_data_for_model_train(self, eval_features, tokenizer, device):
+    def build_data_for_model_train(self, eval_features: List[List[InputFeatures]], tokenizer, device):
         all_input_ids = []
         all_input_mask = []
         all_segment_ids = []

@@ -9,3 +9,9 @@ Model/__pycache__/cal_f1.cpython-36.pyc
 
 Build_Data/__pycache__/read_query_graph.cpython-36.pyc
 Build_Data/__pycache__/read_query_graph.cpython-36.pyc
+Model/Pairwise/__pycache__/DataProcessor.cpython-36.pyc
+Model/Pairwise/__pycache__/InputFeatures.cpython-36.pyc
+Model/Pairwise/__pycache__/InputExample.cpython-36.pyc
+Model/__pycache__/*
+Model/Pairwise/__pycache__/BertEncoderX.cpython-36.pyc
+Model/__pycache__/cal_f1.cpython-36.pyc

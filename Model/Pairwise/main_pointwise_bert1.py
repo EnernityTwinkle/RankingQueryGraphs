@@ -29,7 +29,8 @@ sys.path.append(BASE_DIR)
 
 from Model.cal_f1 import cal_f1, cal_f1_with_scores
 from Model.Pairwise.DataProcessor import DataProcessor
-from Model.Pairwise.BertEncoderX import BertForTwoSequenceCosine
+from Model.Pairwise.BertEncoderX import BertForTwoSequence, \
+                        BertForTwoSequenceCosine, BertForSequence
 
     
 
@@ -38,15 +39,14 @@ def main(fout_res, args: ArgumentParser):
     processor = DataProcessor(args)
     device = torch.device("cuda", 0)
     shutil.copy(__file__, args.output_dir + __file__)
-    merge_mode = ['pairwise']
+    merge_mode = ['classification']
     tokenizer = BertTokenizer.from_pretrained(args.bert_vocab, do_lower_case=args.do_lower_case)
     train_examples = processor.get_train_examples(args.data_dir)
     num_train_optimization_steps = math.ceil(math.ceil(len(train_examples) / args.train_batch_size)\
-                                        / args.gradient_accumulation_steps) * args.num_train_epochs    
-    # import pdb; pdb.set_trace()   
+                                        / args.gradient_accumulation_steps) * args.num_train_epochs 
     # Prepare model
-    cache_dir = args.cache_dir if args.cache_dir else os.path.join(str(PYTORCH_PRETRAINED_BERT_CACHE))
-    model = BertForTwoSequenceCosine.from_pretrained(args.bert_model,cache_dir=cache_dir,num_labels=1)
+    # import pdb; pdb.set_trace()
+    model = BertForSequence.from_pretrained(args.bert_model,num_labels=1)
     model.to(device)
     # Prepare optimizer
     param_optimizer = list(model.named_parameters())
@@ -65,20 +65,20 @@ def main(fout_res, args: ArgumentParser):
     # 构建验证集数据  
     eval_examples = processor.get_dev_examples(args.data_dir)
     # import pdb; pdb.set_trace()   
-    eval_data = processor.convert_examples_to_features_with_two_sentence(eval_examples, tokenizer)
+    eval_data = processor.convert_examples_to_features(eval_examples, tokenizer)
     eval_data = processor.build_data_for_model(eval_data, tokenizer, device)
     # import pdb; pdb.set_trace()
     # **************************
     if args.do_train:   
         i_train_step = 0
-        train_data = processor.convert_examples_to_features_with_two_sentence(train_examples, tokenizer)
+        train_data = processor.convert_examples_to_features(train_examples, tokenizer)
         train_data = processor.build_data_for_model_train(train_data, tokenizer, device)
         # train_pickle = open(args.T_file_name.replace('.txt', '.pkl'), 'wb')
         # pickle.dump(train_data, train_pickle)
         dev_acc = 0.0
         for _ in trange(int(args.num_train_epochs), desc="Epoch"):
-            train_sampler = SequentialSampler(train_data)
-            # train_sampler = RandomSampler(train_data)
+            # train_sampler = SequentialSampler(train_data)
+            train_sampler = RandomSampler(train_data)
             train_dataloader = DataLoader(train_data, sampler=train_sampler, batch_size=args.train_batch_size)
             model.train()
             tr_loss = 0
@@ -107,6 +107,7 @@ def main(fout_res, args: ArgumentParser):
                 if "classification" in merge_mode:
                     # *******************交叉熵损失函数*********************
                     logits_sigmoid = torch.sigmoid(logits).view(-1)
+                    label_ids = label_ids.view(-1)
                     for i, label_item in enumerate(label_ids):
                         # import pdb; pdb.set_trace()
                         if(label_item == 1):
@@ -117,27 +118,30 @@ def main(fout_res, args: ArgumentParser):
                                 loss_point += torch.log(1 - logits_sigmoid[i])
                     loss_point = 0- loss_point
                     point_loss += loss_point.item()
+                    n_batch_correct += torch.sum(torch.eq((logits_sigmoid>0.5).long(),label_ids.long()))
+                    len_train_data += logits.size(0)
+                    # import pdb; pdb.set_trace()
                 if "pairwise" in merge_mode:
                     scores = torch.sigmoid(logits.view(-1)).view(-1, 2)
                     pos_score = scores.view(-1, 2)[:, 0].view(-1)
                     neg_score = scores.view(-1, 2)[:, 1].view(-1)
-                    margin_loss = torch.nn.functional.relu(neg_score + 0.5 - pos_score)
+                    margin_loss = torch.nn.functional.relu(neg_score + 1 - pos_score)
                     loss_pair = torch.mean(margin_loss)
                     pair_loss += loss_pair.item()
-                # 计算评价函数
-                true_pos = torch.max(logits.view(-1, args.group_size), 1)[1]
-                # label_ids_que = label_ids.view(-1, args.group_size)
-                label_ids_que = label_ids.view(-1,2)[:,0].view(-1,2)
-                for i, item in enumerate(true_pos):
-                    if(label_ids_que[i][item] == 1):
-                        n_batch_correct += 1
-                len_train_data += logits.view(-1, args.group_size).size(0)
+                    # 计算评价函数
+                    true_pos = torch.max(logits.view(-1, args.group_size), 1)[1]
+                    # label_ids_que = label_ids.view(-1, args.group_size)
+                    label_ids_que = label_ids.view(-1,2)[:,0].view(-1,2)
+                    for i, item in enumerate(true_pos):
+                        if(label_ids_que[i][item] == 1):
+                            n_batch_correct += 1
+                    len_train_data += logits.view(-1, args.group_size).size(0)
                 # import pdb;pdb.set_trace()
                 try:
                     # fout_res.write('loss:' + str(loss_point) + '\t' + str(loss_pair) + '\t' + str(loss_list) + '\n')
                     # loss = (loss_point + loss_pair * 10.0 + loss_list * 2.0) / 3.0
                     # loss = (loss_point + loss_pair + loss_list) / 3.0
-                    loss = loss_pair
+                    loss = loss_point
                     loss.backward()      
                 except:
                     import pdb; pdb.set_trace()
@@ -203,12 +207,12 @@ def test(best_model_dir_name, fout_res, args):
     merge_mode = ['pairwise']
     tokenizer = BertTokenizer.from_pretrained(best_model_dir_name, do_lower_case=args.do_lower_case)
     cache_dir = args.cache_dir if args.cache_dir else os.path.join(str(PYTORCH_PRETRAINED_BERT_CACHE))
-    model = BertForTwoSequenceCosine.from_pretrained(best_model_dir_name,cache_dir=cache_dir,num_labels=1)
+    model = BertForSequence.from_pretrained(best_model_dir_name,cache_dir=cache_dir,num_labels=1)
     model.to(device)
     # 构建验证集数据  
     eval_examples = processor.get_test_examples(args.data_dir)
     # import pdb; pdb.set_trace()   
-    eval_data = processor.convert_examples_to_features_with_two_sentence(eval_examples, tokenizer)
+    eval_data = processor.convert_examples_to_features(eval_examples, tokenizer)
     eval_data = processor.build_data_for_model(eval_data, tokenizer, device)
     # import pdb; pdb.set_trace()
     file_name1 = args.output_dir + 'prediction_test'
@@ -236,7 +240,7 @@ def test(best_model_dir_name, fout_res, args):
 
 if __name__ == "__main__":
     seed = 42
-    steps = 100
+    steps = 50
     # for N in [5, 10, 20, 30, 40, 50, 60, 70, 80, 100, 120, 140]:
     # for N in [5, 10, 20, 40, 60, 80, 100, 120, 140]:
     for N in [5]:
@@ -245,12 +249,12 @@ if __name__ == "__main__":
         os.environ["CUDA_VISIBLE_DEVICES"] = '0'
         parser = ArgumentParser(description = 'For KBQA')
         parser.add_argument("--data_dir",default=BASE_DIR + '/runnings/train_data/webq/',type=str)
-        parser.add_argument("--bert_model", default='bert-base-uncased', type=str)
+        parser.add_argument("--bert_model", default='/data2/yhjia/bert_base_uncased', type=str)
         parser.add_argument("--bert_vocab", default='bert-base-uncased', type=str)
         parser.add_argument("--task_name",default='mrpc',type=str,help="The name of the task to train.")
-        parser.add_argument("--output_dir",default=BASE_DIR + '/runnings/model/webq/bert_webq_two_sentence_cosine_neg_' + str(N) + '_' + str(seed) + '_' + str(steps) + '/',type=str)
+        parser.add_argument("--output_dir",default=BASE_DIR + '/runnings/model/webq/bert_webq_pointwise_neg_' + str(N) + '_' + str(seed) + '_' + str(steps) + '/',type=str)
         parser.add_argument("--input_model_dir", default='0.9675389502344577_0.4803025192052977_3', type=str)
-        parser.add_argument("--T_file_name",default='webq_rank1_f01_label_position_pairwise_neg_' + str(N) + '_type_entity_time_ordinal_mainpath__train.txt',type=str)
+        parser.add_argument("--T_file_name",default='webq_rank1_f01_gradual_label_position_1_' + str(N) + '_type_entity_time_ordinal_mainpath_is_train.txt',type=str)
         parser.add_argument("--v_file_name",default='pairwise_dev_all.txt',type=str)
         parser.add_argument("--t_file_name",default='pairwise_test_all.txt',type=str)
 
@@ -258,13 +262,13 @@ if __name__ == "__main__":
         parser.add_argument("--v_model_data_name",default='dev_all_135428_from_v_bert_rel_answer_pairwise_1_500000000.pkl',type=str)
         parser.add_argument("--t_model_data_name",default='test_all_344985_from_1_500000000.pkl',type=str)
         ## Other parameters
-        parser.add_argument("--group_size",default=2,type=int,help="")
+        parser.add_argument("--group_size",default=1,type=int,help="")
         parser.add_argument("--cache_dir",default="",type=str,help="Where do you want to store the pre-trained models downloaded from s3")
         parser.add_argument("--max_seq_length",default=100,type=int)
         parser.add_argument("--do_train",default='true',help="Whether to run training.")
         parser.add_argument("--do_eval",default='true',help="Whether to run eval on the dev set.")
         parser.add_argument("--do_lower_case",action='store_true',help="Set this flag if you are using an uncased model.")
-        parser.add_argument("--train_batch_size",default=8,type=int,help="Total batch size for training.")
+        parser.add_argument("--train_batch_size",default=16,type=int,help="Total batch size for training.")
         parser.add_argument("--eval_batch_size",default=100,type=int,help="Total batch size for eval.")
         parser.add_argument("--learning_rate",default=5e-5,type=float,help="The initial learning rate for Adam.")
         parser.add_argument("--num_train_epochs",default=5.0,type=float,help="Total number of training epochs to perform.")

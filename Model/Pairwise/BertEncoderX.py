@@ -23,6 +23,40 @@ from pytorch_pretrained_bert.tokenization import BertTokenizer
 from pytorch_pretrained_bert.optimization import BertAdam, WarmupLinearSchedule
 
 
+class TwoBertForTwoSequence(BertPreTrainedModel):
+    def __init__(self, config, num_labels):
+        super(TwoBertForTwoSequence, self).__init__(config)
+        self.num_labels = num_labels
+        self.bert = BertModel(config)
+        self.bert2 = BertModel(config)
+        self.dropout = nn.Dropout(config.hidden_dropout_prob)
+        self.classifier = nn.Linear(config.hidden_size, num_labels)
+        self.classifier_2 = nn.Linear(config.hidden_size * 2, num_labels)
+        self.classifier_3 = nn.Linear(config.hidden_size * 3, num_labels)
+        self.denseCat = nn.Linear(config.hidden_size * 2, config.hidden_size)
+        self.activation = nn.Tanh()
+        self.apply(self.init_bert_weights)
+
+    def forward(self, input_ids, token_type_ids=None, attention_mask=None, labels=None):
+        max_seq_length = 100
+        que_input_ids = input_ids.view(-1, 2, max_seq_length)[:,0,:].view(-1, max_seq_length)
+        graph_input_ids = input_ids.view(-1, 2, max_seq_length)[:,1,:].view(-1, max_seq_length)
+        que_token_type_ids = token_type_ids.view(-1, 2, max_seq_length)[:,0,:].view(-1, max_seq_length)
+        graph_token_type_ids = token_type_ids.view(-1, 2, max_seq_length)[:,1,:].view(-1, max_seq_length)
+        que_attention_mask = attention_mask.view(-1, 2, max_seq_length)[:, 0, :].view(-1, max_seq_length)
+        graph_attention_mask = attention_mask.view(-1, 2, max_seq_length)[:,1,:].view(-1, max_seq_length)
+        _, pooled_output1 = self.bert(que_input_ids, que_token_type_ids, que_attention_mask, output_all_encoded_layers=False)
+        _, pooled_output2 = self.bert2(graph_input_ids, graph_token_type_ids, graph_attention_mask, output_all_encoded_layers=False)
+        # num_sen = pooled_output.shape[0]
+        pooled_output = torch.cat((pooled_output1,pooled_output2),1)
+        # import pdb; pdb.set_trace()
+        ##########################################################
+        denseCat = self.denseCat(pooled_output)
+        denseCat = self.activation(denseCat)
+        pooled_output = self.dropout(denseCat)
+        logits = self.classifier(pooled_output)
+        return logits
+
 class BertForTwoSequence(BertPreTrainedModel):
     def __init__(self, config, num_labels):
         super(BertForTwoSequence, self).__init__(config)
@@ -30,33 +64,56 @@ class BertForTwoSequence(BertPreTrainedModel):
         self.bert = BertModel(config)
         self.dropout = nn.Dropout(config.hidden_dropout_prob)
         self.classifier = nn.Linear(config.hidden_size, num_labels)
-        self.classifier_2 = nn.Linear(config.hidden_size, num_labels)
+        self.classifier_2 = nn.Linear(config.hidden_size * 2, num_labels)
+        self.classifier_3 = nn.Linear(config.hidden_size * 3, num_labels)
+        self.denseCat = nn.Linear(config.hidden_size * 2, config.hidden_size)
+        self.activation = nn.Tanh()
+        # self.apply(self.init_bert_weights)
+
+    def forward(self, input_ids, token_type_ids=None, attention_mask=None, labels=None):
+        _, pooled_output = self.bert(input_ids, token_type_ids, attention_mask, output_all_encoded_layers=False)
+        num_sen = pooled_output.shape[0]
+        # cat_torch = torch.rand((num_sen // 2, 768 * 2), device='cuda:0')
+        # # ##################################两个向量相减的结果作为相似度特征************
+        # # try:
+        # #     for i in range(0, num_sen, 2):
+        # #         cat_torch[i // 2] = pooled_output[i] - pooled_output[i + 1]
+        # # except:
+        # #     import pdb; pdb.set_trace()
+        # # ##########################################################
+        # ##################################两个向量拼接以及相减的结果作为相似度特征************
+        # try:
+        #     for i in range(0, num_sen, 2):
+        #         catTensor = torch.cat((pooled_output[i], pooled_output[i+1]), 0)
+        #         subTensor = pooled_output[i] - pooled_output[i + 1]
+        #         # cat_torch[i // 2] = torch.cat((catTensor, subTensor), 0)
+        #         cat_torch[i // 2] = catTensor
+        #         # import pdb; pdb.set_trace()
+        # except:
+        #     import pdb; pdb.set_trace()
+        ##########################################################
+        denseCat = self.denseCat(pooled_output.view(-1, 2 * 768)) 
+        denseCat = self.activation(denseCat)
+        pooled_output = self.dropout(denseCat)
+        logits = self.classifier(pooled_output)
+        return logits
+
+class BertForSequence(BertPreTrainedModel):
+    def __init__(self, config, num_labels):
+        super(BertForSequence, self).__init__(config)
+        self.num_labels = num_labels
+        self.bert = BertModel(config)
+        self.dropout = nn.Dropout(config.hidden_dropout_prob)
+        self.classifier = nn.Linear(config.hidden_size, num_labels)
+        self.classifier_2 = nn.Linear(config.hidden_size * 2, num_labels)
         self.classifier_3 = nn.Linear(config.hidden_size * 3, num_labels)
         self.apply(self.init_bert_weights)
 
     def forward(self, input_ids, token_type_ids=None, attention_mask=None, labels=None):
         _, pooled_output = self.bert(input_ids, token_type_ids, attention_mask, output_all_encoded_layers=False)
-        num_sen = pooled_output.shape[0]
-        cat_torch = torch.rand((num_sen // 2, 768 * 3), device='cuda:0')
-        # ##################################两个向量相减的结果作为相似度特征************
-        # try:
-        #     for i in range(0, num_sen, 2):
-        #         cat_torch[i // 2] = pooled_output[i] - pooled_output[i + 1]
-        # except:
-        #     import pdb; pdb.set_trace()
-        # ##########################################################
-        ##################################两个向量拼接以及相减的结果作为相似度特征************
-        try:
-            for i in range(0, num_sen, 2):
-                catTensor = torch.cat((pooled_output[i], pooled_output[i+1]), 0)
-                subTensor = pooled_output[i] - pooled_output[i + 1]
-                cat_torch[i // 2] = torch.cat((catTensor, subTensor), 0)
-                # import pdb; pdb.set_trace()
-        except:
-            import pdb; pdb.set_trace()
-        ##########################################################
-        pooled_output = self.dropout(cat_torch)
-        logits = self.classifier_3(pooled_output).view(num_sen // 2, -1)
+        # num_sen = pooled_output.shape[0]
+        pooled_output = self.dropout(pooled_output)
+        logits = self.classifier(pooled_output)
         return logits
 
 

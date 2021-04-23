@@ -55,6 +55,7 @@ def main(fout_res, args: ArgumentParser):
         {'params': [p for n, p in param_optimizer if not any(nd in n for nd in no_decay)], 'weight_decay': 0.01},
         {'params': [p for n, p in param_optimizer if any(nd in n for nd in no_decay)], 'weight_decay': 0.0}
         ]
+    # import pdb; pdb.set_trace()
     optimizer = BertAdam(optimizer_grouped_parameters,
                             lr=args.learning_rate,
                             warmup=args.warmup_proportion,
@@ -73,8 +74,6 @@ def main(fout_res, args: ArgumentParser):
         i_train_step = 0
         train_data = processor.convert_examples_to_features_with_two_sentence(train_examples, tokenizer)
         train_data = processor.build_data_for_model_train(train_data, tokenizer, device)
-        # train_pickle = open(args.T_file_name.replace('.txt', '.pkl'), 'wb')
-        # pickle.dump(train_data, train_pickle)
         dev_acc = 0.0
         for _ in trange(int(args.num_train_epochs), desc="Epoch"):
             # train_sampler = SequentialSampler(train_data)
@@ -242,13 +241,13 @@ if __name__ == "__main__":
     for N in [5]:
         logger = logging.getLogger(__name__)
         print(seed)
-        os.environ["CUDA_VISIBLE_DEVICES"] = '0'
+        os.environ["CUDA_VISIBLE_DEVICES"] = '7'
         parser = ArgumentParser(description = 'For KBQA')
         parser.add_argument("--data_dir",default=BASE_DIR + '/runnings/train_data/webq/',type=str)
         parser.add_argument("--bert_model", default='bert-base-uncased', type=str)
         parser.add_argument("--bert_vocab", default='bert-base-uncased', type=str)
         parser.add_argument("--task_name",default='mrpc',type=str,help="The name of the task to train.")
-        parser.add_argument("--output_dir",default=BASE_DIR + '/runnings/model/webq/bert_webq_two_sentence_cat-sub_neg_' + str(N) + '_' + str(seed) + '_' + str(steps) + '/',type=str)
+        parser.add_argument("--output_dir",default=BASE_DIR + '/runnings/model/webq/test1_bert_webq_two_sentence_cat-sub_neg_' + str(N) + '_' + str(seed) + '_' + str(steps) + '/',type=str)
         parser.add_argument("--input_model_dir", default='0.9675389502344577_0.4803025192052977_3', type=str)
         parser.add_argument("--T_file_name",default='webq_rank1_f01_label_position_pairwise_neg_' + str(N) + '_type_entity_time_ordinal_mainpath__train.txt',type=str)
         parser.add_argument("--v_file_name",default='pairwise_dev_all.txt',type=str)
