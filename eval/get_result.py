@@ -69,13 +69,16 @@ if __name__ == "__main__":
     #     write2file(results, feature)
 
     features = []
-    features.append('bert_webq_listwise_rank1_f01_gradual_merge_type_entity_time_ordianl_mainpath_neg_')
+    features.append('bert_webq_listwise_gradual_merge_type_entity_time_ordianl_mainpath_neg_')
+    features.append('bert_webq_pairwise_gradual_merge_type_entity_time_ordianl_mainpath_neg_')
+    features.append('bert_webq_pointwise_gradual_merge_type_entity_time_ordianl_mainpath_neg_')
     for feature in features:
         results = read_result(BASE_DIR + '/runnings/model/webq/', feature = feature)
         write2file(results, feature)
 
     features = []
     features.append('bert_compq_listwise_rank1_f01_gradual_merge_type_entity_time_ordianl_mainpath_neg_')
+    features.append('bert_compq_pairwise_rank1_f01_gradual_merge_type_entity_time_ordianl_mainpath_neg_')
     for feature in features:
         results = read_result(BASE_DIR + '/runnings/model/compq/', feature = feature)
         write2file(results, feature)
