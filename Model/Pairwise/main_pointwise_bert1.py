@@ -246,7 +246,7 @@ if __name__ == "__main__":
     for N in [5]:
         logger = logging.getLogger(__name__)
         print(seed)
-        os.environ["CUDA_VISIBLE_DEVICES"] = '0'
+        os.environ["CUDA_VISIBLE_DEVICES"] = '1'
         parser = ArgumentParser(description = 'For KBQA')
         parser.add_argument("--data_dir",default=BASE_DIR + '/runnings/train_data/webq/',type=str)
         parser.add_argument("--bert_model", default='/data2/yhjia/bert_base_uncased', type=str)

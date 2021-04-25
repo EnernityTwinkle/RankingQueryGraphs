@@ -67,13 +67,14 @@ class BertForTwoSequence(BertPreTrainedModel):
         self.classifier_2 = nn.Linear(config.hidden_size * 2, num_labels)
         self.classifier_3 = nn.Linear(config.hidden_size * 3, num_labels)
         self.denseCat = nn.Linear(config.hidden_size * 2, config.hidden_size)
+        self.dense3 = nn.Linear(config.hidden_size * 3, config.hidden_size)
         self.activation = nn.Tanh()
         # self.apply(self.init_bert_weights)
 
     def forward(self, input_ids, token_type_ids=None, attention_mask=None, labels=None):
         _, pooled_output = self.bert(input_ids, token_type_ids, attention_mask, output_all_encoded_layers=False)
         num_sen = pooled_output.shape[0]
-        # cat_torch = torch.rand((num_sen // 2, 768 * 2), device='cuda:0')
+        
         # # ##################################两个向量相减的结果作为相似度特征************
         # # try:
         # #     for i in range(0, num_sen, 2):
@@ -82,20 +83,24 @@ class BertForTwoSequence(BertPreTrainedModel):
         # #     import pdb; pdb.set_trace()
         # # ##########################################################
         # ##################################两个向量拼接以及相减的结果作为相似度特征************
-        # try:
-        #     for i in range(0, num_sen, 2):
-        #         catTensor = torch.cat((pooled_output[i], pooled_output[i+1]), 0)
-        #         subTensor = pooled_output[i] - pooled_output[i + 1]
-        #         # cat_torch[i // 2] = torch.cat((catTensor, subTensor), 0)
-        #         cat_torch[i // 2] = catTensor
-        #         # import pdb; pdb.set_trace()
-        # except:
-        #     import pdb; pdb.set_trace()
-        ##########################################################
-        denseCat = self.denseCat(pooled_output.view(-1, 2 * 768)) 
+        cat_torch = torch.rand((num_sen // 2, 768 * 3), device='cuda:0')
+        for i in range(0, num_sen, 2):
+            catTensor = torch.cat((pooled_output[i], pooled_output[i+1]), 0)
+            subTensor = pooled_output[i] - pooled_output[i + 1]
+            cat_torch[i // 2] = torch.cat((catTensor, subTensor), 0)
+        denseCat = self.dense3(cat_torch)
         denseCat = self.activation(denseCat)
         pooled_output = self.dropout(denseCat)
         logits = self.classifier(pooled_output)
+                # import pdb; pdb.set_trace()
+        ##########################################################
+        ######两个向量拼接并经过dense和激活函数映射为768维，再进行分类########
+        # denseCat = self.denseCat(pooled_output.view(-1, 2 * 768)) 
+        # denseCat = self.activation(denseCat)
+        # # denseCat = pooled_output.view(-1, 2 * 768)
+        # pooled_output = self.dropout(denseCat)
+        # logits = self.classifier(pooled_output)
+        # ************************************************
         return logits
 
 class BertForSequence(BertPreTrainedModel):

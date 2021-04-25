@@ -242,13 +242,13 @@ if __name__ == "__main__":
     for N in [5]:
         logger = logging.getLogger(__name__)
         print(seed)
-        os.environ["CUDA_VISIBLE_DEVICES"] = '0'
+        os.environ["CUDA_VISIBLE_DEVICES"] = '1'
         parser = ArgumentParser(description = 'For KBQA')
         parser.add_argument("--data_dir",default=BASE_DIR + '/runnings/train_data/webq/',type=str)
         parser.add_argument("--bert_model", default='bert-base-uncased', type=str)
         parser.add_argument("--bert_vocab", default='bert-base-uncased', type=str)
         parser.add_argument("--task_name",default='mrpc',type=str,help="The name of the task to train.")
-        parser.add_argument("--output_dir",default=BASE_DIR + '/runnings/model/webq/bert_webq_two_sentence_cosine_neg_' + str(N) + '_' + str(seed) + '_' + str(steps) + '/',type=str)
+        parser.add_argument("--output_dir",default=BASE_DIR + '/runnings/model/webq/test_bert_webq_two_sentence_cosine_neg_' + str(N) + '_' + str(seed) + '_' + str(steps) + '/',type=str)
         parser.add_argument("--input_model_dir", default='0.9675389502344577_0.4803025192052977_3', type=str)
         parser.add_argument("--T_file_name",default='webq_rank1_f01_label_position_pairwise_neg_' + str(N) + '_type_entity_time_ordinal_mainpath__train.txt',type=str)
         parser.add_argument("--v_file_name",default='pairwise_dev_all.txt',type=str)

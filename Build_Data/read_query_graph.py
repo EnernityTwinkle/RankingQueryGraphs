@@ -149,7 +149,7 @@ def get_info_of_cand(line, entity_dic, comp_list):
     p = line_json['p']
     r = line_json['r']
     f1 = line_json['f1']
-    ans_str = ' '.join(line_json['ans_str'].replace('\t', ', ').split(' ')[0:600])# 保留所有答案
+    ans_str = ' '.join(line_json['ans_str'].replace('\t', ', ').split(' ')[0:100])# 保留所有答案
     # ans_str = ''
     # ans_str = ','.join(line_json['ans_str'].split('\t')[0:3]) # 保留一个答案
     raw_paths = line_json['raw_paths']
@@ -427,7 +427,7 @@ def write2file_label_position(file_name, query_answer):
             cand_str += ' '.join(query_graph.main_path[0:3]) + '.' # 包含主实体、关系和答案
             # import pdb; pdb.set_trace()
             f.write(item[0] + '\t' + item[1].lower() + '\t' + cand_str.lower() + \
-                        '\t' + '##'.join(query_graph.entityId) + '\t' +\
+                        '\t' + '##'.join(query_graph.entityId) +\
                         '\t' + '##'.join(query_graph.relationId) + '\t' + \
                         str(query_graph.p) + '\t' + str(query_graph.r) + '\t' + str(query_graph.f1) \
                          + '\t' + item[3] + '\n')
