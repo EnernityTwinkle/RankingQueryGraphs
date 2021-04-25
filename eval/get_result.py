@@ -79,6 +79,7 @@ if __name__ == "__main__":
     features = []
     features.append('bert_compq_listwise_rank1_f01_gradual_merge_type_entity_time_ordianl_mainpath_neg_')
     features.append('bert_compq_pairwise_rank1_f01_gradual_merge_type_entity_time_ordianl_mainpath_neg_')
+    features.append('bert_compq_pointwise_rank1_f01_gradual_merge_type_entity_time_ordianl_mainpath_neg_')
     for feature in features:
         results = read_result(BASE_DIR + '/runnings/model/compq/', feature = feature)
         write2file(results, feature)
