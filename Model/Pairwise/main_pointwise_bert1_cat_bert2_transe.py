@@ -271,6 +271,8 @@ if __name__ == "__main__":
         fout_res = open(args.output_dir + 'result.log', 'w', encoding='utf-8')
         # import pdb; pdb.set_trace()
         # best_model_dir_name = main(fout_res, args)
-        best_model_dir_name = '/data2/yhjia/RankingQueryGraphs/runnings/model/webq/transe_bert_group1_webq_pointwise_cat_neg_5_42_50/0.9880934091258258_0.523950075516159_1/'
+        # best_model_dir_name = '/data2/yhjia/RankingQueryGraphs/runnings/model/webq/transe_bert_group1_webq_pointwise_cat_neg_5_42_50/0.9880934091258258_0.523950075516159_1/'
+        # best_model_dir_name = '/data2/yhjia/RankingQueryGraphs/runnings/model/webq/bert_group1_webq_pointwise_cat_neg_5_42_50/0.9882316792133968_0.5333126343058926_1/'
+        best_model_dir_name = '/data2/yhjia/RankingQueryGraphs/runnings/model/webq/transe_bert_group1_webq_pointwise_2linear_neg_5_42_50/0.8399293286219082_0.5066916181166811_0/'
         test(best_model_dir_name, fout_res, args)
         
