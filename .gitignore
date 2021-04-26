@@ -17,3 +17,5 @@ Model/Pairwise/__pycache__/BertEncoderX.cpython-36.pyc
 Model/__pycache__/cal_f1.cpython-36.pyc
 Build_Data/__pycache__/read_query_graph.cpython-36.pyc
 Build_Data/__pycache__/sample_pos_and_neg.cpython-36.pyc
+eval/bert_webq_pairwise*.txt
+Model/Pairwise/__pycache__/Embedding.cpython-36.pyc

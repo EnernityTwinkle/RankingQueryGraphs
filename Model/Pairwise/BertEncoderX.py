@@ -22,6 +22,11 @@ from pytorch_pretrained_bert.modeling import *
 from pytorch_pretrained_bert.tokenization import BertTokenizer
 from pytorch_pretrained_bert.optimization import BertAdam, WarmupLinearSchedule
 
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+sys.path.append(BASE_DIR)
+from Model.Pairwise.Embedding import RelationEmbedding
+from typing import List, Dict, Tuple
+
 
 class TwoBertForTwoSequence(BertPreTrainedModel):
     def __init__(self, config, num_labels):
@@ -83,25 +88,26 @@ class BertForTwoSequence(BertPreTrainedModel):
         # #     import pdb; pdb.set_trace()
         # # ##########################################################
         # ##################################两个向量拼接以及相减的结果作为相似度特征************
-        cat_torch = torch.rand((num_sen // 2, 768 * 3), device='cuda:0')
-        for i in range(0, num_sen, 2):
-            catTensor = torch.cat((pooled_output[i], pooled_output[i+1]), 0)
-            subTensor = pooled_output[i] - pooled_output[i + 1]
-            cat_torch[i // 2] = torch.cat((catTensor, subTensor), 0)
-        denseCat = self.dense3(cat_torch)
-        denseCat = self.activation(denseCat)
-        pooled_output = self.dropout(denseCat)
-        logits = self.classifier(pooled_output)
+        # cat_torch = torch.rand((num_sen // 2, 768 * 3), device='cuda:0')
+        # for i in range(0, num_sen, 2):
+        #     catTensor = torch.cat((pooled_output[i], pooled_output[i+1]), 0)
+        #     subTensor = pooled_output[i] - pooled_output[i + 1]
+        #     cat_torch[i // 2] = torch.cat((catTensor, subTensor), 0)
+        # denseCat = self.dense3(cat_torch)
+        # denseCat = self.activation(denseCat)
+        # pooled_output = self.dropout(denseCat)
+        # logits = self.classifier(pooled_output)
                 # import pdb; pdb.set_trace()
         ##########################################################
         ######两个向量拼接并经过dense和激活函数映射为768维，再进行分类########
-        # denseCat = self.denseCat(pooled_output.view(-1, 2 * 768)) 
-        # denseCat = self.activation(denseCat)
-        # # denseCat = pooled_output.view(-1, 2 * 768)
-        # pooled_output = self.dropout(denseCat)
-        # logits = self.classifier(pooled_output)
+        denseCat = self.denseCat(pooled_output.view(-1, 2 * 768)) 
+        denseCat = self.activation(denseCat)
+        # denseCat = pooled_output.view(-1, 2 * 768)
+        pooled_output = self.dropout(denseCat)
+        logits = self.classifier(pooled_output)
         # ************************************************
         return logits
+
 
 class BertForSequence(BertPreTrainedModel):
     def __init__(self, config, num_labels):
@@ -150,6 +156,80 @@ class BertForTwoSequenceCosine(BertPreTrainedModel):
         # logits = self.classifier_3(pooled_output).view(num_sen // 2, -1)
         # import pdb; pdb.set_trace()
         return logits
+
+
+class BertForSequence(BertPreTrainedModel):
+    def __init__(self, config, num_labels):
+        super(BertForSequence, self).__init__(config)
+        self.num_labels = num_labels
+        self.bert = BertModel(config)
+        self.dropout = nn.Dropout(config.hidden_dropout_prob)
+        self.classifier = nn.Linear(config.hidden_size, num_labels)
+        self.classifier_2 = nn.Linear(config.hidden_size * 2, num_labels)
+        self.classifier_3 = nn.Linear(config.hidden_size * 3, num_labels)
+        self.apply(self.init_bert_weights)
+
+    def forward(self, input_ids, token_type_ids=None, attention_mask=None, labels=None):
+        _, pooled_output = self.bert(input_ids, token_type_ids, attention_mask, output_all_encoded_layers=False)
+        # num_sen = pooled_output.shape[0]
+        pooled_output = self.dropout(pooled_output)
+        logits = self.classifier(pooled_output)
+        return logits
+
+class BertForSequenceWithRels(BertPreTrainedModel):
+
+    def __init__(self, config, num_labels):
+        super(BertForSequenceWithRels, self).__init__(config)
+        self.num_labels = num_labels
+        # import pdb; pdb.set_trace()
+        self.relEmbedding = torch.from_numpy(RelationEmbedding().embedding.astype(np.float32))
+        self.relEmbeddingMatrix = torch.nn.Embedding.from_pretrained(self.relEmbedding, freeze=False)
+        self.bert = BertModel(config)
+        self.dropout = nn.Dropout(config.hidden_dropout_prob)
+        self.classifier = nn.Linear(config.hidden_size, num_labels)
+        self.classifier_2 = nn.Linear(config.hidden_size * 2, num_labels)
+        self.classifier_3 = nn.Linear(config.hidden_size * 3, num_labels)
+        self.classifier_transe = nn.Linear(config.hidden_size * 2 + 50, num_labels)
+        self.classifier_transe2 = nn.Linear(config.hidden_size + 50, 300)
+        self.classifier_base_transe = nn.Linear(config.hidden_size + 300, num_labels)
+        self.activation = nn.Tanh()
+        self.apply(self.init_bert_weights)
+
+
+    def forward(self, input_ids, token_type_ids=None, attention_mask=None, labels=None, rels_ids = None):
+        # import pdb; pdb.set_trace()
+        #***********************使用transe直接拼接***********************
+        rels_ids = rels_ids.view(-1,2,2)[:,0].view(-1,2)
+        rels_emb = self.relEmbeddingMatrix(rels_ids)
+        rels_emb = rels_emb.permute(0, 2, 1)
+        rels_emb = torch.nn.functional.avg_pool1d(rels_emb, kernel_size=rels_emb.shape[-1]).squeeze(-1)
+        _, pooled_output = self.bert(input_ids, token_type_ids, attention_mask, output_all_encoded_layers=False)
+        pooled_output = pooled_output.view(-1, 2 * 768)
+        pooled_output = torch.cat((pooled_output, rels_emb), 1)
+        pooled_output = self.dropout(pooled_output)
+        logits = self.classifier_transe(pooled_output)
+        #***********************使用transe先映射为特征再拼接***********************
+        # rels_ids = rels_ids.view(-1,2,2)[:,0].view(-1,2)
+        # rels_emb = self.relEmbeddingMatrix(rels_ids)
+        # rels_emb = rels_emb.permute(0, 2, 1)
+        # rels_emb = torch.nn.functional.avg_pool1d(rels_emb, kernel_size=rels_emb.shape[-1]).squeeze(-1)
+        # _, pooled_output = self.bert(input_ids, token_type_ids, attention_mask, output_all_encoded_layers=False)
+        # pooled_output1 = pooled_output.view(-1, 2, 768)[:,0,:].view(-1, 768)
+        # pooled_output2 = pooled_output.view(-1, 2, 768)[:,1,:].view(-1, 768)
+        # pooled_output_transe = torch.cat((pooled_output2, rels_emb), 1)
+        # pooled_output_transe = self.classifier_transe2(pooled_output_transe)
+        # pooled_output_transe = self.activation(pooled_output_transe)
+        # baseCatTranse = torch.cat((pooled_output1, pooled_output_transe), 1)
+        # pooled_output = self.dropout(baseCatTranse)
+        # logits = self.classifier_base_transe(pooled_output)
+        ######################不使用transe###############################
+        # _, pooled_output = self.bert(input_ids, token_type_ids, attention_mask, output_all_encoded_layers=False)
+        # pooled_output = pooled_output.view(-1, 2, 768)[:,0,:].view(-1, 768)
+        # pooled_output = self.dropout(pooled_output)
+        # logits = self.classifier(pooled_output)
+        # import pdb; pdb.set_trace()
+        return logits
+
 
 
 # class BertForSequenceClassification_new_sub2(BertPreTrainedModel):
