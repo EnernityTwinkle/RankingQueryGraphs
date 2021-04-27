@@ -12,7 +12,8 @@ class InputExample(object):
     relationEmbedding = RelationEmbedding()
     haveRels = {}
     noRels = {}
-    def __init__(self, guid, text_a, text_b=None, label=None, entitys = None, rels=None):
+    def __init__(self, guid, text_a, text_b=None, label=None, entitys = None, rels=None,\
+                    answerType: str = '', answerStr: str = ''):
         self.guid = guid
         self.text_a = text_a
         self.text_b = text_b
@@ -20,6 +21,8 @@ class InputExample(object):
         self.freebaseEntity = entitys
         self.freebaseRels = rels
         self.relsId = InputExample.relation2id(self.freebaseRels)
+        self.answerType = answerType
+        self.answerStr = answerStr
         
 
     @staticmethod

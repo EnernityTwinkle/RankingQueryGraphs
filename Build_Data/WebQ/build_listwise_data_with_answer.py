@@ -16,13 +16,14 @@ if __name__ == "__main__":
     qid2question = pickle.load(f)
     qid2cands_train, qid2cands_dev, qid2cands_test = split_data_webq(qid2cands)
     # for N in [5, 10, 20, 30, 40, 50, 60, 70, 80, 100, 120, 140]:
-    for N in [5]:
-        file_name = BASE_DIR + '/runnings/train_data/webq/webq_rank1_f01_gradual_label_position_1_' + str(N) + '_type_entity_time_ordinal_mainpath_'
-        train_data = select_top_1_n_listwise_gradual(qid2question, qid2cands_train, pos_only1=False, data_type='T', N=N)
-        write2file_label_position(file_name + 'is_train.txt', train_data)
+    # for N in [5]:
+    #     file_name = BASE_DIR + '/runnings/train_data/webq/webq_listwise_rank1_f01_gradual_label_position_1_' + str(N) + '_with_answer_'
+    #     train_data = select_top_1_n_listwise_gradual(qid2question, qid2cands_train, pos_only1=False, data_type='T', N=N)
+    #     write2file_label_position(file_name + 'train.txt', train_data)
 
     # 验证集和测试集都是使用全集
-    # dev_data = select_top_1_n_listwise(qid2question, qid2cands_dev, pos_only1=False, data_type='v', N=N)
-    # write2file_label_position(file_name + 'dev_all.txt', dev_data)
-    # test_data = select_top_1_n_listwise(qid2question, qid2cands_test, pos_only1=False, data_type='t', N=N)
-    # write2file_label_position(file_name + 'test_all.txt', test_data)
+    file_name = BASE_DIR + '/runnings/train_data/webq/webq_with_answer_info_'
+    dev_data = select_top_1_n_listwise(qid2question, qid2cands_dev, pos_only1=False, data_type='v')
+    write2file_label_position(file_name + 'dev_all.txt', dev_data)
+    test_data = select_top_1_n_listwise(qid2question, qid2cands_test, pos_only1=False, data_type='t')
+    write2file_label_position(file_name + 'test_all.txt', test_data)

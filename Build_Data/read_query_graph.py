@@ -19,7 +19,8 @@ r_shuff = random.random
 class QueryGraphForTrain:
     def __init__(self, main_path = [], entity_path = [], time_path = [],
                      type_path = [], ordinal_path = [], p = 0, r = 0, f1 = 0,\
-                          entityId: List[str] = [], relationId: List[str] = []):
+                          entityId: List[str] = [], relationId: List[str] = [],\
+                              answerType: str = '', answerStr:str = ''):
         '''
         这里包含QueryGraph中的每条边信息，其中entity_path指包含所有实体信息的路径；time_path指描述时间约束的路径；type_sparql指描述类型约束的路径；ordinal_path指序数词约束的路径；
         而entity_sparql、time_sparql、type_sparql和ordinal_sparql分别对应每种路径的sparql语句。
@@ -40,6 +41,9 @@ class QueryGraphForTrain:
         self.f1 = f1
         self.entityId = entityId
         self.relationId = relationId
+        self.answerType = answerType
+        self.answerStr = answerStr
+
     def set_entity_path(self, entity_path):
         self.entity_path = entity_path
     def set_entity_sparql(self, entity_sparql):
@@ -152,6 +156,13 @@ def get_info_of_cand(line, entity_dic, comp_list):
     ans_str = ' '.join(line_json['ans_str'].replace('\t', ', ').split(' ')[0:100])# 保留所有答案
     # ans_str = ''
     # ans_str = ','.join(line_json['ans_str'].split('\t')[0:3]) # 保留一个答案
+    answerType = line_json['answer_type'].split('\t')
+    answerTypeWords = ''
+    for item in answerType:
+        if(len(answerTypeWords) != 0):
+            answerTypeWords += ', ' + trans_relid2words(item)
+        else:
+            answerTypeWords += trans_relid2words(item)
     raw_paths = line_json['raw_paths']
     entityId = []
     relationId = []
@@ -219,7 +230,7 @@ def get_info_of_cand(line, entity_dic, comp_list):
             print(subpath)
             import pdb; pdb.set_trace()
     # import pdb; pdb.set_trace()
-    return main_path, entity_path, time_path, type_path, ordinal_path, p, r, f1, entityId, relationId
+    return main_path, entity_path, time_path, type_path, ordinal_path, p, r, f1, entityId, relationId, answerTypeWords, ans_str
 
 # 读取查询图信息
 def read_query_graph(init_dir_name, entity_dic, qid2comp_dic):
@@ -241,10 +252,12 @@ def read_query_graph(init_dir_name, entity_dic, qid2comp_dic):
                             que2cands_dic[qid] = []
                         # print(qid)
                         # import pdb; pdb.set_trace()
-                        main_path, entity_path, time_path, type_path, ordinal_path, p, r, f1, entityId, relationId = get_info_of_cand(line, entity_dic, comp_list)
+                        main_path, entity_path, time_path, type_path, ordinal_path, p, r, f1,\
+                             entityId, relationId, answerTypeWords, ans_str = get_info_of_cand(line, entity_dic, comp_list)
                         query_graph = QueryGraphForTrain(main_path = main_path, entity_path = entity_path, time_path = time_path,\
                                                         type_path = type_path, ordinal_path = ordinal_path, p = p, r = r, f1 = f1,\
-                                                            entityId=entityId, relationId=relationId)
+                                                            entityId=entityId, relationId=relationId, answerType = answerTypeWords,\
+                                                                answerStr = ans_str)
                         # query_graph.serialize()
                         que2cands_dic[qid].append(query_graph)
                         num += 1
@@ -429,6 +442,7 @@ def write2file_label_position(file_name, query_answer):
             f.write(item[0] + '\t' + item[1].lower() + '\t' + cand_str.lower() + \
                         '\t' + '##'.join(query_graph.entityId) +\
                         '\t' + '##'.join(query_graph.relationId) + '\t' + \
+                        query_graph.answerType  + '\t' + query_graph.answerStr + '\t' + \
                         str(query_graph.p) + '\t' + str(query_graph.r) + '\t' + str(query_graph.f1) \
                          + '\t' + item[3] + '\n')
     f.flush()
