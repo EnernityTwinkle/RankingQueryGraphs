@@ -69,7 +69,7 @@ if __name__ == "__main__":
     #     write2file(results, feature)
 
     features = []
-    features.append('bert_webq_pairwise_gradual_merge_type_entity_time_ordianl_mainpath_neg_')
+    features.append('bert_group1_webq_pointwise_two_sentence_cat_dense_activate_neg_5_42')
     for feature in features:
         results = read_result(BASE_DIR + '/runnings/model/webq/', feature = feature)
         write2file(results, feature)

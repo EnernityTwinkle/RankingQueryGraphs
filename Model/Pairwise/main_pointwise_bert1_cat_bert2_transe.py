@@ -223,13 +223,14 @@ if __name__ == "__main__":
     for N in [5]:
         logger = logging.getLogger(__name__)
         print(seed)
-        os.environ["CUDA_VISIBLE_DEVICES"] = '5'
+        os.environ["CUDA_VISIBLE_DEVICES"] = '1'
         parser = ArgumentParser(description = 'For KBQA')
         parser.add_argument("--data_dir",default=BASE_DIR + '/runnings/train_data/webq/',type=str)
         parser.add_argument("--bert_model", default='bert-base-uncased', type=str)
         parser.add_argument("--bert_vocab", default='bert-base-uncased', type=str)
         parser.add_argument("--task_name",default='mrpc',type=str,help="The name of the task to train.")
-        parser.add_argument("--output_dir",default=BASE_DIR + '/runnings/model/webq/transe_bert_group1_webq_pointwise_2linear_neg_' + str(N) + '_' + str(seed) + '_' + str(steps) + '/',type=str)
+        # parser.add_argument("--output_dir",default=BASE_DIR + '/runnings/model/webq/transe_bert_group1_webq_pointwise_catque_neg_' + str(N) + '_' + str(seed) + '_' + str(steps) + '/',type=str)
+        parser.add_argument("--output_dir",default=BASE_DIR + '/runnings/model/webq/transe_bert_group1_webq_pointwise_cat20dim_neg_' + str(N) + '_' + str(seed) + '_' + str(steps) + '/',type=str)
         parser.add_argument("--input_model_dir", default='0.9675389502344577_0.4803025192052977_3', type=str)
         parser.add_argument("--T_file_name",default='webq_rank1_f01_pairwise_neg_' + str(N) + '_with_freebase_id__train.txt',type=str)
         # parser.add_argument("--v_file_name",default='pairwise_with_freebase_id_dev_all_cut.txt',type=str)
@@ -270,9 +271,9 @@ if __name__ == "__main__":
             os.makedirs(args.output_dir)
         fout_res = open(args.output_dir + 'result.log', 'w', encoding='utf-8')
         # import pdb; pdb.set_trace()
-        # best_model_dir_name = main(fout_res, args)
+        best_model_dir_name = main(fout_res, args)
         # best_model_dir_name = '/data2/yhjia/RankingQueryGraphs/runnings/model/webq/transe_bert_group1_webq_pointwise_cat_neg_5_42_50/0.9880934091258258_0.523950075516159_1/'
         # best_model_dir_name = '/data2/yhjia/RankingQueryGraphs/runnings/model/webq/bert_group1_webq_pointwise_cat_neg_5_42_50/0.9882316792133968_0.5333126343058926_1/'
-        best_model_dir_name = '/data2/yhjia/RankingQueryGraphs/runnings/model/webq/transe_bert_group1_webq_pointwise_2linear_neg_5_42_50/0.8399293286219082_0.5066916181166811_0/'
+        # best_model_dir_name = '/data2/yhjia/RankingQueryGraphs/runnings/model/webq/transe_bert_group1_webq_pointwise_2linear_neg_5_42_50/0.8399293286219082_0.5066916181166811_0/'
         test(best_model_dir_name, fout_res, args)
         
