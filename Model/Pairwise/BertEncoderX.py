@@ -190,8 +190,8 @@ class BertForSequenceWithRels(BertPreTrainedModel):
         self.classifier_2 = nn.Linear(config.hidden_size * 2, num_labels)
         self.classifier_3 = nn.Linear(config.hidden_size * 3, num_labels)
         self.classifier_transe = nn.Linear(config.hidden_size * 2 + 50, num_labels)
-        self.classifier_transe2 = nn.Linear(config.hidden_size + 50, 20)
-        self.classifier_base_transe = nn.Linear(config.hidden_size + 20, num_labels)
+        self.classifier_transe2 = nn.Linear(config.hidden_size + 50, 80)
+        self.classifier_base_transe = nn.Linear(config.hidden_size + 80, num_labels)
         self.activation = nn.Tanh()
         self.apply(self.init_bert_weights)
 
