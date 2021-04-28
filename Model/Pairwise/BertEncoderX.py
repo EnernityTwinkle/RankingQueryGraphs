@@ -195,19 +195,48 @@ class BertForSequenceWithRels(BertPreTrainedModel):
         self.activation = nn.Tanh()
         self.apply(self.init_bert_weights)
 
+    def mask_avg_pooling(self, encoded_layer, mask):
+        # for i, oneMask in enumerate(mask):
+        #     oneMask = oneMask.view(1, -1)
+        nums = torch.sum(mask, 1).view(-1, 1).float()
+        mask = mask.unsqueeze(1)
+        # import pdb; pdb.set_trace()
+        sumEncoded = torch.bmm(mask.float(), encoded_layer).squeeze(1)
+        avgEncoded = torch.div(sumEncoded, nums)
+        return avgEncoded
+        # import pdb; pdb.set_trace()
+
+
+
 
     def forward(self, input_ids, token_type_ids=None, attention_mask=None, labels=None, rels_ids = None):
         # import pdb; pdb.set_trace()
         #***********************使用transe直接拼接***********************
+        # rels_ids = rels_ids.view(-1,2,2)[:,0].view(-1,2)
+        # rels_emb = self.relEmbeddingMatrix(rels_ids)
+        # rels_emb = rels_emb.permute(0, 2, 1)
+        # rels_emb = torch.nn.functional.avg_pool1d(rels_emb, kernel_size=rels_emb.shape[-1]).squeeze(-1)
+        # _, pooled_output = self.bert(input_ids, token_type_ids, attention_mask, output_all_encoded_layers=False)
+        # pooled_output = pooled_output.view(-1, 2 * 768)
+        # # pooled_output = torch.cat((pooled_output, rels_emb), 1)
+        # pooled_output = self.dropout(pooled_output)
+        # logits = self.classifier_2(pooled_output)
+        #***********************使用词平均作为句子语义表示***********
         rels_ids = rels_ids.view(-1,2,2)[:,0].view(-1,2)
         rels_emb = self.relEmbeddingMatrix(rels_ids)
         rels_emb = rels_emb.permute(0, 2, 1)
         rels_emb = torch.nn.functional.avg_pool1d(rels_emb, kernel_size=rels_emb.shape[-1]).squeeze(-1)
-        _, pooled_output = self.bert(input_ids, token_type_ids, attention_mask, output_all_encoded_layers=False)
-        pooled_output = pooled_output.view(-1, 2 * 768)
+        encoded_layer, pooled_output = self.bert(input_ids, token_type_ids, attention_mask, output_all_encoded_layers=False)
+        # pooled_output = pooled_output.view(-1, 2 * 768)
         # pooled_output = torch.cat((pooled_output, rels_emb), 1)
+        
+        avgEncoded = self.mask_avg_pooling(encoded_layer, attention_mask)
+        questionEncoded = avgEncoded.view(-1, 2, 768)[:, 1, :].squeeze(1)
+        simEncoded = pooled_output.view(-1, 2, 768)[:,0,:].squeeze(1)
+        pooled_output = torch.cat((simEncoded, questionEncoded, rels_emb), 1)
         pooled_output = self.dropout(pooled_output)
-        logits = self.classifier_2(pooled_output)
+        logits = self.classifier_transe(pooled_output)
+        # import pdb; pdb.set_trace()
         #***********************使用transe先映射为特征再拼接***********************
         # rels_ids = rels_ids.view(-1,2,2)[:,0].view(-1,2)
         # rels_emb = self.relEmbeddingMatrix(rels_ids)
