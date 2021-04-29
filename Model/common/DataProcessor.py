@@ -216,7 +216,11 @@ class DataProcessor(object):
                                     input_mask=bertInput[1],
                                     segment_ids=bertInput[2],
                                     label_id=label_id))
-                bert_input = self.convert_sentence_pair_to_features(example.text_a, example.text_b, tokenizer)
+                # text_a = ' '.join(example.text_a.split(' ')[0:2])
+                # bert_input = self.convert_sentence_pair_to_features(example.text_a, example.answerType, tokenizer)
+                # bert_input = self.convert_sentence_pair_to_features(text_a, example.answerType, tokenizer)
+                # import pdb; pdb.set_trace()
+                bert_input = self.convert_sentence_pair_to_features(example.text_a, example.answerStr, tokenizer)
                 features.append(
                         InputFeatures(input_ids=bert_input[0],
                                     input_mask=bert_input[1],

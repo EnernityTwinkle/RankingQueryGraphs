@@ -267,11 +267,18 @@ class BertForSequenceWithAnswerType(BertPreTrainedModel):
         # pooled_output = self.dropout(baseCatTranse)
         # logits = self.classifier_base_transe(pooled_output)
         ######################问句与答案相似度和语义相似度拼接###############################
-        denseCat = self.denseCat(pooled_output.view(-1, 2 * 768)) 
-        denseCat = self.activation(denseCat)
+        # denseCat = self.denseCat(pooled_output.view(-1, 2 * 768)) 
+        # denseCat = self.activation(denseCat)
+        # # denseCat = pooled_output.view(-1, 2 * 768)
+        # pooled_output = self.dropout(denseCat)
+        # logits = self.classifier(pooled_output)
+        ###############问句与答案相似度和语义相似度得分相加########################
+        # denseCat = self.denseCat(pooled_output.view(-1, 2 * 768)) 
+        # denseCat = self.activation(denseCat)
         # denseCat = pooled_output.view(-1, 2 * 768)
-        pooled_output = self.dropout(denseCat)
+        pooled_output = self.dropout(pooled_output)
         logits = self.classifier(pooled_output)
+        logits = torch.sum(logits.view(-1, 2, 2),1)
         # import pdb; pdb.set_trace()
         return logits
 
