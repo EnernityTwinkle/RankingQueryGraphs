@@ -205,7 +205,7 @@ def test(best_model_dir_name, fout_res, args):
         segment_ids = segment_ids.to(device).view(-1, args.max_seq_length)
         label_ids = label_ids.to(device).view(-1)
         with torch.no_grad():
-            logits = model(input_ids, segment_ids, input_mask, labels=None, rels_ids = rels_ids)    
+            logits = model(input_ids, segment_ids, input_mask, labels=None)    
         logits = torch.softmax(logits, 1)     
         # import pdb; pdb.set_trace()
         for item in logits:
