@@ -164,8 +164,6 @@ class BertForSequence(BertPreTrainedModel):
         self.bert = BertModel(config)
         self.dropout = nn.Dropout(config.hidden_dropout_prob)
         self.classifier = nn.Linear(config.hidden_size, num_labels)
-        self.classifier_2 = nn.Linear(config.hidden_size * 2, num_labels)
-        self.classifier_3 = nn.Linear(config.hidden_size * 3, num_labels)
         self.apply(self.init_bert_weights)
 
     def forward(self, input_ids, token_type_ids=None, attention_mask=None, labels=None):
@@ -237,49 +235,53 @@ class BertForSequenceWithAnswerType(BertPreTrainedModel):
         self.num_labels = num_labels
         # import pdb; pdb.set_trace()
         self.bert = BertModel(config)
-        self.bert2 = BertModel(config)
         self.dropout = nn.Dropout(config.hidden_dropout_prob)
         self.classifier = nn.Linear(config.hidden_size, num_labels)
-        self.classifier_2 = nn.Linear(config.hidden_size * 2, num_labels)
-        self.classifier_3 = nn.Linear(config.hidden_size * 3, num_labels)
-        self.classifier_transe = nn.Linear(config.hidden_size * 2 + 50, num_labels)
-        self.classifier_transe2 = nn.Linear(config.hidden_size + 50, 300)
-        self.classifier_base_transe = nn.Linear(config.hidden_size + 300, num_labels)
         self.denseCat = nn.Linear(config.hidden_size * 2, config.hidden_size)
         self.activation = nn.Tanh()
         self.apply(self.init_bert_weights)
 
 
     def forward(self, input_ids, token_type_ids=None, attention_mask=None, labels=None, rels_ids = None):
-        
-        #***********************使用transe先映射为特征再拼接***********************
-        # _, pooled_output = self.bert(input_ids, token_type_ids, attention_mask, output_all_encoded_layers=False)
-        # rels_ids = rels_ids.view(-1,2,2)[:,0].view(-1,2)
-        # rels_emb = self.relEmbeddingMatrix(rels_ids)
-        # rels_emb = rels_emb.permute(0, 2, 1)
-        # rels_emb = torch.nn.functional.avg_pool1d(rels_emb, kernel_size=rels_emb.shape[-1]).squeeze(-1)
-        # _, pooled_output = self.bert(input_ids, token_type_ids, attention_mask, output_all_encoded_layers=False)
-        # pooled_output1 = pooled_output.view(-1, 2, 768)[:,0,:].view(-1, 768)
-        # pooled_output2 = pooled_output.view(-1, 2, 768)[:,1,:].view(-1, 768)
-        # pooled_output_transe = torch.cat((pooled_output2, rels_emb), 1)
-        # pooled_output_transe = self.classifier_transe2(pooled_output_transe)
-        # pooled_output_transe = self.activation(pooled_output_transe)
-        # baseCatTranse = torch.cat((pooled_output1, pooled_output_transe), 1)
-        # pooled_output = self.dropout(baseCatTranse)
-        # logits = self.classifier_base_transe(pooled_output)
         ######################问句与答案相似度和语义相似度拼接###############################
-        # _, pooled_output = self.bert(input_ids, token_type_ids, attention_mask, output_all_encoded_layers=False)
-        # denseCat = self.denseCat(pooled_output.view(-1, 2 * 768)) 
-        # denseCat = self.activation(denseCat)
-        # # denseCat = pooled_output.view(-1, 2 * 768)
-        # pooled_output = self.dropout(denseCat)
-        # logits = self.classifier(pooled_output)
+        _, pooled_output = self.bert(input_ids, token_type_ids, attention_mask, output_all_encoded_layers=False)
+        denseCat = self.denseCat(pooled_output.view(-1, 2 * 768)) 
+        denseCat = self.activation(denseCat)
+        pooled_output = self.dropout(denseCat)
+        logits = self.classifier(pooled_output)
         ###############问句与答案相似度和语义相似度得分相加########################
         # _, pooled_output = self.bert(input_ids, token_type_ids, attention_mask, output_all_encoded_layers=False)
         # pooled_output = self.dropout(pooled_output)
         # logits = self.classifier(pooled_output)
         # logits = torch.sum(logits.view(-1, 2, 2),1)
         # import pdb; pdb.set_trace()
+        ##########不使用answer信息#############################
+        # input_ids = input_ids.view(-1, 2, 100)
+        # token_type_ids = token_type_ids.view(-1, 2, 100)
+        # attention_mask = attention_mask.view(-1, 2, 100)
+        # input_ids1 = input_ids[:, 0, :]
+        # token_type_ids1 = token_type_ids[:, 0, :]
+        # attention_mask1 = attention_mask[:, 0, :]
+        # _, pooled_output = self.bert(input_ids1, token_type_ids1, attention_mask1)
+        # pooled_output = self.dropout(pooled_output)
+        # logits = self.classifier(pooled_output)
+        return logits
+
+
+class BertFor2PairSequenceWithAnswerType(BertPreTrainedModel):
+    
+    def __init__(self, config, num_labels):
+        super(BertFor2PairSequenceWithAnswerType, self).__init__(config)
+        self.num_labels = num_labels
+        self.bert = BertModel(config)
+        self.bert2 = BertModel(config)
+        self.dropout = nn.Dropout(config.hidden_dropout_prob)
+        self.classifier = nn.Linear(config.hidden_size, num_labels)
+        self.denseCat = nn.Linear(config.hidden_size * 2, config.hidden_size)
+        self.activation = nn.Tanh()
+        self.apply(self.init_bert_weights)
+
+    def forward(self, input_ids, token_type_ids=None, attention_mask=None, labels=None, rels_ids = None):
         ##############问句与答案字符串的编码和语义相似度编码不采用同一个bert##############
         input_ids = input_ids.view(-1, 2, 100)
         token_type_ids = token_type_ids.view(-1, 2, 100)
@@ -297,17 +299,6 @@ class BertForSequenceWithAnswerType(BertPreTrainedModel):
         denseCat = self.activation(denseCat)
         pooled_output = self.dropout(denseCat)
         logits = self.classifier(pooled_output)
-        # import pdb; pdb.set_trace()
-        ##########不使用answer信息#############################
-        # input_ids = input_ids.view(-1, 2, 100)
-        # token_type_ids = token_type_ids.view(-1, 2, 100)
-        # attention_mask = attention_mask.view(-1, 2, 100)
-        # input_ids1 = input_ids[:, 0, :]
-        # token_type_ids1 = token_type_ids[:, 0, :]
-        # attention_mask1 = attention_mask[:, 0, :]
-        # _, pooled_output = self.bert(input_ids1, token_type_ids1, attention_mask1)
-        # pooled_output = self.dropout(pooled_output)
-        # logits = self.classifier(pooled_output)
         return logits
 
 

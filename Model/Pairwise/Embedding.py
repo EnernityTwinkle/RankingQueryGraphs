@@ -11,20 +11,28 @@ class RelationEmbedding:
         self.addUNKRel()
 
     def readRelation2id(self):
-        fread = open(self.relation2idFile, 'r', encoding='utf-8')
         rel2id = {}
-        for line in fread:
-            lineCut = line.strip().split('\t')
-            if(len(lineCut) == 2):
-                rel2id[lineCut[0]] = int(lineCut[1])
+        try:
+            with open(self.relation2idFile, 'r', encoding='utf-8') as fread:
+                for line in fread:
+                    lineCut = line.strip().split('\t')
+                    if(len(lineCut) == 2):
+                        rel2id[lineCut[0]] = int(lineCut[1])
+        except:
+            print('transe文件不存在')
+            return rel2id
         # import pdb; pdb.set_trace()
         return rel2id
 
 
     def readVec(self):
-        vec = np.memmap(self.relation2vecFile, dtype='float32', mode='r')
-        embedding = np.reshape(vec, (-1, 50))
-        # import pdb; pdb.set_trace()
+        try:
+            vec = np.memmap(self.relation2vecFile, dtype='float32', mode='r')
+            embedding = np.reshape(vec, (-1, 50))
+            # import pdb; pdb.set_trace()
+        except:
+            print('transe文件不存在')
+            return np.zeros((2, 50))
         return embedding
     
     def addUNKRel(self):

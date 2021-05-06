@@ -29,7 +29,7 @@ sys.path.append(BASE_DIR)
 from Model.common.InputExample import InputExample
 from Model.cal_f1 import cal_f1, cal_f1_with_scores
 from Model.common.DataProcessor import DataProcessor
-from Model.common.BertEncoderX import BertForSequenceWithAnswerType
+from Model.common.BertEncoderX import BertFor2PairSequenceWithAnswerType
 
     
 
@@ -52,7 +52,7 @@ def main(fout_res, args: ArgumentParser):
     # import pdb; pdb.set_trace()   
     # Prepare model
     cache_dir = args.cache_dir if args.cache_dir else os.path.join(str(PYTORCH_PRETRAINED_BERT_CACHE))
-    model = BertForSequenceWithAnswerType.from_pretrained(args.bert_model,cache_dir=cache_dir,num_labels=2)
+    model = BertFor2PairSequenceWithAnswerType.from_pretrained(args.bert_model,cache_dir=cache_dir,num_labels=2)
     model.to(device)
     # Prepare optimizer
     param_optimizer = list(model.named_parameters())
@@ -183,7 +183,7 @@ def test(best_model_dir_name, fout_res, args):
     merge_mode = ['pairwise']
     tokenizer = BertTokenizer.from_pretrained(best_model_dir_name, do_lower_case=args.do_lower_case)
     cache_dir = args.cache_dir if args.cache_dir else os.path.join(str(PYTORCH_PRETRAINED_BERT_CACHE))
-    model = BertForSequenceWithAnswerType.from_pretrained(best_model_dir_name,cache_dir=cache_dir,num_labels=2)
+    model = BertFor2PairSequenceWithAnswerType.from_pretrained(best_model_dir_name,cache_dir=cache_dir,num_labels=2)
     model.to(device)
     # 构建验证集数据  
     eval_examples = processor.get_test_examples(args.data_dir)
@@ -222,7 +222,7 @@ if __name__ == "__main__":
     # for N in [5]:
         logger = logging.getLogger(__name__)
         print(seed)
-        os.environ["CUDA_VISIBLE_DEVICES"] = '1'
+        os.environ["CUDA_VISIBLE_DEVICES"] = '3'
         parser = ArgumentParser(description = 'For KBQA')
         parser.add_argument("--data_dir",default=BASE_DIR + '/runnings/train_data/webq/',type=str)
         # parser.add_argument("--bert_model", default='bert-base-uncased', type=str)
@@ -231,7 +231,7 @@ if __name__ == "__main__":
         parser.add_argument("--bert_vocab", default='/home/jiayonghui/github/bert_rank_data/bert_base_uncased', type=str)
         parser.add_argument("--task_name",default='mrpc',type=str,help="The name of the task to train.")
         # parser.add_argument("--output_dir",default=BASE_DIR + '/runnings/model/webq/only_sim_no_answer_str_cat_2bert_group1_webq_pointwise_2linear_neg_' + str(N) + '_' + str(seed) + '_' + str(steps) + '/',type=str)
-        parser.add_argument("--output_dir",default=BASE_DIR + '/runnings/model/webq/answer_type_bert_webq_pointwise_2linear_neg_' + str(N) + '_' + str(seed) + '_' + str(steps) + '/',type=str)
+        parser.add_argument("--output_dir",default=BASE_DIR + '/runnings/model/webq/2bert_answer_type_bert_webq_pointwise_2linear_neg_' + str(N) + '_' + str(seed) + '_' + str(steps) + '/',type=str)
         parser.add_argument("--input_model_dir", default='0.9675389502344577_0.4803025192052977_3', type=str)
         parser.add_argument("--T_file_name",default='webq_listwise_rank1_f01_gradual_label_position_1_' + str(N) + '_with_answer_train.txt',type=str)
         # parser.add_argument("--v_file_name",default='pairwise_with_freebase_id_dev_all_cut.txt',type=str)
