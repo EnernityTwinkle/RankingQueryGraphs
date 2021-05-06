@@ -88,6 +88,10 @@ def main(fout_res, args: ArgumentParser):
             n_batch_correct = 0
             len_train_data = 0
             crossLoss = torch.nn.CrossEntropyLoss()
+            TruePosTrain = 0
+            TAllTrain = 0
+            FalseNegTrain = 0
+            FAllTrain = 0
             for step, batch in enumerate(tqdm(train_dataloader, desc="Iteration")):
                 i_train_step += 1
                 batch = tuple(t.to(device) for t in batch)
@@ -114,7 +118,16 @@ def main(fout_res, args: ArgumentParser):
                     # point_loss += loss_point.item()
                     n_batch_correct += torch.sum(torch.eq(argmaxId.long(),label_ids.long()))
                     len_train_data += logits.size(0)
-                # import pdb;pdb.set_trace()
+                    for i, item in enumerate(label_ids):
+                        if(label_ids[i] == argmaxId[i]):
+                            if(item == 1):
+                                TruePosTrain += 1
+                            else:
+                                FalseNegTrain += 1
+                        if(item == 1):
+                            TAllTrain += 1
+                        else:
+                            FAllTrain += 1
                 try:
                     loss = loss_point
                     loss.backward()      
@@ -127,12 +140,13 @@ def main(fout_res, args: ArgumentParser):
                     global_step += 1    
             optimizer.step()
             optimizer.zero_grad()
-            print('train_loss:', tr_loss)    
-            fout_res.write('single loss:' + str(point_loss) + '\t' + str(pair_loss) + '\t' + str(list_loss) + '\n')  
+            print('train_loss:', tr_loss)
             fout_res.write('train loss:' + str(tr_loss) + '\n')
             P_train = 1. * int(n_batch_correct) / len_train_data
             print("train_Accuracy-----------------------",P_train)
             fout_res.write('train accuracy:' + str(P_train) + '\n')
+            print('正例预测正确：' + str(1.0 * TruePosTrain / TAllTrain) + '负例预测正确：' + str(1.0 * FalseNegTrain / FAllTrain) + '\n')
+            fout_res.write('正例预测正确：' + str(1.0 * TruePosTrain / TAllTrain) + '负例预测正确：' + str(1.0 * FalseNegTrain / FAllTrain) + '\n')
             F_dev = 0
             if args.do_eval:
                 file_name1 = args.output_dir + 'prediction_valid'
@@ -144,6 +158,10 @@ def main(fout_res, args: ArgumentParser):
                 P_dev = 0
                 n_batch_correct_valid = 0.0
                 len_valid_data = 0.0
+                TruePosDev = 0
+                TAllDev = 0
+                FalseNegDev = 0
+                FAllDev = 0
                 for input_ids, input_mask, segment_ids, label_ids, rels_ids in tqdm(eval_dataloader, desc="Evaluating"):
                     input_ids = input_ids.to(device).view(-1, args.max_seq_length)
                     input_mask = input_mask.to(device).view(-1, args.max_seq_length)
@@ -154,14 +172,25 @@ def main(fout_res, args: ArgumentParser):
                         logits = model(input_ids, segment_ids, input_mask, labels=None)    
                     logitsSoftmax = torch.softmax(logits, 1)
                     argmaxId = torch.argmax(logitsSoftmax, 1)
+                    for i, item in enumerate(label_ids):
+                        if(label_ids[i] == argmaxId[i]):
+                            if(item == 1):
+                                TruePosDev += 1
+                            else:
+                                FalseNegDev += 1
+                        if(item == 1):
+                            TAllDev += 1
+                        else:
+                            FAllDev += 1
                     n_batch_correct_valid += torch.sum(torch.eq(argmaxId.long(),label_ids.long()))
                     # import pdb; pdb.set_trace()
                     len_valid_data += logits.size(0)
                     for item in logitsSoftmax:
                         f_valid.write(str(float(item[1])) + '\n')
+                print('正例预测正确：' + str(1.0 * TruePosDev / TAllDev) + '负例预测正确：' + str(1.0 * FalseNegDev / FAllDev) + '\n')
+                fout_res.write('正例预测正确：' + str(1.0 * TruePosDev / TAllDev) + '负例预测正确：' + str(1.0 * FalseNegDev / FAllDev) + '\n')
                 f_valid.flush()
-                F_dev = n_batch_correct_valid.float() / len_valid_data
-                # import pdb; pdb.set_trace()
+                F_dev = float(n_batch_correct_valid.float() / len_valid_data)
                 print('F_dev', F_dev, n_batch_correct_valid, len_valid_data)
                 fout_res.write(str(F_dev) + '\n')
                 fout_res.flush()
@@ -207,6 +236,10 @@ def test(best_model_dir_name, fout_res, args):
     P_dev = 0
     n_batch_correct_test = 0.0
     len_test_data = 0.0
+    TruePos = 0
+    TAll = 0
+    FalseNeg = 0
+    FAll = 0
     for input_ids, input_mask, segment_ids, label_ids, rels_ids in tqdm(eval_dataloader, desc="Evaluating"):
         input_ids = input_ids.to(device).view(-1, args.max_seq_length)
         input_mask = input_mask.to(device).view(-1, args.max_seq_length)
@@ -216,13 +249,25 @@ def test(best_model_dir_name, fout_res, args):
             logits = model(input_ids, segment_ids, input_mask, labels=None)        
         logitsSoftmax = torch.softmax(logits, 1)
         argmaxId = torch.argmax(logitsSoftmax, 1)
+        # import pdb; pdb.set_trace()
+        for i, item in enumerate(label_ids):
+            if(label_ids[i] == argmaxId[i]):
+                if(item == 1):
+                    TruePos += 1
+                else:
+                    FalseNeg += 1
+            if(item == 1):
+                TAll += 1
+            else:
+                FAll += 1
         n_batch_correct_test += torch.sum(torch.eq(argmaxId.long(),label_ids.long()))
         len_test_data += logits.size(0)
         for item in logitsSoftmax:
             f_valid.write(str(float(item[1])) + '\n')
         f_valid.flush()
-    F_dev = n_batch_correct_test.float() / len_test_data
-    fout_res.write(str(F_dev) + '\n')
+    F_dev = float(n_batch_correct_test.float() / len_test_data)
+    print((str(F_dev) + '正例预测正确：' + str(1.0 * TruePos / TAll) + '负例预测正确：' + str(1.0 * FalseNeg / FAll) + '\n'))
+    fout_res.write(str(F_dev) + '正例预测正确：' + str(1.0 * TruePos / TAll) + '负例预测正确：' + str(1.0 * FalseNeg / FAll) + '\n')
     fout_res.flush()
 
 if __name__ == "__main__":
@@ -230,7 +275,7 @@ if __name__ == "__main__":
     steps = 50
     # for N in [5, 10, 20, 30, 40, 50, 60, 70, 80, 100, 120, 140]:
     # for N in [5, 10, 20, 40, 60, 80, 100, 120, 140]:
-    for N in [4]:
+    for N in [4, 9, 19]:
         logger = logging.getLogger(__name__)
         print(seed)
         os.environ["CUDA_VISIBLE_DEVICES"] = '5'
@@ -239,7 +284,7 @@ if __name__ == "__main__":
         parser.add_argument("--bert_model", default='bert-base-uncased', type=str)
         parser.add_argument("--bert_vocab", default='bert-base-uncased', type=str)
         parser.add_argument("--task_name",default='mrpc',type=str,help="The name of the task to train.")
-        parser.add_argument("--output_dir",default=BASE_DIR + '/runnings/model/webq/bert_group1_webq_pointwise_que_answertype_neg_' + str(N) + '_' + str(seed) + '_' + str(steps) + '/',type=str)
+        parser.add_argument("--output_dir",default=BASE_DIR + '/runnings/model/webq/bert_group1_webq_pointwise_only_que_answertype_neg_' + str(N) + '_' + str(seed) + '_' + str(steps) + '/',type=str)
         parser.add_argument("--input_model_dir", default='0.9675389502344577_0.4803025192052977_3', type=str)
         parser.add_argument("--T_file_name",default='webq_only_answer_info_train_1_' + str(N) + '.txt',type=str)
         # parser.add_argument("--v_file_name",default='pairwise_with_freebase_id_dev_all_cut.txt',type=str)
@@ -281,6 +326,6 @@ if __name__ == "__main__":
         fout_res = open(args.output_dir + 'result.log', 'w', encoding='utf-8')
         # import pdb; pdb.set_trace()
         best_model_dir_name = main(fout_res, args)
-        # best_model_dir_name = '/data2/yhjia/RankingQueryGraphs/runnings/model/webq/transe_bert_group1_webq_pointwise_cat_neg_5_42_50/0.9880934091258258_0.523950075516159_1/'
+        # best_model_dir_name = "/data2/yhjia/RankingQueryGraphs/runnings/model/webq/bert_group1_webq_pointwise_que_answertype_neg_4_42_50/0.848855430941773_tensor(0.9690, device='cuda:0')_0"
         test(best_model_dir_name, fout_res, args)
         
