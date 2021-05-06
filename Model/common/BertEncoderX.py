@@ -122,7 +122,6 @@ class BertForSequence(BertPreTrainedModel):
 
     def forward(self, input_ids, token_type_ids=None, attention_mask=None, labels=None):
         _, pooled_output = self.bert(input_ids, token_type_ids, attention_mask, output_all_encoded_layers=False)
-        # num_sen = pooled_output.shape[0]
         pooled_output = self.dropout(pooled_output)
         logits = self.classifier(pooled_output)
         return logits
@@ -238,6 +237,7 @@ class BertForSequenceWithAnswerType(BertPreTrainedModel):
         self.num_labels = num_labels
         # import pdb; pdb.set_trace()
         self.bert = BertModel(config)
+        self.bert2 = BertModel(config)
         self.dropout = nn.Dropout(config.hidden_dropout_prob)
         self.classifier = nn.Linear(config.hidden_size, num_labels)
         self.classifier_2 = nn.Linear(config.hidden_size * 2, num_labels)
@@ -251,8 +251,9 @@ class BertForSequenceWithAnswerType(BertPreTrainedModel):
 
 
     def forward(self, input_ids, token_type_ids=None, attention_mask=None, labels=None, rels_ids = None):
-        _, pooled_output = self.bert(input_ids, token_type_ids, attention_mask, output_all_encoded_layers=False)
+        
         #***********************使用transe先映射为特征再拼接***********************
+        # _, pooled_output = self.bert(input_ids, token_type_ids, attention_mask, output_all_encoded_layers=False)
         # rels_ids = rels_ids.view(-1,2,2)[:,0].view(-1,2)
         # rels_emb = self.relEmbeddingMatrix(rels_ids)
         # rels_emb = rels_emb.permute(0, 2, 1)
@@ -267,19 +268,46 @@ class BertForSequenceWithAnswerType(BertPreTrainedModel):
         # pooled_output = self.dropout(baseCatTranse)
         # logits = self.classifier_base_transe(pooled_output)
         ######################问句与答案相似度和语义相似度拼接###############################
+        # _, pooled_output = self.bert(input_ids, token_type_ids, attention_mask, output_all_encoded_layers=False)
         # denseCat = self.denseCat(pooled_output.view(-1, 2 * 768)) 
         # denseCat = self.activation(denseCat)
         # # denseCat = pooled_output.view(-1, 2 * 768)
         # pooled_output = self.dropout(denseCat)
         # logits = self.classifier(pooled_output)
         ###############问句与答案相似度和语义相似度得分相加########################
-        # denseCat = self.denseCat(pooled_output.view(-1, 2 * 768)) 
-        # denseCat = self.activation(denseCat)
-        # denseCat = pooled_output.view(-1, 2 * 768)
-        pooled_output = self.dropout(pooled_output)
-        logits = self.classifier(pooled_output)
-        logits = torch.sum(logits.view(-1, 2, 2),1)
+        # _, pooled_output = self.bert(input_ids, token_type_ids, attention_mask, output_all_encoded_layers=False)
+        # pooled_output = self.dropout(pooled_output)
+        # logits = self.classifier(pooled_output)
+        # logits = torch.sum(logits.view(-1, 2, 2),1)
         # import pdb; pdb.set_trace()
+        ##############问句与答案字符串的编码和语义相似度编码不采用同一个bert##############
+        input_ids = input_ids.view(-1, 2, 100)
+        token_type_ids = token_type_ids.view(-1, 2, 100)
+        attention_mask = attention_mask.view(-1, 2, 100)
+        input_ids1 = input_ids[:, 0, :]
+        input_ids2 = input_ids[:, 1, :]
+        token_type_ids1 = token_type_ids[:, 0, :]
+        token_type_ids2 = token_type_ids[:, 1, :]
+        attention_mask1 = attention_mask[:, 0, :]
+        attention_mask2 = attention_mask[:, 1, :]
+        _, pooled_output1 = self.bert(input_ids1, token_type_ids1, attention_mask1)
+        _, pooled_output2 = self.bert2(input_ids2, token_type_ids2, attention_mask2)
+        pooled_output = torch.cat((pooled_output1,pooled_output2),1)
+        denseCat = self.denseCat(pooled_output) 
+        denseCat = self.activation(denseCat)
+        pooled_output = self.dropout(denseCat)
+        logits = self.classifier(pooled_output)
+        # import pdb; pdb.set_trace()
+        ##########不使用answer信息#############################
+        # input_ids = input_ids.view(-1, 2, 100)
+        # token_type_ids = token_type_ids.view(-1, 2, 100)
+        # attention_mask = attention_mask.view(-1, 2, 100)
+        # input_ids1 = input_ids[:, 0, :]
+        # token_type_ids1 = token_type_ids[:, 0, :]
+        # attention_mask1 = attention_mask[:, 0, :]
+        # _, pooled_output = self.bert(input_ids1, token_type_ids1, attention_mask1)
+        # pooled_output = self.dropout(pooled_output)
+        # logits = self.classifier(pooled_output)
         return logits
 
 

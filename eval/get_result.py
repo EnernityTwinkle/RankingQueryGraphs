@@ -17,7 +17,8 @@ def read_result(init_dir_name, feature):
                 # print(file_name)
                 f = open(file_name, 'r', encoding='utf-8')
                 lines = f.readlines()
-                if(len(lines) > 0 and 'precision' in lines[-1]):
+                # if(len(lines) > 0 and 'precision' in lines[-1]):
+                if(len(lines) > 0 and '测试' in lines[-2]):
                     train = lines[-2].split('/')[-1].split('_')[-3]
                     dev = lines[-2].split('/')[-1].split('_')[-2]
                     prf = lines[-1].strip().split('\t')
@@ -69,7 +70,7 @@ if __name__ == "__main__":
     #     write2file(results, feature)
 
     features = []
-    features.append('bert_webq_pairwise_gradual_merge_type_entity_time_ordianl_mainpath_neg_')
+    features.append('answer_type_2bert_webq_pointwise_2linear_neg_')
     for feature in features:
         results = read_result(BASE_DIR + '/runnings/model/webq/', feature = feature)
         write2file(results, feature)

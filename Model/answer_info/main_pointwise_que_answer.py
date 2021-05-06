@@ -27,9 +27,9 @@ from pytorch_pretrained_bert.optimization import BertAdam, WarmupLinearSchedule
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 sys.path.append(BASE_DIR)
 from Model.common.InputExample import InputExample
-from Model.cal_f1 import cal_f1, cal_f1_with_scores
-from Model.common.DataProcessor import DataProcessor
-from Model.common.BertEncoderX import BertForSequenceWithAnswerType
+from Model.cal_f1 import cal_f1
+from Model.common.DataProcessorForAnswer import DataProcessor
+from Model.common.BertEncoderX import BertForSequenceWithAnswerType, BertForSequence
 
     
 
@@ -44,7 +44,7 @@ def main(fout_res, args: ArgumentParser):
     # 构建验证集数据  
     eval_examples = processor.get_dev_examples(args.data_dir)
     # import pdb; pdb.set_trace()   
-    eval_data = processor.convert_examples_to_features_with_answer_type(eval_examples, tokenizer)
+    eval_data = processor.convert_examples_to_features(eval_examples, tokenizer)
     eval_data = processor.build_data_for_model(eval_data, tokenizer, device)
     train_examples = processor.get_train_examples(args.data_dir)
     num_train_optimization_steps = math.ceil(math.ceil(len(train_examples) / args.train_batch_size)\
@@ -52,7 +52,7 @@ def main(fout_res, args: ArgumentParser):
     # import pdb; pdb.set_trace()   
     # Prepare model
     cache_dir = args.cache_dir if args.cache_dir else os.path.join(str(PYTORCH_PRETRAINED_BERT_CACHE))
-    model = BertForSequenceWithAnswerType.from_pretrained(args.bert_model,cache_dir=cache_dir,num_labels=2)
+    model = BertForSequence.from_pretrained(args.bert_model,cache_dir=cache_dir,num_labels=2)
     model.to(device)
     # Prepare optimizer
     param_optimizer = list(model.named_parameters())
@@ -72,7 +72,7 @@ def main(fout_res, args: ArgumentParser):
     # **************************
     if args.do_train:   
         i_train_step = 0
-        train_data = processor.convert_examples_to_features_with_answer_type(train_examples, tokenizer)
+        train_data = processor.convert_examples_to_features(train_examples, tokenizer)
         train_data = processor.build_data_for_model_train(train_data, tokenizer, device)
         dev_acc = 0.0
         for _ in trange(int(args.num_train_epochs), desc="Epoch"):
@@ -106,7 +106,7 @@ def main(fout_res, args: ArgumentParser):
                 loss_list = 0.0
                 if "classification" in merge_mode:
                     # *******************交叉熵损失函数*********************
-                    label_ids = label_ids.view(-1,2)[:,0]
+                    # label_ids = label_ids.view(-1,2)[:,0]
                     loss_point = crossLoss(logits, label_ids)
                     logitsSoftmax = torch.softmax(logits, 1)
                     argmaxId = torch.argmax(logitsSoftmax, 1)
@@ -142,6 +142,8 @@ def main(fout_res, args: ArgumentParser):
                 eval_dataloader = DataLoader(eval_data, sampler=eval_sampler, batch_size=args.eval_batch_size)
                 model.eval()
                 P_dev = 0
+                n_batch_correct_valid = 0.0
+                len_valid_data = 0.0
                 for input_ids, input_mask, segment_ids, label_ids, rels_ids in tqdm(eval_dataloader, desc="Evaluating"):
                     input_ids = input_ids.to(device).view(-1, args.max_seq_length)
                     input_mask = input_mask.to(device).view(-1, args.max_seq_length)
@@ -150,13 +152,18 @@ def main(fout_res, args: ArgumentParser):
                     rels_ids = rels_ids.to(device).view(-1, 2)
                     with torch.no_grad():
                         logits = model(input_ids, segment_ids, input_mask, labels=None)    
-                    logits = torch.softmax(logits, 1)    
-                    # import pdb; pdb.set_trace()  
-                    for item in logits:
+                    logitsSoftmax = torch.softmax(logits, 1)
+                    argmaxId = torch.argmax(logitsSoftmax, 1)
+                    n_batch_correct_valid += torch.sum(torch.eq(argmaxId.long(),label_ids.long()))
+                    # import pdb; pdb.set_trace()
+                    len_valid_data += logits.size(0)
+                    for item in logitsSoftmax:
                         f_valid.write(str(float(item[1])) + '\n')
                 f_valid.flush()
-                p, r, F_dev = cal_f1(file_name1, args.data_dir + args.v_file_name, 'v', actual_num=0)
-                fout_res.write(str(p) + '\t' + str(r) + '\t' + str(F_dev) + '\n')
+                F_dev = n_batch_correct_valid.float() / len_valid_data
+                # import pdb; pdb.set_trace()
+                print('F_dev', F_dev, n_batch_correct_valid, len_valid_data)
+                fout_res.write(str(F_dev) + '\n')
                 fout_res.flush()
             if(True):
                 model_to_save = model.module if hasattr(model, 'module') else model  # Only save the model it-self
@@ -183,12 +190,12 @@ def test(best_model_dir_name, fout_res, args):
     merge_mode = ['pairwise']
     tokenizer = BertTokenizer.from_pretrained(best_model_dir_name, do_lower_case=args.do_lower_case)
     cache_dir = args.cache_dir if args.cache_dir else os.path.join(str(PYTORCH_PRETRAINED_BERT_CACHE))
-    model = BertForSequenceWithAnswerType.from_pretrained(best_model_dir_name,cache_dir=cache_dir,num_labels=2)
+    model = BertForSequence.from_pretrained(best_model_dir_name,cache_dir=cache_dir,num_labels=2)
     model.to(device)
     # 构建验证集数据  
     eval_examples = processor.get_test_examples(args.data_dir)
     # import pdb; pdb.set_trace()   
-    eval_data = processor.convert_examples_to_features_with_answer_type(eval_examples, tokenizer)
+    eval_data = processor.convert_examples_to_features(eval_examples, tokenizer)
     eval_data = processor.build_data_for_model(eval_data, tokenizer, device)
     # import pdb; pdb.set_trace()
     file_name1 = args.output_dir + 'prediction_test'
@@ -198,28 +205,32 @@ def test(best_model_dir_name, fout_res, args):
     eval_dataloader = DataLoader(eval_data, sampler=eval_sampler, batch_size=args.eval_batch_size)
     model.eval()
     P_dev = 0
+    n_batch_correct_test = 0.0
+    len_test_data = 0.0
     for input_ids, input_mask, segment_ids, label_ids, rels_ids in tqdm(eval_dataloader, desc="Evaluating"):
         input_ids = input_ids.to(device).view(-1, args.max_seq_length)
         input_mask = input_mask.to(device).view(-1, args.max_seq_length)
         segment_ids = segment_ids.to(device).view(-1, args.max_seq_length)
         label_ids = label_ids.to(device).view(-1)
         with torch.no_grad():
-            logits = model(input_ids, segment_ids, input_mask, labels=None, rels_ids = rels_ids)    
-        logits = torch.softmax(logits, 1)     
-        # import pdb; pdb.set_trace()
-        for item in logits:
+            logits = model(input_ids, segment_ids, input_mask, labels=None)        
+        logitsSoftmax = torch.softmax(logits, 1)
+        argmaxId = torch.argmax(logitsSoftmax, 1)
+        n_batch_correct_test += torch.sum(torch.eq(argmaxId.long(),label_ids.long()))
+        len_test_data += logits.size(0)
+        for item in logitsSoftmax:
             f_valid.write(str(float(item[1])) + '\n')
-    f_valid.flush()
-    p, r, F_dev = cal_f1(file_name1, args.data_dir + args.t_file_name, 't', actual_num=0)
-    fout_res.write(str(p) + '\t' + str(r) + '\t' + str(F_dev) + '\n')
+        f_valid.flush()
+    F_dev = n_batch_correct_test.float() / len_test_data
+    fout_res.write(str(F_dev) + '\n')
     fout_res.flush()
 
 if __name__ == "__main__":
     seed = 42
     steps = 50
     # for N in [5, 10, 20, 30, 40, 50, 60, 70, 80, 100, 120, 140]:
-    for N in [5, 10, 20, 40, 60]:
-    # for N in [5]:
+    # for N in [5, 10, 20, 40, 60, 80, 100, 120, 140]:
+    for N in [4]:
         logger = logging.getLogger(__name__)
         print(seed)
         os.environ["CUDA_VISIBLE_DEVICES"] = '5'
@@ -228,14 +239,13 @@ if __name__ == "__main__":
         parser.add_argument("--bert_model", default='bert-base-uncased', type=str)
         parser.add_argument("--bert_vocab", default='bert-base-uncased', type=str)
         parser.add_argument("--task_name",default='mrpc',type=str,help="The name of the task to train.")
-        # parser.add_argument("--output_dir",default=BASE_DIR + '/runnings/model/webq/only_sim_no_answer_str_cat_2bert_group1_webq_pointwise_2linear_neg_' + str(N) + '_' + str(seed) + '_' + str(steps) + '/',type=str)
-        parser.add_argument("--output_dir",default=BASE_DIR + '/runnings/model/webq/answer_type_webq_pointwise_2linear_neg_' + str(N) + '_' + str(seed) + '_' + str(steps) + '/',type=str)
+        parser.add_argument("--output_dir",default=BASE_DIR + '/runnings/model/webq/bert_group1_webq_pointwise_que_answertype_neg_' + str(N) + '_' + str(seed) + '_' + str(steps) + '/',type=str)
         parser.add_argument("--input_model_dir", default='0.9675389502344577_0.4803025192052977_3', type=str)
-        parser.add_argument("--T_file_name",default='webq_listwise_rank1_f01_gradual_label_position_1_' + str(N) + '_with_answer_train.txt',type=str)
+        parser.add_argument("--T_file_name",default='webq_only_answer_info_train_1_' + str(N) + '.txt',type=str)
         # parser.add_argument("--v_file_name",default='pairwise_with_freebase_id_dev_all_cut.txt',type=str)
-        parser.add_argument("--v_file_name",default='webq_with_answer_info_dev_all.txt',type=str)
+        parser.add_argument("--v_file_name",default='webq_only_answer_info_dev_all_for_train.txt',type=str)
         # parser.add_argument("--v_file_name",default='webq_rank1_f01_gradual_label_position_1_' + str(N) + '_type_entity_time_ordinal_mainpath_is_train.txt',type=str)
-        parser.add_argument("--t_file_name",default='webq_with_answer_info_test_all.txt',type=str)
+        parser.add_argument("--t_file_name",default='webq_only_answer_info_test_all_for_train.txt',type=str)
 
         parser.add_argument("--T_model_data_name",default='train_all_518484_from_1_500000000.pkl',type=str)
         parser.add_argument("--v_model_data_name",default='dev_all_135428_from_v_bert_rel_answer_pairwise_1_500000000.pkl',type=str)

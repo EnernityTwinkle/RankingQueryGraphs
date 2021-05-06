@@ -12,7 +12,7 @@ class InputExample(object):
     relationEmbedding = RelationEmbedding()
     haveRels = {}
     noRels = {}
-    def __init__(self, guid, text_a, text_b=None, label=None, entitys = None, rels=None,\
+    def __init__(self, guid, text_a, text_b=None, label=None, entitys = None, rels=[],\
                     answerType: str = '', answerStr: str = ''):
         self.guid = guid
         self.text_a = text_a

@@ -43,27 +43,22 @@ class DataProcessor(object):
         for (i, line) in enumerate(lines):
             guid = "%s-%s" % (set_type, i)
             text_a = line[1]
-            text_b = '\t'.join(line[2:7])
+            text_b = '\t'.join(line[2:3])
             label = line[0]
-            freebaseRels = line[8].split('##')
-            answerType = line[9]
-            answerStr = line[10].lower()
             # import pdb; pdb.set_trace()
             if((i + 1) % self.args.group_size == 0):# 表示开始新的一组数据
-                # if(i < 2):
-                #     print(line)
-                #     print(text_a, text_b)
+                if(i < 2):
+                    print(line)
+                    print(text_a, text_b)
                 examples.append(
-                    InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label, rels=freebaseRels,\
-                                answerType=answerType, answerStr=answerStr))
+                    InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
                 examples_all.append(examples)
                 examples = []
                 # if(i > 100):
                 #     break
             else:# 表示是同一组数据，可以继续放在一起
                 examples.append(
-                    InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label, rels=freebaseRels,\
-                                answerType=answerType, answerStr=answerStr))
+                    InputExample(guid=guid, text_a=text_a, text_b=text_b, label=label))
         if(len(examples) != 0):
             examples_all.append(examples)
         return examples_all
@@ -217,10 +212,10 @@ class DataProcessor(object):
                                     segment_ids=bertInput[2],
                                     label_id=label_id))
                 # text_a = ' '.join(example.text_a.split(' ')[0:2])
-                bert_input = self.convert_sentence_pair_to_features(example.text_a, example.answerType, tokenizer)
+                # bert_input = self.convert_sentence_pair_to_features(example.text_a, example.answerType, tokenizer)
                 # bert_input = self.convert_sentence_pair_to_features(text_a, example.answerType, tokenizer)
                 # import pdb; pdb.set_trace()
-                # bert_input = self.convert_sentence_pair_to_features(example.text_a, example.answerStr, tokenizer)
+                bert_input = self.convert_sentence_pair_to_features(example.text_a, example.answerStr, tokenizer)
                 features.append(
                         InputFeatures(input_ids=bert_input[0],
                                     input_mask=bert_input[1],
@@ -390,32 +385,3 @@ class DataProcessor(object):
                 #     line = list(unicode(cell, 'utf-8') for cell in line)
                 lines.append(line.strip().split('\t'))
             return lines
-
-
-
-# class DataProcessor(object):
-#     "返回一个包含所有[lable----que----path]的list"
-#     def get_train_examples(self, data_dir):
-#         """Gets a collection of `InputExample`s for the train set."""
-#         raise NotImplementedError()
-
-#     def get_dev_examples(self, data_dir):
-#         """Gets a collection of `InputExample`s for the dev set."""
-#         raise NotImplementedError()
-
-#     def get_labels(self):
-#         """Gets the list of labels for this data set."""
-#         raise NotImplementedError()
-
-#     @classmethod
-#     def _read_tsv(cls, input_file, quotechar=None):
-#         """Reads a tab separated value file."""       
-#         with open(input_file, "r", encoding="utf-8") as f:
-#             # reader = csv.reader(f, delimiter="\t", quotechar=quotechar)
-#             lines = []
-#             # import pdb;pdb.set_trace()
-#             for line in f:
-#                 # if sys.version_info[0] == 2:
-#                 #     line = list(unicode(cell, 'utf-8') for cell in line)
-#                 lines.append(line.strip().split('\t'))
-#             return lines
