@@ -25,3 +25,4 @@ Model/common/__pycache__/DataProcessor.cpython-36.pyc
 Model/common/__pycache__/BertEncoderX.cpython-36.pyc
 Model/common/__pycache__/InputExample.cpython-36.pyc
 Model/__pycache__/cal_f1.cpython-36.pyc
+Model/__pycache__/cal_f1.cpython-36.pyc

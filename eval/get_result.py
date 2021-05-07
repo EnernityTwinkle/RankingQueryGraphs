@@ -28,7 +28,7 @@ def read_result(init_dir_name, feature):
                     if(neg_num not in results):
                         results[neg_num] = (train, dev, p, r, f1)
                     else:
-                        # print(results)
+                        print(file_name)
                         # import pdb; pdb.set_trace()
                         print('数据重复')
                 else:
@@ -70,7 +70,7 @@ if __name__ == "__main__":
     #     write2file(results, feature)
 
     features = []
-    features.append('answer_type_2bert_webq_pointwise_2linear_neg_')
+    features.append('rerank_pointwise_baseline_group1_webq_neg_')
     for feature in features:
         results = read_result(BASE_DIR + '/runnings/model/webq/', feature = feature)
         write2file(results, feature)
