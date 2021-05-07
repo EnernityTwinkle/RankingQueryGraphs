@@ -302,6 +302,45 @@ class BertFor2PairSequenceWithAnswerType(BertPreTrainedModel):
         return logits
 
 
+class BertFor3PairSequenceWithAnswer(BertPreTrainedModel):
+    
+    def __init__(self, config, num_labels):
+        super(BertFor3PairSequenceWithAnswer, self).__init__(config)
+        self.num_labels = num_labels
+        self.bert = BertModel(config)
+        self.bert2 = BertModel(config)
+        self.bert3 = BertModel(config)
+        self.dropout = nn.Dropout(config.hidden_dropout_prob)
+        self.classifier = nn.Linear(config.hidden_size, num_labels)
+        self.denseCat = nn.Linear(config.hidden_size * 3, config.hidden_size)
+        self.activation = nn.Tanh()
+        self.apply(self.init_bert_weights)
+
+    def forward(self, input_ids, token_type_ids=None, attention_mask=None, labels=None, rels_ids = None):
+        ##############问句与答案字符串的编码和语义相似度编码不采用同一个bert##############
+        input_ids = input_ids.view(-1, 3, 100)
+        token_type_ids = token_type_ids.view(-1, 3, 100)
+        attention_mask = attention_mask.view(-1, 3, 100)
+        input_ids1 = input_ids[:, 0, :]
+        input_ids2 = input_ids[:, 1, :]
+        input_ids3 = input_ids[:, 2, :]
+        token_type_ids1 = token_type_ids[:, 0, :]
+        token_type_ids2 = token_type_ids[:, 1, :]
+        token_type_ids3 = token_type_ids[:, 2, :]
+        attention_mask1 = attention_mask[:, 0, :]
+        attention_mask2 = attention_mask[:, 1, :]
+        attention_mask3 = attention_mask[:, 2, :]
+        _, pooled_output1 = self.bert(input_ids1, token_type_ids1, attention_mask1)
+        _, pooled_output2 = self.bert2(input_ids2, token_type_ids2, attention_mask2)
+        _, pooled_output3 = self.bert3(input_ids3, token_type_ids3, attention_mask3)
+        pooled_output = torch.cat((pooled_output1,pooled_output2, pooled_output3),1)
+        denseCat = self.denseCat(pooled_output)
+        denseCat = self.activation(denseCat)
+        pooled_output = self.dropout(denseCat)
+        logits = self.classifier(pooled_output)
+        return logits
+
+
 
 # class BertForSequenceClassification_new_sub2(BertPreTrainedModel):
 #     def __init__(self, config, num_labels):

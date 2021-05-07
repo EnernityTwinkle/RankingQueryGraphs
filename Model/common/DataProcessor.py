@@ -254,6 +254,36 @@ class DataProcessor(object):
             features_all.append(features)
         return features_all
 
+    def convert_examples_to_features_with_answer_info(self, examples: List[List[str]],
+                                 tokenizer) -> List[List[InputFeatures]]:
+        """Loads a data file into a list of `InputBatch`s."""
+        features_all = []
+        for exampleGroup in examples:
+            features = []
+            for example in exampleGroup:
+                # import pdb; pdb.set_trace()
+                label_id = int(example.label)
+                bertInput = self.convert_sentence_pair_to_features(example.text_a, example.text_b, tokenizer)
+                features.append(
+                        InputFeatures(input_ids=bertInput[0],
+                                    input_mask=bertInput[1],
+                                    segment_ids=bertInput[2],
+                                    label_id=label_id))
+                bert_input = self.convert_sentence_pair_to_features(example.text_a, example.answerType, tokenizer)
+                features.append(
+                        InputFeatures(input_ids=bert_input[0],
+                                    input_mask=bert_input[1],
+                                    segment_ids=bert_input[2],
+                                    label_id=label_id))
+                bert_input = self.convert_sentence_pair_to_features(example.text_a, example.answerStr, tokenizer)
+                features.append(
+                        InputFeatures(input_ids=bert_input[0],
+                                    input_mask=bert_input[1],
+                                    segment_ids=bert_input[2],
+                                    label_id=label_id))
+            features_all.append(features)
+        return features_all
+
 
     def convert_sentence_to_bert_input(self, sentence: str, tokenizer) -> Tuple[List[int]]:
         max_seq_length = self.args.max_seq_length
