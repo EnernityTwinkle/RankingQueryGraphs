@@ -89,29 +89,29 @@ def write2file(fileName: str, que2AnswerInfo):
 
 
 if __name__ == '__main__':
-    fileName = BASE_DIR + '/runnings/train_data/webq/webq_with_answer_info_train_all.txt'
-    que2AnswerInfo = readQue2AnswerInfoForTrain(fileName)
-    outFile = BASE_DIR + '/runnings/train_data/webq/webq_only_answer_info_train_all_for_train.txt'
-    write2file(outFile, que2AnswerInfo)
-
-    fileName = BASE_DIR + '/runnings/train_data/webq/webq_with_answer_info_dev_all.txt'
-    que2AnswerInfo = readQue2AnswerInfoForTrain(fileName)
-    outFile = BASE_DIR + '/runnings/train_data/webq/webq_only_answer_info_dev_all_for_train.txt'
-    write2file(outFile, que2AnswerInfo)
-
-    fileName = BASE_DIR + '/runnings/train_data/webq/webq_with_answer_info_test_all.txt'
-    que2AnswerInfo = readQue2AnswerInfoForTrain(fileName)
-    outFile = BASE_DIR + '/runnings/train_data/webq/webq_only_answer_info_test_all_for_train.txt'
-    write2file(outFile, que2AnswerInfo)
-
-
+    # fileName = BASE_DIR + '/runnings/train_data/webq/webq_with_answer_info_train_all.txt'
+    # que2AnswerInfo = readQue2AnswerInfoForTrain(fileName)
+    # outFile = BASE_DIR + '/runnings/train_data/webq/webq_only_answer_info_train_all_for_train.txt'
+    # write2file(outFile, que2AnswerInfo)
 
     # fileName = BASE_DIR + '/runnings/train_data/webq/webq_with_answer_info_dev_all.txt'
-    # que2AnswerInfo = readQue2AnswerInfo(fileName)
-    # outFile = BASE_DIR + '/runnings/train_data/webq/webq_only_answer_info_dev_all.txt'
+    # que2AnswerInfo = readQue2AnswerInfoForTrain(fileName)
+    # outFile = BASE_DIR + '/runnings/train_data/webq/webq_only_answer_info_dev_all_for_train.txt'
     # write2file(outFile, que2AnswerInfo)
 
     # fileName = BASE_DIR + '/runnings/train_data/webq/webq_with_answer_info_test_all.txt'
-    # que2AnswerInfo = readQue2AnswerInfo(fileName)
-    # outFile = BASE_DIR + '/runnings/train_data/webq/webq_only_answer_info_test_all.txt'
+    # que2AnswerInfo = readQue2AnswerInfoForTrain(fileName)
+    # outFile = BASE_DIR + '/runnings/train_data/webq/webq_only_answer_info_test_all_for_train.txt'
     # write2file(outFile, que2AnswerInfo)
+
+
+
+    fileName = BASE_DIR + '/runnings/train_data/webq/webq_with_answer_info_dev_all.txt'
+    que2AnswerInfo = readQue2AnswerInfo(fileName)
+    outFile = BASE_DIR + '/runnings/train_data/webq/webq_only_answer_info_dev_all.txt'
+    write2file(outFile, que2AnswerInfo)
+
+    fileName = BASE_DIR + '/runnings/train_data/webq/webq_with_answer_info_test_all.txt'
+    que2AnswerInfo = readQue2AnswerInfo(fileName)
+    outFile = BASE_DIR + '/runnings/train_data/webq/webq_only_answer_info_test_all.txt'
+    write2file(outFile, que2AnswerInfo)

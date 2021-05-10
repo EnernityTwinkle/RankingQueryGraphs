@@ -1,3 +1,9 @@
+import sys
+import os
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(BASE_DIR)
+
 
 # 计算预测文件与gold文件的得分
 def cal_f1(file_name1, file_name2, data_type, actual_num = 0, log=0):
@@ -247,7 +253,71 @@ def cal_f1_with_position(file_name1, file_name2, data_type, f1_pos):
         return p / 755.0, r / 755.0, sum_f1 / 755.0
 
 
+def eval_rank1(file_name1: str, file_name2: str, data_type: str):
+    f = open(file_name1, 'r', encoding='utf-8')
+    lines_predict = f.readlines()
+    f2 = open(file_name2, 'r', encoding='utf-8')
+    lines = f2.readlines()
+    print(len(lines), len(lines_predict))
+    assert len(lines) == len(lines_predict)
+    begin = -1
+    end = -1
+    qid = ''
+    i = 0
+    que_num = 0
+    rank1Num = 0
+    while i < len(lines):
+        line_cut = lines[i].strip().split('\t')
+        line = lines[i]
+        qid_temp = line.strip().split('\t')[-1]
+        if(qid_temp != qid):
+            qid = qid_temp
+            if(begin == -1):
+                begin = i
+            else:
+                end = i
+        if(end != -1):
+            scores = lines_predict[begin:end]
+            max_score = -100000000
+            num = 0
+            for j, score in enumerate(scores):
+                if(float(score.strip()) >= max_score):
+                    max_score = float(score.strip())
+                    num = j
+            que_num += 1
+            if(lines[begin + num][0] == '1'):
+                rank1Num += 1
+            # else:
+            #     print(begin + num, scores[num])
+            # # print(begin, end, num, f1)
+            #     import pdb; pdb.set_trace()
+            begin = -1
+            end = -1
+            qid = ''
+            i -= 1
+        i += 1
+    if(begin != -1):
+        # import pdb; pdb.set_trace()
+        scores = lines_predict[begin:]
+        max_score = -100000000
+        num = 0
+        for j, score in enumerate(scores):
+            if(float(score.strip()) >= max_score):
+                max_score = float(score.strip())
+                num = j
+        if(lines[begin + num][0] == '1'):
+            rank1Num += 1
+        que_num += 1
+    print('数据个数：', len(lines))
+    print('问句个数：', que_num)
+    return rank1Num * 1.0 / que_num
+
+
 if __name__ == "__main__":
-    file_name1 = './bert_pairwise_all_3level_min20_1_49_2_400/prediction'
-    file_name2 = './t_bert_rel_answer_pairwise_1_600000.txt'
-    cal_f1(file_name1, file_name2, 't', actual_num=0)
+    # file_name1 = './bert_pairwise_all_3level_min20_1_49_2_400/prediction'
+    # file_name2 = './t_bert_rel_answer_pairwise_1_600000.txt'
+    # cal_f1(file_name1, file_name2, 't', actual_num=0)
+    fileName1 = BASE_DIR + '/runnings/model/webq/bert_group1_webq_pointwise_only_que_answertype_neg_4_42_50/prediction_valid'
+    fileName2 = BASE_DIR + '/runnings/train_data/webq/webq_only_answer_info_dev_all_for_train.txt'
+    rank1Percentage = eval_rank1(fileName1, fileName2, 't')
+    print(rank1Percentage)

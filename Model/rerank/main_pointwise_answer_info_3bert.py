@@ -53,6 +53,10 @@ def main(fout_res, args: ArgumentParser):
     # Prepare model
     cache_dir = args.cache_dir if args.cache_dir else os.path.join(str(PYTORCH_PRETRAINED_BERT_CACHE))
     model = BertFor3PairSequenceWithAnswer.from_pretrained(args.bert_model,cache_dir=cache_dir,num_labels=2)
+    # import pdb; pdb.set_trace()
+    # model.bert = model.bert.from_pretrained(args.bert_model)
+    # model.bert2 = model.bert2.from_pretrained(args.bert_model)
+    
     model.to(device)
     # Prepare optimizer
     param_optimizer = list(model.named_parameters())
@@ -222,7 +226,7 @@ if __name__ == "__main__":
     # for N in [5]:
         logger = logging.getLogger(__name__)
         print(seed)
-        os.environ["CUDA_VISIBLE_DEVICES"] = '5'
+        os.environ["CUDA_VISIBLE_DEVICES"] = '1'
         parser = ArgumentParser(description = 'For KBQA')
         parser.add_argument("--data_dir",default=BASE_DIR + '/runnings/train_data/webq/',type=str)
         # parser.add_argument("--bert_model", default='bert-base-uncased', type=str)
@@ -231,7 +235,8 @@ if __name__ == "__main__":
         parser.add_argument("--bert_vocab", default='/home/jiayonghui/github/bert_rank_data/bert_base_uncased', type=str)
         parser.add_argument("--task_name",default='mrpc',type=str,help="The name of the task to train.")
         # parser.add_argument("--output_dir",default=BASE_DIR + '/runnings/model/webq/only_sim_no_answer_str_cat_2bert_group1_webq_pointwise_2linear_neg_' + str(N) + '_' + str(seed) + '_' + str(steps) + '/',type=str)
-        parser.add_argument("--output_dir",default=BASE_DIR + '/runnings/model/webq/answer_info_rerank_3bert_webq_pointwise_2linear_neg_' + str(N) + '_' + str(seed) + '_' + str(steps) + '/',type=str)
+        # parser.add_argument("--output_dir",default=BASE_DIR + '/runnings/model/webq/answer_info_rerank_3bert_webq_pointwise_to2add_10epoch_neg_' + str(N) + '_' + str(seed) + '_' + str(steps) + '/',type=str)
+        parser.add_argument("--output_dir",default=BASE_DIR + '/runnings/model/webq/answer_info_rerank_3bert2bert_webq_pointwise_to2add_10epoch_neg_' + str(N) + '_' + str(seed) + '_' + str(steps) + '/',type=str)
         parser.add_argument("--input_model_dir", default='0.9675389502344577_0.4803025192052977_3', type=str)
         parser.add_argument("--T_file_name",default='T_cv2_bert_top' + str(N) + '_from5244.txt',type=str)
         # parser.add_argument("--v_file_name",default='pairwise_with_freebase_id_dev_all_cut.txt',type=str)
@@ -252,7 +257,7 @@ if __name__ == "__main__":
         parser.add_argument("--train_batch_size",default=16,type=int,help="Total batch size for training.")
         parser.add_argument("--eval_batch_size",default=90,type=int,help="Total batch size for eval.")
         parser.add_argument("--learning_rate",default=5e-5,type=float,help="The initial learning rate for Adam.")
-        parser.add_argument("--num_train_epochs",default=5.0,type=float,help="Total number of training epochs to perform.")
+        parser.add_argument("--num_train_epochs",default=10.0,type=float,help="Total number of training epochs to perform.")
         parser.add_argument("--warmup_proportion",default=0.1,type=float,)
         parser.add_argument("--no_cuda",action='store_true',help="Whether not to use CUDA when available")
         parser.add_argument("--local_rank",type=int,default=-1,help="local_rank for distributed training on gpus")
@@ -273,6 +278,6 @@ if __name__ == "__main__":
         fout_res = open(args.output_dir + 'result.log', 'w', encoding='utf-8')
         # import pdb; pdb.set_trace()
         best_model_dir_name = main(fout_res, args)
-        # best_model_dir_name = '/data2/yhjia/RankingQueryGraphs/runnings/model/webq/transe_bert_group1_webq_pointwise_cat_neg_5_42_50/0.9880934091258258_0.523950075516159_1/'
+        # best_model_dir_name = '/home/jiayonghui/github/sum/RankingQueryGraphs/runnings/model/webq/answer_info_rerank_3bert_webq_pointwise_to2add_neg_5_42_50/0.7636423841059603_0.4790997737292964_2'
         test(best_model_dir_name, fout_res, args)
         
