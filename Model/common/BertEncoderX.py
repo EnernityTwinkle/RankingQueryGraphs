@@ -353,7 +353,7 @@ class BertFor3PairSequenceWithAnswer(BertPreTrainedModel):
         # self.classifier = nn.Linear(config.hidden_size * 3, num_labels)
         self.classifier1 = nn.Linear(config.hidden_size, num_labels)
         self.classifier2 = nn.Linear(config.hidden_size, num_labels)
-        # self.classifier3 = nn.Linear(config.hidden_size, num_labels)
+        self.classifier3 = nn.Linear(config.hidden_size, num_labels)
         # self.denseCat = nn.Linear(config.hidden_size * 3, config.hidden_size)
         # self.activation = nn.Tanh()
         self.apply(self.init_bert_weights)
@@ -394,7 +394,8 @@ class BertFor3PairSequenceWithAnswer(BertPreTrainedModel):
         pooled_output1 = self.dropout(pooled_output1)
         pooled_output2 = self.dropout(pooled_output2)
         pooled_output3 = self.dropout(pooled_output3)
-        logits = self.classifier1(pooled_output1) + self.classifier2(pooled_output2) + self.classifier2(pooled_output2)
+        logits = 0.7 * self.classifier1(pooled_output1) + 0.2 * self.classifier2(pooled_output2) + 0.1 * self.classifier3(pooled_output3)
+        # import pdb; pdb.set_trace()
         return logits
 
 

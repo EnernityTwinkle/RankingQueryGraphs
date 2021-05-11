@@ -70,7 +70,7 @@ if __name__ == "__main__":
     #     write2file(results, feature)
 
     features = []
-    features.append('answer_info_rerank_3bert2bert_webq_pointwise_to2add_5epoch_neg_')
+    features.append('answer_info_rerank_3bert2bert_webq_pointwise_to2add_10epoch_neg_')
     for feature in features:
         results = read_result(BASE_DIR + '/runnings/model/webq/', feature = feature)
         write2file(results, feature)

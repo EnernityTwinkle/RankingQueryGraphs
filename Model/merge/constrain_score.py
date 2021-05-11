@@ -67,6 +67,8 @@ def constrainScoreAccordingOrder(qid2cands: Dict[str, List[Tuple[float, float, s
             indexOrder = candsSort.index(item)
             if(indexOrder > length):
                 scores.append(item[1] - 0.9)
+                if(item[2][0] == '1'):
+                    print(item)
             else:
                 scores.append(item[1])
             # import pdb; pdb.set_trace()
@@ -109,7 +111,7 @@ if __name__ == "__main__":
     # test(0.1)
     for i in [1.0, 0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1]:
         testConstrainOrder(i)
-    import pdb; pdb.set_trace()
+        import pdb; pdb.set_trace()
     fileNameDev = BASE_DIR + '/runnings/train_data/webq/webq_with_answer_info_dev_all.txt'
     fileNameSim = BASE_DIR + '/runnings/model/webq/2bert_answer_type_bert_webq_pointwise_2linear_neg_100_42_50/prediction_valid'
     # fileNameSim = BASE_DIR + '/runnings/model/webq/bert_webq_pointwise_gradual_merge_type_entity_time_ordianl_mainpath_neg_50_42_100/prediction_valid'

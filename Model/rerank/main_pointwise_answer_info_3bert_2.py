@@ -55,7 +55,7 @@ def main(fout_res, args: ArgumentParser):
     model = BertFor3PairSequenceWithAnswer.from_pretrained(args.bert_model,cache_dir=cache_dir,num_labels=2)
     # import pdb; pdb.set_trace()
     # model.bert = model.bert.from_pretrained(args.bert_model)
-    # model.bert2 = model.bert2.from_pretrained(args.bert_model)
+    model.bert2 = model.bert2.from_pretrained(args.bert_model)
     
     model.to(device)
     # Prepare optimizer
@@ -226,7 +226,7 @@ if __name__ == "__main__":
     # for N in [5]:
         logger = logging.getLogger(__name__)
         print(seed)
-        os.environ["CUDA_VISIBLE_DEVICES"] = '1'
+        os.environ["CUDA_VISIBLE_DEVICES"] = '0'
         parser = ArgumentParser(description = 'For KBQA')
         parser.add_argument("--data_dir",default=BASE_DIR + '/runnings/train_data/webq/',type=str)
         # parser.add_argument("--bert_model", default='bert-base-uncased', type=str)
@@ -236,7 +236,7 @@ if __name__ == "__main__":
         parser.add_argument("--task_name",default='mrpc',type=str,help="The name of the task to train.")
         # parser.add_argument("--output_dir",default=BASE_DIR + '/runnings/model/webq/only_sim_no_answer_str_cat_2bert_group1_webq_pointwise_2linear_neg_' + str(N) + '_' + str(seed) + '_' + str(steps) + '/',type=str)
         # parser.add_argument("--output_dir",default=BASE_DIR + '/runnings/model/webq/answer_info_rerank_3bert_webq_pointwise_to2add_10epoch_neg_' + str(N) + '_' + str(seed) + '_' + str(steps) + '/',type=str)
-        parser.add_argument("--output_dir",default=BASE_DIR + '/runnings/model/webq/answer_info_rerank_3bert2bert_3linear_weight_webq_pointwise_to2add_neg_' + str(N) + '_' + str(seed) + '_' + str(steps) + '/',type=str)
+        parser.add_argument("--output_dir",default=BASE_DIR + '/runnings/model/webq/answer_info_rerank_3bert2samebert_3linear_webq_pointwise_to2add_neg_' + str(N) + '_' + str(seed) + '_' + str(steps) + '/',type=str)
         parser.add_argument("--input_model_dir", default='0.9675389502344577_0.4803025192052977_3', type=str)
         parser.add_argument("--T_file_name",default='T_cv2_bert_top' + str(N) + '_from5244.txt',type=str)
         # parser.add_argument("--v_file_name",default='pairwise_with_freebase_id_dev_all_cut.txt',type=str)
