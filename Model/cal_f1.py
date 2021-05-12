@@ -253,6 +253,90 @@ def cal_f1_with_position(file_name1, file_name2, data_type, f1_pos):
         return p / 755.0, r / 755.0, sum_f1 / 755.0
 
 
+# 计算预测文件与gold文件的得分
+def cal_f1_with_position_compq(file_name1, file_name2, data_type, f1_pos):
+    f = open(file_name1, 'r', encoding='utf-8')
+    lines_predict = f.readlines()
+    f2 = open(file_name2, 'r', encoding='utf-8')
+    lines = f2.readlines()
+    print(len(lines), len(lines_predict))
+    assert len(lines) == len(lines_predict)
+    begin = -1
+    end = -1
+    qid = ''
+    i = 0
+    have_p_r = 0
+    sum_f1 = 0.0
+    p = 0.0
+    r = 0.0
+    que_num = 0
+    while i < len(lines):
+        line_cut = lines[i].strip().split('\t')
+        if(len(line_cut) == 12):
+            have_p_r = 1
+        line = lines[i]
+        qid_temp = line.strip().split('\t')[f1_pos + 1]
+        if(qid_temp != qid):
+            qid = qid_temp
+            if(begin == -1):
+                begin = i
+            else:
+                end = i
+        if(end != -1):
+            scores = lines_predict[begin:end]
+            max_score = -100000000
+            num = 0
+            for j, score in enumerate(scores):
+                if(float(score.strip()) >= max_score):
+                    max_score = float(score.strip())
+                    num = j
+            # num = len(scores) - 1
+            f1 = float(lines[begin + num].split('\t')[f1_pos])
+            p += float(lines[begin + num].split('\t')[f1_pos - 2])
+            r += float(lines[begin + num].split('\t')[f1_pos - 1])
+            # if(f1 > 0):
+            #     print(begin+num, f1)
+            sum_f1 += f1
+            que_num += 1
+            # print(begin, end, num, f1)
+            # import pdb; pdb.set_trace()
+            begin = -1
+            end = -1
+            qid = ''
+            i -= 1
+            # import pdb; pdb.set_trace()
+        i += 1
+    if(begin != -1):
+        # import pdb; pdb.set_trace()
+        scores = lines_predict[begin:]
+        max_score = -100000000
+        num = 0
+        for j, score in enumerate(scores):
+            if(float(score.strip()) >= max_score):
+                max_score = float(score.strip())
+                num = j
+        # num = len(scores) - 1
+        f1 = float(lines[begin + num].split('\t')[f1_pos])
+        p += float(lines[begin + num].split('\t')[f1_pos - 2])
+        r += float(lines[begin + num].split('\t')[f1_pos - 1])
+        sum_f1 += f1
+        que_num += 1
+    print('数据个数：', len(lines))
+    print('问句个数：', que_num)
+    if(data_type == 't'):
+        micro_p = p / 800.0
+        micro_r = r / 800.0
+        micro_f1 = sum_f1 / 800.0
+        print(sum_f1, micro_p, micro_r, micro_f1)
+        return micro_p, micro_r, micro_f1
+    else:
+        micro_p = p / 300.0
+        micro_r = r / 300.0
+        micro_f1 = sum_f1 / 300.0
+        print(sum_f1, micro_p, micro_r, micro_f1)
+        return micro_p, micro_r, micro_f1
+
+
 def eval_rank1(file_name1: str, file_name2: str, data_type: str):
     f = open(file_name1, 'r', encoding='utf-8')
     lines_predict = f.readlines()

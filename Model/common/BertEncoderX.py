@@ -311,9 +311,9 @@ class BertFor2PairSequenceWithAnswerTypeMidDim(BertPreTrainedModel):
         self.bert = BertModel(config)
         self.bert2 = BertModel(config)
         self.dropout = nn.Dropout(config.hidden_dropout_prob)
-        self.classifier = nn.Linear(config.hidden_size * 2, num_labels)
-        # self.classifier1 = nn.Linear(config.hidden_size, num_labels)
-        # self.classifier2 = nn.Linear(config.hidden_size, num_labels)
+        # self.classifier = nn.Linear(config.hidden_size * 2, num_labels)
+        self.classifier1 = nn.Linear(config.hidden_size, num_labels)
+        self.classifier2 = nn.Linear(config.hidden_size, num_labels)
         # self.denseCat = nn.Linear(config.hidden_size * 2, )
         # self.activation = nn.Tanh()
         self.apply(self.init_bert_weights)
@@ -331,13 +331,13 @@ class BertFor2PairSequenceWithAnswerTypeMidDim(BertPreTrainedModel):
         _, pooled_output1 = self.bert(input_ids1, token_type_ids1, attention_mask1)
         _, pooled_output2 = self.bert2(input_ids2, token_type_ids2, attention_mask2)
         ##############问句与答案字符串的编码和语义相似度编码不采用同一个bert,直接拼接映射到2维##############
-        pooled_output = torch.cat((pooled_output1,pooled_output2),1)
-        pooled_output = self.dropout(pooled_output)
-        logits = self.classifier(pooled_output)
+        # pooled_output = torch.cat((pooled_output1,pooled_output2),1)
+        # pooled_output = self.dropout(pooled_output)
+        # logits = self.classifier(pooled_output)
         ##############问句与答案字符串的编码和语义相似度编码不采用同一个bert,分别映射到2维再相加##############
-        # logits1 = self.classifier1(self.dropout(pooled_output1))
-        # logits2 = self.classifier2(self.dropout(pooled_output2))
-        # logits = logits1 + logits2
+        logits1 = self.classifier1(self.dropout(pooled_output1))
+        logits2 = self.classifier2(self.dropout(pooled_output2))
+        logits = logits1 + logits2
         return logits
 
 
