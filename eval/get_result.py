@@ -70,13 +70,13 @@ if __name__ == "__main__":
     #     write2file(results, feature)
 
     features = []
-    features.append('answer_info_rerank_3bert2bert_3linear_webq_pointwise_to2add_neg_')
+    features.append('rerank_pointwise_baseline_1score_webq_neg_')
     for feature in features:
         results = read_result(BASE_DIR + '/runnings/model/webq/', feature = feature)
         write2file(results, feature)
 
     # features = []
-    # features.append('compq_rerank_pointwise_neg_')
+    # features.append('compq_resample_rank_pointwise_neg_')
     # for feature in features:
     #     results = read_result(BASE_DIR + '/runnings/model/compq/', feature = feature)
     #     write2file(results, feature)

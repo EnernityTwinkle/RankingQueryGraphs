@@ -29,8 +29,10 @@ sys.path.append(BASE_DIR)
 from Model.common.InputExample import InputExample
 from Model.cal_f1 import cal_f1, cal_f1_with_position
 from Model.common.DataProcessor import DataProcessor
-from Model.common.BertEncoderX import BertForSequence
+# from Model.common.BertEncoderX import BertFor2PairSequenceWithAnswerType
+from Model.common.BertEncoderX import BertFor2PairSequenceWithAnswerTypeMidDim as BertFor2PairSequenceWithAnswerType
 from Model.rerank.loss import crossEntropy
+
     
 
 def main(fout_res, args: ArgumentParser):
@@ -44,7 +46,7 @@ def main(fout_res, args: ArgumentParser):
     # 构建验证集数据  
     eval_examples = processor.get_dev_examples(args.data_dir)
     # import pdb; pdb.set_trace()   
-    eval_data = processor.convert_examples_to_features(eval_examples, tokenizer)
+    eval_data = processor.convert_examples_to_features_with_answer_type(eval_examples, tokenizer)
     eval_data = processor.build_data_for_model(eval_data, tokenizer, device)
     train_examples = processor.get_train_examples(args.data_dir)
     num_train_optimization_steps = math.ceil(math.ceil(len(train_examples) / args.train_batch_size)\
@@ -52,7 +54,7 @@ def main(fout_res, args: ArgumentParser):
     # import pdb; pdb.set_trace()   
     # Prepare model
     cache_dir = args.cache_dir if args.cache_dir else os.path.join(str(PYTORCH_PRETRAINED_BERT_CACHE))
-    model = BertForSequence.from_pretrained(args.bert_model,cache_dir=cache_dir,num_labels=1)
+    model = BertFor2PairSequenceWithAnswerType.from_pretrained(args.bert_model,cache_dir=cache_dir,num_labels=1)
     model.to(device)
     # Prepare optimizer
     param_optimizer = list(model.named_parameters())
@@ -72,8 +74,7 @@ def main(fout_res, args: ArgumentParser):
     # **************************
     if args.do_train:   
         i_train_step = 0
-        train_data = processor.convert_examples_to_features(train_examples, tokenizer)
-        # import pdb; pdb.set_trace()
+        train_data = processor.convert_examples_to_features_with_answer_type(train_examples, tokenizer)
         train_data = processor.build_data_for_model_train(train_data, tokenizer, device)
         dev_acc = 0.0
         for _ in trange(int(args.num_train_epochs), desc="Epoch"):
@@ -107,6 +108,7 @@ def main(fout_res, args: ArgumentParser):
                 loss_list = 0.0
                 if "classification" in merge_mode:
                     # *******************交叉熵损失函数*********************
+                    label_ids = label_ids.view(-1,2)[:,0]
                     loss_point = crossEntropy(logits, label_ids)
                     n_batch_correct += torch.sum(torch.eq((logits>0.5).data.long().view(-1,1),label_ids.view(-1,1)))
                     len_train_data += logits.size(0)   
@@ -146,7 +148,7 @@ def main(fout_res, args: ArgumentParser):
                     rels_ids = rels_ids.to(device).view(-1, 2)
                     with torch.no_grad():
                         logits = model(input_ids, segment_ids, input_mask, labels=None)    
-                    logits = torch.sigmoid(logits)    
+                    logits = torch.sigmoid(logits)
                     # import pdb; pdb.set_trace()  
                     for item in logits:
                         f_valid.write(str(float(item)) + '\n')
@@ -179,12 +181,12 @@ def test(best_model_dir_name, fout_res, args):
     merge_mode = ['pairwise']
     tokenizer = BertTokenizer.from_pretrained(best_model_dir_name, do_lower_case=args.do_lower_case)
     cache_dir = args.cache_dir if args.cache_dir else os.path.join(str(PYTORCH_PRETRAINED_BERT_CACHE))
-    model = BertForSequence.from_pretrained(best_model_dir_name,cache_dir=cache_dir,num_labels=1)
+    model = BertFor2PairSequenceWithAnswerType.from_pretrained(best_model_dir_name,cache_dir=cache_dir,num_labels=1)
     model.to(device)
     # 构建验证集数据  
     eval_examples = processor.get_test_examples(args.data_dir)
     # import pdb; pdb.set_trace()   
-    eval_data = processor.convert_examples_to_features(eval_examples, tokenizer)
+    eval_data = processor.convert_examples_to_features_with_answer_type(eval_examples, tokenizer)
     eval_data = processor.build_data_for_model(eval_data, tokenizer, device)
     # import pdb; pdb.set_trace()
     file_name1 = args.output_dir + 'prediction_test'
@@ -218,7 +220,7 @@ if __name__ == "__main__":
     # for N in [5]:
         logger = logging.getLogger(__name__)
         print(seed)
-        os.environ["CUDA_VISIBLE_DEVICES"] = '2'
+        os.environ["CUDA_VISIBLE_DEVICES"] = '5'
         parser = ArgumentParser(description = 'For KBQA')
         parser.add_argument("--data_dir",default=BASE_DIR + '/runnings/train_data/webq/',type=str)
         # parser.add_argument("--bert_model", default='bert-base-uncased', type=str)
@@ -226,7 +228,8 @@ if __name__ == "__main__":
         parser.add_argument("--bert_model", default= '/home/jiayonghui/github/bert_rank_data/bert_base_uncased', type=str)
         parser.add_argument("--bert_vocab", default='/home/jiayonghui/github/bert_rank_data/bert_base_uncased', type=str)
         parser.add_argument("--task_name",default='mrpc',type=str,help="The name of the task to train.")
-        parser.add_argument("--output_dir",default=BASE_DIR + '/runnings/model/webq/rerank_pointwise_baseline_1score_webq_neg_' + str(N) + '_' + str(seed) + '_' + str(steps) + '/',type=str)
+        # parser.add_argument("--output_dir",default=BASE_DIR + '/runnings/model/webq/only_sim_no_answer_str_cat_2bert_group1_webq_pointwise_2linear_neg_' + str(N) + '_' + str(seed) + '_' + str(steps) + '/',type=str)
+        parser.add_argument("--output_dir",default=BASE_DIR + '/runnings/model/webq/rerank_2bert_answer_type_bert_webq_pointwise_2scoreadd_neg_' + str(N) + '_' + str(seed) + '_' + str(steps) + '/',type=str)
         parser.add_argument("--input_model_dir", default='0.9675389502344577_0.4803025192052977_3', type=str)
         parser.add_argument("--T_file_name",default='webq_T_bert_2cv_constrain_top' + str(N) + '.txt',type=str)
         parser.add_argument("--v_file_name",default='webq_v_top' + str(N) + '_from5244.txt',type=str)

@@ -1,5 +1,3 @@
-from __future__ import absolute_import, division, print_function
-
 import argparse
 import csv
 import logging
@@ -27,10 +25,12 @@ from pytorch_pretrained_bert.optimization import BertAdam, WarmupLinearSchedule
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
 sys.path.append(BASE_DIR)
 from Model.common.InputExample import InputExample
-from Model.cal_f1 import cal_f1, cal_f1_with_position
+from Model.cal_f1 import cal_f1, cal_f1_with_position, cal_f1_with_position_compq
 from Model.common.DataProcessor import DataProcessor
+# from Model.common.BertEncoderX import BertFor2PairSequenceWithAnswerType
 from Model.common.BertEncoderX import BertForSequence
 from Model.rerank.loss import crossEntropy
+
     
 
 def main(fout_res, args: ArgumentParser):
@@ -73,7 +73,6 @@ def main(fout_res, args: ArgumentParser):
     if args.do_train:   
         i_train_step = 0
         train_data = processor.convert_examples_to_features(train_examples, tokenizer)
-        # import pdb; pdb.set_trace()
         train_data = processor.build_data_for_model_train(train_data, tokenizer, device)
         dev_acc = 0.0
         for _ in trange(int(args.num_train_epochs), desc="Epoch"):
@@ -88,7 +87,7 @@ def main(fout_res, args: ArgumentParser):
             nb_tr_examples, nb_tr_steps = 0, 0
             n_batch_correct = 0
             len_train_data = 0
-            crossLoss = torch.nn.CrossEntropyLoss()
+            # crossLoss = torch.nn.CrossEntropyLoss()
             for step, batch in enumerate(tqdm(train_dataloader, desc="Iteration")):
                 i_train_step += 1
                 batch = tuple(t.to(device) for t in batch)
@@ -107,6 +106,7 @@ def main(fout_res, args: ArgumentParser):
                 loss_list = 0.0
                 if "classification" in merge_mode:
                     # *******************交叉熵损失函数*********************
+                    # label_ids = label_ids.view(-1,2)[:,0]
                     loss_point = crossEntropy(logits, label_ids)
                     n_batch_correct += torch.sum(torch.eq((logits>0.5).data.long().view(-1,1),label_ids.view(-1,1)))
                     len_train_data += logits.size(0)   
@@ -146,12 +146,12 @@ def main(fout_res, args: ArgumentParser):
                     rels_ids = rels_ids.to(device).view(-1, 2)
                     with torch.no_grad():
                         logits = model(input_ids, segment_ids, input_mask, labels=None)    
-                    logits = torch.sigmoid(logits)    
+                    # logits = torch.softmax(logits, 1)    
                     # import pdb; pdb.set_trace()  
                     for item in logits:
                         f_valid.write(str(float(item)) + '\n')
                 f_valid.flush()
-                p, r, F_dev = cal_f1_with_position(file_name1, args.data_dir + args.v_file_name, 'v', -3)
+                p, r, F_dev = cal_f1_with_position_compq(file_name1, args.data_dir + args.v_file_name, 'v', -3)
                 fout_res.write(str(p) + '\t' + str(r) + '\t' + str(F_dev) + '\n')
                 fout_res.flush()
             if(True):
@@ -200,13 +200,13 @@ def test(best_model_dir_name, fout_res, args):
         segment_ids = segment_ids.to(device).view(-1, args.max_seq_length)
         label_ids = label_ids.to(device).view(-1)
         with torch.no_grad():
-            logits = model(input_ids, segment_ids, input_mask, labels=None)    
-        logits = torch.sigmoid(logits)
+            logits = model(input_ids, segment_ids, input_mask, labels=None)
+        # logits = torch.softmax(logits, 1)     
         # import pdb; pdb.set_trace()
         for item in logits:
             f_valid.write(str(float(item)) + '\n')
     f_valid.flush()
-    p, r, F_dev = cal_f1_with_position(file_name1, args.data_dir + args.t_file_name, 't', -3)
+    p, r, F_dev = cal_f1_with_position_compq(file_name1, args.data_dir + args.t_file_name, 't', -3)
     fout_res.write(str(p) + '\t' + str(r) + '\t' + str(F_dev) + '\n')
     fout_res.flush()
 
@@ -214,23 +214,26 @@ if __name__ == "__main__":
     seed = 42
     steps = 50
     # for N in [5, 10, 20, 30, 40, 50, 60, 70, 80, 100, 120, 140]:
+    # for N in [5, 10, 20, 30]:
     for N in [5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120]:
-    # for N in [5]:
         logger = logging.getLogger(__name__)
         print(seed)
-        os.environ["CUDA_VISIBLE_DEVICES"] = '2'
+        os.environ["CUDA_VISIBLE_DEVICES"] = '3'
         parser = ArgumentParser(description = 'For KBQA')
-        parser.add_argument("--data_dir",default=BASE_DIR + '/runnings/train_data/webq/',type=str)
+        parser.add_argument("--data_dir",default=BASE_DIR + '/runnings/train_data/compq/',type=str)
         # parser.add_argument("--bert_model", default='bert-base-uncased', type=str)
         # parser.add_argument("--bert_vocab", default='bert-base-uncased', type=str)
         parser.add_argument("--bert_model", default= '/home/jiayonghui/github/bert_rank_data/bert_base_uncased', type=str)
         parser.add_argument("--bert_vocab", default='/home/jiayonghui/github/bert_rank_data/bert_base_uncased', type=str)
         parser.add_argument("--task_name",default='mrpc',type=str,help="The name of the task to train.")
-        parser.add_argument("--output_dir",default=BASE_DIR + '/runnings/model/webq/rerank_pointwise_baseline_1score_webq_neg_' + str(N) + '_' + str(seed) + '_' + str(steps) + '/',type=str)
+        # parser.add_argument("--output_dir",default=BASE_DIR + '/runnings/model/webq/only_sim_no_answer_str_cat_2bert_group1_webq_pointwise_2linear_neg_' + str(N) + '_' + str(seed) + '_' + str(steps) + '/',type=str)
+        parser.add_argument("--output_dir",default=BASE_DIR + '/runnings/model/compq/compq_resample_rank_pointwise_neg_' + str(N) + '_' + str(seed) + '_' + str(steps) + '/',type=str)
         parser.add_argument("--input_model_dir", default='0.9675389502344577_0.4803025192052977_3', type=str)
-        parser.add_argument("--T_file_name",default='webq_T_bert_2cv_constrain_top' + str(N) + '.txt',type=str)
-        parser.add_argument("--v_file_name",default='webq_v_top' + str(N) + '_from5244.txt',type=str)
-        parser.add_argument("--t_file_name",default='webq_t_top' + str(N) + '_from5244.txt',type=str)
+        parser.add_argument("--T_file_name",default='compq_T_bert_2cv_constrain_top' + str(N) + '.txt',type=str)
+        # parser.add_argument("--v_file_name",default='pairwise_with_freebase_id_dev_all_cut.txt',type=str)
+        parser.add_argument("--v_file_name",default='bert_compq_pointwise_3835_dev.txt',type=str)
+        # parser.add_argument("--v_file_name",default='webq_rank1_f01_gradual_label_position_1_' + str(N) + '_type_entity_time_ordinal_mainpath_is_train.txt',type=str)
+        parser.add_argument("--t_file_name",default='bert_compq_pointwise_3835_test.txt',type=str)
 
         parser.add_argument("--T_model_data_name",default='train_all_518484_from_1_500000000.pkl',type=str)
         parser.add_argument("--v_model_data_name",default='dev_all_135428_from_v_bert_rel_answer_pairwise_1_500000000.pkl',type=str)
