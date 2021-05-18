@@ -38,20 +38,21 @@ if __name__ == "__main__":
 
 
     dirName = BASE_DIR + '/runnings/train_data/compq/'
-    for top_n in [50, 60, 70, 80, 90, 100, 110, 120]:
+    # for top_n in [50, 60, 70, 80, 90, 100, 110, 120]:
     # for top_n in [5, 10, 20, 30, 40]:
+    for top_n in [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]:
         print(top_n)
         # 对交叉验证得到的训练集进行topn选取
-        file_name = dirName + 'compq_train_2cv.txt'
-        qid2data = getTopNPrediction(file_name, top_n) # 得到topn数据
-        qid2dataFull = readOrderedTrainData(file_name)
-        qid2data = constrainTrainData(qid2data, qid2dataFull, top_n)
-        write2file(dirName + 'compq_T_bert_2cv_constrain_top' + str(top_n) + '.txt', qid2data)
-        # break
+        # file_name = dirName + 'compq_train_2cv.txt'
+        # qid2data = getTopNPrediction(file_name, top_n) # 得到topn数据
+        # qid2dataFull = readOrderedTrainData(file_name)
+        # qid2data = constrainTrainData(qid2data, qid2dataFull, top_n)
+        # write2file(dirName + 'compq_T_bert_2cv_constrain_top' + str(top_n) + '.txt', qid2data)
+        # # break
 
-        devFile = dirName + 'bert_compq_pointwise_3835_dev.txt'
-        qid2data = getTopNPrediction(devFile, top_n)
-        write2file(dirName + 'compq_v_top' + str(top_n) + '.txt', qid2data)
+        # devFile = dirName + 'bert_compq_pointwise_3835_dev.txt'
+        # qid2data = getTopNPrediction(devFile, top_n)
+        # write2file(dirName + 'compq_v_top' + str(top_n) + '.txt', qid2data)
 
         testFile = dirName + 'bert_compq_pointwise_3835_test.txt'
         qid2data = getTopNPrediction(testFile, top_n)
