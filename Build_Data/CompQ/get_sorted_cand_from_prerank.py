@@ -69,9 +69,16 @@ def sort_cands(scores_file_name, data_file_name, dataType):
     print('数据个数：', len(lines))
 
 if __name__ == "__main__":
-    sort_cands(BASE_DIR + '/runnings/train_data/compq/compq_2cv_from_3835_scores.txt', 
-            BASE_DIR + '/runnings/train_data/compq/compq_train_all.txt', 'train_2cv')
-    sort_cands(BASE_DIR + '/runnings/model/compq/bert_compq_pointwise_3835/prediction_valid', 
-            BASE_DIR + '/runnings/train_data/compq/compq_dev_all.txt', 'dev')
-    sort_cands(BASE_DIR + '/runnings/model/compq/bert_compq_pointwise_3835/prediction', 
-            BASE_DIR + '/runnings/train_data/compq/compq_test_all.txt', 'test')
+    # sort_cands(BASE_DIR + '/runnings/train_data/compq/compq_2cv_from_3835_scores.txt', 
+    #         BASE_DIR + '/runnings/train_data/compq/compq_train_all.txt', 'train_2cv')
+    # sort_cands(BASE_DIR + '/runnings/model/compq/bert_compq_pointwise_3835/prediction_valid', 
+    #         BASE_DIR + '/runnings/train_data/compq/compq_dev_all.txt', 'dev')
+    # sort_cands(BASE_DIR + '/runnings/model/compq/bert_compq_pointwise_3835/prediction', 
+    #         BASE_DIR + '/runnings/train_data/compq/compq_test_all.txt', 'test')
+
+    sort_cands(BASE_DIR + '/runnings/model/compq/pairwise/bert_compq_pairwise_4267/prediction_train', 
+            BASE_DIR + '/runnings/train_data/compq/compq_train_all.txt', 'train_from4267')
+    sort_cands(BASE_DIR + '/runnings/model/compq/pairwise/bert_compq_pairwise_4267/prediction_valid', 
+            BASE_DIR + '/runnings/train_data/compq/compq_dev_all.txt', 'dev_from4267')
+    sort_cands(BASE_DIR + '/runnings/model/compq//pairwise/bert_compq_pairwise_4267/prediction', 
+            BASE_DIR + '/runnings/train_data/compq/compq_test_all.txt', 'test_from4267')

@@ -13,3 +13,13 @@ def crossEntropy(logits, label_ids):
                 loss += torch.log(1 - logits[i])
     loss = 0- loss
     return loss
+
+
+def hingeLoss(logits, label_ids):
+    loss = torch.tensor(0.0).cuda()
+    scores = torch.sigmoid(logits).view(-1, 2)
+    pos_score = scores.view(-1, 2)[:, 0].view(-1)
+    neg_score = scores.view(-1, 2)[:, 1].view(-1)
+    margin_loss = torch.nn.functional.relu(neg_score + 0.5 - pos_score)
+    loss = torch.mean(margin_loss)
+    return loss

@@ -69,11 +69,20 @@ def sort_cands(scores_file_name, data_file_name, dataType):
     print('数据个数：', len(lines))
 
 if __name__ == "__main__":
-    sort_cands(BASE_DIR + '/runnings/model/webq/bert_webq_pointwise_5244/prediction', 
-                BASE_DIR + '/runnings/train_data/webq/webq_with_answer_info_test_all.txt', 'test')
+    # sort_cands(BASE_DIR + '/runnings/model/webq/bert_webq_pointwise_5244/prediction', 
+    #             BASE_DIR + '/runnings/train_data/webq/webq_with_answer_info_test_all.txt', 'test')
 
-    sort_cands(BASE_DIR + '/runnings/model/webq/bert_webq_pointwise_5244/prediction_valid', 
-                BASE_DIR + '/runnings/train_data/webq/webq_with_answer_info_dev_all.txt', 'dev')
+    # sort_cands(BASE_DIR + '/runnings/model/webq/bert_webq_pointwise_5244/prediction_valid', 
+    #             BASE_DIR + '/runnings/train_data/webq/webq_with_answer_info_dev_all.txt', 'dev')
 
-    sort_cands(BASE_DIR + '/runnings/model/webq/bert_webq_pointwise_5244/2cv_from5244', 
-                BASE_DIR + '/runnings/train_data/webq/webq_with_answer_info_train_all.txt', 'train')
+    # sort_cands(BASE_DIR + '/runnings/model/webq/bert_webq_pointwise_5244/2cv_from5244', 
+    #             BASE_DIR + '/runnings/train_data/webq/webq_with_answer_info_train_all.txt', 'train')
+
+    sort_cands(BASE_DIR + '/runnings/model/webq/pairwise/bert_webq_pairwise_40_5372/prediction', 
+                BASE_DIR + '/runnings/train_data/webq/webq_with_answer_info_test_all.txt', 'test_from5372')
+
+    sort_cands(BASE_DIR + '/runnings/model/webq/pairwise/bert_webq_pairwise_40_5372/prediction_valid', 
+                BASE_DIR + '/runnings/train_data/webq/webq_with_answer_info_dev_all.txt', 'dev_from5372')
+
+    sort_cands(BASE_DIR + '/runnings/model/webq/pairwise/bert_webq_pairwise_40_5372/prediction_train', 
+                BASE_DIR + '/runnings/train_data/webq/webq_with_answer_info_train_all.txt', 'train_from5372')
