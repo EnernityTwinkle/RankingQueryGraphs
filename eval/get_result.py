@@ -69,11 +69,11 @@ if __name__ == "__main__":
     #     results = read_result('./model/webq/', feature = feature)
     #     write2file(results, feature)
 
-    features = []
-    features.append('rerank_2bert_answer_type_bert_webq_pointwise_2scoreadd_neg_')
-    for feature in features:
-        results = read_result(BASE_DIR + '/runnings/model/webq/', feature = feature)
-        write2file(results, feature)
+    # features = []
+    # features.append('rerank_2bert_answer_type_bert_webq_pointwise_2scoreadd_neg_')
+    # for feature in features:
+    #     results = read_result(BASE_DIR + '/runnings/model/webq/', feature = feature)
+    #     write2file(results, feature)
 
     # features = []
     # features.append('compq_resample_rank_pointwise_neg_')
@@ -81,4 +81,17 @@ if __name__ == "__main__":
     #     results = read_result(BASE_DIR + '/runnings/model/compq/', feature = feature)
     #     write2file(results, feature)
 
+    features = []
+    # features.append('webq_rerank_pairwise_top_')
+    features.append('webq_rerank_2bert_answer_type_pairwise_to2add_neg')
+    for feature in features:
+        results = read_result(BASE_DIR + '/runnings/model/webq/pairwise/', feature = feature)
+        write2file(results, feature)
+
+    features = []
+    # features.append('compq_rerank_pairwise_top_')
+    features.append('compq_rerank_2bert_fromrankmodel_answer_type_pairwise_2scoreadd_neg_')
+    for feature in features:
+        results = read_result(BASE_DIR + '/runnings/model/compq/pairwise/', feature = feature)
+        write2file(results, feature)
     
