@@ -45,17 +45,18 @@ if __name__ == "__main__":
     # for top_n in [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]:
         print(top_n)
         # 对交叉验证得到的训练集进行topn选取
-        file_name = dirName + 'bert_webq_pairwise_40_5372_train_from5372.txt'
+        # file_name = dirName + 'bert_webq_pairwise_40_5372_train_from5372.txt'
+        file_name = dirName + 'bert_processing_type_webq_pairwise_40_5372_train_from5372.txt'
         qid2data = getTopNPrediction(file_name, top_n) # 得到topn数据
         qid2dataFull = readOrderedTrainData(file_name)
         qid2data = constrainTrainData(qid2data, qid2dataFull, top_n)
-        write2fileTrain(dirName + 'webq_T_bert_constrain_top' + str(top_n) + '_from5372.txt', qid2data)
+        write2fileTrain(dirName + 'processing_type_webq_T_bert_constrain_top' + str(top_n) + '_from5372.txt', qid2data)
         # break
 
-        devFile = dirName + 'bert_webq_pairwise_40_5372_dev_from5372.txt'
-        qid2data = getTopNPrediction(devFile, top_n)
-        write2file(dirName + 'webq_v_top' + str(top_n) + '_from5372.txt', qid2data)
+        # devFile = dirName + 'bert_webq_pairwise_40_5372_dev_from5372.txt'
+        # qid2data = getTopNPrediction(devFile, top_n)
+        # write2file(dirName + 'webq_v_top' + str(top_n) + '_from5372.txt', qid2data)
 
-        testFile = dirName + 'bert_webq_pairwise_40_5372_test_from5372.txt'
-        qid2data = getTopNPrediction(testFile, top_n)
-        write2file(dirName + 'webq_t_top' + str(top_n) + '_from5372.txt', qid2data)
+        # testFile = dirName + 'bert_webq_pairwise_40_5372_test_from5372.txt'
+        # qid2data = getTopNPrediction(testFile, top_n)
+        # write2file(dirName + 'webq_t_top' + str(top_n) + '_from5372.txt', qid2data)
