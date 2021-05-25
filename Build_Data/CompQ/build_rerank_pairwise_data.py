@@ -55,17 +55,19 @@ if __name__ == "__main__":
     # for top_n in [5, 10, 15, 20, 25, 30, 35, 40, 45, 50]:
         print(top_n)
         # 对交叉验证得到的训练集进行topn选取
-        file_name = dirName + 'bert_compq_pairwise_4267_train_from4267.txt'
+        # file_name = dirName + 'bert_compq_pairwise_4267_train_from4267.txt'
+        file_name = dirName + 'bert_processing_compq_pairwise_4267_train_from4267.txt'
         qid2data = getTopNPrediction(file_name, top_n) # 得到topn数据
         qid2dataFull = readOrderedTrainData(file_name)
         qid2data = constrainTrainData(qid2data, qid2dataFull, top_n)
-        write2fileTrain(dirName + 'compq_pairwise_T_bert_constrain_top' + str(top_n) + '_from4267.txt', qid2data)
+        # write2fileTrain(dirName + 'compq_pairwise_T_bert_constrain_top' + str(top_n) + '_from4267.txt', qid2data)
+        write2fileTrain(dirName + 'processing_compq_pairwise_T_bert_constrain_top' + str(top_n) + '_from4267.txt', qid2data)
         # break
 
-        devFile = dirName + 'bert_compq_pairwise_4267_dev_from4267.txt'
-        qid2data = getTopNPrediction(devFile, top_n)
-        write2file(dirName + 'compq_pairwise_v_top' + str(top_n) + '_from4267.txt', qid2data)
+        # devFile = dirName + 'bert_compq_pairwise_4267_dev_from4267.txt'
+        # qid2data = getTopNPrediction(devFile, top_n)
+        # write2file(dirName + 'compq_pairwise_v_top' + str(top_n) + '_from4267.txt', qid2data)
 
-        testFile = dirName + 'bert_compq_pairwise_4267_test_from4267.txt'
-        qid2data = getTopNPrediction(testFile, top_n)
-        write2file(dirName + 'compq_pairwise_t_top' + str(top_n) + '_from4267.txt', qid2data)
+        # testFile = dirName + 'bert_compq_pairwise_4267_test_from4267.txt'
+        # qid2data = getTopNPrediction(testFile, top_n)
+        # write2file(dirName + 'compq_pairwise_t_top' + str(top_n) + '_from4267.txt', qid2data)
