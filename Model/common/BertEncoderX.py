@@ -338,7 +338,8 @@ class BertFor2PairSequenceWithAnswerTypeMidDimPoint(BertPreTrainedModel):
         ##############问句与答案字符串的编码和语义相似度编码不采用同一个bert,分别映射到2维再相加##############
         logits1 = self.classifier1(self.dropout(pooled_output1))
         logits2 = self.classifier2(self.dropout(pooled_output2))
-        logits = logits1 + logits2
+        # logits = logits1 + logits2
+        logits = logits1 * torch.sigmoid(logits2)
         # logits = logits1
         return logits
 
@@ -379,8 +380,9 @@ class BertFor2PairSequenceWithAnswerTypeMidDim(BertPreTrainedModel):
         # import pdb; pdb.set_trace()
         logits1 = self.classifier1(self.dropout(pooled_output1))
         logits2 = self.classifier2(self.dropout2(pooled_output2))
-        # logits = logits1 + logits2
-        logits = logits1 + logits1 * logits2
+        logits = logits1 + logits2
+        # logits = logits1 * torch.sigmoid(logits2)
+        # logits = logits1 + logits1 * torch.sigmoid(logits2)
         # logits = logits1
         return logits
 

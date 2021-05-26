@@ -52,7 +52,10 @@ def main(fout_res, args: ArgumentParser):
     # import pdb; pdb.set_trace()   
     # Prepare model
     cache_dir = args.cache_dir if args.cache_dir else os.path.join(str(PYTORCH_PRETRAINED_BERT_CACHE))
+    # import pdb; pdb.set_trace()
     model = BertFor2PairSequenceWithAnswerType.from_pretrained(args.bert_model,cache_dir=cache_dir,num_labels=1)
+    # model.bert.from_pretrained(args.bert_model)
+    # model.bert2.from_pretrained(args.bert_model)
     model.to(device)
     # Prepare optimizer
     param_optimizer = list(model.named_parameters())
@@ -215,13 +218,13 @@ if __name__ == "__main__":
     seed = 42
     steps = 50
     # for N in [5, 10, 20, 30, 40, 50, 60, 70, 80, 100, 120, 140]:
-    for N in [20, 30, 40, 50]:
+    for N in [5, 10, 20, 30]:
     # for batch in [32, 64, 128]:
     # for N in [5, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120]:
         batch = 16
         logger = logging.getLogger(__name__)
         print(seed)
-        os.environ["CUDA_VISIBLE_DEVICES"] = '5'
+        os.environ["CUDA_VISIBLE_DEVICES"] = '4'
         parser = ArgumentParser(description = 'For KBQA')
         parser.add_argument("--data_dir",default=BASE_DIR + '/runnings/train_data/compq/',type=str)
         # parser.add_argument("--bert_model", default= BASE_DIR + '/runnings/model/compq/pairwise/bert_compq_pairwise_4267/0.9391435011269722_0.40942470633498634_4', type=str)
@@ -229,7 +232,7 @@ if __name__ == "__main__":
         parser.add_argument("--bert_model", default= '/home/jiayonghui/github/bert_rank_data/bert_base_uncased', type=str)
         parser.add_argument("--bert_vocab", default='/home/jiayonghui/github/bert_rank_data/bert_base_uncased', type=str)
         parser.add_argument("--task_name",default='mrpc',type=str,help="The name of the task to train.")
-        parser.add_argument("--output_dir",default=BASE_DIR + '/runnings/model/compq/pairwise/compq_processing_rerank_2bert_answer_type_pairwise_2scoreadd_neg_' + str(N) + '_' + str(batch) + '_' + str(steps) + '/',type=str)
+        parser.add_argument("--output_dir",default=BASE_DIR + '/runnings/model/compq/pairwise/compq_nobertinit_processing_rerank_2bert_answer_type_pairwise_2scoreadd_neg_' + str(N) + '_' + str(batch) + '_' + str(steps) + '/',type=str)
         # parser.add_argument("--output_dir",default=BASE_DIR + '/runnings/model/compq/pairwise/compq_rerank_2bert_use1_answer_type_pairwise_to2add_neg_' + str(N) + '_' + str(seed) + '_' + str(steps) + '/',type=str)
         parser.add_argument("--input_model_dir", default='0.9675389502344577_0.4803025192052977_3', type=str)
         parser.add_argument("--T_file_name",default='processing_compq_pairwise_T_bert_constrain_top' + str(N) + '_from4267.txt',type=str)
