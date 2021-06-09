@@ -347,6 +347,7 @@ class BertFor2PairSequenceWithAnswerTypeMidDim(BertPreTrainedModel):
     
     def __init__(self, config, num_labels, mid_dim = 768):
         super(BertFor2PairSequenceWithAnswerTypeMidDim, self).__init__(config)
+        # import pdb; pdb.set_trace()
         self.num_labels = num_labels
         self.mid_dim = mid_dim
         self.bert = BertModel(config)
@@ -356,7 +357,7 @@ class BertFor2PairSequenceWithAnswerTypeMidDim(BertPreTrainedModel):
         # self.classifier = nn.Linear(config.hidden_size * 2, num_labels)
         self.classifier1 = nn.Linear(config.hidden_size, num_labels)
         self.classifier2 = nn.Linear(config.hidden_size, num_labels)
-        # self.denseCat = nn.Linear(config.hidden_size * 2, )
+        self.denseCat = nn.Linear(config.hidden_size * 2, 1)
         # self.activation = nn.Tanh()
         self.apply(self.init_bert_weights)
 
